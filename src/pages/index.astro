@@ -1,5 +1,6 @@
 ---
 import BackgroundScene from '../components/BackgroundScene.tsx';
+const base = import.meta.env.BASE_URL;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -819,7 +820,7 @@ footer { background: var(--cream-2); padding: 80px 32px 40px; border-top: 1px so
 <div class="nav-wrap" id="navWrap">
   <nav aria-label="Primary navigation">
     <a href="#" class="nav-logo">
-      <img src="/eightwire-logo-white-text-transparent.svg" alt="Eightwire" height="32" />
+      <img src={`${base}eightwire-logo-white-text-transparent.svg`} alt="Eightwire" height="32" />
     </a>
     <div class="nav-links">
       <a href="#platform">Platform</a>
@@ -1182,7 +1183,7 @@ footer { background: var(--cream-2); padding: 80px 32px 40px; border-top: 1px so
       <div class="footer-brand">
         <div class="footer-brand-logo">
           <a href="#" aria-label="Eightwire home">
-            <img src="/eightwire-logo.svg" alt="Eightwire" />
+            <img src={`${base}eightwire-logo.svg`} alt="Eightwire" />
           </a>
         </div>
         <p>Secure data exchange for Aotearoa's high-stakes sectors. Built in Wellington since 2013.</p>
