@@ -4,6 +4,6 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   site: 'https://ritvikdutt-sketch.github.io',
-  base: '/eightwire-astro',
+  base: '/eightwire-astro/',
   integrations: [tailwind(), react()],
 });
