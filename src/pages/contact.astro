@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us | Eightwire" description="Get in touch with Eightwire. We're here to help with enquiries, feedback, or collaboration opportunities for secure data exchange solutions.">
+
+  <!-- ========== HERO ========== -->
+  <section class="relative overflow-hidden py-32 lg:py-40" style="background: #0c2e24;">
+    <div class="absolute inset-0">
+      <img src="/hero22.png" alt="" class="w-full h-full object-cover" aria-hidden="true">
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <div class="reveal max-w-3xl mx-auto">
+        <p class="text-lime font-bold text-xs tracking-[0.2em] uppercase mb-4">Get In Touch</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">Contact us</h1>
+        <p class="text-white/75 text-lg body-relaxed max-w-2xl mx-auto">We're here to help! Feel free to reach out to us with any enquiries, feedback, or collaboration opportunities. We look forward to connecting with you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT FORM + INFO ========== -->
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+
+        <!-- Left column: Static Contact Info (3/5 width) -->
+        <div class="lg:col-span-3 reveal">
+          <div class="rounded-2xl p-8 sm:p-10 lg:p-12" style="background: rgba(20,80,65,0.03); border: 1px solid rgba(20,80,65,0.08); box-shadow: 0 2px 12px rgba(20,80,65,0.04);">
+            <h2 class="text-2xl sm:text-3xl text-forest leading-[1.15] mb-4">Get in touch</h2>
+            <p class="text-forest-light body-relaxed mb-10">We're here to help with enquiries, feedback, or collaboration opportunities for secure data exchange solutions. We look forward to connecting with you.</p>
+
+            <div class="space-y-8">
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-forest/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-forest mb-1">Email</p>
+                  <a href="mailto:support@eight-wire.com" class="text-lime-mid font-medium text-lg hover:text-forest" style="transition: color 0.2s ease;">support@eight-wire.com</a>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-forest/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-forest mb-1">Office</p>
+                  <p class="text-forest-light body-relaxed">Level 4, 40 Taranaki Street</p>
+                  <p class="text-forest-light body-relaxed">Wellington 6011, New Zealand</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Address + Map (2/5 width) -->
+        <div class="lg:col-span-2 space-y-8">
+
+          <!-- Address Card -->
+          <div class="reveal reveal-delay-1 rounded-2xl p-8" style="background: rgba(20,80,65,0.03); border: 1px solid rgba(20,80,65,0.08); border-radius: 1rem;">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-forest/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              </div>
+              <h3 class="font-display text-xl text-forest">Our Office</h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <p class="font-semibold text-forest text-sm mb-1">Eightwire Ltd.</p>
+                <p class="text-forest-light/80 text-sm body-relaxed">Level 4, 40 Taranaki Street</p>
+                <p class="text-forest-light/80 text-sm body-relaxed">Wellington 6011, New Zealand</p>
+              </div>
+              <div class="pt-2 border-t border-forest/8">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-forest/10 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                  </div>
+                  <a href="mailto:support@eight-wire.com" class="text-forest font-medium text-sm hover:text-lime-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 rounded" style="transition: color 0.2s ease;">support@eight-wire.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="reveal reveal-delay-2 rounded-2xl overflow-hidden relative" style="box-shadow: 0 1px 3px rgba(20,80,65,0.04), 0 4px 16px rgba(20,80,65,0.03);">
+            <img src="https://placehold.co/600x400/d6e9e2/145041?text=Map+-+Wellington+NZ" alt="Map showing Eightwire office location in Wellington, New Zealand" class="w-full h-auto">
+            <div class="absolute inset-0 bg-gradient-to-t from-forest/15 to-transparent mix-blend-multiply"></div>
+            <!-- Pin overlay -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="relative">
+                <div class="w-10 h-10 rounded-full bg-forest flex items-center justify-center" style="box-shadow: 0 2px 12px rgba(20,80,65,0.3);">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                </div>
+                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-forest rotate-45" style="box-shadow: 2px 2px 4px rgba(20,80,65,0.2);"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Info Card -->
+          <div class="reveal reveal-delay-3 rounded-2xl p-8 relative overflow-hidden" style="background: linear-gradient(135deg, #145041 0%, #195a4a 100%); box-shadow: 0 4px 24px rgba(20,80,65,0.2);">
+            <div class="absolute inset-0 grain" style="opacity: 0.5;"></div>
+            <div class="relative z-10">
+              <h3 class="font-display text-xl text-white mb-3">Looking for support?</h3>
+              <p class="text-white/70 text-sm body-relaxed mb-5">If you're an existing customer needing technical support, visit our support page for faster assistance.</p>
+              <a href="/support" class="inline-flex items-center gap-2 text-lime font-semibold text-sm hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-forest rounded" style="transition: gap 0.3s cubic-bezier(0.22, 1, 0.36, 1);">
+                Visit Support
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
