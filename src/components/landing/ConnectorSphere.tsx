@@ -109,11 +109,6 @@ export default function ConnectorSphere() {
     lastInteract.current = performance.now();
     focusTarget.current = null;
     vel.current = { x: 0, y: 0 };
-    try {
-      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
-    } catch {
-      /* synthetic events may carry no active pointer */
-    }
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -123,6 +118,15 @@ export default function ConnectorSphere() {
     lastPointer.current = { x: e.clientX, y: e.clientY };
     dragDist.current += Math.abs(dx) + Math.abs(dy);
     if (dragDist.current > 8 && !hasDragged) setHasDragged(true);
+    // capture only once a real drag starts — capturing on pointerdown would
+    // retarget the click to the canvas and swallow tile selection on desktop
+    if (dragDist.current > 8 && !e.currentTarget.hasPointerCapture(e.pointerId)) {
+      try {
+        (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+      } catch {
+        /* synthetic events may carry no active pointer */
+      }
+    }
     const k = 0.16;
     rot.current.ry -= dx * k;
     rot.current.rx += dy * k;
@@ -242,6 +246,9 @@ export default function ConnectorSphere() {
                   transform: `rotateY(${p.lon}deg) rotateX(${p.lat}deg) translateZ(${-radius}px)`,
                   backfaceVisibility: 'hidden',
                   WebkitBackfaceVisibility: 'hidden',
+                  // tiles must match the canvas, or touches starting on a tile
+                  // get claimed by browser scrolling and the drag never starts
+                  touchAction: 'pan-y',
                 }}
               >
                 <img

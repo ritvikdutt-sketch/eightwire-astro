@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 const STATS = [
-  { value: 50, suffix: '+', display: '50+', label: 'organisations connected' },
+  { value: 20, suffix: '+', display: '20+', label: 'organisations connected' },
   { display: 'PMS', label: 'practice management systems integrated' },
   { value: 99.9, suffix: '%', decimals: 1, display: '99.9%', label: 'platform uptime, 12-month rolling' },
   { display: '12+ yrs', label: 'moving NZ’s most sensitive data' },
@@ -49,7 +49,7 @@ export default function Stats() {
         <p className="pt-14 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-cream/40">
           Trusted by Aotearoa&rsquo;s most regulated sectors
         </p>
-        <div className="grid grid-cols-1 gap-px overflow-hidden bg-lime/10 pb-0 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden bg-lime/10 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((s, i) => (
             <div key={s.label} className="bg-forest-deepest px-7 py-9">
               <div

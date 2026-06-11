@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const SOURCES = [
-  { id: 'src-indici', label: 'indici', y: 96 },
+  { id: 'src-rds', label: 'rds', y: 96 },
   { id: 'src-hl7', label: 'hl7_feed', y: 188 },
   { id: 'src-nhi', label: 'nhi', y: 280 },
   { id: 'src-sftp', label: 'sftp', y: 372 },
