@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Azure",
+    "file": "connectors/azure.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/674d2f29cc4715837b3c6a79_cdnlogo.com_microsoft-azure.svg",
+    "bytes": 5784
+  },
+  {
+    "name": "HubSpot",
+    "file": "connectors/hubspot.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/674d22eb5b60d4588631043c_hubspot.svg",
+    "bytes": 3319
+  },
+  {
+    "name": "Salesforce",
+    "file": "connectors/salesforce.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5f1f400f7aad170b8fb62_Salesforce.com_logo.svg",
+    "bytes": 8075
+  },
+  {
+    "name": "SFTP Generic",
+    "file": "connectors/sftp-generic.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5efdea407f157e24272e6_iconfinder-sftp-4263535_117855.svg",
+    "bytes": 3051
+  },
+  {
+    "name": "Parquet",
+    "file": "connectors/parquet.png",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5f13fc0f34d48d4e08adc_1_HxiCknjNWjwy5yGV6frukw.png",
+    "bytes": 87668
+  },
+  {
+    "name": "XLSX",
+    "file": "connectors/xlsx.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5f0c2b71967238d7991e8_Microsoft_Excel_2013-2019_logo.svg",
+    "bytes": 13741
+  },
+  {
+    "name": "SFTP XLSX",
+    "file": "connectors/sftp-xlsx.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5efdea407f157e24272e6_iconfinder-sftp-4263535_117855.svg",
+    "bytes": 3051
+  },
+  {
+    "name": "SFTP CSV",
+    "file": "connectors/sftp-csv.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5efdea407f157e24272e6_iconfinder-sftp-4263535_117855.svg",
+    "bytes": 3051
+  },
+  {
+    "name": "S3 CSV",
+    "file": "connectors/s3-csv.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5ee5c33aa89bbd8e04bad_amazon-s3-svgrepo-com.svg",
+    "bytes": 792
+  },
+  {
+    "name": "Hadoop DFS",
+    "file": "connectors/hadoop-dfs.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5ed1958792a126cbef12d_hadoop-svgrepo-com.svg",
+    "bytes": 38684
+  },
+  {
+    "name": "Folder",
+    "file": "connectors/folder.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5ec7eee2821f1bb3a08d7_folder-svgrepo-com.svg",
+    "bytes": 838
+  },
+  {
+    "name": "Fixed Width",
+    "file": "connectors/fixed-width.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5ec0d2cdc8f1567de4cf1_fixed-width-svgrepo-com.svg",
+    "bytes": 966
+  },
+  {
+    "name": "CSV",
+    "file": "connectors/csv.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e9abe92ead23c8fe3b61_CSV%20File%20Format.svg",
+    "bytes": 2205
+  },
+  {
+    "name": "Generic",
+    "file": "connectors/generic.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5ea9b0cc21f639774a904_question-mark-svgrepo-com.svg",
+    "bytes": 1532
+  },
+  {
+    "name": "Excel",
+    "file": "connectors/excel.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5ea08f90e62aa5f7e2755_Microsoft_Office_Excel_(2019%E2%80%93present).svg",
+    "bytes": 3472
+  },
+  {
+    "name": "MongoDB",
+    "file": "connectors/mongodb.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e879b71967238d73785b_mongodb.svg",
+    "bytes": 19090
+  },
+  {
+    "name": "DynamoDB",
+    "file": "connectors/dynamodb.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e84520919469b54505db_aws-dynamodb.svg",
+    "bytes": 2386
+  },
+  {
+    "name": "DocumentDB",
+    "file": "connectors/documentdb.png",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e7fc68ebfb208afbe5c0_62df34fefaf0e536f7405e2d_documentDB.png",
+    "bytes": 3449
+  },
+  {
+    "name": "CouchDB",
+    "file": "connectors/couchdb.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e7672a2deb93ba9baf75_Apache_CouchDB_logo.svg",
+    "bytes": 8440
+  },
+  {
+    "name": "Cloudant",
+    "file": "connectors/cloudant.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e6fc0c8ac19d313339e7_cloudant%20(1).svg",
+    "bytes": 805
+  },
+  {
+    "name": "Sybase",
+    "file": "connectors/sybase.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e65dd6c54c8d082751c1_Sybase_logo_full.svg",
+    "bytes": 6255
+  },
+  {
+    "name": "SQL Server",
+    "file": "connectors/sql-server.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e5a0459420218f68e4c4_Microsoft_SQL_Server_Logo.svg",
+    "bytes": 39627
+  },
+  {
+    "name": "Snowflake",
+    "file": "connectors/snowflake.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e54c459420218f68a425_Snowflake.svg",
+    "bytes": 9946
+  },
+  {
+    "name": "Redshift",
+    "file": "connectors/redshift.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e4d9723c895f0399076c_Amazon%20Redshift.svg",
+    "bytes": 6205
+  },
+  {
+    "name": "PostgreSQL",
+    "file": "connectors/postgresql.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e44b06ed6c88600cf192_Postgresql_elephant.svg",
+    "bytes": 4461
+  },
+  {
+    "name": "Oracle",
+    "file": "connectors/oracle.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e3c8ff0e3d79e558f097_Oracle_logo.svg",
+    "bytes": 874
+  },
+  {
+    "name": "Netezza SQL",
+    "file": "connectors/netezza-sql.png",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65c87b9115a8106a1db10b5a_Netezzaq%20logo.png",
+    "bytes": 32111
+  },
+  {
+    "name": "MySQL",
+    "file": "connectors/mysql.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e35c694307d1ca8a72af_mysql-official.svg",
+    "bytes": 5048
+  },
+  {
+    "name": "MYOB",
+    "file": "connectors/myob.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e2bde1b3afc19d223d7a_myob-logo-vector.svg",
+    "bytes": 2348
+  },
+  {
+    "name": "ANSI SQL",
+    "file": "connectors/ansi-sql.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5c764976671902b2da525_ansi-2.svg",
+    "bytes": 1212
+  },
+  {
+    "name": "DB2",
+    "file": "connectors/db2.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5dd33d8a7dc17c0357a47_db2.svg",
+    "bytes": 2595
+  },
+  {
+    "name": "DB2 Generic",
+    "file": "connectors/db2-generic.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5dd33d8a7dc17c0357a47_db2.svg",
+    "bytes": 2595
+  },
+  {
+    "name": "Hadoop Hive",
+    "file": "connectors/hadoop-hive.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5de884919f151b3170ded_Apache_Hive_logo.svg",
+    "bytes": 14000
+  },
+  {
+    "name": "Interbase",
+    "file": "connectors/interbase.svg",
+    "source": "https://cdn.prod.website-files.com/64f5e3bb50f50f66f7bb0e21/65a5e08be4bab6694055c985_interbase.svg",
+    "bytes": 5800
+  }
+]

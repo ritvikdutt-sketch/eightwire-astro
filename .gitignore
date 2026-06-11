@@ -4,3 +4,4 @@ dist/
 .env
 .env.*
 *.local
+src/index-original-backup.astro.txt

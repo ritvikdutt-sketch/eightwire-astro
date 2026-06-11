@@ -12,6 +12,9 @@ body { font-family: 'DM Sans', system-ui, sans-serif; }
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+/* No-JS fallback: if scripting is unavailable, reveal content immediately */
+.no-js .reveal { opacity: 1; transform: none; }
+.no-js .stroke-draw { stroke-dashoffset: 0; }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }

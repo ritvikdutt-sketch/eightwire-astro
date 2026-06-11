@@ -6,4 +6,5 @@ export default defineConfig({
   site: 'https://ritvikdutt-sketch.github.io',
   base: '/eightwire-astro/',
   integrations: [tailwind(), react()],
+  devToolbar: { enabled: false },
 });
