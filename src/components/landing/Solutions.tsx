@@ -1,4 +1,5 @@
 import SectionHead from './SectionHead';
+import { card } from './ui';
 
 const base = import.meta.env.BASE_URL;
 
@@ -45,7 +46,7 @@ export default function Solutions() {
           {SOLUTIONS.map((s, i) => (
             <article
               key={s.tag}
-              className={`reveal reveal-d${i} group flex min-h-[300px] flex-col rounded border border-cream-line bg-white p-9 shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-card-hover`}
+              className={`reveal reveal-d${i} group flex min-h-[300px] flex-col p-9 ${card}`}
             >
               <p className="mb-6 font-mono text-caption uppercase tracking-[0.08em] text-ink-muted">{s.tag}</p>
               <h3 className="mb-3 font-display text-h-card leading-snug text-ink">{s.title}</h3>

@@ -1,4 +1,5 @@
 import SectionHead from './SectionHead';
+import { card } from './ui';
 
 const PROBLEMS = [
   {
@@ -36,7 +37,7 @@ export default function Problem() {
           {PROBLEMS.map((p, i) => (
             <article
               key={p.num}
-              className={`reveal reveal-d${i} group relative overflow-hidden rounded border border-cream-line bg-white p-8 shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
+              className={`reveal reveal-d${i} group relative overflow-hidden p-8 ${card}`}
             >
               <span
                 aria-hidden="true"

@@ -1,4 +1,5 @@
 import SectionHead from './SectionHead';
+import { card } from './ui';
 
 const QUOTES = [
   {
@@ -43,7 +44,7 @@ export default function Customers() {
           {QUOTES.map((q, i) => (
             <blockquote
               key={q.name}
-              className={`reveal reveal-d${i} flex flex-col rounded border border-cream-line bg-white p-9 shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-card-hover`}
+              className={`reveal reveal-d${i} flex flex-col p-9 ${card}`}
             >
               <span aria-hidden="true" className="mb-5 font-display text-6xl leading-[0.6] text-lime">“</span>
               <p className="mb-7 flex-1 font-display text-lede italic leading-[1.6] text-ink-soft">{q.quote}</p>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { btnPrimary, btnGhostDark, arrowNudge } from './ui';
 
 const base = import.meta.env.BASE_URL;
 
@@ -176,17 +177,11 @@ export default function Hero() {
           </p>
 
           <div className="rise rise-d3 mt-9 flex flex-wrap gap-3">
-            <a
-              href={`${base}#contact`}
-              className="group inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3.5 text-body-sm font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
-            >
+            <a href={`${base}#contact`} className={btnPrimary}>
               Book a demo
-              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+              <span aria-hidden="true" className={arrowNudge}>&rarr;</span>
             </a>
-            <a
-              href={`${base}#platform`}
-              className="inline-flex items-center gap-2 rounded-sm border border-cream/25 px-6 py-3.5 text-body-sm font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
-            >
+            <a href={`${base}#platform`} className={btnGhostDark}>
               See how Conductor works
             </a>
           </div>

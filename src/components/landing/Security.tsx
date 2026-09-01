@@ -1,4 +1,5 @@
 import SectionHead from './SectionHead';
+import { cardStatic } from './ui';
 
 const ITEMS = [
   {
@@ -58,7 +59,7 @@ export default function Security() {
             ))}
           </div>
 
-          <div className="reveal reveal-d2 rounded border border-cream-line bg-white p-8 shadow-card lg:sticky lg:top-24">
+          <div className={`reveal reveal-d2 p-8 lg:sticky lg:top-24 ${cardStatic}`}>
             <p className="mb-6 font-mono text-caption uppercase tracking-[0.1em] text-ink-muted">
               Certifications & alignments
             </p>

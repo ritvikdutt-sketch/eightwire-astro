@@ -1,4 +1,5 @@
 import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL, CONTACT_EMAIL } from './cta';
+import { btnPrimary, btnGhostDark, arrowNudge } from './ui';
 
 const base = import.meta.env.BASE_URL;
 
@@ -32,17 +33,11 @@ export default function CTASection() {
           trying to move. We&rsquo;ll show you the fastest path.
         </p>
         <div className="reveal reveal-d2 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
-            href={BOOK_DEMO_HREF}
-            className="group inline-flex items-center gap-2 rounded-sm bg-lime px-7 py-3.5 text-body-sm font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
-          >
+          <a href={BOOK_DEMO_HREF} className={btnPrimary}>
             {BOOK_DEMO_LABEL}
-            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            <span aria-hidden="true" className={arrowNudge}>→</span>
           </a>
-          <a
-            href={`${base}technical-overview/`}
-            className="inline-flex items-center rounded-sm border border-cream/25 px-7 py-3.5 text-body-sm font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
-          >
+          <a href={`${base}technical-overview/`} className={btnGhostDark}>
             Read the technical overview
           </a>
         </div>

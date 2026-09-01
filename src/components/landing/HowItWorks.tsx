@@ -1,4 +1,5 @@
 import SectionHead from './SectionHead';
+import { card } from './ui';
 
 const STEPS = [
   {
@@ -40,7 +41,7 @@ export default function HowItWorks() {
           {STEPS.map((s, i) => (
             <li
               key={s.num}
-              className={`reveal reveal-d${i} group relative rounded border border-cream-line bg-white p-9 shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover`}
+              className={`reveal reveal-d${i} group relative p-9 ${card}`}
             >
               <div className="mb-6 flex items-baseline justify-between">
                 <span className="font-display text-5xl leading-none text-forest/15 transition-colors duration-300 group-hover:text-lime">

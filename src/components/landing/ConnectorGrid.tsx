@@ -1,6 +1,7 @@
 import { CONNECTORS, CATEGORIES } from '../../data/connectors';
 import SectionHead from './SectionHead';
 import { CONTACT_EMAIL } from './cta';
+import { btnForest, card, arrowNudge } from './ui';
 
 const base = import.meta.env.BASE_URL;
 
@@ -33,7 +34,7 @@ export default function ConnectorGrid() {
                 {items.map((c) => (
                   <li
                     key={c.name}
-                    className="group flex items-center gap-4 rounded border border-cream-line bg-white p-4 shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-forest/40 hover:shadow-card-hover"
+                    className={`group flex items-center gap-4 p-4 ${card}`}
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-cream-line bg-cream p-2">
                       <img src={`${base}${c.file}`} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
@@ -60,12 +61,9 @@ export default function ConnectorGrid() {
               SQL or files. Tell us what you need to move — we&rsquo;ll show you the fastest path.
             </p>
           </div>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="group inline-flex shrink-0 items-center gap-2 rounded-sm bg-forest px-6 py-3 text-body-sm font-semibold text-cream transition-[transform,box-shadow] duration-200 hover:shadow-card-hover active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
-          >
+          <a href={`mailto:${CONTACT_EMAIL}`} className={`shrink-0 ${btnForest}`}>
             Talk to us
-            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            <span aria-hidden="true" className={arrowNudge}>→</span>
           </a>
         </div>
       </div>
