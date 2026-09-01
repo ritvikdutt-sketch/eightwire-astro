@@ -38,7 +38,7 @@ export default function Solutions() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead eyebrow="04 — Solutions">
-          Built for sectors where <em className="text-forest">stakes are real.</em>
+          Built for sectors where <em className="text-forest">stakes are real</em>
         </SectionHead>
 
         <div className="grid gap-5 md:grid-cols-3">

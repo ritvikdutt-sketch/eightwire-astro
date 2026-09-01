@@ -29,7 +29,7 @@ export default function Problem() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead eyebrow="01 — The problem">
-          Data sharing in NZ is <em className="text-forest">harder than it should be.</em>
+          Data sharing in NZ is <em className="text-forest">harder than it should be</em>
         </SectionHead>
 
         <div className="grid gap-5 md:grid-cols-3">

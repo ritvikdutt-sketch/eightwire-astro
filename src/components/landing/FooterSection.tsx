@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from './cta';
+
 const base = import.meta.env.BASE_URL;
 
 const COLS = [
@@ -23,7 +25,7 @@ const COLS = [
     links: [
       { label: 'Customers', href: `${base}#customers` },
       { label: 'Support', href: `${base}support/` },
-      { label: 'Contact', href: 'mailto:hello@eightwire.co.nz' },
+      { label: 'Contact', href: `mailto:${CONTACT_EMAIL}` },
     ],
   },
 ];

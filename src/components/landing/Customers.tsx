@@ -36,7 +36,7 @@ export default function Customers() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead eyebrow="05 — Customer stories">
-          What teams who’ve <em className="text-forest">actually shipped it</em> say.
+          What teams who’ve <em className="text-forest">actually shipped it</em> say
         </SectionHead>
 
         <div className="grid gap-5 md:grid-cols-3">

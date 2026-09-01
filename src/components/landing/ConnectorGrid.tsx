@@ -1,5 +1,6 @@
 import { CONNECTORS, CATEGORIES } from '../../data/connectors';
 import SectionHead from './SectionHead';
+import { CONTACT_EMAIL } from './cta';
 
 const base = import.meta.env.BASE_URL;
 
@@ -15,7 +16,7 @@ export default function ConnectorGrid() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead eyebrow="The full catalogue">
-          Every connector, <em className="text-forest">ready on day one.</em>
+          Every connector, <em className="text-forest">ready on day one</em>
         </SectionHead>
 
         {CATEGORIES.map((cat) => {
@@ -60,7 +61,7 @@ export default function ConnectorGrid() {
             </p>
           </div>
           <a
-            href="mailto:hello@eightwire.co.nz"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="group inline-flex shrink-0 items-center gap-2 rounded-sm bg-forest px-6 py-3 text-[14px] font-semibold text-cream transition-[transform,box-shadow] duration-200 hover:shadow-card-hover active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
           >
             Talk to us

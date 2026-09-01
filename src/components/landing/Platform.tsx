@@ -40,7 +40,7 @@ export default function Platform() {
     >
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead eyebrow="02 — The platform" dark>
-          Meet <em className="text-lime">Conductor.</em>
+          Meet <em className="text-lime">Conductor</em>
         </SectionHead>
 
         <p className="reveal -mt-6 mb-14 max-w-xl text-[17px] leading-[1.7] text-cream/65">
@@ -86,7 +86,7 @@ export default function Platform() {
             href={`${base}technical-overview/`}
             className="inline-flex items-center rounded-sm border border-cream/25 px-6 py-3 text-[14px] font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
-            Read technical overview
+            Read the technical overview
           </a>
         </div>
       </div>

@@ -151,7 +151,7 @@ const base = import.meta.env.BASE_URL;
         </h2>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:hello@eightwire.co.nz" class="inline-flex items-center gap-3 bg-lime text-forest font-semibold px-8 py-4 rounded-full btn-press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-forest" style="box-shadow: 0 4px 14px rgba(129,215,19,0.3), 0 1px 3px rgba(129,215,19,0.2);">
+          <a href="mailto:support@eight-wire.com" class="inline-flex items-center gap-3 bg-lime text-forest font-semibold px-8 py-4 rounded-full btn-press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-forest" style="box-shadow: 0 4px 14px rgba(129,215,19,0.3), 0 1px 3px rgba(129,215,19,0.2);">
             Contact us
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M12 1.5L19 8.5M19 8.5L12 15.5M19 8.5L1 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -173,19 +173,17 @@ const base = import.meta.env.BASE_URL;
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="reveal">
           <div class="rounded-2xl overflow-hidden" style="box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
-            <img src="https://placehold.co/500x400/195a4a/81D713?text=Eightwire" alt="Eightwire illustration" class="w-full h-auto">
+            <img src={`${base}images/65141d4abcc2e9571d29a428_Eightwire_Connect-1.png`} alt="Eightwire illustration" class="w-full h-auto">
           </div>
         </div>
         <div class="reveal reveal-delay-2" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 2rem;">
           <p class="text-lime font-bold text-xs tracking-[0.2em] uppercase mb-3">The Wire</p>
           <h2 class="font-display heading-tight text-3xl sm:text-4xl text-white leading-[1.15] mb-4">Expand your bandwidth</h2>
           <p class="text-white/70 body-relaxed mb-8">Join our email newsletter for the latest on safe and secure data-sharing.</p>
-          <form class="flex gap-3" onsubmit="event.preventDefault()">
-            <input type="email" placeholder="Email address" required class="flex-1 px-5 py-3 rounded-full border border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent text-sm">
-            <button type="submit" class="bg-lime text-forest px-6 py-3 rounded-full font-semibold btn-press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 text-sm" style="box-shadow: 0 2px 8px rgba(129,215,19,0.3);">
-              Submit
-            </button>
-          </form>
+          <a href="mailto:support@eight-wire.com?subject=Subscribe%20to%20The%20Wire" class="inline-flex items-center gap-2 bg-lime text-forest px-6 py-3 rounded-full font-semibold btn-press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 text-sm" style="box-shadow: 0 2px 8px rgba(129,215,19,0.3);">
+            Subscribe by email
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 1.5L19 8.5M19 8.5L12 15.5M19 8.5L1 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ export default function HowItWorks() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead eyebrow="03 — How it works">
-          From <em className="text-forest">spreadsheet chaos</em> to live data flow in under 30 minutes.
+          From <em className="text-forest">spreadsheet chaos</em> to live data flow in under 30 minutes
         </SectionHead>
 
         <ol className="grid gap-5 md:grid-cols-3">

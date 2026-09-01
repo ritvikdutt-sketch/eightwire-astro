@@ -167,7 +167,7 @@ export default function Hero() {
           </p>
 
           <h1 className="rise rise-d1 max-w-xl font-display text-[clamp(2.6rem,6.2vw,4.6rem)] leading-[1.04] tracking-[-0.01em] text-cream [text-wrap:balance]">
-            Secure data exchange for <em className="text-lime">Aotearoa&rsquo;s</em> high&#8209;stakes sectors.
+            Secure data exchange for <em className="text-lime">Aotearoa&rsquo;s</em> high&#8209;stakes sectors
           </h1>
 
           <p className="rise rise-d2 mt-6 max-w-md text-[17px] leading-[1.7] text-cream/70">
@@ -180,7 +180,7 @@ export default function Hero() {
               href={`${base}#contact`}
               className="group inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3.5 text-[14px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
-              Book a 30-min demo
+              Book a demo
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
             </a>
             <a
@@ -207,7 +207,7 @@ export default function Hero() {
           <WireField animate={!reduced} />
           <p className="mt-2 flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-cream/40">
             <span className="h-1.5 w-1.5 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
-            8 live flows &middot; all healthy &middot; last sync 14s ago
+            How data moves through Conductor
           </p>
         </div>
       </div>
