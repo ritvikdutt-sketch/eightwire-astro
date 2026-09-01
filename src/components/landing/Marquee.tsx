@@ -1,11 +1,11 @@
-const COMPANIES = ['Procare', 'Pegasus', 'MSD', 'Roopu', 'ACC', 'RAPHS', 'Barnardos'];
+const COMPANIES = ['PHO networks', 'Government agencies', 'Primary care', 'Social services', 'Health registries', 'Community providers'];
 
 export default function Marquee() {
   const row = [...COMPANIES, ...COMPANIES];
   return (
-    <section className="overflow-hidden border-b border-cream-line bg-forest-deepest py-12" aria-label="Companies we work with">
+    <section className="overflow-hidden border-b border-cream-line bg-forest-deepest py-12" aria-label="Trusted across sectors">
       <p className="reveal mb-8 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-cream/40">
-        Companies we work with
+        Trusted across sectors
       </p>
       <div
         className="relative"

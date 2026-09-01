@@ -38,7 +38,7 @@ export default function CTASection() {
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
           </a>
           <a
-            href={`${base}#platform`}
+            href={`${base}technical-overview/`}
             className="inline-flex items-center rounded-sm border border-cream/25 px-7 py-3.5 text-[14px] font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
             Read the technical overview

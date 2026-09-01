@@ -1,5 +1,7 @@
 import SectionHead from './SectionHead';
 
+const base = import.meta.env.BASE_URL;
+
 const PILLARS = [
   {
     num: 'PILLAR 01',
@@ -74,14 +76,14 @@ export default function Platform() {
 
         <div className="reveal mt-14 flex flex-wrap gap-3">
           <a
-            href="#contact"
+            href={`${base}connectors/`}
             className="group inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3 text-[14px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
             Explore Conductor
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
           </a>
           <a
-            href="#contact"
+            href={`${base}technical-overview/`}
             className="inline-flex items-center rounded-sm border border-cream/25 px-6 py-3 text-[14px] font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
             Read technical overview

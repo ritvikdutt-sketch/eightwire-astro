@@ -1,23 +1,28 @@
 import SectionHead from './SectionHead';
 
+const base = import.meta.env.BASE_URL;
+
 const SOLUTIONS = [
   {
     tag: 'For Health',
     title: 'PHO networks, registries & clinical pipelines',
     body: 'From PHO data submissions to clinical registries to GP system integration. Medicly is built on Conductor for NZ health.',
     link: 'Explore health solutions',
+    href: `${base}medicly/`,
   },
   {
     tag: 'For Government',
     title: 'Inter-agency data sharing, done properly',
     body: 'Move data between agencies with the audit trail, sovereignty and compliance posture your procurement team needs to sign off.',
     link: 'Explore government solutions',
+    href: `${base}customer-stories/`,
   },
   {
     tag: 'For Social Sector',
     title: 'Outcomes-based reporting & multi-agency data',
-    body: 'Power Te Tauraki-style aggregation across health, social and justice systems. Consent management and privacy controls built in.',
+    body: 'Aggregate outcomes data across health, social and justice systems. Consent management and privacy controls built in.',
     link: 'Explore social sector',
+    href: `${base}customer-stories/`,
   },
 ];
 
@@ -46,7 +51,7 @@ export default function Solutions() {
               <h3 className="mb-3 font-display text-[22px] leading-snug text-ink">{s.title}</h3>
               <p className="mb-7 flex-1 text-[14.5px] leading-[1.7] text-ink-soft">{s.body}</p>
               <a
-                href="#contact"
+                href={s.href}
                 className="inline-flex items-center gap-2 text-[14px] font-medium text-forest transition-[gap] duration-200 hover:gap-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
               >
                 {s.link} <span aria-hidden="true">→</span>

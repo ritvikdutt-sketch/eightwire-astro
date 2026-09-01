@@ -60,9 +60,6 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a href="#" className="hidden font-mono text-[12px] uppercase tracking-[0.14em] text-cream/65 transition-colors duration-200 hover:text-lime md:block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
-              Sign in
-            </a>
             <a
               href="#contact"
               className="group hidden items-center gap-2 rounded-sm bg-lime px-5 py-2.5 text-[13px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] sm:inline-flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"

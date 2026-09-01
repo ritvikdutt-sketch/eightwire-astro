@@ -66,12 +66,6 @@ export default function Security() {
               <p className="font-display text-3xl text-ink">SOC 2</p>
               <p className="mt-1 text-[12.5px] text-ink-muted">Type II, current</p>
             </div>
-            <a
-              href="#contact"
-              className="mt-6 inline-flex items-center gap-2 text-[14px] font-medium text-forest transition-[gap] duration-200 hover:gap-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
-            >
-              Open the trust centre <span aria-hidden="true">→</span>
-            </a>
           </div>
         </div>
       </div>

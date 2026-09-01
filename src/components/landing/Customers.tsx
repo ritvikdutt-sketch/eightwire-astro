@@ -3,16 +3,16 @@ import SectionHead from './SectionHead';
 const QUOTES = [
   {
     quote: 'Eightwire’s data exchange allows organisations to securely exchange data without system changes.',
-    initials: 'DA',
-    name: 'Dorothy Adams',
-    role: 'Past Chief Executive, Social Investment Agency',
+    initials: 'CE',
+    name: 'Former Chief Executive',
+    role: 'Government agency',
     outcome: '→ 4,000+ providers connected',
   },
   {
     quote: 'Eight-Wire has given us a fast and reliable way to aggregate data from a range of government agencies into one place.',
-    initials: 'DT',
-    name: 'David Todd',
-    role: 'Managing Director, Synergia',
+    initials: 'MD',
+    name: 'Managing Director',
+    role: 'Research consultancy',
     outcome: '→ multi-agency aggregation',
   },
   {

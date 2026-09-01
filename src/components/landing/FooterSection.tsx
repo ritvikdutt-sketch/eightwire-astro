@@ -22,7 +22,7 @@ const COLS = [
     heading: 'Company',
     links: [
       { label: 'Customers', href: '#customers' },
-      { label: 'Contact', href: '#contact' },
+      { label: 'Contact', href: 'mailto:hello@eightwire.co.nz' },
     ],
   },
 ];
@@ -78,7 +78,7 @@ export default function FooterSection() {
           <p>© 2026 Eightwire Ltd · Level 4, 40 Taranaki Street, Wellington 6011</p>
           <div className="flex items-center gap-6">
             <a href="#security" className="transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
-              Trust centre
+              Security &amp; trust
             </a>
             <a href="#top" className="font-mono text-[11px] uppercase tracking-[0.1em] transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               <span aria-hidden="true">↑</span> Top

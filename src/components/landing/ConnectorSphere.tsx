@@ -294,7 +294,7 @@ export default function ConnectorSphere() {
                     href={`mailto:hello@eightwire.co.nz?subject=Conductor%20%2B%20${encodeURIComponent(selected.name)}`}
                     className="mt-1.5 inline-flex items-center gap-1.5 text-[13px] font-medium text-cream/80 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
                   >
-                    Set up a {selected.name} flow <span aria-hidden="true">→</span>
+                    Set up {/^[aeiou]/i.test(selected.name) ? 'an' : 'a'} {selected.name} flow <span aria-hidden="true">→</span>
                   </a>
                 </div>
                 <button
