@@ -46,19 +46,16 @@ export default function TrustPillars() {
           Trusted by organisations <em className="text-forest">across New Zealand</em>
         </SectionHead>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid divide-y divide-forest/15 border-y border-forest/15 md:grid-cols-3 md:divide-x md:divide-y-0">
           {PILLARS.map((p, i) => (
-            <article
-              key={p.title}
-              className={`reveal reveal-d${i} rounded border border-cream/10 bg-forest p-8 text-cream shadow-card lg:p-10`}
-            >
-              <span className="mb-6 flex h-12 w-12 items-center justify-center rounded border border-lime/25 bg-lime/10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#81D713" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <article key={p.title} className={`reveal reveal-d${i} py-8 md:px-8 md:first:pl-0 md:last:pr-0`}>
+              <span className="mb-6 flex h-11 w-11 items-center justify-center rounded border border-forest/20 bg-forest/5">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#145041" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   {p.icon}
                 </svg>
               </span>
-              <h3 className="mb-3 font-display text-2xl text-cream">{p.title}</h3>
-              <p className="text-body leading-[1.7] text-cream/70">{p.body}</p>
+              <h3 className="mb-3 font-display text-2xl text-ink">{p.title}</h3>
+              <p className="text-body leading-[1.7] text-ink-soft">{p.body}</p>
             </article>
           ))}
         </div>

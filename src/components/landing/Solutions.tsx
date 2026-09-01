@@ -40,7 +40,7 @@ export default function Solutions({ showHead = true }: Props) {
   return (
     <section
       id="solutions"
-      className="border-b border-cream-line py-24 sm:py-28"
+      className={`border-b border-cream-line ${showHead ? 'py-24 sm:py-28' : 'pb-24 pt-6 sm:pb-28 sm:pt-8'}`}
       style={{
         background:
           'radial-gradient(ellipse 90% 60% at 10% 60%, rgba(129,215,19,0.06) 0%, transparent 55%), #F5F4EE',
@@ -53,7 +53,7 @@ export default function Solutions({ showHead = true }: Props) {
           </SectionHead>
         )}
 
-        <div className="border-t border-cream-line">
+        <div className={showHead ? 'border-t border-cream-line' : ''}>
           {SOLUTIONS.map((s, i) => (
             <article
               key={s.id}
