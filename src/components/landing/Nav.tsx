@@ -18,6 +18,9 @@ interface Props {
 const firstSegment = (p: string) =>
   (p.startsWith(base) ? p.slice(base.length) : p.replace(/^\/+/, '')).split('/').filter(Boolean)[0] ?? '';
 
+const focusForest =
+  'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest';
+
 export default function Nav({ currentPath = '' }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -45,15 +48,15 @@ export default function Nav({ currentPath = '' }: Props) {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-500 ${
+        className={`fixed inset-x-0 top-0 z-50 bg-white transition-[box-shadow] duration-500 ${
           scrolled
-            ? 'bg-forest-deepest/85 shadow-[0_1px_0_rgba(129,215,19,0.10),0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-xl'
-            : 'bg-transparent'
+            ? 'shadow-[0_1px_0_rgba(11,16,13,0.08),0_12px_32px_-16px_rgba(20,80,65,0.25)]'
+            : 'shadow-[0_1px_0_rgba(11,16,13,0.06)]'
         }`}
       >
         <nav aria-label="Primary" className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
-          <a href={base} className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
-            <img src={`${base}eightwire-logo-white-text-transparent.svg`} alt="Eightwire" className="h-7 w-auto sm:h-8" />
+          <a href={base} className={`shrink-0 rounded-sm ${focusForest}`}>
+            <img src={`${base}eightwire-logo.svg`} alt="Eightwire" className="h-7 w-auto sm:h-8" />
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -64,13 +67,13 @@ export default function Nav({ currentPath = '' }: Props) {
                   key={l.href}
                   href={l.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`group relative py-1 font-mono text-label uppercase tracking-[0.14em] transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${
-                    active ? 'text-lime' : 'text-cream/65'
+                  className={`group relative py-1 font-mono text-label uppercase tracking-[0.14em] transition-colors duration-200 hover:text-forest ${focusForest} ${
+                    active ? 'text-forest' : 'text-ink-muted'
                   }`}
                 >
                   {l.label}
                   <span
-                    className={`absolute -bottom-0.5 left-0 h-px w-full origin-left bg-lime transition-transform duration-300 ease-out group-hover:scale-x-100 ${
+                    className={`absolute -bottom-0.5 left-0 h-px w-full origin-left bg-forest transition-transform duration-300 ease-out group-hover:scale-x-100 ${
                       active ? 'scale-x-100' : 'scale-x-0'
                     }`}
                     aria-hidden="true"
@@ -83,7 +86,7 @@ export default function Nav({ currentPath = '' }: Props) {
           <div className="flex items-center gap-3">
             <a
               href={`${base}#contact`}
-              className="group hidden items-center gap-2 rounded-sm bg-lime px-5 py-2.5 text-body-xs font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] sm:inline-flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              className={`group hidden items-center gap-2 rounded-sm bg-lime px-5 py-2.5 text-body-xs font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] sm:inline-flex ${focusForest}`}
             >
               Book a demo
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
@@ -93,7 +96,7 @@ export default function Nav({ currentPath = '' }: Props) {
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               aria-expanded={open}
-              className="rounded-sm p-2 text-cream/80 transition-colors hover:text-lime md:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
+              className={`rounded-sm p-2 text-ink transition-colors hover:text-forest md:hidden ${focusForest}`}
             >
               <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                 <path d="M3 6h16M3 11h16M3 16h16" />
@@ -108,17 +111,17 @@ export default function Nav({ currentPath = '' }: Props) {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation"
-        className={`fixed inset-0 z-[60] flex flex-col bg-forest-deepest transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-[60] flex flex-col bg-white transition-opacity duration-300 md:hidden ${
           open ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        <div className="flex items-center justify-between px-5 py-4">
-          <img src={`${base}eightwire-logo-white-text-transparent.svg`} alt="" className="h-7 w-auto" />
+        <div className="flex items-center justify-between px-5 py-4 shadow-[0_1px_0_rgba(11,16,13,0.06)]">
+          <img src={`${base}eightwire-logo.svg`} alt="" className="h-7 w-auto" />
           <button
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Close menu"
-            className="rounded-sm p-2 text-cream/80 transition-colors hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
+            className={`rounded-sm p-2 text-ink transition-colors hover:text-forest ${focusForest}`}
           >
             <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
               <path d="M5 5l12 12M17 5L5 17" />
@@ -134,8 +137,8 @@ export default function Nav({ currentPath = '' }: Props) {
                 href={l.href}
                 onClick={() => setOpen(false)}
                 aria-current={active ? 'page' : undefined}
-                className={`font-display text-4xl transition-[opacity,transform] duration-500 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${
-                  active ? 'text-lime' : 'text-cream'
+                className={`font-display text-4xl transition-[opacity,transform] duration-500 hover:text-forest ${focusForest} ${
+                  active ? 'text-forest' : 'text-ink'
                 } ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                 style={{ transitionDelay: open ? `${120 + i * 60}ms` : '0ms' }}
               >
@@ -146,7 +149,7 @@ export default function Nav({ currentPath = '' }: Props) {
           <a
             href={`${base}#contact`}
             onClick={() => setOpen(false)}
-            className={`mt-8 inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3 text-sm font-semibold text-forest-deepest transition-[opacity,transform] duration-500 active:scale-[0.97] ${
+            className={`mt-8 inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3 text-sm font-semibold text-forest-deepest transition-[opacity,transform] duration-500 active:scale-[0.97] ${focusForest} ${
               open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
             style={{ transitionDelay: open ? '400ms' : '0ms' }}
@@ -154,7 +157,7 @@ export default function Nav({ currentPath = '' }: Props) {
             Book a demo <span aria-hidden="true">→</span>
           </a>
         </nav>
-        <p className="px-8 pb-10 font-mono text-caption uppercase tracking-[0.14em] text-cream/30">
+        <p className="px-8 pb-10 font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">
           Wellington · Aotearoa NZ
         </p>
       </div>

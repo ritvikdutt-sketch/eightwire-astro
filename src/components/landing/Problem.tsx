@@ -1,5 +1,4 @@
 import SectionHead from './SectionHead';
-import { card } from './ui';
 
 const PROBLEMS = [
   {
@@ -33,19 +32,12 @@ export default function Problem() {
           Data sharing in NZ is <em className="text-forest">harder than it should be</em>
         </SectionHead>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid divide-y divide-ink/10 border-y border-ink/10 md:grid-cols-3 md:divide-x md:divide-y-0">
           {PROBLEMS.map((p, i) => (
-            <article
-              key={p.num}
-              className={`reveal reveal-d${i} group relative overflow-hidden p-8 ${card}`}
-            >
-              <span
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-lime transition-transform duration-300 ease-out group-hover:scale-x-100"
-              />
-              <p className="mb-6 font-mono text-caption tracking-[0.08em] text-ink-muted">{p.num}</p>
-              <h3 className="mb-3 font-display text-h-card leading-snug text-ink">{p.title}</h3>
-              <p className="text-body leading-[1.7] text-ink-soft">{p.body}</p>
+            <article key={p.num} className={`reveal reveal-d${i} py-8 md:px-8 md:first:pl-0 md:last:pr-0 lg:py-10`}>
+              <p className="mb-6 font-mono text-caption tracking-[0.08em] text-forest">{p.num}</p>
+              <h3 className="mb-3 max-w-xs font-display text-h-card leading-snug text-ink">{p.title}</h3>
+              <p className="max-w-sm text-body leading-[1.7] text-ink-soft">{p.body}</p>
             </article>
           ))}
         </div>
