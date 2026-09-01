@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+const base = import.meta.env.BASE_URL;
+
 const SOURCES = [
   { id: 'src-rds', label: 'rds', y: 96 },
   { id: 'src-hl7', label: 'hl7_feed', y: 188 },
@@ -175,14 +177,14 @@ export default function Hero() {
 
           <div className="rise rise-d3 mt-9 flex flex-wrap gap-3">
             <a
-              href="#contact"
+              href={`${base}#contact`}
               className="group inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3.5 text-[14px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
               Book a 30-min demo
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
             </a>
             <a
-              href="#platform"
+              href={`${base}#platform`}
               className="inline-flex items-center gap-2 rounded-sm border border-cream/25 px-6 py-3.5 text-[14px] font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
               See how Conductor works

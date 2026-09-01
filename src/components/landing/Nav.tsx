@@ -61,7 +61,7 @@ export default function Nav() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#contact"
+              href={`${base}#contact`}
               className="group hidden items-center gap-2 rounded-sm bg-lime px-5 py-2.5 text-[13px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] sm:inline-flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
               Book a demo
@@ -119,7 +119,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={`${base}#contact`}
             onClick={() => setOpen(false)}
             className={`mt-8 inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3 text-sm font-semibold text-forest-deepest transition-[opacity,transform] duration-500 active:scale-[0.97] ${
               open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'

@@ -13,15 +13,16 @@ const COLS = [
   {
     heading: 'Solutions',
     links: [
-      { label: 'Health', href: '#solutions' },
-      { label: 'Government', href: '#solutions' },
-      { label: 'Social sector', href: '#solutions' },
+      { label: 'Health', href: `${base}#solutions` },
+      { label: 'Government', href: `${base}#solutions` },
+      { label: 'Social sector', href: `${base}#solutions` },
     ],
   },
   {
     heading: 'Company',
     links: [
-      { label: 'Customers', href: '#customers' },
+      { label: 'Customers', href: `${base}#customers` },
+      { label: 'Support', href: `${base}support/` },
       { label: 'Contact', href: 'mailto:hello@eightwire.co.nz' },
     ],
   },
@@ -33,7 +34,7 @@ export default function FooterSection() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-10 border-b border-cream/10 pb-14 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <a href="#top" aria-label="Eightwire home" className="inline-block rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
+            <a href={base} aria-label="Eightwire home" className="inline-block rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               <img src={`${base}eightwire-logo-white-text-transparent.svg`} alt="Eightwire" className="h-7 w-auto" />
             </a>
             <p className="mt-5 max-w-xs text-[14px] leading-[1.7] text-cream/55">
@@ -77,7 +78,7 @@ export default function FooterSection() {
         <div className="flex flex-col gap-3 pt-8 text-[13px] text-cream/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Eightwire Ltd · Level 4, 40 Taranaki Street, Wellington 6011</p>
           <div className="flex items-center gap-6">
-            <a href="#security" className="transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
+            <a href={`${base}#security`} className="transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               Security &amp; trust
             </a>
             <a href="#top" className="font-mono text-[11px] uppercase tracking-[0.1em] transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
