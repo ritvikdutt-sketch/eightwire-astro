@@ -173,8 +173,10 @@ const base = import.meta.env.BASE_URL;
     <div class="max-w-5xl mx-auto px-6 relative z-10">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="reveal">
-          <div class="rounded overflow-hidden border border-cream/10">
+          <div class="relative rounded overflow-hidden border border-cream/10">
             <img src={`${base}images/65141d4abcc2e9571d29a428_Eightwire_Connect-1.png`} alt="Eightwire illustration" class="w-full h-auto">
+            <div class="absolute inset-0 bg-forest/30 mix-blend-color"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent mix-blend-multiply"></div>
           </div>
         </div>
         <div class="reveal reveal-delay-2 rounded border border-cream/10 bg-cream/[0.04] p-8">
