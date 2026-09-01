@@ -1,5 +1,5 @@
 ---
-import Nav from '../components/landing/Nav.tsx';
+import LandingLayout from '../layouts/LandingLayout.astro';
 import Hero from '../components/landing/Hero.tsx';
 import Stats from '../components/landing/Stats.tsx';
 import Marquee from '../components/landing/Marquee.tsx';
@@ -10,33 +10,12 @@ import Solutions from '../components/landing/Solutions.tsx';
 import Customers from '../components/landing/Customers.tsx';
 import Security from '../components/landing/Security.tsx';
 import CTASection from '../components/landing/CTASection.tsx';
-import FooterSection from '../components/landing/FooterSection.tsx';
-import '../styles/landing.css';
-const base = import.meta.env.BASE_URL;
 ---
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-<script is:inline>document.documentElement.classList.remove('no-js');</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Eightwire — Secure data exchange for Aotearoa</title>
-<meta name="description" content="Conductor by Eightwire moves sensitive data between health, government and enterprise systems. No custom code. No manual handling. No sovereignty compromises." />
-<meta property="og:title" content="Eightwire — Secure data exchange for Aotearoa" />
-<meta property="og:description" content="Conductor by Eightwire moves sensitive data between health, government and enterprise systems." />
-<meta property="og:type" content="website" />
-<link rel="icon" href={`${base}favicon.png`} type="image/png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-</head>
-<body class="bg-forest-deepest font-body text-ink antialiased">
-
-<a href="#main-content" class="absolute left-4 z-[100] -top-full rounded-b bg-lime px-4 py-2.5 text-sm font-semibold text-forest-deepest transition-[top] focus:top-0">Skip to main content</a>
-
-<Nav client:load />
-
-<main id="main-content">
+<LandingLayout
+  title="Eightwire — Secure data exchange for Aotearoa"
+  description="Conductor by Eightwire moves sensitive data between health, government and enterprise systems. No custom code. No manual handling. No sovereignty compromises."
+  ogDescription="Conductor by Eightwire moves sensitive data between health, government and enterprise systems."
+>
   <Hero client:load />
   <Stats client:visible />
   <Marquee />
@@ -47,17 +26,4 @@ const base = import.meta.env.BASE_URL;
   <Customers />
   <Security />
   <CTASection />
-</main>
-
-<FooterSection />
-
-<script is:inline>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.07 });
-  document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
-</script>
-</body>
-</html>
+</LandingLayout>

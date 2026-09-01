@@ -48,15 +48,10 @@ export default {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.3', transform: 'scale(0.7)' },
         },
-        'ring-pulse': {
-          '0%': { transform: 'scale(0.6)', opacity: '0.5' },
-          '100%': { transform: 'scale(1.6)', opacity: '0' },
-        },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',
         'pulse-dot': 'pulse-dot 2s ease-in-out infinite',
-        'ring-pulse': 'ring-pulse 2.6s ease-out infinite',
       },
     },
   },
