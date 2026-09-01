@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Support | Eightwire" description="Get support and find answers to frequently asked questions about Eightwire's secure data exchange products.">
@@ -7,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ========== HERO ========== -->
   <section class="relative overflow-hidden" style="background: #0c2e24;">
     <div class="absolute inset-0">
-      <img src="/hero22.png" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      <img src={`${base}hero22.png`} alt="" class="w-full h-full object-cover" aria-hidden="true">
     </div>
     <div class="max-w-5xl mx-auto px-6 py-32 lg:py-40 text-center relative z-10">
       <div class="reveal">

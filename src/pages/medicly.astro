@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Medicly | Health Data Exchange | Eightwire" description="Medicly is Eightwire's all-round solution for sensitive health data exchange. Health and social systems can access health data faster and more securely than before.">
@@ -7,12 +8,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- ========== HERO ========== -->
   <section class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden" style="background: #0c2e24;">
     <div class="absolute inset-0">
-      <img src="/hero22.png" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      <img src={`${base}hero22.png`} alt="" class="w-full h-full object-cover" aria-hidden="true">
     </div>
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
       <!-- Medicly logo -->
       <div class="mb-10 reveal">
-        <img src="/images/Frame-19965medically-1.svg" alt="Medicly" class="mx-auto h-14 sm:h-16 w-auto">
+        <img src={`${base}images/Frame-19965medically-1.svg`} alt="Medicly" class="mx-auto h-14 sm:h-16 w-auto">
       </div>
 
       <h1 class="font-display heading-tight text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6 reveal reveal-delay-1">
