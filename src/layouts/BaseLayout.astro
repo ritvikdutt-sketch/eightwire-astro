@@ -31,7 +31,7 @@ const base = import.meta.env.BASE_URL;
 </head>
 <body class="bg-white text-forest font-body antialiased overflow-x-hidden">
   <a href="#main-content" class="absolute left-4 z-[100] -top-full rounded-b bg-lime px-4 py-2.5 text-sm font-semibold text-forest-deepest transition-[top] focus:top-0">Skip to main content</a>
-  <Nav client:load />
+  <Nav client:load currentPath={Astro.url.pathname} />
   <main id="main-content">
     <slot />
   </main>

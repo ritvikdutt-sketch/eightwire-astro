@@ -3,15 +3,24 @@ import { useEffect, useState } from 'react';
 const base = import.meta.env.BASE_URL;
 
 const LINKS = [
-  { href: `${base}#platform`, label: 'Platform' },
+  { href: `${base}platform/`, label: 'Platform' },
   { href: `${base}connectors/`, label: 'Connectors' },
-  { href: `${base}#solutions`, label: 'Solutions' },
-  { href: `${base}#security`, label: 'Security' },
+  { href: `${base}solutions/`, label: 'Solutions' },
+  { href: `${base}security/`, label: 'Security' },
 ];
 
-export default function Nav() {
+interface Props {
+  /** Astro.url.pathname of the rendering page — drives the active-link state */
+  currentPath?: string;
+}
+
+const withSlash = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+
+export default function Nav({ currentPath = '' }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const current = withSlash(currentPath);
+  const isCurrent = (href: string) => href !== base && current === href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -46,16 +55,27 @@ export default function Nav() {
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
-            {LINKS.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="group relative py-1 font-mono text-label uppercase tracking-[0.14em] text-cream/65 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
-              >
-                {l.label}
-                <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-lime transition-transform duration-300 ease-out group-hover:scale-x-100" aria-hidden="true" />
-              </a>
-            ))}
+            {LINKS.map((l) => {
+              const active = isCurrent(l.href);
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`group relative py-1 font-mono text-label uppercase tracking-[0.14em] transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${
+                    active ? 'text-lime' : 'text-cream/65'
+                  }`}
+                >
+                  {l.label}
+                  <span
+                    className={`absolute -bottom-0.5 left-0 h-px w-full origin-left bg-lime transition-transform duration-300 ease-out group-hover:scale-x-100 ${
+                      active ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                    aria-hidden="true"
+                  />
+                </a>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-3">
@@ -104,19 +124,23 @@ export default function Nav() {
           </button>
         </div>
         <nav aria-label="Mobile" className="flex flex-1 flex-col items-start justify-center gap-2 px-8">
-          {LINKS.map((l, i) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className={`font-display text-4xl text-cream transition-[opacity,transform] duration-500 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${
-                open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-              }`}
-              style={{ transitionDelay: open ? `${120 + i * 60}ms` : '0ms' }}
-            >
-              {l.label}
-            </a>
-          ))}
+          {LINKS.map((l, i) => {
+            const active = isCurrent(l.href);
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                aria-current={active ? 'page' : undefined}
+                className={`font-display text-4xl transition-[opacity,transform] duration-500 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${
+                  active ? 'text-lime' : 'text-cream'
+                } ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                style={{ transitionDelay: open ? `${120 + i * 60}ms` : '0ms' }}
+              >
+                {l.label}
+              </a>
+            );
+          })}
           <a
             href={`${base}#contact`}
             onClick={() => setOpen(false)}

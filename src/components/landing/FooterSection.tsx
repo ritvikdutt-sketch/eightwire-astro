@@ -6,18 +6,18 @@ const COLS = [
   {
     heading: 'Platform',
     links: [
-      { label: 'Conductor', href: `${base}#platform` },
-      { label: 'How it works', href: `${base}#how-it-works` },
+      { label: 'Conductor', href: `${base}platform/` },
+      { label: 'How it works', href: `${base}platform/#how-it-works` },
       { label: 'Connectors', href: `${base}connectors/` },
-      { label: 'Security', href: `${base}#security` },
+      { label: 'Security', href: `${base}security/` },
     ],
   },
   {
     heading: 'Solutions',
     links: [
-      { label: 'Health', href: `${base}#solutions` },
-      { label: 'Government', href: `${base}#solutions` },
-      { label: 'Social sector', href: `${base}#solutions` },
+      { label: 'Health', href: `${base}solutions/#health` },
+      { label: 'Government', href: `${base}solutions/#government` },
+      { label: 'Social sector', href: `${base}solutions/#social-sector` },
     ],
   },
   {
@@ -79,7 +79,7 @@ export default function FooterSection() {
         <div className="flex flex-col gap-3 pt-8 text-body-xs text-cream/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Eightwire Ltd · Level 4, 40 Taranaki Street, Wellington 6011</p>
           <div className="flex items-center gap-6">
-            <a href={`${base}#security`} className="transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
+            <a href={`${base}security/`} className="transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               Security &amp; trust
             </a>
             <a href="#top" className="font-mono text-caption uppercase tracking-[0.1em] transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
