@@ -181,7 +181,7 @@ export default function Hero() {
               Book a demo
               <span aria-hidden="true" className={arrowNudge}>&rarr;</span>
             </a>
-            <a href={`${base}#platform`} className={btnGhostDark}>
+            <a href={`${base}platform/`} className={btnGhostDark}>
               See how Conductor works
             </a>
           </div>

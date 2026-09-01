@@ -5,9 +5,7 @@ import Stats from '../components/landing/Stats.tsx';
 import Marquee from '../components/landing/Marquee.tsx';
 import Problem from '../components/landing/Problem.tsx';
 import Platform from '../components/landing/Platform.tsx';
-import HowItWorks from '../components/landing/HowItWorks.tsx';
-import Solutions from '../components/landing/Solutions.tsx';
-import Security from '../components/landing/Security.tsx';
+import HomeTeasers from '../components/landing/HomeTeasers.tsx';
 import CTASection from '../components/landing/CTASection.tsx';
 ---
 <LandingLayout
@@ -19,9 +17,7 @@ import CTASection from '../components/landing/CTASection.tsx';
   <Stats client:visible />
   <Marquee />
   <Problem />
-  <Platform />
-  <HowItWorks />
-  <Solutions />
-  <Security />
+  <Platform variant="teaser" />
+  <HomeTeasers />
   <CTASection />
 </LandingLayout>
