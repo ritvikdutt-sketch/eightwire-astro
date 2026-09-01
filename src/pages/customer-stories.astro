@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { btnPrimary, arrowNudge } from '../components/landing/ui';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -11,9 +12,9 @@ const base = import.meta.env.BASE_URL;
       <img src={`${base}hero22.png`} alt="" class="w-full h-full object-cover" aria-hidden="true">
     </div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal">
-      <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem;" class="p-10 lg:p-14">
-        <p class="text-lime font-bold text-xs tracking-[0.2em] uppercase mb-4">Customer Stories</p>
-        <h1 class="font-display heading-tight text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">Customer Stories</h1>
+      <div>
+        <p class="font-mono text-caption uppercase tracking-[0.14em] text-lime mb-4">Customer Stories</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">Customer Stories</h1>
         <p class="text-white/80 text-lg body-relaxed max-w-2xl mx-auto">Discover how we collaborate with governments, health providers, insurers, and banks to facilitate seamless data exchange across boundaries.</p>
       </div>
     </div>
@@ -22,7 +23,7 @@ const base = import.meta.env.BASE_URL;
   <!-- ========== QUOTE BANNER ========== -->
   <section class="py-20 lg:py-24 relative overflow-hidden grain" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal">
-      <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem;" class="p-10 lg:p-14">
+      <div>
         <!-- Large decorative quotation mark -->
         <svg class="w-16 h-16 text-white/20 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
         <p class="font-display text-2xl sm:text-3xl lg:text-4xl text-white italic leading-snug mb-6">Eightwire data exchange products provide a safe, secure and easy method for connecting people and organisations.</p>
@@ -34,46 +35,46 @@ const base = import.meta.env.BASE_URL;
   <!-- ========== STORIES GRID ========== -->
   <section class="py-24 lg:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 reveal p-8" style="background: rgba(20,80,65,0.03); border: 1px solid rgba(20,80,65,0.08); border-radius: 1rem;">
-        <p class="text-lime-mid font-bold text-xs tracking-[0.2em] uppercase mb-4">Case Studies</p>
-        <h2 class="font-display heading-tight text-3xl sm:text-4xl lg:text-5xl text-forest leading-[1.15]">Stories from our partners</h2>
+      <div class="text-center mb-16 reveal">
+        <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted mb-4">Case Studies</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-forest leading-[1.15]">Stories from our partners</h2>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Card 1: Healthcare -->
-        <div class="reveal reveal-delay-1 group bg-white rounded-2xl overflow-hidden" style="box-shadow: 0 1px 4px rgba(20,80,65,0.06), 0 4px 16px rgba(20,80,65,0.05), 0 12px 40px rgba(20,80,65,0.04);">
+        <div class="reveal reveal-delay-1 group bg-white rounded overflow-hidden border border-cream-line shadow-card">
           <div class="relative overflow-hidden">
             <img src={`${base}images/pexels-photo-4423752_edi-1-p-800.png`} alt="Healthcare data exchange" class="w-full h-56 object-cover" style="transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);">
             <div class="absolute inset-0 bg-gradient-to-t from-forest/30 to-transparent mix-blend-multiply"></div>
           </div>
           <div class="p-8">
-            <span class="inline-block bg-lime/15 text-forest text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full mb-4">Healthcare</span>
+            <span class="inline-block rounded-sm border border-forest/15 bg-lime/15 px-2.5 py-1 font-mono text-caption uppercase tracking-[0.14em] text-forest mb-4">Healthcare</span>
             <h3 class="font-display text-xl text-forest mb-3 leading-snug">Transforming health data exchange in New Zealand</h3>
             <p class="text-forest-light body-relaxed text-sm">Discover how Eightwire enabled healthcare providers across New Zealand to securely share patient data in real time, improving outcomes and reducing administrative burden.</p>
           </div>
         </div>
 
         <!-- Card 2: Government -->
-        <div class="reveal reveal-delay-2 group bg-white rounded-2xl overflow-hidden" style="box-shadow: 0 1px 4px rgba(20,80,65,0.06), 0 4px 16px rgba(20,80,65,0.05), 0 12px 40px rgba(20,80,65,0.04);">
+        <div class="reveal reveal-delay-2 group bg-white rounded overflow-hidden border border-cream-line shadow-card">
           <div class="relative overflow-hidden">
             <img src={`${base}images/Eightwire_Map-1-p-800.png`} alt="Government data sharing" class="w-full h-56 object-cover" style="transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);">
             <div class="absolute inset-0 bg-gradient-to-t from-forest/30 to-transparent mix-blend-multiply"></div>
           </div>
           <div class="p-8">
-            <span class="inline-block bg-lime/15 text-forest text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full mb-4">Government</span>
+            <span class="inline-block rounded-sm border border-forest/15 bg-lime/15 px-2.5 py-1 font-mono text-caption uppercase tracking-[0.14em] text-forest mb-4">Government</span>
             <h3 class="font-display text-xl text-forest mb-3 leading-snug">Enabling secure government data sharing</h3>
             <p class="text-forest-light body-relaxed text-sm">Learn how government agencies leveraged Eightwire to create a unified data exchange network, enabling cross-agency collaboration while maintaining strict compliance standards.</p>
           </div>
         </div>
 
         <!-- Card 3: Insurance -->
-        <div class="reveal reveal-delay-3 group bg-white rounded-2xl overflow-hidden" style="box-shadow: 0 1px 4px rgba(20,80,65,0.06), 0 4px 16px rgba(20,80,65,0.05), 0 12px 40px rgba(20,80,65,0.04);">
+        <div class="reveal reveal-delay-3 group bg-white rounded overflow-hidden border border-cream-line shadow-card">
           <div class="relative overflow-hidden">
             <img src={`${base}images/65160c28f99c2aac114fb765_Insurance-header.svg`} alt="Insurance data workflows" class="w-full h-56 object-cover" style="transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);">
             <div class="absolute inset-0 bg-gradient-to-t from-forest/30 to-transparent mix-blend-multiply"></div>
           </div>
           <div class="p-8">
-            <span class="inline-block bg-lime/15 text-forest text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full mb-4">Insurance</span>
+            <span class="inline-block rounded-sm border border-forest/15 bg-lime/15 px-2.5 py-1 font-mono text-caption uppercase tracking-[0.14em] text-forest mb-4">Insurance</span>
             <h3 class="font-display text-xl text-forest mb-3 leading-snug">Streamlining insurance data workflows</h3>
             <p class="text-forest-light body-relaxed text-sm">See how insurance providers automated their data exchange processes with Eightwire, reducing processing times and eliminating manual data entry across multiple systems.</p>
           </div>
@@ -85,10 +86,10 @@ const base = import.meta.env.BASE_URL;
   <!-- ========== TRUSTED SECTION ========== -->
   <section class="py-20 lg:py-24 relative overflow-hidden grain" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
     <div class="relative z-10 max-w-7xl mx-auto px-6">
-      <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem;" class="p-10 lg:p-14">
+      <div>
         <div class="text-center mb-12 reveal">
-          <p class="text-lime font-bold text-xs tracking-[0.2em] uppercase mb-4">Our Partners</p>
-          <h2 class="font-display heading-tight text-3xl sm:text-4xl text-white leading-[1.15] mb-6">Trusted with high-stakes data</h2>
+          <p class="font-mono text-caption uppercase tracking-[0.14em] text-lime mb-4">Our Partners</p>
+          <h2 class="font-display text-3xl sm:text-4xl text-white leading-[1.15] mb-6">Trusted with high-stakes data</h2>
           <p class="text-white/70 text-lg body-relaxed max-w-2xl mx-auto">We are trusted by over 100 public and private organisations to handle high-stakes data, everyday.</p>
         </div>
       </div>
@@ -98,11 +99,11 @@ const base = import.meta.env.BASE_URL;
   <!-- ========== CTA ========== -->
   <section class="py-24 lg:py-32 relative overflow-hidden grain" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal">
-      <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem;" class="p-10 lg:p-14">
-        <h2 class="font-display heading-tight text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15] mb-8">Ready to share your data securely?</h2>
-        <a href="mailto:support@eight-wire.com" class="inline-flex items-center gap-3 bg-lime text-forest font-semibold px-7 py-3.5 rounded-full btn-press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-forest" style="box-shadow: 0 4px 14px rgba(129,215,19,0.3), 0 1px 3px rgba(129,215,19,0.2);">
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15] mb-8">Ready to share your data securely?</h2>
+        <a href="mailto:support@eight-wire.com" class={btnPrimary}>
           Contact us
-          <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class={arrowNudge} width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
