@@ -52,19 +52,19 @@ export default function Security() {
                 <span className="text-forest">{item.icon}</span>
                 <div>
                   <h3 className="mb-2 font-display text-[19px] text-forest-deepest">{item.title}</h3>
-                  <p className="text-[14.5px] leading-[1.7] text-ink-soft">{item.body}</p>
+                  <p className="text-body leading-[1.7] text-ink-soft">{item.body}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="reveal reveal-d2 rounded border border-cream-line bg-white p-8 shadow-card lg:sticky lg:top-24">
-            <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-muted">
+            <p className="mb-6 font-mono text-caption uppercase tracking-[0.1em] text-ink-muted">
               Certifications & alignments
             </p>
             <div className="rounded border border-cream-line bg-cream px-5 py-7 text-center">
               <p className="font-display text-3xl text-ink">SOC 2</p>
-              <p className="mt-1 text-[12.5px] text-ink-muted">Type II, current</p>
+              <p className="mt-1 text-body-xs text-ink-muted">Type II, current</p>
             </div>
           </div>
         </div>

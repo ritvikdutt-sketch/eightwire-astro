@@ -46,17 +46,17 @@ export default function Customers() {
               className={`reveal reveal-d${i} flex flex-col rounded border border-cream-line bg-white p-9 shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-card-hover`}
             >
               <span aria-hidden="true" className="mb-5 font-display text-6xl leading-[0.6] text-lime">“</span>
-              <p className="mb-7 flex-1 font-display text-[17px] italic leading-[1.6] text-ink-soft">{q.quote}</p>
+              <p className="mb-7 flex-1 font-display text-lede italic leading-[1.6] text-ink-soft">{q.quote}</p>
               <footer className="flex items-center gap-3 border-t border-cream-line pt-5">
-                <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest font-mono text-[12px] font-semibold text-cream">
+                <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest font-mono text-label font-semibold text-cream">
                   {q.initials}
                 </span>
                 <div>
-                  <cite className="block text-[14px] font-semibold not-italic text-ink">{q.name}</cite>
-                  <p className="mt-0.5 text-[12px] leading-snug text-ink-muted">{q.role}</p>
+                  <cite className="block text-body-sm font-semibold not-italic text-ink">{q.name}</cite>
+                  <p className="mt-0.5 text-label leading-snug text-ink-muted">{q.role}</p>
                 </div>
               </footer>
-              <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-forest">{q.outcome}</p>
+              <p className="mt-5 font-mono text-caption uppercase tracking-[0.08em] text-forest">{q.outcome}</p>
             </blockquote>
           ))}
         </div>

@@ -20,6 +20,19 @@ export default {
         body: ['"DM Sans"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
+      // Type scale — sizes only (line-height stays where each usage sets it),
+      // so tokens are drop-in equal to the arbitrary values they replace.
+      fontSize: {
+        '2xs': '10.5px',   // smallest mono badge
+        'caption': '11px', // mono eyebrows, labels, badges
+        'label': '12px',   // nav links, code chips
+        'body-xs': '13px', // compact UI text
+        'body-sm': '14px', // buttons, footer links
+        'body': '14.5px',  // card body copy
+        'body-lg': '15.5px', // section ledes (small)
+        'lede': '17px',    // hero/section ledes
+        'h-card': '22px',  // card headings
+      },
       boxShadow: {
         'card': '0 1px 2px rgba(11,16,13,0.04), 0 8px 24px -8px rgba(20,80,65,0.12)',
         'card-hover': '0 2px 4px rgba(11,16,13,0.05), 0 20px 48px -12px rgba(20,80,65,0.22)',

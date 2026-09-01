@@ -42,9 +42,9 @@ export default function Problem() {
                 aria-hidden="true"
                 className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-lime transition-transform duration-300 ease-out group-hover:scale-x-100"
               />
-              <p className="mb-6 font-mono text-[11px] tracking-[0.08em] text-ink-muted">{p.num}</p>
-              <h3 className="mb-3 font-display text-[21px] leading-snug text-ink">{p.title}</h3>
-              <p className="text-[14.5px] leading-[1.7] text-ink-soft">{p.body}</p>
+              <p className="mb-6 font-mono text-caption tracking-[0.08em] text-ink-muted">{p.num}</p>
+              <h3 className="mb-3 font-display text-h-card leading-snug text-ink">{p.title}</h3>
+              <p className="text-body leading-[1.7] text-ink-soft">{p.body}</p>
             </article>
           ))}
         </div>

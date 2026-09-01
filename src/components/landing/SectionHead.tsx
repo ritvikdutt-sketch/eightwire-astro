@@ -10,7 +10,7 @@ export default function SectionHead({ eyebrow, dark = false, children }: Props) 
   return (
     <div className="reveal mb-14 grid gap-5 sm:mb-16 lg:grid-cols-[0.38fr_1fr] lg:gap-14">
       <p
-        className={`self-start border-t pt-3 font-mono text-[11px] uppercase tracking-[0.16em] ${
+        className={`self-start border-t pt-3 font-mono text-caption uppercase tracking-[0.16em] ${
           dark ? 'border-lime/60 text-lime' : 'border-forest text-forest'
         }`}
       >

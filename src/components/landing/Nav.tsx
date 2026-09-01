@@ -51,7 +51,7 @@ export default function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative py-1 font-mono text-[12px] uppercase tracking-[0.14em] text-cream/65 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+                className="group relative py-1 font-mono text-label uppercase tracking-[0.14em] text-cream/65 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
               >
                 {l.label}
                 <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-lime transition-transform duration-300 ease-out group-hover:scale-x-100" aria-hidden="true" />
@@ -62,7 +62,7 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <a
               href={`${base}#contact`}
-              className="group hidden items-center gap-2 rounded-sm bg-lime px-5 py-2.5 text-[13px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] sm:inline-flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              className="group hidden items-center gap-2 rounded-sm bg-lime px-5 py-2.5 text-body-xs font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] sm:inline-flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
               Book a demo
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
@@ -129,7 +129,7 @@ export default function Nav() {
             Book a demo <span aria-hidden="true">→</span>
           </a>
         </nav>
-        <p className="px-8 pb-10 font-mono text-[11px] uppercase tracking-[0.14em] text-cream/30">
+        <p className="px-8 pb-10 font-mono text-caption uppercase tracking-[0.14em] text-cream/30">
           Wellington · Aotearoa NZ
         </p>
       </div>

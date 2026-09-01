@@ -27,26 +27,26 @@ export default function CTASection() {
         <h2 className="reveal font-display text-[clamp(2.2rem,5vw,3.6rem)] leading-[1.08] tracking-[-0.01em] text-cream [text-wrap:balance]">
           Talk to a team that <em className="text-lime">knows</em> Aotearoa&rsquo;s data
         </h2>
-        <p className="reveal reveal-d1 mx-auto mt-6 max-w-lg text-[17px] leading-[1.7] text-cream/65">
+        <p className="reveal reveal-d1 mx-auto mt-6 max-w-lg text-lede leading-[1.7] text-cream/65">
           We work with health, government and social sector teams every day. Tell us what you&rsquo;re
           trying to move. We&rsquo;ll show you the fastest path.
         </p>
         <div className="reveal reveal-d2 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href={BOOK_DEMO_HREF}
-            className="group inline-flex items-center gap-2 rounded-sm bg-lime px-7 py-3.5 text-[14px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+            className="group inline-flex items-center gap-2 rounded-sm bg-lime px-7 py-3.5 text-body-sm font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
             {BOOK_DEMO_LABEL}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
           </a>
           <a
             href={`${base}technical-overview/`}
-            className="inline-flex items-center rounded-sm border border-cream/25 px-7 py-3.5 text-[14px] font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+            className="inline-flex items-center rounded-sm border border-cream/25 px-7 py-3.5 text-body-sm font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
             Read the technical overview
           </a>
         </div>
-        <p className="reveal reveal-d3 mt-7 text-[13.5px] text-cream/50">
+        <p className="reveal reveal-d3 mt-7 text-body-xs text-cream/50">
           Or email us directly at{' '}
           <a
             href={`mailto:${CONTACT_EMAIL}`}

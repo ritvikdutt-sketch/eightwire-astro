@@ -51,8 +51,8 @@ export default function HowItWorks() {
                 )}
               </div>
               <h3 className="mb-3 font-display text-2xl text-ink">{s.title}</h3>
-              <p className="mb-6 text-[14.5px] leading-[1.7] text-ink-soft">{s.body}</p>
-              <span className="inline-block rounded-sm bg-mint-deep/60 px-2.5 py-1 font-mono text-[11.5px] text-forest">
+              <p className="mb-6 text-body leading-[1.7] text-ink-soft">{s.body}</p>
+              <span className="inline-block rounded-sm bg-mint-deep/60 px-2.5 py-1 font-mono text-caption text-forest">
                 {s.time}
               </span>
             </li>

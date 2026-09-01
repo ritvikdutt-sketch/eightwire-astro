@@ -161,7 +161,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:pb-28 lg:pt-44">
         <div>
-          <p className="rise mb-7 inline-flex items-center gap-2.5 rounded-sm border border-lime/25 bg-lime/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-lime">
+          <p className="rise mb-7 inline-flex items-center gap-2.5 rounded-sm border border-lime/25 bg-lime/10 px-3.5 py-1.5 font-mono text-caption uppercase tracking-[0.14em] text-lime">
             <span className="h-1.5 w-1.5 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
             Conductor v8 &middot; now serving NZ Health
           </p>
@@ -170,7 +170,7 @@ export default function Hero() {
             Secure data exchange for <em className="text-lime">Aotearoa&rsquo;s</em> high&#8209;stakes sectors
           </h1>
 
-          <p className="rise rise-d2 mt-6 max-w-md text-[17px] leading-[1.7] text-cream/70">
+          <p className="rise rise-d2 mt-6 max-w-md text-lede leading-[1.7] text-cream/70">
             Conductor by Eightwire moves sensitive data between health, government and enterprise systems.
             No custom code. No manual handling. No sovereignty compromises.
           </p>
@@ -178,20 +178,20 @@ export default function Hero() {
           <div className="rise rise-d3 mt-9 flex flex-wrap gap-3">
             <a
               href={`${base}#contact`}
-              className="group inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3.5 text-[14px] font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              className="group inline-flex items-center gap-2 rounded-sm bg-lime px-6 py-3.5 text-body-sm font-semibold text-forest-deepest transition-[transform,box-shadow] duration-200 hover:shadow-lime-glow active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
               Book a demo
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
             </a>
             <a
               href={`${base}#platform`}
-              className="inline-flex items-center gap-2 rounded-sm border border-cream/25 px-6 py-3.5 text-[14px] font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              className="inline-flex items-center gap-2 rounded-sm border border-cream/25 px-6 py-3.5 text-body-sm font-medium text-cream/85 transition-colors duration-200 hover:border-cream/50 hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
               See how Conductor works
             </a>
           </div>
 
-          <div className="rise rise-d4 mt-10 flex flex-wrap gap-x-7 gap-y-3 text-[13px] text-cream/75">
+          <div className="rise rise-d4 mt-10 flex flex-wrap gap-x-7 gap-y-3 text-body-xs text-cream/75">
             {['Data stays in NZ', 'SOC 2 Type II'].map((t) => (
               <span key={t} className="inline-flex items-center gap-2">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#81D713" strokeWidth="2.5" className="h-3.5 w-3.5 shrink-0" aria-hidden="true">
@@ -205,7 +205,7 @@ export default function Hero() {
 
         <div className="rise rise-d2 relative">
           <WireField animate={!reduced} />
-          <p className="mt-2 flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-cream/40">
+          <p className="mt-2 flex items-center justify-center gap-2 font-mono text-caption uppercase tracking-[0.14em] text-cream/40">
             <span className="h-1.5 w-1.5 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
             How data moves through Conductor
           </p>

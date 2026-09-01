@@ -165,14 +165,14 @@ export default function ConnectorSphere() {
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col px-5 pt-28 sm:px-8 lg:pt-32">
         {/* header overlay */}
         <div className="pointer-events-none relative z-20 text-center">
-          <p className="rise pointer-events-auto mx-auto inline-flex items-center gap-2.5 rounded-sm border border-lime/25 bg-lime/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-lime">
+          <p className="rise pointer-events-auto mx-auto inline-flex items-center gap-2.5 rounded-sm border border-lime/25 bg-lime/10 px-3.5 py-1.5 font-mono text-caption uppercase tracking-[0.14em] text-lime">
             <span className="h-1.5 w-1.5 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
             {CONNECTORS.length} pre-built connectors
           </p>
           <h1 className="rise rise-d1 mx-auto mt-5 max-w-2xl font-display text-[clamp(2.4rem,5.5vw,4.2rem)] leading-[1.05] tracking-[-0.01em] text-cream [text-wrap:balance]">
             Step inside <em className="text-lime">the exchange</em>
           </h1>
-          <p className="rise rise-d2 mx-auto mt-4 max-w-md text-[15.5px] leading-[1.7] text-cream/65">
+          <p className="rise rise-d2 mx-auto mt-4 max-w-md text-body-lg leading-[1.7] text-cream/65">
             Every system Conductor speaks to — databases, files, SaaS and transfer protocols.
           </p>
 
@@ -182,7 +182,7 @@ export default function ConnectorSphere() {
               type="button"
               onClick={() => setFilter(null)}
               aria-pressed={filter === null}
-              className={`rounded-full border px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime ${
+              className={`rounded-full border px-4 py-1.5 font-mono text-caption uppercase tracking-[0.1em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime ${
                 filter === null
                   ? 'border-lime bg-lime/15 text-lime'
                   : 'border-cream/20 text-cream/55 hover:border-cream/45 hover:text-cream/85'
@@ -196,7 +196,7 @@ export default function ConnectorSphere() {
                 type="button"
                 onClick={() => setFilter(filter === cat ? null : cat)}
                 aria-pressed={filter === cat}
-                className={`rounded-full border px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime ${
+                className={`rounded-full border px-4 py-1.5 font-mono text-caption uppercase tracking-[0.1em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime ${
                   filter === cat
                     ? 'border-lime bg-lime/15 text-lime'
                     : 'border-cream/20 text-cream/55 hover:border-cream/45 hover:text-cream/85'
@@ -259,7 +259,7 @@ export default function ConnectorSphere() {
                   className="pointer-events-none h-[54%] w-[82%] object-contain"
                   loading="eager"
                 />
-                <span className="pointer-events-none font-mono text-[10px] uppercase tracking-[0.05em] text-ink-muted group-hover:text-forest">
+                <span className="pointer-events-none font-mono text-2xs uppercase tracking-[0.05em] text-ink-muted group-hover:text-forest">
                   {p.name}
                 </span>
               </button>
@@ -290,10 +290,10 @@ export default function ConnectorSphere() {
                 </span>
                 <div className="min-w-0 flex-1">
                   <p className="font-display text-lg leading-tight text-cream">{selected.name}</p>
-                  <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.1em] text-lime">{selected.kind}</p>
+                  <p className="mt-0.5 font-mono text-2xs uppercase tracking-[0.1em] text-lime">{selected.kind}</p>
                   <a
                     href={`mailto:${CONTACT_EMAIL}?subject=Conductor%20%2B%20${encodeURIComponent(selected.name)}`}
-                    className="mt-1.5 inline-flex items-center gap-1.5 text-[13px] font-medium text-cream/80 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
+                    className="mt-1.5 inline-flex items-center gap-1.5 text-body-xs font-medium text-cream/80 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
                   >
                     Set up {/^[aeiou]/i.test(selected.name) ? 'an' : 'a'} {selected.name} flow <span aria-hidden="true">→</span>
                   </a>
@@ -316,7 +316,7 @@ export default function ConnectorSphere() {
         {/* hint */}
         <p
           aria-hidden="true"
-          className={`pointer-events-none relative z-20 pb-6 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-cream/40 transition-opacity duration-700 ${
+          className={`pointer-events-none relative z-20 pb-6 text-center font-mono text-caption uppercase tracking-[0.16em] text-cream/40 transition-opacity duration-700 ${
             hasDragged ? 'opacity-0' : 'opacity-100'
           }`}
         >

@@ -46,7 +46,7 @@ export default function Stats() {
   return (
     <section className="border-t border-lime/10 bg-forest-deepest">
       <div ref={ref} className="mx-auto max-w-7xl px-5 sm:px-8">
-        <p className="pt-14 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-cream/40">
+        <p className="pt-14 text-center font-mono text-caption uppercase tracking-[0.18em] text-cream/40">
           Trusted by Aotearoa&rsquo;s most regulated sectors
         </p>
         <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden bg-lime/10 sm:grid-cols-2 lg:grid-cols-4">
@@ -60,7 +60,7 @@ export default function Stats() {
               >
                 {s.display}
               </div>
-              <p className="mt-3 max-w-[24ch] text-[13.5px] leading-relaxed text-cream/55">{s.label}</p>
+              <p className="mt-3 max-w-[24ch] text-body-xs leading-relaxed text-cream/55">{s.label}</p>
             </div>
           ))}
         </div>

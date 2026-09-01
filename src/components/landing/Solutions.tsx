@@ -47,12 +47,12 @@ export default function Solutions() {
               key={s.tag}
               className={`reveal reveal-d${i} group flex min-h-[300px] flex-col rounded border border-cream-line bg-white p-9 shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-card-hover`}
             >
-              <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-muted">{s.tag}</p>
-              <h3 className="mb-3 font-display text-[22px] leading-snug text-ink">{s.title}</h3>
-              <p className="mb-7 flex-1 text-[14.5px] leading-[1.7] text-ink-soft">{s.body}</p>
+              <p className="mb-6 font-mono text-caption uppercase tracking-[0.08em] text-ink-muted">{s.tag}</p>
+              <h3 className="mb-3 font-display text-h-card leading-snug text-ink">{s.title}</h3>
+              <p className="mb-7 flex-1 text-body leading-[1.7] text-ink-soft">{s.body}</p>
               <a
                 href={s.href}
-                className="inline-flex items-center gap-2 text-[14px] font-medium text-forest transition-[gap] duration-200 hover:gap-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
+                className="inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-[gap] duration-200 hover:gap-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
               >
                 {s.link} <span aria-hidden="true">→</span>
               </a>

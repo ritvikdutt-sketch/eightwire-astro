@@ -4,7 +4,7 @@ export default function Marquee() {
   const row = [...COMPANIES, ...COMPANIES];
   return (
     <section className="overflow-hidden border-b border-cream-line bg-forest-deepest py-12" aria-label="Trusted across sectors">
-      <p className="reveal mb-8 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-cream/40">
+      <p className="reveal mb-8 text-center font-mono text-caption uppercase tracking-[0.18em] text-cream/40">
         Trusted across sectors
       </p>
       <div

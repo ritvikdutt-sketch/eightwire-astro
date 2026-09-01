@@ -39,10 +39,10 @@ export default function FooterSection() {
             <a href={base} aria-label="Eightwire home" className="inline-block rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               <img src={`${base}eightwire-logo-white-text-transparent.svg`} alt="Eightwire" className="h-7 w-auto" />
             </a>
-            <p className="mt-5 max-w-xs text-[14px] leading-[1.7] text-cream/55">
+            <p className="mt-5 max-w-xs text-body-sm leading-[1.7] text-cream/55">
               Secure data exchange for Aotearoa&rsquo;s high-stakes sectors. Built in Wellington since 2013.
             </p>
-            <p className="mt-5 inline-block rounded-full border border-lime/25 bg-lime/10 px-3 py-1 font-mono text-[10.5px] tracking-[0.05em] text-lime">
+            <p className="mt-5 inline-block rounded-full border border-lime/25 bg-lime/10 px-3 py-1 font-mono text-2xs tracking-[0.05em] text-lime">
               SOC 2
             </p>
             <div className="mt-4">
@@ -50,7 +50,7 @@ export default function FooterSection() {
                 href="https://www.linkedin.com/company/eight-wire-limited/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[13px] text-cream/50 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+                className="inline-flex items-center gap-1.5 text-body-xs text-cream/50 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
@@ -63,12 +63,12 @@ export default function FooterSection() {
 
           {COLS.map((col) => (
             <nav key={col.heading} aria-label={col.heading}>
-              <h4 className="mb-5 font-mono text-[11px] uppercase tracking-[0.14em] text-cream/40">{col.heading}</h4>
+              <h4 className="mb-5 font-mono text-caption uppercase tracking-[0.14em] text-cream/40">{col.heading}</h4>
               {col.links.map((l) => (
                 <a
                   key={l.label}
                   href={l.href}
-                  className="block py-1.5 text-[14px] text-cream/65 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+                  className="block py-1.5 text-body-sm text-cream/65 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
                 >
                   {l.label}
                 </a>
@@ -77,13 +77,13 @@ export default function FooterSection() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-3 pt-8 text-[13px] text-cream/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 pt-8 text-body-xs text-cream/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Eightwire Ltd · Level 4, 40 Taranaki Street, Wellington 6011</p>
           <div className="flex items-center gap-6">
             <a href={`${base}#security`} className="transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               Security &amp; trust
             </a>
-            <a href="#top" className="font-mono text-[11px] uppercase tracking-[0.1em] transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
+            <a href="#top" className="font-mono text-caption uppercase tracking-[0.1em] transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               <span aria-hidden="true">↑</span> Top
             </a>
           </div>
