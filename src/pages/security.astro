@@ -1,0 +1,18 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import Security from '../components/landing/Security.tsx';
+import TrustPillars from '../components/landing/TrustPillars.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+
+const lede =
+  'Every transfer logged. Every transformation auditable. Built for OIA, Privacy Act 2020 and NZISM-aligned operations from day one.';
+---
+<LandingLayout title="Security & trust — Eightwire" description={lede}>
+  <PageHero eyebrow="Security & trust" lede={lede}>
+    Built for the <em class="text-lime">strictest</em> procurement teams in the country
+  </PageHero>
+  <Security showHead={false} />
+  <TrustPillars />
+  <CTASection />
+</LandingLayout>

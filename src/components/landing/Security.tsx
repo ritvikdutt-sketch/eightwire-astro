@@ -31,7 +31,7 @@ const ITEMS = [
   },
 ];
 
-export default function Security() {
+export default function Security({ showHead = true }: { showHead?: boolean }) {
   return (
     <section
       id="security"
@@ -42,9 +42,9 @@ export default function Security() {
       }}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHead eyebrow="06 — Security & trust">
+        {showHead && (<SectionHead eyebrow="Security & trust">
           Built for the <em className="text-forest">strictest</em> procurement teams in the country
-        </SectionHead>
+        </SectionHead>)}
 
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div>

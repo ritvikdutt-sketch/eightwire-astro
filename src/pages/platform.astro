@@ -1,0 +1,15 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import Platform, { PLATFORM_LEDE } from '../components/landing/Platform.tsx';
+import HowItWorks from '../components/landing/HowItWorks.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+---
+<LandingLayout title="Conductor platform — Eightwire" description={PLATFORM_LEDE}>
+  <PageHero eyebrow="The platform" lede={PLATFORM_LEDE}>
+    Meet <em class="text-lime">Conductor</em>
+  </PageHero>
+  <Platform showHead={false} />
+  <HowItWorks />
+  <CTASection />
+</LandingLayout>

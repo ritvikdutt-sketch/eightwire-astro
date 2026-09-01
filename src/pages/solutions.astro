@@ -1,0 +1,16 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import Solutions from '../components/landing/Solutions.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+
+const lede =
+  'Conductor by Eightwire moves sensitive data between health, government and enterprise systems. No custom code. No manual handling. No sovereignty compromises.';
+---
+<LandingLayout title="Solutions — Eightwire" description={lede}>
+  <PageHero eyebrow="Solutions" lede={lede}>
+    Built for sectors where <em class="text-lime">stakes are real</em>
+  </PageHero>
+  <Solutions showHead={false} />
+  <CTASection />
+</LandingLayout>
