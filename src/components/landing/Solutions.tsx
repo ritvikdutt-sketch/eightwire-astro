@@ -8,22 +8,22 @@ const SOLUTIONS = [
     tag: 'For Health',
     title: 'PHO networks, registries & clinical pipelines',
     body: 'From PHO data submissions to clinical registries to GP system integration. Medicly is built on Conductor for NZ health.',
-    link: 'Explore health solutions',
+    link: 'Explore Medicly',
     href: `${base}medicly/`,
   },
   {
     tag: 'For Government',
     title: 'Inter-agency data sharing, done properly',
     body: 'Move data between agencies with the audit trail, sovereignty and compliance posture your procurement team needs to sign off.',
-    link: 'Explore government solutions',
-    href: `${base}customer-stories/`,
+    link: 'Talk to us about government data',
+    href: '#contact',
   },
   {
     tag: 'For Social Sector',
     title: 'Outcomes-based reporting & multi-agency data',
     body: 'Aggregate outcomes data across health, social and justice systems. Consent management and privacy controls built in.',
-    link: 'Explore social sector',
-    href: `${base}customer-stories/`,
+    link: 'Talk to us about social-sector data',
+    href: '#contact',
   },
 ];
 

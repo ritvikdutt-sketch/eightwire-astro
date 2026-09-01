@@ -6,7 +6,6 @@ const LINKS = [
   { href: `${base}#platform`, label: 'Platform' },
   { href: `${base}connectors/`, label: 'Connectors' },
   { href: `${base}#solutions`, label: 'Solutions' },
-  { href: `${base}#customers`, label: 'Customers' },
   { href: `${base}#security`, label: 'Security' },
 ];
 

@@ -7,4 +7,5 @@ export default defineConfig({
   base: '/eightwire-astro/',
   integrations: [tailwind(), react()],
   devToolbar: { enabled: false },
+  redirects: { '/customer-stories/': '/eightwire-astro/' },
 });

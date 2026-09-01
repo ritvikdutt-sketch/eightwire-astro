@@ -23,7 +23,6 @@ const COLS = [
   {
     heading: 'Company',
     links: [
-      { label: 'Customers', href: `${base}#customers` },
       { label: 'Support', href: `${base}support/` },
       { label: 'Contact', href: `mailto:${CONTACT_EMAIL}` },
     ],
