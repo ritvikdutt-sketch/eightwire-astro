@@ -83,7 +83,7 @@ function WireField({ animate }: { animate: boolean }) {
           <circle cx="44" cy={s.y} r="2.5" fill="#81D713">
             {animate && <animate attributeName="opacity" values="1;0.25;1" dur="2.4s" repeatCount="indefinite" begin={`${s.y / 200}s`} />}
           </circle>
-          <text x="56" y={s.y + 3.5} fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="rgba(245,244,238,0.72)">
+          <text x="56" y={s.y + 3.5} className="max-sm:hidden" fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="rgba(245,244,238,0.72)">
             {s.label}
           </text>
         </g>
@@ -93,7 +93,7 @@ function WireField({ animate }: { animate: boolean }) {
       {DESTS.map((d) => (
         <g key={d.id}>
           <rect x="548" y={d.y - 16} width="112" height="32" rx="3" fill="#0A1F14" stroke="rgba(129,215,19,0.22)" />
-          <text x="564" y={d.y + 3.5} fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="rgba(245,244,238,0.72)">
+          <text x="564" y={d.y + 3.5} className="max-sm:hidden" fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="rgba(245,244,238,0.72)">
             {d.label}
           </text>
           <circle cx="648" cy={d.y} r="2.5" fill="#81D713" />
@@ -118,7 +118,7 @@ function WireField({ animate }: { animate: boolean }) {
         <rect x="308" y="248" width="64" height="64" rx="7" fill="rgba(129,215,19,0.07)" />
         {/* eightwire glyph: 8 wires mark */}
         <path d="M 324 280 h 32 M 340 264 v 32 M 329 269 l 22 22 M 351 269 l -22 22" stroke="#81D713" strokeWidth="1.6" strokeLinecap="round" />
-        <text x="340" y="342" textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontSize="11" letterSpacing="2" fill="#81D713">
+        <text x="340" y="342" className="max-sm:hidden" textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontSize="11" letterSpacing="2" fill="#81D713">
           CONDUCTOR
         </text>
       </g>

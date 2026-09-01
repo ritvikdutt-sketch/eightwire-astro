@@ -59,10 +59,12 @@ export default function ConnectorSphere() {
     const measure = () => {
       const w = el.clientWidth;
       const h = el.clientHeight;
-      // keep the projected sphere comfortably inside the canvas
-      const r = Math.max(250, Math.min(w * 0.4, h * 0.66, 500));
+      const t = w < 480 ? 80 : w < 640 ? 104 : 144;
+      // keep the projected sphere (radius + half a tile each side) inside the
+      // canvas — the old 250px floor overflowed narrow phone viewports
+      const r = Math.max(120, Math.min(w * 0.4, h * 0.66, (w - t) / 2, 500));
       setRadius(Math.round(r));
-      setTile(w < 640 ? 104 : 144);
+      setTile(t);
     };
     measure();
     const ro = new ResizeObserver(measure);

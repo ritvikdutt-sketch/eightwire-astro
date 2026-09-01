@@ -49,7 +49,7 @@ export default function Stats() {
         <p className="pt-14 text-center font-mono text-caption uppercase tracking-[0.18em] text-cream/40">
           Trusted by Aotearoa&rsquo;s most regulated sectors
         </p>
-        <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden bg-lime/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 divide-y divide-lime/10 overflow-hidden sm:grid-cols-2 sm:gap-px sm:divide-y-0 sm:bg-lime/10 lg:grid-cols-4">
           {STATS.map((s, i) => (
             <div key={s.label} className="bg-forest-deepest px-7 py-9">
               <div

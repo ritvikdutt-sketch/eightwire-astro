@@ -46,7 +46,7 @@ export default function Solutions() {
           {SOLUTIONS.map((s, i) => (
             <article
               key={s.tag}
-              className={`reveal reveal-d${i} group flex min-h-[300px] flex-col p-9 ${card}`}
+              className={`reveal reveal-d${i} group flex flex-col p-9 md:min-h-[300px] ${card}`}
             >
               <p className="mb-6 font-mono text-caption uppercase tracking-[0.08em] text-ink-muted">{s.tag}</p>
               <h3 className="mb-3 font-display text-h-card leading-snug text-ink">{s.title}</h3>

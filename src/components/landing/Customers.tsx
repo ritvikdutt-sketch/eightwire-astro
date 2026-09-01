@@ -29,7 +29,7 @@ export default function Customers() {
   return (
     <section
       id="customers"
-      className="border-b border-cream-line py-24 sm:py-28"
+      className="border-b border-cream-line py-20 sm:py-24"
       style={{
         background:
           'radial-gradient(ellipse 90% 60% at 90% 30%, rgba(214,237,216,0.55) 0%, transparent 55%), #EDEBE2',

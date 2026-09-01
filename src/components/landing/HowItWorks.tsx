@@ -29,7 +29,7 @@ export default function HowItWorks() {
       className="border-b border-cream-line py-24 sm:py-28"
       style={{
         background:
-          'radial-gradient(ellipse 60% 80% at 85% 20%, rgba(214,237,216,0.5) 0%, transparent 55%), #F5F4EE',
+          'radial-gradient(ellipse 60% 80% at 85% 20%, rgba(214,237,216,0.5) 0%, transparent 55%), #EDEBE2',
       }}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
