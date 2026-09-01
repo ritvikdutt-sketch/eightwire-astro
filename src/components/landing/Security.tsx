@@ -32,6 +32,7 @@ const ITEMS = [
 ];
 
 export default function Security({ showHead = true }: { showHead?: boolean }) {
+  const H: 'h2' | 'h3' = showHead ? 'h3' : 'h2';
   return (
     <section
       id="security"
@@ -52,7 +53,7 @@ export default function Security({ showHead = true }: { showHead?: boolean }) {
               <div key={item.title} className="reveal grid grid-cols-[36px_1fr] gap-5 border-b border-cream-line py-7 last:border-b-0">
                 <span className="text-forest">{item.icon}</span>
                 <div>
-                  <h3 className="mb-2 font-display text-[19px] text-forest-deepest">{item.title}</h3>
+                  <H className="mb-2 font-display text-[19px] text-forest-deepest">{item.title}</H>
                   <p className="text-body leading-[1.7] text-ink-soft">{item.body}</p>
                 </div>
               </div>

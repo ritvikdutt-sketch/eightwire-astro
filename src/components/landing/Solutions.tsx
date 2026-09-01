@@ -36,6 +36,7 @@ interface Props {
 }
 
 export default function Solutions({ showHead = true }: Props) {
+  const H: 'h2' | 'h3' = showHead ? 'h3' : 'h2';
   return (
     <section
       id="solutions"
@@ -61,9 +62,9 @@ export default function Solutions({ showHead = true }: Props) {
             >
               <div>
                 <p className="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">{s.tag}</p>
-                <h3 className="mt-3 max-w-md font-display text-[clamp(1.6rem,2.6vw,2.2rem)] leading-[1.12] tracking-[-0.01em] text-ink [text-wrap:balance]">
+                <H className="mt-3 max-w-md font-display text-[clamp(1.6rem,2.6vw,2.2rem)] leading-[1.12] tracking-[-0.01em] text-ink [text-wrap:balance]">
                   {s.title}
-                </h3>
+                </H>
               </div>
               <div className="max-w-2xl">
                 <p className="text-body-lg leading-[1.75] text-ink-soft">{s.body}</p>

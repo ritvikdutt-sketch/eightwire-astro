@@ -5,6 +5,7 @@ const base = import.meta.env.BASE_URL;
 // Copy is lifted verbatim from the pages these panels point at — no new claims.
 const TEASERS = [
   {
+    id: 'solutions',
     eyebrow: 'Solutions',
     title: (
       <>
@@ -16,6 +17,7 @@ const TEASERS = [
     href: `${base}solutions/`,
   },
   {
+    id: 'security',
     eyebrow: 'Security & trust',
     title: (
       <>
@@ -42,7 +44,8 @@ export default function HomeTeasers() {
         <div className="grid divide-y divide-cream-line lg:grid-cols-2 lg:divide-x lg:divide-y-0">
           {TEASERS.map((t, i) => (
             <article
-              key={t.eyebrow}
+              key={t.id}
+              id={t.id}
               className={`reveal reveal-d${i} flex flex-col py-10 first:pt-0 last:pb-0 lg:py-0 lg:first:pr-14 lg:last:pl-14`}
             >
               <p className="self-start border-t border-forest pt-3 font-mono text-caption uppercase tracking-[0.16em] text-forest">

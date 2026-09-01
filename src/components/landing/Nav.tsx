@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 
 const base = import.meta.env.BASE_URL;
 
+// `matches` = first path segment(s) this item is current for; inner pages roll up to their section
 const LINKS = [
-  { href: `${base}platform/`, label: 'Platform' },
-  { href: `${base}connectors/`, label: 'Connectors' },
-  { href: `${base}solutions/`, label: 'Solutions' },
-  { href: `${base}security/`, label: 'Security' },
+  { href: `${base}platform/`, label: 'Platform', matches: ['platform', 'technical-overview'] },
+  { href: `${base}connectors/`, label: 'Connectors', matches: ['connectors'] },
+  { href: `${base}solutions/`, label: 'Solutions', matches: ['solutions', 'medicly'] },
+  { href: `${base}security/`, label: 'Security', matches: ['security'] },
 ];
 
 interface Props {
@@ -14,13 +15,14 @@ interface Props {
   currentPath?: string;
 }
 
-const withSlash = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+const firstSegment = (p: string) =>
+  (p.startsWith(base) ? p.slice(base.length) : p.replace(/^\/+/, '')).split('/').filter(Boolean)[0] ?? '';
 
 export default function Nav({ currentPath = '' }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const current = withSlash(currentPath);
-  const isCurrent = (href: string) => href !== base && current === href;
+  const segment = firstSegment(currentPath);
+  const isCurrent = (l: (typeof LINKS)[number]) => segment !== '' && l.matches.includes(segment);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -56,7 +58,7 @@ export default function Nav({ currentPath = '' }: Props) {
 
           <div className="hidden items-center gap-8 md:flex">
             {LINKS.map((l) => {
-              const active = isCurrent(l.href);
+              const active = isCurrent(l);
               return (
                 <a
                   key={l.href}
@@ -125,7 +127,7 @@ export default function Nav({ currentPath = '' }: Props) {
         </div>
         <nav aria-label="Mobile" className="flex flex-1 flex-col items-start justify-center gap-2 px-8">
           {LINKS.map((l, i) => {
-            const active = isCurrent(l.href);
+            const active = isCurrent(l);
             return (
               <a
                 key={l.href}

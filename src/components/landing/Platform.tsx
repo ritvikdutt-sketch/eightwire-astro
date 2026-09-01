@@ -42,6 +42,8 @@ interface Props {
 
 export default function Platform({ variant = 'full', showHead = true }: Props) {
   const teaser = variant === 'teaser';
+  // keep the outline h1 > h2 when a PageHero owns the h1 and the section head is hidden
+  const H: 'h2' | 'h3' = showHead ? 'h3' : 'h2';
   return (
     <section
       id="platform"
@@ -78,7 +80,7 @@ export default function Platform({ variant = 'full', showHead = true }: Props) {
                 className={`reveal reveal-d${i % 2} group relative rounded border border-cream/10 border-l-2 border-l-lime/40 bg-cream/[0.04] p-8 transition-[transform,border-color,background-color] duration-300 hover:-translate-y-0.5 hover:border-l-lime hover:bg-cream/[0.06]`}
               >
                 <p className="mb-6 font-mono text-caption tracking-[0.1em] text-lime">{p.num}</p>
-                <h3 className="mb-3 font-display text-h-card leading-snug text-cream">{p.title}</h3>
+                <H className="mb-3 font-display text-h-card leading-snug text-cream">{p.title}</H>
                 {p.code ? (
                   <p className="text-body leading-[1.8] text-cream/60">
                     Pre-built connectors for{' '}
