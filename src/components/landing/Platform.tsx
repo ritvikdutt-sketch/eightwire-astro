@@ -34,7 +34,7 @@ const PILLARS = [
 const CONNECTORS = ['Indici', 'Medicly', 'NHI', 'HL7', 'SFTP', 'S3', 'REST'];
 
 interface Props {
-  /** `teaser` = homepage overview band linking to /platform/; `full` = pillar cards on the page */
+  /** `teaser` = homepage overview band linking to /conductor/; `full` = pillar cards on the page */
   variant?: 'full' | 'teaser';
   /** hide heading + lede when a PageHero already carries them */
   showHead?: boolean;
@@ -103,8 +103,8 @@ export default function Platform({ variant = 'full', showHead = true }: Props) {
         <div className="reveal mt-14 flex flex-wrap gap-3">
           {teaser ? (
             <>
-              <a href={`${base}platform/`} className={btnPrimary}>
-                Explore the platform
+              <a href={`${base}conductor/`} className={btnPrimary}>
+                Explore Conductor
                 <span aria-hidden="true" className={arrowNudge}>→</span>
               </a>
               <a href={`${base}connectors/`} className={btnGhostDark}>

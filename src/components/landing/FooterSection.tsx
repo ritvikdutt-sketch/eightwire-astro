@@ -4,12 +4,12 @@ const base = import.meta.env.BASE_URL;
 
 const COLS = [
   {
-    heading: 'Platform',
+    heading: 'Products',
     links: [
-      { label: 'Conductor', href: `${base}platform/` },
-      { label: 'How it works', href: `${base}platform/#how-it-works` },
+      { label: 'Conductor', href: `${base}conductor/` },
+      { label: 'Medicly', href: `${base}medicly/` },
+      { label: 'How it works', href: `${base}conductor/#how-it-works` },
       { label: 'Connectors', href: `${base}connectors/` },
-      { label: 'Security', href: `${base}security/` },
     ],
   },
   {

@@ -4,17 +4,17 @@ import { btnPrimary, btnGhostDark, arrowNudge } from './ui';
 const base = import.meta.env.BASE_URL;
 
 const SOURCES = [
-  { id: 'src-rds', label: 'rds', y: 96 },
-  { id: 'src-hl7', label: 'hl7_feed', y: 188 },
-  { id: 'src-nhi', label: 'nhi', y: 280 },
-  { id: 'src-sftp', label: 'sftp', y: 372 },
-  { id: 'src-s3', label: 's3_bucket', y: 464 },
+  { id: 'src-rds', label: 'sql_server', y: 96 },
+  { id: 'src-hl7', label: 'hubspot', y: 188 },
+  { id: 'src-nhi', label: 'excel', y: 280 },
+  { id: 'src-sftp', label: 'postgresql', y: 372 },
+  { id: 'src-s3', label: 'sftp', y: 464 },
 ];
 
 const DESTS = [
-  { id: 'dst-registry', label: 'registry', y: 152 },
-  { id: 'dst-analytics', label: 'analytics', y: 280 },
-  { id: 'dst-agency', label: 'agency_hub', y: 408 },
+  { id: 'dst-registry', label: 'snowflake', y: 152 },
+  { id: 'dst-analytics', label: 'azure', y: 280 },
+  { id: 'dst-agency', label: 's3', y: 408 },
 ];
 
 // Wires converge into the Conductor node (left edge x=300) and fan out (right edge x=380)
@@ -38,7 +38,7 @@ function WireField({ animate }: { animate: boolean }) {
       viewBox="0 0 680 560"
       fill="none"
       role="img"
-      aria-label="Diagram of data flowing from NZ health and government systems through Conductor to destination systems"
+      aria-label="Diagram of data flowing from systems such as SQL Server, HubSpot and Excel through Conductor to destinations such as Snowflake, Azure and S3"
       className="h-auto w-full"
     >
       <defs>
@@ -181,7 +181,7 @@ export default function Hero() {
               Book a demo
               <span aria-hidden="true" className={arrowNudge}>&rarr;</span>
             </a>
-            <a href={`${base}platform/`} className={btnGhostDark}>
+            <a href={`${base}conductor/`} className={btnGhostDark}>
               See how Conductor works
             </a>
           </div>
