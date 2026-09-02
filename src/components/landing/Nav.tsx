@@ -4,22 +4,11 @@ import { cardStatic } from './ui';
 const base = import.meta.env.BASE_URL;
 
 // Products disclosure (APG disclosure-navigation pattern — plain links, not role="menu").
+// Opens on hover for mouse users; click / keyboard still work for touch and assistive tech.
 // `matches` = first path segment(s) each item is current for; inner pages roll up to their product.
 const PRODUCTS = [
-  {
-    segment: 'conductor',
-    href: `${base}conductor/`,
-    label: 'Conductor',
-    desc: 'No-code data exchange for NZ health, government and social sector data',
-    matches: ['conductor', 'platform', 'technical-overview'],
-  },
-  {
-    segment: 'medicly',
-    href: `${base}medicly/`,
-    label: 'Medicly',
-    desc: 'Sensitive health data exchange',
-    matches: ['medicly'],
-  },
+  { segment: 'conductor', href: `${base}conductor/`, label: 'Conductor', matches: ['conductor', 'platform', 'technical-overview'] },
+  { segment: 'medicly', href: `${base}medicly/`, label: 'Medicly', matches: ['medicly'] },
 ];
 
 const LINKS = [
@@ -53,6 +42,8 @@ export default function Nav({ currentPath = '' }: Props) {
   const closeBtn = useRef<HTMLButtonElement>(null);
   const productsRef = useRef<HTMLDivElement>(null);
   const productsBtn = useRef<HTMLButtonElement>(null);
+  const closeTimer = useRef<number | null>(null);
+  const lastPointer = useRef(''); // pointerType of the press that produced the next click ('' = keyboard)
 
   const segment = firstSegment(currentPath);
   const isCurrent = (matches: string[]) => segment !== '' && matches.includes(segment);
@@ -64,6 +55,8 @@ export default function Nav({ currentPath = '' }: Props) {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => () => { if (closeTimer.current) window.clearTimeout(closeTimer.current); }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -98,6 +91,33 @@ export default function Nav({ currentPath = '' }: Props) {
       document.removeEventListener('pointerdown', onPointer);
     };
   }, [productsOpen]);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      window.clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  // hover intent: mouse only (a tap would otherwise open on pointerenter and toggle closed on click)
+  const onHoverIn = (e: React.PointerEvent) => {
+    if (e.pointerType !== 'mouse') return;
+    cancelClose();
+    setProductsOpen(true);
+  };
+  const onHoverOut = (e: React.PointerEvent) => {
+    if (e.pointerType !== 'mouse') return;
+    cancelClose();
+    closeTimer.current = window.setTimeout(() => setProductsOpen(false), 160);
+  };
+
+  // Mouse users already opened it by hovering — a click keeps it open rather than toggling it shut.
+  // Touch/pen and keyboard (no pointerdown) still toggle.
+  const onTriggerClick = () => {
+    const viaMouse = lastPointer.current === 'mouse';
+    lastPointer.current = '';
+    if (viaMouse) setProductsOpen(true);
+    else setProductsOpen((o) => !o);
+  };
 
   const itemLinks = () =>
     Array.from(productsRef.current?.querySelectorAll<HTMLAnchorElement>('#products-menu a') ?? []);
@@ -154,42 +174,34 @@ export default function Nav({ currentPath = '' }: Props) {
           </a>
 
           <div className="hidden items-center gap-5 md:flex lg:gap-8">
-            <div ref={productsRef} className="relative" onBlur={onProductsBlur}>
+            <div
+              ref={productsRef}
+              className="relative"
+              onBlur={onProductsBlur}
+              onPointerEnter={onHoverIn}
+              onPointerLeave={onHoverOut}
+            >
               <button
                 type="button"
                 ref={productsBtn}
                 aria-expanded={productsOpen}
                 aria-controls="products-menu"
-                onClick={() => setProductsOpen((o) => !o)}
+                onPointerDown={(e) => { lastPointer.current = e.pointerType; }}
+                onClick={onTriggerClick}
                 onKeyDown={onTriggerKey}
-                className={`${navLabel} inline-flex items-center gap-1.5 ${focusForest} ${
-                  productsActive || productsOpen ? 'text-forest' : 'text-ink'
-                }`}
+                className={`${navLabel} ${focusForest} ${productsActive || productsOpen ? 'text-forest' : 'text-ink'}`}
               >
                 Products
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                  className={`transition-transform duration-200 motion-reduce:transition-none ${productsOpen ? 'rotate-180' : ''}`}
-                >
-                  <path d="M2 3.5l3 3 3-3" />
-                </svg>
                 <span className={underline(productsActive || productsOpen)} aria-hidden="true" />
               </button>
 
+              {/* pt-3 keeps the hover area continuous across the gap under the trigger */}
               <div
                 id="products-menu"
                 onKeyDown={onMenuKey}
-                className={`${productsOpen ? '' : 'hidden'} absolute left-0 top-full mt-3 w-[22rem] p-1.5 motion-safe:animate-dropdown ${cardStatic}`}
+                className={`${productsOpen ? '' : 'hidden'} absolute left-0 top-full pt-3`}
               >
-                <ul>
+                <ul className={`w-52 p-1.5 motion-safe:animate-dropdown ${cardStatic}`}>
                   {PRODUCTS.map((p) => {
                     const current = segment === p.segment;
                     return (
@@ -197,24 +209,11 @@ export default function Nav({ currentPath = '' }: Props) {
                         <a
                           href={p.href}
                           aria-current={current ? 'page' : undefined}
-                          className={`group/item flex min-h-[44px] items-start justify-between gap-4 rounded-sm px-4 py-3 transition-colors duration-200 hover:bg-cream ${focusForest}`}
+                          className={`flex min-h-[44px] items-center rounded-sm px-4 py-2.5 font-display text-[19px] leading-tight transition-colors duration-200 hover:bg-cream hover:text-forest ${focusForest} ${
+                            current ? 'text-forest' : 'text-ink'
+                          }`}
                         >
-                          <span>
-                            <span
-                              className={`block font-display text-[19px] leading-tight transition-colors duration-200 group-hover/item:text-forest ${
-                                current ? 'text-forest' : 'text-ink'
-                              }`}
-                            >
-                              {p.label}
-                            </span>
-                            <span className="mt-1 block text-body-xs leading-snug text-ink-muted">{p.desc}</span>
-                          </span>
-                          <span
-                            aria-hidden="true"
-                            className="mt-1 text-forest opacity-0 transition-[opacity,transform] duration-200 group-hover/item:translate-x-0.5 group-hover/item:opacity-100 group-focus-visible/item:opacity-100"
-                          >
-                            →
-                          </span>
+                          {p.label}
                         </a>
                       </li>
                     );
