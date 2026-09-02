@@ -117,7 +117,7 @@ function WireField({ animate }: { animate: boolean }) {
         <rect x="300" y="240" width="80" height="80" rx="10" fill="#0A1F14" stroke="rgba(129,215,19,0.55)" strokeWidth="1.25" />
         <rect x="308" y="248" width="64" height="64" rx="7" fill="rgba(129,215,19,0.07)" />
         {/* Eightwire mark */}
-        <image href={`${base}eightwire-mark-dark.svg`} x="318" y="252" width="44" height="56" />
+        <image href={`${base}eightwire-mark-dark.svg`} x="316" y="256" width="48" height="48" />
         <text x="340" y="342" className="max-sm:hidden" textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontSize="11" letterSpacing="2" fill="#81D713">
           CONDUCTOR
         </text>
@@ -161,9 +161,9 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:pb-28 lg:pt-44">
-        <div>
-          <p className="rise mb-7 inline-flex items-center gap-2.5 whitespace-nowrap rounded-sm border border-lime/25 bg-lime/10 px-3.5 py-1.5 font-mono text-caption uppercase tracking-[0.14em] text-lime max-sm:text-2xs max-sm:tracking-[0.08em]">
-            <span className="h-1.5 w-1.5 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
+        <div className="min-w-0">
+          <p className="rise mb-7 inline-flex max-w-full items-start gap-2.5 rounded-sm border border-lime/25 bg-lime/10 px-3.5 py-1.5 font-mono text-caption uppercase leading-snug tracking-[0.14em] text-lime max-sm:text-2xs max-sm:tracking-[0.08em]">
+            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
             Conductor v8 &middot; now serving NZ Health
           </p>
 
