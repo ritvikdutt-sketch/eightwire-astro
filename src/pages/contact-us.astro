@@ -1,0 +1,76 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import { btnPrimary, arrowNudge, focusForest } from '../components/landing/ui';
+import { CONTACT_EMAIL } from '../components/landing/cta';
+
+const base = import.meta.env.BASE_URL;
+
+const linkForest = `group inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`;
+---
+<LandingLayout
+  title="Contact us — Eightwire"
+  description="Get in touch with Eightwire for demos, questions and support. Email support@eight-wire.com or visit us at Level 4, 40 Taranaki Street, Wellington."
+>
+  <PageHero
+    eyebrow="Contact us"
+    lede="We're here to help! Feel free to reach out to us with any enquiries, feedback, or collaboration opportunities. We look forward to connecting with you."
+  >
+    Talk to the <em class="text-lime">Eightwire</em> team
+  </PageHero>
+
+  <section
+    class="border-b border-cream-line py-20 sm:py-24"
+    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.06) 0%, transparent 60%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="grid border-t border-cream-line lg:grid-cols-[0.38fr_1fr] lg:gap-14">
+        <!-- Email — the one channel that reaches everyone at Eightwire -->
+        <p class="reveal self-start pt-3 font-mono text-caption uppercase tracking-[0.16em] text-forest">Email</p>
+        <div class="reveal border-b border-cream-line pb-12 pt-3 lg:pt-3">
+          <p class="max-w-xl text-lede leading-[1.7] text-ink-soft">
+            Demos, pricing, partnerships and product support all start with one address. We reply from Wellington, on New Zealand business hours.
+          </p>
+          <a href={`mailto:${CONTACT_EMAIL}`} class={`mt-8 ${btnPrimary}`}>
+            Email {CONTACT_EMAIL}
+            <span aria-hidden="true" class={arrowNudge}>→</span>
+          </a>
+        </div>
+
+        <p class="reveal reveal-d1 self-start pt-8 font-mono text-caption uppercase tracking-[0.16em] text-forest lg:pt-12">Office</p>
+        <div class="reveal reveal-d1 border-b border-cream-line pb-12 pt-3 lg:pt-12">
+          <address class="font-display text-[clamp(1.4rem,2.4vw,1.9rem)] not-italic leading-[1.3] text-ink">
+            Eightwire<br />
+            Level 4, 40 Taranaki Street<br />
+            Wellington 6011, New Zealand
+          </address>
+        </div>
+
+        <p class="reveal reveal-d2 self-start pt-8 font-mono text-caption uppercase tracking-[0.16em] text-forest lg:pt-12">Elsewhere</p>
+        <div class="reveal reveal-d2 pb-4 pt-3 lg:pt-12">
+          <ul class="flex flex-col gap-4" role="list">
+            <li>
+              <a href="https://www.linkedin.com/company/eight-wire-limited/" target="_blank" rel="noopener noreferrer" class={linkForest}>
+                Eightwire on LinkedIn
+                <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                <span class="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a href={`${base}knowledge-base/`} class={linkForest}>
+                Knowledge base — set-up guides for administrators and users
+                <span aria-hidden="true" class={arrowNudge}>→</span>
+              </a>
+            </li>
+            <li>
+              <a href={`${base}faq/`} class={linkForest}>
+                Frequently asked questions
+                <span aria-hidden="true" class={arrowNudge}>→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</LandingLayout>

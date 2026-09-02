@@ -1,150 +1,125 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { btnPrimary, arrowNudge } from '../components/landing/ui';
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import SectionHead from '../components/landing/SectionHead.tsx';
+import FeatureColumns from '../components/landing/FeatureColumns.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+import { btnPrimary, btnForest, arrowNudge, focusForest } from '../components/landing/ui';
+import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL } from '../components/landing/cta';
+
 const base = import.meta.env.BASE_URL;
+
+// Copy carried over verbatim from eightwire.io/technical-overview.
+const DESCRIPTION =
+  "Discover how Eightwire's secure data-sharing platform works. Safe, secure and easy data exchange across boundaries with end-to-end security and no-code integration.";
+
+const CAPABILITIES = [
+  { icon: 'shield', title: 'Create a safe and secure environment', body: 'Ensure you meet user access, data sovereignty, governance, privacy, and other security requirements.' },
+  { icon: 'layers', title: 'Move on-premise data to cloud-based systems', body: 'Our platform lets you easily populate cloud-based data warehouse platforms from on-premises systems, removing the need to build bespoke integrations.' },
+  { icon: 'clock', title: 'Connect legacy systems and SaaS products', body: 'Deploy data sharing features for enterprise SaaS products that rely on sensitive data from legacy systems, without the need for APIs, manual extracts or other complex technologies.' },
+  { icon: 'check', title: 'Share data across silos', body: 'Share sensitive information across separate divisions, partners and customers without the need to upgrade systems.' },
+] as const;
+
+const STEPS = [
+  { title: 'Connect', body: 'Our no-code interface connects complex, cross-enterprise data exchange processes with ease. It takes as little as 20 minutes for an organisation to connect and begin exchanging data.' },
+  { title: 'Map', body: 'Eightwire products automatically map your data sources and destination, with governance and security built into every step.' },
+  { title: 'Exchange', body: 'Eightwire products move information between systems without the need to write code.' },
+];
 ---
+<LandingLayout title="Technical overview — Eightwire" description={DESCRIPTION}>
+  <PageHero
+    eyebrow="About · Technical overview"
+    lede="We work with technology partners providing a vital component to your data-driven services, often minimising the thousands of steps required to access, validate and move data."
+  >
+    Safe, secure and easy data-sharing <em class="text-lime">across boundaries</em>
+  </PageHero>
 
-<BaseLayout title="Technical Overview | Eightwire" description="Discover how Eightwire's secure data-sharing platform works. Safe, secure and easy data exchange across boundaries with end-to-end security and no-code integration.">
-
-  <!-- ========== HERO ========== -->
-  <section class="relative py-32 lg:py-40 overflow-hidden" style="background: #0c2e24;">
-    <div class="absolute inset-0">
-      <img src={`${base}hero22.png`} alt="" class="w-full h-full object-cover" aria-hidden="true">
+  <!-- Our approach -->
+  <section
+    class="border-b border-cream-line pt-24 pb-10 sm:pt-28 sm:pb-12"
+    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.06) 0%, transparent 60%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead
+        eyebrow="Our approach"
+        lede="We automate the movement and management of sensitive data. Our products remove the majority of the work for customers to share data across boundaries while maintaining end-to-end security."
+      >
+        Where security meets <em class="text-forest">convenience</em>
+      </SectionHead>
     </div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      <div class="reveal">
-        <p class="text-lime font-mono text-caption uppercase tracking-[0.14em] mb-4">Technical Overview</p>
-        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] text-white leading-[1.1] mb-6">Safe, secure and easy data-sharing across boundaries</h1>
-        <p class="text-white/80 text-lg body-relaxed max-w-2xl mx-auto">We work with technology partners providing a vital component to your data-driven services, often minimising the thousands of steps required to access, validate and move data.</p>
+  </section>
+
+  <FeatureColumns eyebrow="Capabilities" items={CAPABILITIES}>
+    What can Eightwire <em class="text-forest">help you do?</em>
+  </FeatureColumns>
+
+  <!-- How it works — a real sequence, so the steps are numbered -->
+  <section
+    id="how-it-works"
+    class="border-b border-cream-line py-24 sm:py-28"
+    style="background: radial-gradient(ellipse 90% 60% at 10% 60%, rgba(129,215,19,0.06) 0%, transparent 55%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="How it works">
+        Three <em class="text-forest">simple steps</em>
+      </SectionHead>
+
+      <ol class="grid divide-y divide-forest/15 border-y border-forest/15 md:grid-cols-3 md:divide-x md:divide-y-0" role="list">
+        {STEPS.map((s, i) => (
+          <li class={`reveal reveal-d${i} py-8 md:px-8 md:first:pl-0 md:last:pr-0`}>
+            <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">Step {String(i + 1).padStart(2, '0')}</p>
+            <h3 class="mt-3 font-display text-2xl text-ink">{s.title}</h3>
+            <p class="mt-3 max-w-sm text-body leading-[1.7] text-ink-soft">{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Position -->
+  <section
+    class="relative overflow-hidden border-b border-lime/10 py-24 sm:py-28"
+    style="background: radial-gradient(ellipse 70% 60% at 85% 20%, rgba(129,215,19,0.08) 0%, transparent 60%), #0A1F14;"
+  >
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="Our position" dark>
+        A <em class="text-lime">trusted intermediary</em> between all parties
+      </SectionHead>
+      <div class="reveal -mt-6 grid lg:grid-cols-[0.38fr_1fr] lg:gap-14">
+        <div class="hidden lg:block" aria-hidden="true"></div>
+        <p class="max-w-2xl text-lede leading-[1.7] text-cream/70">
+          We operate in sectors that often have conflicted relationships. Eightwire remains unencumbered by technical and business relationships to function as a trusted intermediary between all parties.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ========== WHERE SECURITY MEETS CONVENIENCE ========== -->
-  <section class="py-24 lg:py-32 bg-white">
-    <div class="max-w-3xl mx-auto px-6 text-center reveal">
-      <div>
-        <p class="text-ink-muted font-mono text-caption uppercase tracking-[0.14em] mb-4">Our Approach</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-forest leading-[1.15] mb-6">Where security meets convenience</h2>
-        <p class="text-forest-light text-lg body-relaxed">We automate the movement and management of sensitive data. Our products remove the majority of the work for customers to share data across boundaries while maintaining end-to-end security.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== 4 CAPABILITY CARDS ========== -->
-  <section class="py-24 lg:py-32 relative overflow-hidden" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
-    <div class="absolute inset-0 grain" style="opacity: 0.5;"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6">
-      <div class="grid sm:grid-cols-2 gap-8">
-        <!-- Card 1 -->
-        <div class="reveal reveal-delay-1 rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <div class="w-12 h-12 rounded bg-lime/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-          </div>
-          <h3 class="font-display text-xl text-white mb-3">Create a safe and secure environment</h3>
-          <p class="text-white/80 body-relaxed">Ensure you meet user access, data sovereignty, governance, privacy, and other security requirements.</p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="reveal reveal-delay-2 rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <div class="w-12 h-12 rounded bg-lime/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>
-          </div>
-          <h3 class="font-display text-xl text-white mb-3">Move on-premise data to cloud-based systems</h3>
-          <p class="text-white/80 body-relaxed">Our platform lets you easily populate cloud-based data warehouse platforms from on-premises systems, removing the need to build bespoke integrations.</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="reveal reveal-delay-3 rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <div class="w-12 h-12 rounded bg-lime/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z"/></svg>
-          </div>
-          <h3 class="font-display text-xl text-white mb-3">Connect legacy systems and SaaS products</h3>
-          <p class="text-white/80 body-relaxed">Deploy data sharing features for enterprise SaaS products that rely on sensitive data from legacy systems, without the need for APIs, manual extracts or other complex technologies.</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="reveal reveal-delay-4 rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <div class="w-12 h-12 rounded bg-lime/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
-          </div>
-          <h3 class="font-display text-xl text-white mb-3">Share data across silos</h3>
-          <p class="text-white/80 body-relaxed">Share sensitive information across separate divisions, partners and customers without the need to upgrade systems.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== QUOTE ========== -->
-  <section class="py-24 lg:py-32 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center reveal">
-      <div>
-        <svg class="w-12 h-12 text-forest/20 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="font-display text-2xl sm:text-3xl text-forest/95 italic leading-relaxed">We operate in sectors that often have conflicted relationships. Eightwire remains unencumbered by technical and business relationships to function as a trusted intermediary between all parties.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== HOW IT WORKS ========== -->
-  <section class="py-24 lg:py-32 relative overflow-hidden" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
-    <div class="absolute inset-0 grain" style="opacity: 0.5;"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 reveal">
-        <div>
-          <p class="text-lime font-mono text-caption uppercase tracking-[0.14em] mb-4">How It Works</p>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15]">Three simple steps</h2>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-        <!-- Step 1 -->
-        <div class="reveal reveal-delay-1 relative rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <div class="hidden md:block step-connector"></div>
-          <span class="font-display text-7xl text-lime/15 absolute top-4 right-6 leading-none select-none" aria-hidden="true">1</span>
-          <div class="w-10 h-10 rounded bg-lime/10 flex items-center justify-center mb-6">
-            <span class="font-display text-xl text-lime">1</span>
-          </div>
-          <h3 class="font-display text-2xl text-white mb-4">Connect</h3>
-          <p class="text-white/80 body-relaxed">Our no-code interface connects complex, cross-enterprise data exchange processes with ease. It takes as little as 20 minutes for an organisation to connect and begin exchanging data.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="reveal reveal-delay-2 relative rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <div class="hidden md:block step-connector"></div>
-          <span class="font-display text-7xl text-lime/15 absolute top-4 right-6 leading-none select-none" aria-hidden="true">2</span>
-          <div class="w-10 h-10 rounded bg-lime/10 flex items-center justify-center mb-6">
-            <span class="font-display text-xl text-lime">2</span>
-          </div>
-          <h3 class="font-display text-2xl text-white mb-4">Map</h3>
-          <p class="text-white/80 body-relaxed">Eightwire products automatically map your data sources and destination, with governance and security built into every step.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="reveal reveal-delay-3 relative rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <span class="font-display text-7xl text-lime/15 absolute top-4 right-6 leading-none select-none" aria-hidden="true">3</span>
-          <div class="w-10 h-10 rounded bg-lime/10 flex items-center justify-center mb-6">
-            <span class="font-display text-xl text-lime">3</span>
-          </div>
-          <h3 class="font-display text-2xl text-white mb-4">Exchange</h3>
-          <p class="text-white/80 body-relaxed">Eightwire products move information between systems without the need to write code.</p>
+  <!-- Integrations -->
+  <section
+    class="border-b border-cream-line py-24 sm:py-28"
+    style="background: radial-gradient(ellipse 80% 60% at 85% 40%, rgba(214,237,216,0.5) 0%, transparent 55%), #EDEBE2;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead
+        eyebrow="Connectors"
+        lede="We work closely with a range of sectors that have significant and complex data exchange needs. Our data sharing products integrate with a majority of commonly used databases."
+      >
+        <em class="text-forest">Integrations</em> for the systems you already run
+      </SectionHead>
+      <div class="reveal -mt-6 grid lg:grid-cols-[0.38fr_1fr] lg:gap-14">
+        <div class="hidden lg:block" aria-hidden="true"></div>
+        <div class="flex flex-wrap gap-3">
+          <a href={`${base}connectors/`} class={btnForest}>
+            Browse all connectors
+            <span aria-hidden="true" class={arrowNudge}>→</span>
+          </a>
+          <a href={BOOK_DEMO_HREF} class={`group inline-flex items-center gap-2 rounded-sm border border-forest/25 px-6 py-3 text-body-sm font-medium text-forest transition-colors duration-200 hover:border-forest/60 ${focusForest}`}>
+            {BOOK_DEMO_LABEL}
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== INTEGRATIONS ========== -->
-  <section class="py-24 lg:py-32 bg-white">
-    <div class="max-w-3xl mx-auto px-6 text-center reveal">
-      <div>
-        <p class="text-ink-muted font-mono text-caption uppercase tracking-[0.14em] mb-4">Integrations</p>
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-forest leading-[1.15] mb-6">Integrations</h2>
-        <p class="text-forest-light text-lg body-relaxed mb-10">We work closely with a range of sectors that have significant and complex data exchange needs. Our data sharing products integrate with a majority of commonly used databases.</p>
-        <a href="mailto:support@eight-wire.com" class={btnPrimary}>
-          Contact us
-          <svg class={arrowNudge} width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-</BaseLayout>
+  <CTASection />
+</LandingLayout>

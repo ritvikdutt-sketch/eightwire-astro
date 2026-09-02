@@ -1,0 +1,88 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+import { arrowNudge, focusForest } from '../components/landing/ui';
+
+const base = import.meta.env.BASE_URL;
+
+// The six questions carried over verbatim from eightwire.io/support.
+const FAQS = [
+  {
+    id: 'what-is-a-data-exchange',
+    q: 'What is a data exchange?',
+    a: 'A data exchange is a platform that enables organisations to securely share and transfer data with one another.',
+  },
+  {
+    id: 'who-is-eightwire',
+    q: 'Who is Eightwire?',
+    a: "Eightwire is an innovative data sharing company built in New Zealand. Since 2015, Eightwire's focus has been to make data sharing between enterprises as simple and secure as possible.",
+  },
+  {
+    id: 'how-secure',
+    q: 'How secure is the data exchange?',
+    a: 'Eightwire and its data exchange products are committed to data security and privacy. We exceed the highest national and global security thresholds for data-sharing to ensure even the most sensitive data can be managed securely.',
+  },
+  {
+    id: 'technical-capability',
+    q: 'Is a high standard of technical capability required to use it?',
+    a: "You don't need extensive technical expertise to use Eightwire data exchange products. With a simple user interface, our products have been designed to be used by business and data analysts, rather than software engineers.",
+  },
+  {
+    id: 'where-is-my-data-stored',
+    q: 'Where is my data stored?',
+    a: "Many of Eightwire's customers have specific data sovereignty requirements. Eightwire's hybrid cloud allows customers to restrict the servers that physically handle data to certain countries or data centers.",
+  },
+  {
+    id: 'how-long-to-integrate',
+    q: 'How long does it take to integrate?',
+    a: 'Eightwire products work with all major data storage systems and APIs, so it can take from 20 minutes to 4 weeks for an organisation to connect and begin exchanging data.',
+  },
+];
+---
+<LandingLayout
+  title="FAQ — Eightwire"
+  description="Frequently asked questions about Eightwire's secure data exchange products: what a data exchange is, security, data sovereignty and integration time."
+>
+  <PageHero eyebrow="About · FAQ" lede="Six answers to the questions we hear most. Anything else, ask us directly.">
+    Frequently asked <em class="text-lime">questions</em>
+  </PageHero>
+
+  <section
+    class="border-b border-cream-line py-20 sm:py-24"
+    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.06) 0%, transparent 60%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-3xl px-5 sm:px-8">
+      <div class="reveal border-t border-cream-line">
+        {FAQS.map((item, i) => (
+          <details id={item.id} class="faq group border-b border-cream-line scroll-mt-28" name="faq">
+            <summary class={`flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-left ${focusForest} focus-visible:outline-offset-[-2px]`}>
+              <span class="flex items-baseline gap-5">
+                <span class="w-7 shrink-0 font-mono text-caption tracking-[0.1em] text-ink-muted" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <span class="font-display text-[clamp(1.25rem,2vw,1.6rem)] leading-[1.25] text-ink transition-colors duration-200 group-hover:text-forest group-open:text-forest">{item.q}</span>
+              </span>
+              <span class="faq-mark mt-1 shrink-0 font-mono text-lg leading-none text-forest transition-transform duration-300 ease-out" aria-hidden="true">+</span>
+            </summary>
+            <p class="pb-7 pl-12 text-body-lg leading-[1.75] text-ink-soft">{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <p class="reveal mt-10 text-body-sm text-ink-soft">
+        Looking for how-to guides?{' '}
+        <a href={`${base}knowledge-base/`} class={`group inline-flex items-center gap-2 font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`}>
+          Browse the knowledge base <span aria-hidden="true" class={arrowNudge}>→</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <CTASection />
+</LandingLayout>
+
+<style>
+  /* The + turns into × as the answer opens; motion respects the OS preference. */
+  details[open] .faq-mark { transform: rotate(45deg); }
+  summary::-webkit-details-marker { display: none; }
+  @media (prefers-reduced-motion: reduce) { .faq-mark { transition: none; } }
+</style>

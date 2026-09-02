@@ -1,0 +1,233 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import SectionHead from '../components/landing/SectionHead.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+import { btnPrimary, btnGhostDark, arrowNudge, focusForest } from '../components/landing/ui';
+import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL, CONTACT_HREF } from '../components/landing/cta';
+
+const base = import.meta.env.BASE_URL;
+
+// Copy carried over verbatim from eightwire.io/company (typos corrected: "it's" → "its",
+// "His dedicated" → "His dedication", "mum or busy boys" → "mum of busy boys").
+const DESCRIPTION =
+  'Eightwire exists to ease the burden of poor data sharing. Our story, mission, board and team, and open roles in Wellington.';
+
+const STORY = [
+  {
+    title: 'Turning data-sharing frustrations into solutions',
+    paras: [
+      "Wind the clock back to 2015. Eightwire's founders were half-way through a 12 month business intelligence project integrating over 40 data feeds sourced from CSV and spreadsheets.",
+      'The project was plagued with human errors and changes by external providers that made progress slow, if not impossible. They kept coming back to the same question: "What can we do to stop businesses and organisations from stumbling because of inconsistent data?"',
+    ],
+  },
+  {
+    title: 'Uncovering a persistent data dependency issue',
+    paras: [
+      "With their combined 25 years of experience, every client the founders had worked with, no matter the size, still had their business processes dependent on data they couldn't fully control. This would cause delays and increased costs.",
+      'Despite the increased availability of data, where were the IT solutions working to solve the problem?',
+    ],
+  },
+  {
+    title: 'From conversations to a simple data exchange solution',
+    paras: [
+      'Over beer and a curry, the future Eightwire founders discussed how they would fix this problem in an ideal world.',
+      'The goal was to create a system that was so easy, anybody could do it. It had to be fast, and smart enough to pick up and fix common errors. The idea was either a great one that no one had tackled, or a bad idea you would be crazy to follow.',
+    ],
+  },
+  {
+    title: 'Enabling data exchange for 100+ organisations',
+    paras: [
+      "The founders started planning and Eightwire's Conductor was born. The goal of creating simple, streamlined, secure data exchange was realised.",
+      'Eightwire now provides trustworthy data exchange for over 100+ public and private organisations, and continues to expand its data exchange offering with Surely, Medicly, and Banex enabling greater connections across enterprise boundaries.',
+    ],
+  },
+];
+
+const MISSION = [
+  'Our mission at Eightwire is to connect people and organisations through the transformative potential of data.',
+  'We automate the exchange of information between data systems to accelerate business performance while reducing costs, time and risks.',
+  "At Eightwire, we're on a mission to simplify, secure and automate data exchange, transforming the way that health and social services are delivered across New Zealand.",
+];
+
+const TEAM = [
+  {
+    name: 'Kate Hyndman',
+    role: 'Board Chair',
+    bio: "As an experienced leader with a 20-year track record in growing NZ SaaS businesses globally, Kate is passionate about technology and its role in enabling innovative and sustainable solutions. Kate's expertise spans governance, leadership, strategy, team-building, technology and cybersecurity. Currently, Kate holds multiple Non-Executive Director roles, including as Board Chair and founding team member of a globally successful FinTech.",
+    linkedin: 'https://www.linkedin.com/in/kate-hyndman/',
+  },
+  {
+    name: 'Bill English',
+    role: 'Board Director',
+    bio: "Bill English joined Eightwire's board driven by his long-standing interest in utilising data sharing to improve social and economic outcomes. Following his transition from Finance Minister and Prime Minister of New Zealand in 2017, Bill established his own business supporting companies and NGOs to leverage data for improving social impact. Bill has a keen interest in technology and its potential to positively transform lives, and also consults on Social Investment in both Australia and the US.",
+    linkedin: 'https://www.linkedin.com/in/bill-english-011b01163/',
+  },
+  {
+    name: 'Jason Gleason',
+    role: 'CEO, Founder & Director',
+    bio: 'With over 12 years of experience as a business intelligence consultant, Jason has consistently sought innovative methods to enhance business outcomes. His dedication to continually improving analytics delivery revealed a major challenge that was preventing complex organisations from achieving their goals. After years of frustration, Jason founded Eightwire to build the solution his clients required: a better way to share sensitive data across enterprise boundaries.',
+    linkedin: 'https://www.linkedin.com/in/jasongleason/',
+  },
+  {
+    name: 'Meiken Bassant',
+    role: 'Chief Operating Officer',
+    bio: 'Prior to joining us, Meiken served as the COO at Optimal Workshop for 5 years, where she played a pivotal role in driving operational excellence and strategic growth. Her leadership skills were further honed during her tenure as a member of the Senior Leadership Team (SLT) at Fire & Emergency NZ. She has also served as an independent director of Farm Focus. Outside of her professional accomplishments, Meiken is the mum of busy boys and lives in rural Wairarapa. She is passionate about supporting entrepreneurship and has a keen interest in investing in startups and is a member of Arc Angels, where she champions and supports female founders, fostering diversity and innovation in the startup ecosystem.',
+    linkedin: 'https://www.linkedin.com/in/meiken-bassant-52151027',
+  },
+  {
+    name: 'James Wood',
+    role: 'Chief Revenue Officer',
+    bio: 'James joins Eightwire as our Chief Revenue Officer, leveraging his extensive experience in senior leadership roles with a strong emphasis on strategy, growth, and revenue generation. With over ten years of expertise, including his role as CRO at Optimal Workshop, James has played a pivotal role in driving success within the high-growth SaaS sector. Beyond his professional life, he simultaneously claims the titles of "keen, but awful weekend golfer" and "best girl-dad" to his three wonderful daughters.',
+    linkedin: 'https://www.linkedin.com/in/jamesjwood1/',
+  },
+  {
+    name: 'Ritvik Dutt',
+    role: 'Product Support Specialist',
+    bio: 'Ritvik has a background in technical and product support spanning six years, in the energy and education sectors. Ritvik is also fluent in three languages—Hindi, Punjabi, and English. Beyond his professional role, Ritvik is a multi-talented individual who moonlights as a rapper and reads all things astrophysics!',
+    linkedin: 'https://www.linkedin.com/in/ritvik-dutt-6089a754/',
+  },
+];
+
+const ROLES = [
+  {
+    location: 'Wellington',
+    title: 'Business Analyst',
+    body: "In this role, you'll wear many hats, leveraging your government knowledge in an exciting startup environment. If you're a BA looking to broaden your horizons and contribute to groundbreaking data-sharing projects, we'd love to discuss how you can grow with us and make a meaningful difference.",
+  },
+  {
+    location: 'Remote',
+    title: 'Senior Engineer',
+    body: "Your role will include contributing to the current and future technical design, build, and management of the data exchange platform. You'll work closely with other teams as the business continues to grow and meet customers' daily needs.",
+  },
+];
+
+const linkForest = `group inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`;
+---
+<LandingLayout title="About Eightwire — Eightwire" description={DESCRIPTION}>
+  <PageHero
+    eyebrow="About · Eightwire"
+    lede="At Eightwire, we believe in making safe, secure, and automated data exchange simple and cost-effective."
+  >
+    We exist to ease the burden of <em class="text-lime">poor data sharing</em>
+    <div slot="actions" class="flex flex-wrap gap-3">
+      <a href={BOOK_DEMO_HREF} class={btnPrimary}>
+        {BOOK_DEMO_LABEL}
+        <span aria-hidden="true" class={arrowNudge}>→</span>
+      </a>
+      <a href={`${base}technical-overview/`} class={btnGhostDark}>Read the technical overview</a>
+    </div>
+  </PageHero>
+
+  <!-- Our story — four chapters, in the order the company tells them -->
+  <section
+    id="story"
+    class="border-b border-cream-line py-24 sm:py-28"
+    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.06) 0%, transparent 60%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="Our story">
+        It's never been easier to <em class="text-forest">securely share data</em>
+      </SectionHead>
+
+      <div class="border-t border-cream-line">
+        {STORY.map((chapter, i) => (
+          <article class={`reveal reveal-d${i % 2} grid gap-5 border-b border-cream-line py-10 lg:grid-cols-[0.38fr_1fr] lg:gap-14 lg:py-14`}>
+            <h3 class="max-w-md font-display text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] tracking-[-0.01em] text-ink [text-wrap:balance]">
+              {chapter.title}
+            </h3>
+            <div class="max-w-2xl space-y-5">
+              {chapter.paras.map((p) => <p class="text-body-lg leading-[1.75] text-ink-soft">{p}</p>)}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p class="reveal mt-10 text-body-sm text-ink-soft">
+        Want to hear the rest?{' '}
+        <a href={CONTACT_HREF} class={linkForest}>Get in touch <span aria-hidden="true" class={arrowNudge}>→</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Our mission -->
+  <section
+    id="mission"
+    class="relative overflow-hidden border-b border-lime/10 py-24 sm:py-28"
+    style="background: radial-gradient(ellipse 70% 60% at 85% 20%, rgba(129,215,19,0.08) 0%, transparent 60%), #0A1F14;"
+  >
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="Our mission" dark>
+        We believe great things happen when <em class="text-lime">data is shared</em>
+      </SectionHead>
+      <div class="reveal -mt-6 grid lg:grid-cols-[0.38fr_1fr] lg:gap-14">
+        <div class="hidden lg:block" aria-hidden="true"></div>
+        <div class="max-w-2xl">
+          {MISSION.map((p) => <p class="mt-5 text-lede leading-[1.7] text-cream/70 first:mt-0">{p}</p>)}
+          <a href={CONTACT_HREF} class={`group mt-9 ${btnGhostDark}`}>
+            Get in touch
+            <span aria-hidden="true" class={arrowNudge}>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section
+    id="team"
+    class="border-b border-cream-line py-24 sm:py-28 scroll-mt-24"
+    style="background: radial-gradient(ellipse 80% 60% at 85% 40%, rgba(214,237,216,0.5) 0%, transparent 55%), #EDEBE2;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="Who we are">
+        Board and <em class="text-forest">team</em>
+      </SectionHead>
+
+      <ul class="grid border-t border-forest/15 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-3 lg:gap-x-12" role="list">
+        {TEAM.map((person, i) => (
+          <li class={`reveal reveal-d${i % 3} border-b border-forest/15 py-8 lg:py-10`}>
+            <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">{person.role}</p>
+            <h3 class="mt-2 font-display text-2xl text-ink">{person.name}</h3>
+            <p class="mt-4 text-body leading-[1.7] text-ink-soft">{person.bio}</p>
+            <a href={person.linkedin} target="_blank" rel="noopener noreferrer" class={`mt-5 ${linkForest}`}>
+              LinkedIn
+              <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Careers -->
+  <section
+    id="careers"
+    class="border-b border-cream-line py-24 sm:py-28 scroll-mt-24"
+    style="background: radial-gradient(ellipse 90% 60% at 10% 60%, rgba(129,215,19,0.06) 0%, transparent 55%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="Careers">
+        Open <em class="text-forest">roles</em>
+      </SectionHead>
+
+      <div class="border-t border-cream-line">
+        {ROLES.map((role, i) => (
+          <article class={`reveal reveal-d${i % 2} grid gap-5 border-b border-cream-line py-10 lg:grid-cols-[0.38fr_1fr] lg:gap-14 lg:py-12`}>
+            <div>
+              <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">{role.location}</p>
+              <h3 class="mt-3 font-display text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] tracking-[-0.01em] text-ink">{role.title}</h3>
+            </div>
+            <div class="max-w-2xl">
+              <p class="text-body-lg leading-[1.75] text-ink-soft">{role.body}</p>
+              <a href={CONTACT_HREF} class={`mt-7 ${linkForest}`}>Get in touch <span aria-hidden="true" class={arrowNudge}>→</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</LandingLayout>

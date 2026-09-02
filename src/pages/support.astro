@@ -1,135 +1,79 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { btnPrimary, arrowNudge } from '../components/landing/ui';
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import SectionHead from '../components/landing/SectionHead.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+import { arrowNudge, focusForest } from '../components/landing/ui';
+import { CONTACT_EMAIL } from '../components/landing/cta';
+
 const base = import.meta.env.BASE_URL;
+
+// Copy carried over verbatim from eightwire.io/support; the six FAQs now live on /faq/.
+const COMMITMENT =
+  "At Eightwire, we are trusted by over 100 public and private organisations to handle high-stakes data, everyday. That's why we have ensured that data exchange with Eightwire products goes above and beyond the highest security thresholds, to keep your sensitive data safe.";
+
+const CHANNELS = [
+  {
+    eyebrow: 'Self-serve',
+    title: 'Knowledge base',
+    body: 'Learning resources to get you started using Eightwire, for administrators and end-users.',
+    link: 'Browse the knowledge base',
+    href: `${base}knowledge-base/`,
+  },
+  {
+    eyebrow: 'Quick answers',
+    title: 'Frequently asked questions',
+    body: 'What a data exchange is, how secure it is, where your data is stored and how long integration takes.',
+    link: 'Read the FAQ',
+    href: `${base}faq/`,
+  },
+  {
+    eyebrow: 'Talk to a person',
+    title: 'Email support',
+    body: 'Product questions, account help and anything the guides do not cover. One address reaches the whole team.',
+    link: CONTACT_EMAIL,
+    href: `mailto:${CONTACT_EMAIL}`,
+  },
+];
 ---
+<LandingLayout
+  title="Support — Eightwire"
+  description="Get support for Eightwire's secure data exchange products: knowledge base guides, frequently asked questions and email support."
+>
+  <PageHero
+    eyebrow="Resources · Support"
+    lede="Eightwire products provide a safe, secure and easy method for connecting people and organisations."
+  >
+    We help you unlock the <em class="text-lime">power of your data</em>
+  </PageHero>
 
-<BaseLayout title="Support | Eightwire" description="Get support and find answers to frequently asked questions about Eightwire's secure data exchange products.">
+  <section
+    class="border-b border-cream-line py-24 sm:py-28"
+    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.06) 0%, transparent 60%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="Data exchange you can trust" lede={COMMITMENT}>
+        We understand the importance of <em class="text-forest">automated and secure</em> data sharing
+      </SectionHead>
 
-  <!-- ========== HERO ========== -->
-  <section class="relative overflow-hidden" style="background: #0c2e24;">
-    <div class="absolute inset-0">
-      <img src={`${base}hero22.png`} alt="" class="w-full h-full object-cover" aria-hidden="true">
-    </div>
-    <div class="max-w-5xl mx-auto px-6 py-32 lg:py-40 text-center relative z-10">
-      <div class="reveal">
-        <p class="font-mono text-caption uppercase tracking-[0.14em] text-lime mb-4">Support &amp; FAQ</p>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">We help you unlock the power of your data</h1>
-        <p class="text-white/70 text-lg sm:text-xl body-relaxed max-w-2xl mx-auto">Eightwire products provide a safe, secure and easy method for connecting people and organisations.</p>
-      </div>
-    </div>
-    <!-- Decorative bottom curve -->
-    <div class="absolute bottom-0 left-0 right-0">
-      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full"><path d="M0 48h1440V24C1200 0 240 0 0 24v24z" fill="#ffffff"/></svg>
-    </div>
-  </section>
-
-
-  <!-- ========== UNDERSTANDING SECTION ========== -->
-  <section class="py-20 lg:py-28 relative overflow-hidden grain" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
-    <div class="max-w-4xl mx-auto px-6 relative z-10">
-      <div class="reveal text-center">
-        <div>
-          <p class="font-mono text-caption uppercase tracking-[0.14em] text-lime mb-3">Our commitment</p>
-          <h2 class="text-3xl sm:text-4xl text-white leading-[1.15] mb-6">We understand the importance of automated and secure data sharing</h2>
-          <p class="text-white/70 body-relaxed text-lg max-w-3xl mx-auto">At Eightwire, we are trusted by over 100 public and private organisations to handle high-stakes data, everyday. That's why we have ensured that data exchange with Eightwire products goes above and beyond the highest security thresholds, to keep your sensitive data safe.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FAQ ACCORDION ========== -->
-  <section id="faq" class="py-20 lg:py-28 bg-white scroll-mt-20">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-16 reveal">
-        <div>
-          <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted mb-3">FAQ</p>
-          <h2 class="text-3xl sm:text-4xl text-forest leading-[1.15]">Frequently asked questions</h2>
-        </div>
-      </div>
-
-      <div class="space-y-4 reveal reveal-delay-1">
-        <!-- FAQ 1 -->
-        <details class="group overflow-hidden rounded border border-cream-line bg-white shadow-card">
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 font-semibold text-forest hover:bg-forest/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-inset" style="transition: background-color 0.2s ease;">
-            <span class="text-left">What is a data exchange?</span>
-            <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-forest/50" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-          </summary>
-          <div class="faq-answer px-6 pb-5">
-            <p class="text-forest-light body-relaxed text-sm">A data exchange is a platform that enables organisations to securely share and transfer data with one another.</p>
-          </div>
-        </details>
-
-        <!-- FAQ 2 -->
-        <details class="group overflow-hidden rounded border border-cream-line bg-white shadow-card">
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 font-semibold text-forest hover:bg-forest/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-inset" style="transition: background-color 0.2s ease;">
-            <span class="text-left">Who is Eightwire?</span>
-            <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-forest/50" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-          </summary>
-          <div class="faq-answer px-6 pb-5">
-            <p class="text-forest-light body-relaxed text-sm">Eightwire is an innovative data sharing company built in New Zealand. Since 2015, Eightwire's focus has been to make data sharing between enterprises as simple and secure as possible.</p>
-          </div>
-        </details>
-
-        <!-- FAQ 3 -->
-        <details class="group overflow-hidden rounded border border-cream-line bg-white shadow-card">
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 font-semibold text-forest hover:bg-forest/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-inset" style="transition: background-color 0.2s ease;">
-            <span class="text-left">How secure is the data exchange?</span>
-            <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-forest/50" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-          </summary>
-          <div class="faq-answer px-6 pb-5">
-            <p class="text-forest-light body-relaxed text-sm">Eightwire and its data exchange products are committed to data security and privacy. We exceed the highest national and global security thresholds for data-sharing to ensure even the most sensitive data can be managed securely.</p>
-          </div>
-        </details>
-
-        <!-- FAQ 4 -->
-        <details class="group overflow-hidden rounded border border-cream-line bg-white shadow-card">
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 font-semibold text-forest hover:bg-forest/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-inset" style="transition: background-color 0.2s ease;">
-            <span class="text-left">Is a high standard of technical capability required to use it?</span>
-            <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-forest/50" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-          </summary>
-          <div class="faq-answer px-6 pb-5">
-            <p class="text-forest-light body-relaxed text-sm">You don't need extensive technical expertise to use Eightwire data exchange products. With a simple user interface, our products have been designed to be used by business and data analysts, rather than software engineers.</p>
-          </div>
-        </details>
-
-        <!-- FAQ 5 -->
-        <details class="group overflow-hidden rounded border border-cream-line bg-white shadow-card">
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 font-semibold text-forest hover:bg-forest/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-inset" style="transition: background-color 0.2s ease;">
-            <span class="text-left">Where is my data stored?</span>
-            <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-forest/50" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-          </summary>
-          <div class="faq-answer px-6 pb-5">
-            <p class="text-forest-light body-relaxed text-sm">Many of Eightwire's customers have specific data sovereignty requirements. Eightwire's hybrid cloud allows customers to restrict the servers that physically handle data to certain countries or data centers.</p>
-          </div>
-        </details>
-
-        <!-- FAQ 6 -->
-        <details class="group overflow-hidden rounded border border-cream-line bg-white shadow-card">
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 font-semibold text-forest hover:bg-forest/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-inset" style="transition: background-color 0.2s ease;">
-            <span class="text-left">How long does it take to integrate?</span>
-            <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-forest/50" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-          </summary>
-          <div class="faq-answer px-6 pb-5">
-            <p class="text-forest-light body-relaxed text-sm">Eightwire products work with all major data storage systems and APIs, so it can take from 20 minutes to 4 weeks for an organisation to connect and begin exchanging data.</p>
-          </div>
-        </details>
+      <div class="border-t border-cream-line">
+        {CHANNELS.map((c, i) => (
+          <article class={`reveal reveal-d${i % 3} grid gap-5 border-b border-cream-line py-10 lg:grid-cols-[0.38fr_1fr] lg:gap-14 lg:py-12`}>
+            <div>
+              <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">{c.eyebrow}</p>
+              <h3 class="mt-3 font-display text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] tracking-[-0.01em] text-ink">{c.title}</h3>
+            </div>
+            <div class="max-w-2xl">
+              <p class="text-body-lg leading-[1.75] text-ink-soft">{c.body}</p>
+              <a href={c.href} class={`group mt-7 inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`}>
+                {c.link} <span aria-hidden="true" class={arrowNudge}>→</span>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ========== CTA ========== -->
-  <section class="relative overflow-hidden grain" style="background: linear-gradient(135deg, #0c372c 0%, #145041 50%, #195a4a 100%);">
-    <div class="max-w-4xl mx-auto px-6 py-20 lg:py-28 text-center relative z-10">
-      <div class="reveal">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] mb-6">Want to learn more about Eightwire?</h2>
-        <p class="text-white/70 body-relaxed text-lg mb-10 max-w-xl mx-auto">Get in touch with our team and discover how Eightwire can transform your data sharing.</p>
-        <a href="mailto:support@eight-wire.com" class={btnPrimary}>
-          Contact us
-          <svg class={arrowNudge} width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M12 1.5L19 8.5M19 8.5L12 15.5M19 8.5L1 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-</BaseLayout>
+  <CTASection />
+</LandingLayout>
