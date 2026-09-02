@@ -63,7 +63,7 @@ export default function TrustPillars() {
         <p className="reveal mt-12 text-body-sm text-ink-soft">
           Questions about security?{' '}
           <a
-            href={`${base}support/#faq`}
+            href={`${base}faq/`}
             className={`group inline-flex items-center gap-2 font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`}
           >
             Read the FAQ <span aria-hidden="true" className={arrowNudge}>→</span>

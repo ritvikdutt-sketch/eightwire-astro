@@ -1,5 +1,7 @@
 import SectionHead from './SectionHead';
-import { cardStatic } from './ui';
+import { cardStatic, arrowNudge, focusForest } from './ui';
+
+const base = import.meta.env.BASE_URL;
 
 const ITEMS = [
   {
@@ -68,6 +70,17 @@ export default function Security({ showHead = true }: { showHead?: boolean }) {
               <p className="font-display text-3xl text-ink">SOC 2</p>
               <p className="mt-1 text-body-xs text-ink-muted">Type II, current</p>
             </div>
+            <a
+              href={`${base}whitepapers/eightwire-security-whitepaper.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group mt-6 inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`}
+            >
+              Read the security whitepaper
+              <span aria-hidden="true" className="font-mono text-2xs tracking-[0.08em] text-ink-muted">PDF</span>
+              <span aria-hidden="true" className={arrowNudge}>→</span>
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
           </div>
         </div>
       </div>

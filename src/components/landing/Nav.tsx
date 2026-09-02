@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL } from './cta';
 
 const base = import.meta.env.BASE_URL;
 
@@ -27,6 +28,10 @@ interface MenuItem {
   /** first path segment(s) this item is current for — inner pages roll up to their section */
   matches: string[];
   items?: MenuItem[];
+  /** opens in a new tab (PDFs, other sites) */
+  external?: boolean;
+  /** file-type marker shown after the label */
+  kind?: 'PDF';
 }
 
 const LOGO = { url: base, src: `${base}eightwire-logo.svg`, alt: 'Eightwire' };
@@ -35,18 +40,52 @@ const MENU: MenuItem[] = [
   {
     title: 'Products',
     url: `${base}conductor/`,
-    matches: ['conductor', 'platform', 'technical-overview', 'medicly'],
+    matches: ['conductor', 'platform', 'medicly'],
     items: [
-      { title: 'Conductor', url: `${base}conductor/`, matches: ['conductor', 'platform', 'technical-overview'] },
+      { title: 'Conductor', url: `${base}conductor/`, matches: ['conductor', 'platform'] },
       { title: 'Medicly', url: `${base}medicly/`, matches: ['medicly'] },
     ],
   },
   { title: 'Connectors', url: `${base}connectors/`, matches: ['connectors'] },
   { title: 'Solutions', url: `${base}solutions/`, matches: ['solutions'] },
   { title: 'Security', url: `${base}security/`, matches: ['security'] },
+  {
+    title: 'About',
+    url: `${base}company/`,
+    matches: ['company', 'technical-overview', 'faq'],
+    items: [
+      { title: 'About Eightwire', url: `${base}company/`, matches: ['company'] },
+      { title: 'Technical overview', url: `${base}technical-overview/`, matches: ['technical-overview'] },
+      { title: 'FAQ', url: `${base}faq/`, matches: ['faq'] },
+    ],
+  },
+  {
+    title: 'Resources',
+    url: `${base}knowledge-base/`,
+    matches: ['knowledge-base', 'support'],
+    items: [
+      { title: 'Knowledge base', url: `${base}knowledge-base/`, matches: ['knowledge-base'] },
+      {
+        title: 'Security whitepaper',
+        url: `${base}whitepapers/eightwire-security-whitepaper.pdf`,
+        matches: [],
+        external: true,
+        kind: 'PDF',
+      },
+      {
+        title: 'Technical whitepaper',
+        url: `${base}whitepapers/eightwire-technical-whitepaper.pdf`,
+        matches: [],
+        external: true,
+        kind: 'PDF',
+      },
+      { title: 'Support', url: `${base}support/`, matches: ['support'] },
+    ],
+  },
+  { title: 'Contact us', url: `${base}contact-us/`, matches: ['contact-us'] },
 ];
 
-const CTA = { text: 'Book a demo', url: `${base}#contact` };
+const CTA = { text: BOOK_DEMO_LABEL, url: BOOK_DEMO_HREF };
 
 interface Props {
   /** Astro.url.pathname of the rendering page — drives the active-link state */
@@ -60,6 +99,24 @@ const underline = (on: boolean) =>
   `absolute -bottom-0.5 left-0 h-px w-full origin-left bg-forest transition-transform duration-300 ease-out group-hover:scale-x-100 ${
     on ? 'scale-x-100' : 'scale-x-0'
   }`;
+
+const externalProps = (item: MenuItem) =>
+  item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+
+/** Label + optional file-type marker + new-tab note for assistive tech. */
+function Label({ item, markerClass }: { item: MenuItem; markerClass: string }) {
+  return (
+    <>
+      {item.title}
+      {item.kind && (
+        <span aria-hidden="true" className={markerClass}>
+          {item.kind}
+        </span>
+      )}
+      {item.external && <span className="sr-only"> (opens in a new tab)</span>}
+    </>
+  );
+}
 
 export default function Nav({ currentPath = '' }: Props) {
   const [scrolled, setScrolled] = useState(false);
@@ -90,7 +147,8 @@ export default function Nav({ currentPath = '' }: Props) {
             <span className={underline(active || open)} aria-hidden="true" />
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="w-52 rounded border border-cream-line bg-popover p-1.5 shadow-card">
+            {/* Panel reads as part of the bar: same cream, same mono label recipe as the triggers. */}
+            <ul className="w-max min-w-56 rounded border border-cream-line bg-cream p-1.5 shadow-card">
               {item.items.map((subItem) => {
                 const current = isCurrent(subItem.matches);
                 return (
@@ -99,9 +157,10 @@ export default function Nav({ currentPath = '' }: Props) {
                       <a
                         href={subItem.url}
                         aria-current={current ? 'page' : undefined}
-                        className="flex min-h-[44px] select-none items-center rounded-sm px-4 py-2.5 font-display text-[19px] leading-tight text-forest no-underline outline-none transition-colors duration-200 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest data-[active]:bg-cream"
+                        {...externalProps(subItem)}
+                        className="flex min-h-[44px] select-none items-center whitespace-nowrap rounded-sm px-4 py-2.5 font-mono text-label font-medium uppercase tracking-[0.12em] text-forest no-underline outline-none transition-colors duration-200 hover:bg-cream-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest data-[active]:bg-cream-dark"
                       >
-                        {subItem.title}
+                        <Label item={subItem} markerClass="ml-2.5 text-2xs tracking-[0.08em] text-ink-muted" />
                       </a>
                     </NavigationMenuLink>
                   </li>
@@ -142,12 +201,13 @@ export default function Nav({ currentPath = '' }: Props) {
                   key={subItem.title}
                   href={subItem.url}
                   aria-current={current ? 'page' : undefined}
+                  {...externalProps(subItem)}
                   className={cn(
                     'rounded-sm py-2 font-display text-2xl leading-tight text-forest outline-none transition-colors duration-200 hover:text-forest-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest',
                     current && 'underline decoration-forest/40 underline-offset-8',
                   )}
                 >
-                  {subItem.title}
+                  <Label item={subItem} markerClass="ml-2.5 align-middle font-mono text-caption tracking-[0.08em] text-ink-muted" />
                 </a>
               );
             })}
@@ -171,7 +231,8 @@ export default function Nav({ currentPath = '' }: Props) {
     );
   };
 
-  const productsActive = isCurrent(MENU[0].matches);
+  // The drawer opens the group that holds the current page, so the reader sees where they are.
+  const activeGroup = MENU.find((m) => m.items && isCurrent(m.matches))?.title;
 
   return (
     <header
@@ -183,10 +244,10 @@ export default function Nav({ currentPath = '' }: Props) {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <a href={LOGO.url} className="shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest">
-          <img src={LOGO.src} className="h-7 w-auto lg:h-8" alt={LOGO.alt} />
+          <img src={LOGO.src} className="h-7 w-auto xl:h-8" alt={LOGO.alt} />
         </a>
 
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <NavigationMenu aria-label="Primary" value={menuValue} onValueChange={setMenuValue} delayDuration={80} skipDelayDuration={400}>
             <NavigationMenuList>{MENU.map((item) => renderMenuItem(item))}</NavigationMenuList>
           </NavigationMenu>
@@ -200,7 +261,7 @@ export default function Nav({ currentPath = '' }: Props) {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="md:hidden" aria-label="Open menu">
+              <Button variant="outline" size="icon" className="lg:hidden" aria-label="Open menu">
                 <Menu className="size-5" aria-hidden="true" />
               </Button>
             </SheetTrigger>
@@ -216,7 +277,7 @@ export default function Nav({ currentPath = '' }: Props) {
                 <Accordion
                   type="single"
                   collapsible
-                  defaultValue={productsActive ? 'Products' : undefined}
+                  defaultValue={activeGroup}
                   className="flex w-full flex-col border-t border-ink/10"
                 >
                   {MENU.map((item) => renderMobileMenuItem(item))}

@@ -2,7 +2,15 @@ import { CONTACT_EMAIL } from './cta';
 
 const base = import.meta.env.BASE_URL;
 
-const COLS = [
+interface FooterLink {
+  label: string;
+  href: string;
+  /** opens in a new tab (PDFs) */
+  external?: boolean;
+  kind?: 'PDF';
+}
+
+const COLS: { heading: string; links: FooterLink[] }[] = [
   {
     heading: 'Products',
     links: [
@@ -23,8 +31,19 @@ const COLS = [
   {
     heading: 'Company',
     links: [
+      { label: 'About Eightwire', href: `${base}company/` },
+      { label: 'Technical overview', href: `${base}technical-overview/` },
+      { label: 'FAQ', href: `${base}faq/` },
+      { label: 'Contact us', href: `${base}contact-us/` },
+    ],
+  },
+  {
+    heading: 'Resources',
+    links: [
+      { label: 'Knowledge base', href: `${base}knowledge-base/` },
+      { label: 'Security whitepaper', href: `${base}whitepapers/eightwire-security-whitepaper.pdf`, external: true, kind: 'PDF' },
+      { label: 'Technical whitepaper', href: `${base}whitepapers/eightwire-technical-whitepaper.pdf`, external: true, kind: 'PDF' },
       { label: 'Support', href: `${base}support/` },
-      { label: 'Contact', href: `mailto:${CONTACT_EMAIL}` },
     ],
   },
 ];
@@ -33,8 +52,8 @@ export default function FooterSection() {
   return (
     <footer aria-label="Site footer" className="border-t border-lime/10 bg-forest-deepest pb-10 pt-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-10 border-b border-cream/10 pb-14 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div>
+        <div className="grid gap-10 border-b border-cream/10 pb-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <a href={base} aria-label="Eightwire home" className="inline-block rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime">
               <img src={`${base}eightwire-logo-white-text-transparent.svg`} alt="Eightwire" className="h-7 w-auto" />
             </a>
@@ -44,7 +63,7 @@ export default function FooterSection() {
             <p className="mt-5 inline-block rounded-full border border-lime/25 bg-lime/10 px-3 py-1 font-mono text-2xs tracking-[0.05em] text-lime">
               SOC 2
             </p>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
               <a
                 href="https://www.linkedin.com/company/eight-wire-limited/"
                 target="_blank"
@@ -56,6 +75,13 @@ export default function FooterSection() {
                   <circle cx="4" cy="4" r="2" />
                 </svg>
                 LinkedIn
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-body-xs text-cream/50 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              >
+                {CONTACT_EMAIL}
               </a>
             </div>
           </div>
@@ -67,9 +93,16 @@ export default function FooterSection() {
                 <a
                   key={l.label}
                   href={l.href}
+                  {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="block py-1.5 text-body-sm text-cream/65 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
                 >
                   {l.label}
+                  {l.kind && (
+                    <span aria-hidden="true" className="ml-2 font-mono text-2xs tracking-[0.08em] text-cream/35">
+                      {l.kind}
+                    </span>
+                  )}
+                  {l.external && <span className="sr-only"> (opens in a new tab)</span>}
                 </a>
               ))}
             </nav>
