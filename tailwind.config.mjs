@@ -1,3 +1,5 @@
+import animate from 'tailwindcss-animate';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -14,6 +16,16 @@ export default {
         'light-brown': '#e2d7cd',
         cream: { DEFAULT: '#F5F4EE', dark: '#EDEBE2', line: '#DDDAD0' },
         ink: { DEFAULT: '#0B100D', soft: '#2A322D', muted: '#69716C' },
+        // shadcn-style semantic tokens used by src/components/ui/*, mapped onto the palette above
+        background: '#F5F4EE',
+        foreground: '#0B100D',
+        muted: { DEFAULT: '#EDEBE2', foreground: '#69716C' },
+        accent: { DEFAULT: '#EDEBE2', foreground: '#145041' },
+        popover: { DEFAULT: '#FFFFFF', foreground: '#0B100D' },
+        primary: { DEFAULT: '#81D713', foreground: '#050F09' },
+        border: '#DDDAD0',
+        input: '#DDDAD0',
+        ring: '#145041',
       },
       fontFamily: {
         display: ['"DM Serif Display"', 'Georgia', 'serif'],
@@ -52,13 +64,23 @@ export default {
           from: { opacity: '0', transform: 'translateY(-6px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',
         'pulse-dot': 'pulse-dot 2s ease-in-out infinite',
         dropdown: 'dropdown 0.18s cubic-bezier(0.22, 1, 0.36, 1) both',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
-  plugins: [],
+  plugins: [animate],
 };
