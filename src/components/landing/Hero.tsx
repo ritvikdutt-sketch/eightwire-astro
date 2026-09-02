@@ -117,7 +117,7 @@ function WireField({ animate }: { animate: boolean }) {
         <rect x="300" y="240" width="80" height="80" rx="10" fill="#0A1F14" stroke="rgba(129,215,19,0.55)" strokeWidth="1.25" />
         <rect x="308" y="248" width="64" height="64" rx="7" fill="rgba(129,215,19,0.07)" />
         {/* Eightwire mark */}
-        <image href={`${base}eightwire-mark.svg`} x="316" y="251" width="48" height="58" />
+        <image href={`${base}eightwire-mark-dark.svg`} x="318" y="252" width="44" height="56" />
         <text x="340" y="342" className="max-sm:hidden" textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontSize="11" letterSpacing="2" fill="#81D713">
           CONDUCTOR
         </text>
