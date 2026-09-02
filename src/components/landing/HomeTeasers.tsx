@@ -5,16 +5,16 @@ const base = import.meta.env.BASE_URL;
 // Copy is lifted verbatim from the pages these panels point at — no new claims.
 const TEASERS = [
   {
-    id: 'solutions',
-    eyebrow: 'Solutions',
+    id: 'about',
+    eyebrow: 'About Eightwire',
     title: (
       <>
-        Built for sectors where <em className="text-forest">stakes are real</em>
+        We believe great things happen when <em className="text-forest">data is shared</em>
       </>
     ),
-    body: 'Conductor by Eightwire moves sensitive data between health, government and enterprise systems.',
-    link: 'Explore solutions',
-    href: `${base}solutions/`,
+    body: 'Our mission at Eightwire is to connect people and organisations through the transformative potential of data.',
+    link: 'About Eightwire',
+    href: `${base}company/`,
   },
   {
     id: 'security',
@@ -24,13 +24,13 @@ const TEASERS = [
         Built for the <em className="text-forest">strictest</em> procurement teams in the country
       </>
     ),
-    body: 'AES-256 at rest, TLS 1.3 in transit. Multi-layer security architecture with role-based access at every boundary.',
+    body: 'Data is encrypted from source to destination, at rest and in transit. Authentication, authorisation and encryption secure both parties’ proprietary data.',
     link: 'Explore security & trust',
     href: `${base}security/`,
   },
 ];
 
-/** Homepage overview pair — hands off to /solutions/ and /security/. */
+/** Homepage overview pair — hands off to /company/ and /security/. */
 export default function HomeTeasers() {
   return (
     <section

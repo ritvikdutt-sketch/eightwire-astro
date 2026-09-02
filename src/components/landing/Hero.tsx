@@ -1,21 +1,32 @@
 import { useEffect, useState } from 'react';
-import { btnPrimary, btnGhostDark, arrowNudge } from './ui';
+import { btnPrimary, btnGhostDark, arrowNudge, focusLime } from './ui';
+import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL } from './cta';
 
 const base = import.meta.env.BASE_URL;
 
+// Each trust line links to the page that substantiates it.
+const TRUST = [
+  { label: 'Data locked to NZ or AU', href: `${base}security/#sovereignty` },
+  { label: 'SOC 2 Type I & II', href: `${base}knowledge-base/certifications-and-accreditations/` },
+];
+
+// `short` is what the node shows on phones, where the whole diagram is ~half size — bigger type,
+// fewer letters, so the boxes never sit empty.
 const SOURCES = [
-  { id: 'src-rds', label: 'sql_server', y: 96 },
-  { id: 'src-hl7', label: 'hubspot', y: 188 },
-  { id: 'src-nhi', label: 'excel', y: 280 },
-  { id: 'src-sftp', label: 'postgresql', y: 372 },
-  { id: 'src-s3', label: 'sftp', y: 464 },
+  { id: 'src-rds', label: 'sql_server', short: 'sql', y: 96 },
+  { id: 'src-hl7', label: 'hubspot', short: 'hubspot', y: 188 },
+  { id: 'src-nhi', label: 'excel', short: 'excel', y: 280 },
+  { id: 'src-sftp', label: 'postgresql', short: 'postgres', y: 372 },
+  { id: 'src-s3', label: 'sftp', short: 'sftp', y: 464 },
 ];
 
 const DESTS = [
-  { id: 'dst-registry', label: 'snowflake', y: 152 },
-  { id: 'dst-analytics', label: 'azure', y: 280 },
-  { id: 'dst-agency', label: 's3', y: 408 },
+  { id: 'dst-registry', label: 'snowflake', short: 'snowflake', y: 152 },
+  { id: 'dst-analytics', label: 'azure', short: 'azure', y: 280 },
+  { id: 'dst-agency', label: 's3', short: 's3', y: 408 },
 ];
+
+const MONO = "'JetBrains Mono', monospace";
 
 // Wires converge into the Conductor node (left edge x=300) and fan out (right edge x=380)
 const IN_PATHS = SOURCES.map((s, i) => ({
@@ -80,11 +91,14 @@ function WireField({ animate }: { animate: boolean }) {
       {SOURCES.map((s) => (
         <g key={s.id}>
           <rect x="28" y={s.y - 16} width="104" height="32" rx="3" fill="#0A1F14" stroke="rgba(129,215,19,0.22)" />
-          <circle cx="44" cy={s.y} r="2.5" fill="#81D713">
+          <circle cx="44" cy={s.y} r="2.5" fill="#81D713" className="max-sm:hidden">
             {animate && <animate attributeName="opacity" values="1;0.25;1" dur="2.4s" repeatCount="indefinite" begin={`${s.y / 200}s`} />}
           </circle>
-          <text x="56" y={s.y + 3.5} className="max-sm:hidden" fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="rgba(245,244,238,0.72)">
+          <text x="56" y={s.y + 3.5} className="max-sm:hidden" fontFamily={MONO} fontSize="11" fill="rgba(245,244,238,0.72)">
             {s.label}
+          </text>
+          <text x="36" y={s.y + 6} className="sm:hidden" fontFamily={MONO} fontSize="18" fill="rgba(245,244,238,0.85)">
+            {s.short}
           </text>
         </g>
       ))}
@@ -93,10 +107,13 @@ function WireField({ animate }: { animate: boolean }) {
       {DESTS.map((d) => (
         <g key={d.id}>
           <rect x="548" y={d.y - 16} width="112" height="32" rx="3" fill="#0A1F14" stroke="rgba(129,215,19,0.22)" />
-          <text x="564" y={d.y + 3.5} className="max-sm:hidden" fontFamily="'JetBrains Mono', monospace" fontSize="11" fill="rgba(245,244,238,0.72)">
+          <text x="564" y={d.y + 3.5} className="max-sm:hidden" fontFamily={MONO} fontSize="11" fill="rgba(245,244,238,0.72)">
             {d.label}
           </text>
-          <circle cx="648" cy={d.y} r="2.5" fill="#81D713" />
+          <text x="554" y={d.y + 6} className="sm:hidden" fontFamily={MONO} fontSize="18" fill="rgba(245,244,238,0.85)">
+            {d.short}
+          </text>
+          <circle cx="648" cy={d.y} r="2.5" fill="#81D713" className="max-sm:hidden" />
         </g>
       ))}
 
@@ -118,7 +135,10 @@ function WireField({ animate }: { animate: boolean }) {
         <rect x="308" y="248" width="64" height="64" rx="7" fill="rgba(129,215,19,0.07)" />
         {/* Eightwire mark */}
         <image href={`${base}eightwire-mark-dark.svg`} x="316" y="256" width="48" height="48" />
-        <text x="340" y="342" className="max-sm:hidden" textAnchor="middle" fontFamily="'JetBrains Mono', monospace" fontSize="11" letterSpacing="2" fill="#81D713">
+        <text x="340" y="342" className="max-sm:hidden" textAnchor="middle" fontFamily={MONO} fontSize="11" letterSpacing="2" fill="#81D713">
+          CONDUCTOR
+        </text>
+        <text x="340" y="346" className="sm:hidden" textAnchor="middle" fontFamily={MONO} fontSize="16" letterSpacing="2" fill="#81D713">
           CONDUCTOR
         </text>
       </g>
@@ -162,11 +182,6 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:pb-28 lg:pt-44">
         <div className="min-w-0">
-          <p className="rise mb-7 inline-flex max-w-full items-start gap-2.5 rounded-sm border border-lime/25 bg-lime/10 px-3.5 py-1.5 font-mono text-caption uppercase leading-snug tracking-[0.14em] text-lime max-sm:text-2xs max-sm:tracking-[0.08em]">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
-            Conductor v8 &middot; now serving NZ Health
-          </p>
-
           <h1 className="rise rise-d1 max-w-xl font-display text-[clamp(2.6rem,6.2vw,4.6rem)] leading-[1.04] tracking-[-0.01em] text-cream [text-wrap:balance]">
             Secure data exchange for <em className="text-lime">Aotearoa&rsquo;s</em> high&#8209;stakes sectors
           </h1>
@@ -177,8 +192,8 @@ export default function Hero() {
           </p>
 
           <div className="rise rise-d3 mt-9 flex flex-wrap gap-3">
-            <a href={`${base}#contact`} className={btnPrimary}>
-              Book a demo
+            <a href={BOOK_DEMO_HREF} className={btnPrimary}>
+              {BOOK_DEMO_LABEL}
               <span aria-hidden="true" className={arrowNudge}>&rarr;</span>
             </a>
             <a href={`${base}conductor/`} className={btnGhostDark}>
@@ -187,13 +202,17 @@ export default function Hero() {
           </div>
 
           <div className="rise rise-d4 mt-10 flex flex-wrap gap-x-7 gap-y-3 text-body-xs text-cream/75">
-            {['Data stays in NZ', 'SOC 2 Type II'].map((t) => (
-              <span key={t} className="inline-flex items-center gap-2">
+            {TRUST.map((t) => (
+              <a
+                key={t.label}
+                href={t.href}
+                className={`inline-flex items-center gap-2 rounded-sm underline-offset-4 transition-colors duration-200 hover:text-lime hover:underline ${focusLime}`}
+              >
                 <svg viewBox="0 0 24 24" fill="none" stroke="#81D713" strokeWidth="2.5" className="h-3.5 w-3.5 shrink-0" aria-hidden="true">
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
-                {t}
-              </span>
+                {t.label}
+              </a>
             ))}
           </div>
         </div>

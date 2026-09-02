@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CONNECTORS, CATEGORIES, type Connector } from '../../data/connectors';
-import { CONTACT_EMAIL } from './cta';
+import { CONTACT_HREF } from './cta';
 
 const base = import.meta.env.BASE_URL;
 
@@ -294,10 +294,10 @@ export default function ConnectorSphere() {
                   <p className="font-display text-lg leading-tight text-cream">{selected.name}</p>
                   <p className="mt-0.5 font-mono text-2xs uppercase tracking-[0.1em] text-lime">{selected.kind}</p>
                   <a
-                    href={`mailto:${CONTACT_EMAIL}?subject=Conductor%20%2B%20${encodeURIComponent(selected.name)}`}
+                    href={CONTACT_HREF}
                     className="mt-1.5 inline-flex items-center gap-1.5 text-body-xs font-medium text-cream/80 transition-colors duration-200 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
                   >
-                    Set up {/^[aeiou]/i.test(selected.name) ? 'an' : 'a'} {selected.name} flow <span aria-hidden="true">→</span>
+                    Talk to us about {selected.name} <span aria-hidden="true">→</span>
                   </a>
                 </div>
                 <button

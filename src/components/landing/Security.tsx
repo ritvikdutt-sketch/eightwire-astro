@@ -2,11 +2,15 @@ import SectionHead from './SectionHead';
 import { cardStatic, arrowNudge, focusForest } from './ui';
 
 const base = import.meta.env.BASE_URL;
+const CERTS_HREF = `${base}knowledge-base/certifications-and-accreditations/`;
 
+// Every sentence here is either Eightwire's own published copy (eightwire.io, knowledge base)
+// or a statement supplied by the team (region locking, Sept 2026).
 const ITEMS = [
   {
-    title: 'End-to-end encryption',
-    body: 'AES-256 at rest, TLS 1.3 in transit. Multi-layer security architecture with role-based access at every boundary.',
+    id: 'encryption',
+    title: 'Encrypted from source to destination',
+    body: 'Data is encrypted at rest and in transit. Authentication, authorisation and encryption secure both parties’ proprietary data.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9" aria-hidden="true">
         <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
@@ -14,8 +18,9 @@ const ITEMS = [
     ),
   },
   {
-    title: 'Data sovereignty',
-    body: 'All infrastructure hosted in Aotearoa. Your data never leaves NZ. Sub-processors documented and disclosed.',
+    id: 'sovereignty',
+    title: 'Data sovereignty, your choice of region',
+    body: 'Lock processing to the region you choose — New Zealand or Australia. Eightwire’s hybrid cloud lets customers restrict the servers that physically handle data to certain countries or data centres.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9" aria-hidden="true">
         <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z" />
@@ -23,6 +28,7 @@ const ITEMS = [
     ),
   },
   {
+    id: 'compliance',
     title: 'Compliant from the start',
     body: 'We exceed the highest security thresholds for data sharing and navigate all the compliance requirements, ensuring you can exchange even the most sensitive data with confidence and ease.',
     icon: (
@@ -33,8 +39,15 @@ const ITEMS = [
   },
 ];
 
+// As published in the knowledge base article "Certifications and Accreditations".
+const CERTS = [
+  { name: 'SOC 2 Type I & II', detail: 'Service Organisation Control audit completed August 2022' },
+  { name: 'NZ Government Security Certification', detail: 'For SENSITIVE data sharing — issued 2017, renewed November 2020 and November 2022' },
+];
+
 export default function Security({ showHead = true }: { showHead?: boolean }) {
   const H: 'h2' | 'h3' = showHead ? 'h3' : 'h2';
+  const linkClass = `group inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`;
   return (
     <section
       id="security"
@@ -52,7 +65,7 @@ export default function Security({ showHead = true }: { showHead?: boolean }) {
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             {ITEMS.map((item) => (
-              <div key={item.title} className="reveal grid grid-cols-[36px_1fr] gap-5 border-b border-cream-line py-7 last:border-b-0">
+              <div key={item.id} id={item.id} className="reveal grid scroll-mt-28 grid-cols-[36px_1fr] gap-5 border-b border-cream-line py-7 last:border-b-0">
                 <span className="text-forest">{item.icon}</span>
                 <div>
                   <H className="mb-2 font-display text-[19px] text-forest-deepest">{item.title}</H>
@@ -64,23 +77,38 @@ export default function Security({ showHead = true }: { showHead?: boolean }) {
 
           <div className={`reveal reveal-d2 p-8 lg:sticky lg:top-24 ${cardStatic}`}>
             <p className="mb-6 font-mono text-caption uppercase tracking-[0.1em] text-ink-muted">
-              Certifications & alignments
+              Certifications
             </p>
-            <div className="rounded border border-cream-line bg-cream px-5 py-7 text-center">
-              <p className="font-display text-3xl text-ink">SOC 2</p>
-              <p className="mt-1 text-body-xs text-ink-muted">Type II, current</p>
+            <ul className="divide-y divide-cream-line border-y border-cream-line" role="list">
+              {CERTS.map((c) => (
+                <li key={c.name} className="py-5">
+                  <a
+                    href={CERTS_HREF}
+                    className={`inline-block rounded-sm font-display text-2xl leading-tight text-ink transition-colors duration-200 hover:text-forest ${focusForest}`}
+                  >
+                    {c.name}
+                  </a>
+                  <p className="mt-1.5 text-body-sm leading-[1.6] text-ink-soft">{c.detail}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 flex flex-col items-start gap-3">
+              <a href={CERTS_HREF} className={linkClass}>
+                View the certificates
+                <span aria-hidden="true" className={arrowNudge}>→</span>
+              </a>
+              <a
+                href={`${base}whitepapers/eightwire-security-whitepaper.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                Read the security whitepaper
+                <span aria-hidden="true" className="font-mono text-2xs tracking-[0.08em] text-ink-muted">PDF</span>
+                <span aria-hidden="true" className={arrowNudge}>→</span>
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
             </div>
-            <a
-              href={`${base}whitepapers/eightwire-security-whitepaper.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group mt-6 inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`}
-            >
-              Read the security whitepaper
-              <span aria-hidden="true" className="font-mono text-2xs tracking-[0.08em] text-ink-muted">PDF</span>
-              <span aria-hidden="true" className={arrowNudge}>→</span>
-              <span className="sr-only"> (opens in a new tab)</span>
-            </a>
           </div>
         </div>
       </div>

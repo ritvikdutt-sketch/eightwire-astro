@@ -7,5 +7,11 @@ export default defineConfig({
   base: '/eightwire-astro/',
   integrations: [tailwind(), react()],
   devToolbar: { enabled: false },
-  redirects: { '/customer-stories/': '/eightwire-astro/', '/platform/': '/eightwire-astro/conductor/' },
+  // Retired routes keep working: destinations carry the base path.
+  redirects: {
+    '/customer-stories/': '/eightwire-astro/',
+    '/platform/': '/eightwire-astro/conductor/',
+    '/solutions/': '/eightwire-astro/',
+    '/support/': '/eightwire-astro/knowledge-base/',
+  },
 });

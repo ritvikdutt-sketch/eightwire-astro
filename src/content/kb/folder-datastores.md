@@ -90,4 +90,4 @@ Like any other data sharing process - the process can be executed manually or sc
 
 This type of connector is not automatically made available to all accounts.
 
-If you wish to have it activated, please contact Eightwire support — [support@eight-wire.com](mailto:support@eightwire.com)
+If you wish to have it activated, please contact Eightwire support — [support@eight-wire.com](mailto:support@eight-wire.com)

@@ -1,72 +1,81 @@
 ---
 import LandingLayout from '../layouts/LandingLayout.astro';
-import PageHero from '../components/landing/PageHero.tsx';
-import { btnPrimary, arrowNudge, focusForest } from '../components/landing/ui';
-import { CONTACT_EMAIL } from '../components/landing/cta';
+import ContactHero from '../components/landing/ContactHero.tsx';
+import { arrowNudge, focusForest } from '../components/landing/ui';
 
 const base = import.meta.env.BASE_URL;
 
+const MAPS_HREF = 'https://www.google.com/maps/search/?api=1&query=1+Queens+Wharf+Wellington+Central+Wellington+6011';
+const SIGN_IN_HREF = 'https://conductor.eight-wire.com';
+
 const linkForest = `group inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`;
+const up = 'transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5';
 ---
 <LandingLayout
   title="Contact us — Eightwire"
-  description="Get in touch with Eightwire for demos, questions and support. Email support@eight-wire.com or visit us at Level 4, 40 Taranaki Street, Wellington."
+  description="Talk to the Eightwire team. Email support@eight-wire.com for demos, product support, partnerships and pricing. Office: 1 Queens Wharf, Wellington Central, Wellington 6011."
 >
-  <PageHero
-    eyebrow="Contact us"
-    lede="We're here to help! Feel free to reach out to us with any enquiries, feedback, or collaboration opportunities. We look forward to connecting with you."
-  >
-    Talk to the <em class="text-lime">Eightwire</em> team
-  </PageHero>
+  <ContactHero client:load />
 
+  <!-- The ledger: where we are, where customers go, what to read first -->
   <section
     class="border-b border-cream-line py-20 sm:py-24"
-    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.06) 0%, transparent 60%), #F5F4EE;"
+    style="background: radial-gradient(ellipse 80% 60% at 85% 40%, rgba(214,237,216,0.5) 0%, transparent 55%), #EDEBE2;"
   >
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
-      <div class="grid border-t border-cream-line lg:grid-cols-[0.38fr_1fr] lg:gap-14">
-        <!-- Email — the one channel that reaches everyone at Eightwire -->
-        <p class="reveal self-start pt-3 font-mono text-caption uppercase tracking-[0.16em] text-forest">Email</p>
-        <div class="reveal border-b border-cream-line pb-12 pt-3 lg:pt-3">
-          <p class="max-w-xl text-lede leading-[1.7] text-ink-soft">
-            Demos, pricing, partnerships and product support all start with one address. We reply from Wellington, on New Zealand business hours.
-          </p>
-          <a href={`mailto:${CONTACT_EMAIL}`} class={`mt-8 ${btnPrimary}`}>
-            Email {CONTACT_EMAIL}
-            <span aria-hidden="true" class={arrowNudge}>→</span>
+      <div class="grid divide-y divide-forest/15 border-y border-forest/15 md:grid-cols-3 md:divide-x md:divide-y-0">
+        <div class="reveal py-8 md:px-8 md:first:pl-0">
+          <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">Office</p>
+          <address class="mt-4 font-display text-[clamp(1.4rem,2.2vw,1.75rem)] not-italic leading-[1.25] text-ink">
+            Eightwire<br />
+            1 Queens Wharf<br />
+            Wellington Central<br />
+            Wellington 6011, New Zealand
+          </address>
+          <a href={MAPS_HREF} target="_blank" rel="noopener noreferrer" class={`mt-6 ${linkForest}`}>
+            Open in Google Maps
+            <span aria-hidden="true" class={up}>↗</span>
+            <span class="sr-only"> (opens in a new tab)</span>
           </a>
         </div>
 
-        <p class="reveal reveal-d1 self-start pt-8 font-mono text-caption uppercase tracking-[0.16em] text-forest lg:pt-12">Office</p>
-        <div class="reveal reveal-d1 border-b border-cream-line pb-12 pt-3 lg:pt-12">
-          <address class="font-display text-[clamp(1.4rem,2.4vw,1.9rem)] not-italic leading-[1.3] text-ink">
-            Eightwire<br />
-            Level 4, 40 Taranaki Street<br />
-            Wellington 6011, New Zealand
-          </address>
+        <div class="reveal reveal-d1 py-8 md:px-8">
+          <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">Already a customer?</p>
+          <p class="mt-4 max-w-xs text-body-lg leading-[1.7] text-ink-soft">
+            Conductor accounts sign in on the platform itself. Set-up guides for administrators and users live in the knowledge base.
+          </p>
+          <div class="mt-6 flex flex-col items-start gap-3">
+            <a href={SIGN_IN_HREF} class={linkForest}>
+              Sign in to Conductor
+              <span aria-hidden="true" class={up}>↗</span>
+            </a>
+            <a href={`${base}knowledge-base/`} class={linkForest}>
+              Knowledge base
+              <span aria-hidden="true" class={arrowNudge}>→</span>
+            </a>
+          </div>
+          <p class="mt-8 font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">Elsewhere</p>
+          <a href="https://www.linkedin.com/company/eight-wire-limited/" target="_blank" rel="noopener noreferrer" class={`mt-4 ${linkForest}`}>
+            Eightwire on LinkedIn
+            <span aria-hidden="true" class={up}>↗</span>
+            <span class="sr-only"> (opens in a new tab)</span>
+          </a>
         </div>
 
-        <p class="reveal reveal-d2 self-start pt-8 font-mono text-caption uppercase tracking-[0.16em] text-forest lg:pt-12">Elsewhere</p>
-        <div class="reveal reveal-d2 pb-4 pt-3 lg:pt-12">
-          <ul class="flex flex-col gap-4" role="list">
+        <div class="reveal reveal-d2 py-8 md:px-8 md:last:pr-0">
+          <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">Read first</p>
+          <p class="mt-4 max-w-xs text-body-lg leading-[1.7] text-ink-soft">
+            The short answers, and how Conductor works under the hood.
+          </p>
+          <ul class="mt-6 flex flex-col items-start gap-3" role="list">
             <li>
-              <a href="https://www.linkedin.com/company/eight-wire-limited/" target="_blank" rel="noopener noreferrer" class={linkForest}>
-                Eightwire on LinkedIn
-                <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
-                <span class="sr-only"> (opens in a new tab)</span>
-              </a>
+              <a href={`${base}faq/`} class={linkForest}>Frequently asked questions <span aria-hidden="true" class={arrowNudge}>→</span></a>
             </li>
             <li>
-              <a href={`${base}knowledge-base/`} class={linkForest}>
-                Knowledge base — set-up guides for administrators and users
-                <span aria-hidden="true" class={arrowNudge}>→</span>
-              </a>
+              <a href={`${base}technical-overview/`} class={linkForest}>Technical overview <span aria-hidden="true" class={arrowNudge}>→</span></a>
             </li>
             <li>
-              <a href={`${base}faq/`} class={linkForest}>
-                Frequently asked questions
-                <span aria-hidden="true" class={arrowNudge}>→</span>
-              </a>
+              <a href={`${base}security/`} class={linkForest}>Security &amp; trust <span aria-hidden="true" class={arrowNudge}>→</span></a>
             </li>
           </ul>
         </div>
@@ -74,3 +83,15 @@ const linkForest = `group inline-flex items-center gap-2 text-body-sm font-mediu
     </div>
   </section>
 </LandingLayout>
+
+<style is:global>
+  /* the wire draws in from "you" — transform only, once, on load */
+  @keyframes contact-wire-in {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  .contact-wire { animation: contact-wire-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  @media (prefers-reduced-motion: reduce) {
+    .contact-wire { animation: none; }
+  }
+</style>

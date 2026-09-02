@@ -1,6 +1,6 @@
 import { CONNECTORS, CATEGORIES } from '../../data/connectors';
 import SectionHead from './SectionHead';
-import { CONTACT_EMAIL } from './cta';
+import { CONTACT_HREF } from './cta';
 import { btnForest, card, arrowNudge } from './ui';
 
 const base = import.meta.env.BASE_URL;
@@ -61,7 +61,7 @@ export default function ConnectorGrid() {
               SQL or files. Tell us what you need to move — we&rsquo;ll show you the fastest path.
             </p>
           </div>
-          <a href={`mailto:${CONTACT_EMAIL}`} className={`shrink-0 ${btnForest}`}>
+          <a href={CONTACT_HREF} className={`group shrink-0 ${btnForest}`}>
             Talk to us
             <span aria-hidden="true" className={arrowNudge}>→</span>
           </a>

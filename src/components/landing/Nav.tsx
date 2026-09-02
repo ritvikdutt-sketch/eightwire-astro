@@ -47,24 +47,13 @@ const MENU: MenuItem[] = [
     ],
   },
   { title: 'Connectors', url: `${base}connectors/`, matches: ['connectors'] },
-  { title: 'Solutions', url: `${base}solutions/`, matches: ['solutions'] },
-  { title: 'Security', url: `${base}security/`, matches: ['security'] },
-  {
-    title: 'About',
-    url: `${base}company/`,
-    matches: ['company', 'technical-overview', 'faq'],
-    items: [
-      { title: 'About Eightwire', url: `${base}company/`, matches: ['company'] },
-      { title: 'Technical overview', url: `${base}technical-overview/`, matches: ['technical-overview'] },
-      { title: 'FAQ', url: `${base}faq/`, matches: ['faq'] },
-    ],
-  },
   {
     title: 'Resources',
     url: `${base}knowledge-base/`,
-    matches: ['knowledge-base', 'support'],
+    matches: ['knowledge-base', 'security'],
     items: [
       { title: 'Knowledge base', url: `${base}knowledge-base/`, matches: ['knowledge-base'] },
+      { title: 'Security & trust', url: `${base}security/`, matches: ['security'] },
       {
         title: 'Security whitepaper',
         url: `${base}whitepapers/eightwire-security-whitepaper.pdf`,
@@ -79,13 +68,24 @@ const MENU: MenuItem[] = [
         external: true,
         kind: 'PDF',
       },
-      { title: 'Support', url: `${base}support/`, matches: ['support'] },
+    ],
+  },
+  {
+    title: 'About',
+    url: `${base}company/`,
+    matches: ['company', 'technical-overview', 'faq'],
+    items: [
+      { title: 'About Eightwire', url: `${base}company/`, matches: ['company'] },
+      { title: 'Technical overview', url: `${base}technical-overview/`, matches: ['technical-overview'] },
+      { title: 'FAQ', url: `${base}faq/`, matches: ['faq'] },
     ],
   },
   { title: 'Contact us', url: `${base}contact-us/`, matches: ['contact-us'] },
 ];
 
 const CTA = { text: BOOK_DEMO_LABEL, url: BOOK_DEMO_HREF };
+/** Conductor's real login — the old site's "Sign in" destination. */
+const SIGN_IN = { text: 'Sign in', url: 'https://conductor.eight-wire.com' };
 
 interface Props {
   /** Astro.url.pathname of the rendering page — drives the active-link state */
@@ -253,7 +253,13 @@ export default function Nav({ currentPath = '' }: Props) {
           </NavigationMenu>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 lg:gap-5">
+          <a
+            href={SIGN_IN.url}
+            className="hidden items-center whitespace-nowrap py-1 font-mono text-label font-medium uppercase tracking-[0.12em] text-ink transition-colors duration-200 hover:text-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest lg:inline-flex"
+          >
+            {SIGN_IN.text}
+          </a>
           <a href={CTA.url} className={cn(buttonVariants({ size: 'sm' }), 'group hidden sm:inline-flex')}>
             {CTA.text}
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
@@ -282,10 +288,18 @@ export default function Nav({ currentPath = '' }: Props) {
                 >
                   {MENU.map((item) => renderMobileMenuItem(item))}
                 </Accordion>
-                <a href={CTA.url} className={cn(buttonVariants(), 'group self-start')}>
-                  {CTA.text}
-                  <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                </a>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+                  <a href={CTA.url} className={cn(buttonVariants(), 'group')}>
+                    {CTA.text}
+                    <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                  </a>
+                  <a
+                    href={SIGN_IN.url}
+                    className="font-mono text-label font-medium uppercase tracking-[0.12em] text-ink transition-colors duration-200 hover:text-forest focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
+                  >
+                    {SIGN_IN.text} to Conductor
+                  </a>
+                </div>
               </nav>
               <p className="mt-auto font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">
                 Wellington · Aotearoa NZ

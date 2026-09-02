@@ -6,7 +6,8 @@ import FeatureColumns from '../components/landing/FeatureColumns.tsx';
 import HandoffBand from '../components/landing/HandoffBand.tsx';
 import CTASection from '../components/landing/CTASection.tsx';
 import { PLATFORM_LEDE } from '../components/landing/Platform.tsx';
-import { btnPrimary, btnGhostDark } from '../components/landing/ui';
+import { btnPrimary, arrowNudge } from '../components/landing/ui';
+import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL } from '../components/landing/cta';
 
 const base = import.meta.env.BASE_URL;
 
@@ -31,14 +32,10 @@ const FEATURES = [
   <PageHero eyebrow="Products · Medicly" lede={LEDE}>
     An all-round solution for <em class="text-lime">sensitive health data</em> exchange
     <div slot="actions" class="flex flex-wrap gap-3">
-      <a href="https://www.medicly.co.nz/" target="_blank" rel="noopener noreferrer" class={btnPrimary}>
-        Visit medicly.co.nz
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-          <path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="sr-only">(opens in a new tab)</span>
+      <a href={BOOK_DEMO_HREF} class={btnPrimary}>
+        {BOOK_DEMO_LABEL}
+        <span aria-hidden="true" class={arrowNudge}>→</span>
       </a>
-      <a href="#contact" class={btnGhostDark}>Talk to us</a>
     </div>
   </PageHero>
 

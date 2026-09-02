@@ -36,7 +36,7 @@ Automated emails will give a summary description of a failure or that warnings h
 
 You can use the relevant Batch and ProcessID shown in the email to check the detail of the Project Activity by clicking on the link in the email.
 
-Let us know at Support@Eight-wire.com if you need help interpreting the warning or error message.
+Let us know at support@eight-wire.com if you need help interpreting the warning or error message.
 
 ![Screenshot](./images/account-alerts-6.webp)
 

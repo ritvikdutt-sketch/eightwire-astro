@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
+import { CONNECTORS } from '../../data/connectors';
 
+// Figures Eightwire already publishes (eightwire.io) or that come straight from this site's data.
 const STATS = [
-  { value: 20, suffix: '+', display: '20+', label: 'organisations connected' },
-  { display: 'PMS', label: 'practice management systems integrated' },
-  { value: 99.9, suffix: '%', decimals: 1, display: '99.9%', label: 'platform uptime, 12-month rolling' },
-  { display: '12+ yrs', label: 'moving NZ’s most sensitive data' },
+  { value: 100, suffix: '+', display: '100+', label: 'public and private organisations exchange data with Eightwire' },
+  { display: 'Since 2015', label: 'making data sharing between enterprises simple and secure' },
+  { value: CONNECTORS.length, display: String(CONNECTORS.length), label: 'connectors across databases, files, transfer and SaaS' },
+  { value: 20, suffix: ' min', display: '20 min', label: 'as little as it takes to connect and begin exchanging data' },
 ];
 
 const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));

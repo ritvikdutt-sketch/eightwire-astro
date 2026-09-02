@@ -4,37 +4,27 @@ import { btnPrimary, btnGhostDark, arrowNudge } from './ui';
 
 const base = import.meta.env.BASE_URL;
 
+// Intro supplied by Eightwire (Sept 2026); Overview and Why Conductor carried over verbatim
+// from eightwire.io/conductor ("an data expert" → "a data expert").
 export const PLATFORM_LEDE =
-  'A no-code data exchange platform built specifically for the systems, formats and regulations of New Zealand health, government and social sector data.';
+  'A data management tool unlike any other. Conductor makes data integration simple, automating the majority of the effort, massively reducing costs and fixing data errors as it goes. It integrates with all major data storage platforms, and data is encrypted from source to destination.';
 
-const PILLARS = [
-  {
-    num: 'PILLAR 01',
-    title: 'No-code data exchange',
-    body: 'Visual flow builder. Connect systems, map fields, schedule transfers without writing a line of code. Engineers stay focused on harder problems.',
-  },
-  {
-    num: 'PILLAR 02',
-    title: 'NZ-native integrations',
-    body: 'Pre-built connectors for Indici, Medicly, NHI, HL7, SFTP, S3, REST. We speak the formats your sector already uses.',
-    code: true,
-  },
-  {
-    num: 'PILLAR 03',
-    title: 'Governance by default',
-    body: 'Every transfer logged. Every transformation auditable. Built for OIA, Privacy Act 2020 and NZISM-aligned operations from day one.',
-  },
-  {
-    num: 'PILLAR 04',
-    title: 'Hosted in Aotearoa',
-    body: 'Infrastructure in NZ. Data stays in NZ. Your sovereignty story is one sentence long, not a 40-page architecture diagram.',
-  },
+const OVERVIEW_TITLE = 'Traditionally, exchanging data has been a headache';
+const OVERVIEW = [
+  'It generally requires a data expert to spend some serious time designing how the process will work, and the costs can be eye watering. Conductor simplifies the process and speeds up the integration, so your team can focus on putting the data to work.',
+  'Conductor automatically maps between disparate systems without requiring any manual intervention. When Conductor moves data between systems, it does a full rebuild of the table and fixes the common mistakes that will cause most data loads to fail.',
+  'Data quality and business rules can be added by business users, reducing the need for long IT projects merging and migrating data. Conductor makes data management easy.',
 ];
 
-const CONNECTORS = ['Indici', 'Medicly', 'NHI', 'HL7', 'SFTP', 'S3', 'REST'];
+const WHY = [
+  { title: 'Automated', body: 'Conductor automates complex, cross-enterprise data exchange processes.' },
+  { title: 'Secure', body: 'Authentication, authorisation, and encryption secure both parties’ proprietary data.' },
+  { title: 'Transparent', body: 'You always know what’s happening and can highlight and avoid trouble before it hits.' },
+  { title: 'Compliant', body: 'We meet user access, data sovereignty, governance, privacy, and security requirements out of the box.' },
+];
 
 interface Props {
-  /** `teaser` = homepage overview band linking to /conductor/; `full` = pillar cards on the page */
+  /** `teaser` = homepage overview band linking to /conductor/; `full` = overview + why on the page */
   variant?: 'full' | 'teaser';
   /** hide heading + lede when a PageHero already carries them */
   showHead?: boolean;
@@ -44,6 +34,9 @@ export default function Platform({ variant = 'full', showHead = true }: Props) {
   const teaser = variant === 'teaser';
   // keep the outline h1 > h2 when a PageHero owns the h1 and the section head is hidden
   const H: 'h2' | 'h3' = showHead ? 'h3' : 'h2';
+  const Sub: 'h3' | 'h4' = showHead ? 'h4' : 'h3';
+  const eyebrowClass = 'font-mono text-caption uppercase tracking-[0.14em] text-lime/80';
+
   return (
     <section
       id="platform"
@@ -59,46 +52,46 @@ export default function Platform({ variant = 'full', showHead = true }: Props) {
             <SectionHead eyebrow="The platform" dark>
               Meet <em className="text-lime">Conductor</em>
             </SectionHead>
-            <p className="reveal -mt-6 mb-14 max-w-xl text-lede leading-[1.7] text-cream/65">{PLATFORM_LEDE}</p>
+            <p className="reveal -mt-6 mb-14 max-w-2xl text-lede leading-[1.7] text-cream/65">{PLATFORM_LEDE}</p>
           </>
         )}
 
-        {teaser ? (
-          <ul className="reveal grid gap-x-12 gap-y-6 border-t border-cream/10 pt-8 sm:grid-cols-2">
-            {PILLARS.map((p) => (
-              <li key={p.num} className="flex items-baseline gap-4">
-                <span className="shrink-0 font-mono text-caption tracking-[0.1em] text-lime">{p.num}</span>
-                <span className="font-display text-h-card leading-snug text-cream">{p.title}</span>
+        {!teaser && (
+          <article className="reveal grid gap-5 border-t border-cream/10 py-12 lg:grid-cols-[0.38fr_1fr] lg:gap-14 lg:py-16">
+            <div>
+              <p className={eyebrowClass}>Overview</p>
+              <H className="mt-3 max-w-md font-display text-[clamp(1.6rem,2.6vw,2.2rem)] leading-[1.12] tracking-[-0.01em] text-cream [text-wrap:balance]">
+                {OVERVIEW_TITLE}
+              </H>
+            </div>
+            <div className="max-w-2xl space-y-5">
+              {OVERVIEW.map((p) => (
+                <p key={p.slice(0, 24)} className="text-body-lg leading-[1.75] text-cream/65">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </article>
+        )}
+
+        <div className={`reveal ${teaser ? '' : 'border-t border-cream/10 pt-12 lg:pt-16'}`}>
+          <p className={`${eyebrowClass} mb-6`}>Why Conductor</p>
+          <ul className="grid border-b border-cream/10 sm:grid-cols-2 lg:grid-cols-4" role="list">
+            {WHY.map((w, i) => (
+              <li
+                key={w.title}
+                className={`reveal reveal-d${i % 4} border-t border-cream/10 py-7 sm:odd:pr-8 sm:even:border-l sm:even:pl-8 lg:border-l lg:px-8 lg:first:border-l-0 lg:first:pl-0 lg:last:pr-0`}
+              >
+                {teaser ? (
+                  <H className="font-display text-2xl text-cream">{w.title}</H>
+                ) : (
+                  <Sub className="font-display text-2xl text-cream">{w.title}</Sub>
+                )}
+                <p className="mt-3 max-w-xs text-body leading-[1.7] text-cream/60">{w.body}</p>
               </li>
             ))}
           </ul>
-        ) : (
-          <div className="grid gap-4 md:grid-cols-2">
-            {PILLARS.map((p, i) => (
-              <article
-                key={p.num}
-                className={`reveal reveal-d${i % 2} group relative rounded border border-cream/10 bg-cream/[0.04] p-8 transition-[transform,border-color,background-color] duration-300 hover:-translate-y-0.5 hover:border-lime/40 hover:bg-cream/[0.06]`}
-              >
-                <p className="mb-6 font-mono text-caption tracking-[0.1em] text-lime">{p.num}</p>
-                <H className="mb-3 font-display text-h-card leading-snug text-cream">{p.title}</H>
-                {p.code ? (
-                  <p className="text-body leading-[1.8] text-cream/60">
-                    Pre-built connectors for{' '}
-                    {CONNECTORS.map((c, j) => (
-                      <span key={c}>
-                        <code className="rounded-sm bg-lime/10 px-1.5 py-0.5 font-mono text-label text-lime">{c}</code>
-                        {j < CONNECTORS.length - 1 ? ', ' : '. '}
-                      </span>
-                    ))}
-                    We speak the formats your sector already uses.
-                  </p>
-                ) : (
-                  <p className="text-body leading-[1.7] text-cream/60">{p.body}</p>
-                )}
-              </article>
-            ))}
-          </div>
-        )}
+        </div>
 
         <div className="reveal mt-14 flex flex-wrap gap-3">
           {teaser ? (

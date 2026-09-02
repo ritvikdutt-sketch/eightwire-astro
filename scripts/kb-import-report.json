@@ -1,0 +1,36 @@
+{
+  "articles": 81,
+  "images": 291,
+  "imageBytes": 13642283,
+  "embeds": 16,
+  "tablesKeptRaw": 0,
+  "unresolvedLinks": [],
+  "notInIndex": [],
+  "warnings": [
+    "agent-faqs-and-connectivity-troubleshooting: unlinked bogus href http://com%7Cco.nz/"
+  ],
+  "categories": {
+    "Set up a Datastore": 5,
+    "Tile for Data Providers": 4,
+    "Account and Project Alerts": 2,
+    "Reporting and Audit": 3,
+    "Set up your Account": 5,
+    "Install an Agent": 7,
+    "Architecture": 3,
+    "Process Expressions Syntax": 10,
+    "Create a Project": 2,
+    "Security Certifications and Whitepaper": 3,
+    "Articles": 2,
+    "Using APIs": 1,
+    "Connectors": 3,
+    "Copy Account or Project": 1,
+    "Associated Accounts": 1,
+    "Create a Process": 9,
+    "Data Preparation hints": 2,
+    "Datastore Features": 9,
+    "Build Tile Datashares": 6,
+    "Help": 1,
+    "Datastore Tags": 1,
+    "Videos": 1
+  }
+}

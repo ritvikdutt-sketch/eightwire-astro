@@ -63,6 +63,12 @@ async function mapLimit(items, limit, fn) {
 
 const collapse = (s) => s.replace(/[‍ ]/g, ' ').replace(/\s+/g, ' ').trim();
 const yaml = (v) => JSON.stringify(v); // JSON strings are valid YAML double-quoted scalars
+// One public address everywhere on the new site (support@ replaces the old heya@ inbox and
+// the old-domain / odd-case variants that appear in article bodies).
+const oneAddress = (s) =>
+  s
+    .replace(/heya@eight-?wire\.(?:com|io)/gi, 'support@eight-wire.com')
+    .replace(/support@eight-?wire\.(?:com|io)/gi, 'support@eight-wire.com');
 
 // ---------------------------------------------------------------- 1. slugs
 const sitemap = await fetchText(`${ORIGIN}/sitemap.xml`);
@@ -134,6 +140,7 @@ async function downloadImage(url, slug, n) {
 
 function rewriteHref(href, slug) {
   if (!href) return null;
+  if (href.startsWith('../') || href.startsWith('./') || href.startsWith('#')) return href; // already ours
   let url;
   try {
     url = new URL(href, ORIGIN);
@@ -163,7 +170,7 @@ async function convertArticle(slug) {
 
   const category = collapse($('.section-banner .nested-tags').first().text()) || 'Articles';
   const title = collapse($('h1.wikie-header').first().text());
-  const description = collapse($('p.blog-desc').first().text());
+  const description = oneAddress(collapse($('p.blog-desc').first().text()));
   const body = $('.rich-text-block.w-richtext').first();
   if (!title || !body.length) throw new Error(`Unexpected article structure — ${url}`);
 
@@ -251,8 +258,6 @@ async function convertArticle(slug) {
     $a.removeAttr('target rel');
   });
 
-  // One public address everywhere on the new site (support@ replaces the old heya@ inbox).
-  const oneAddress = (s) => s.replace(/heya@eight-wire\.com/gi, 'support@eight-wire.com').replace(/support@eightwire\.io/gi, 'support@eight-wire.com');
   let markdown = oneAddress(turndown.turndown(body.html() || '').replace(/\n{3,}/g, '\n\n').trim());
 
   // The two whitepaper articles say "see attached" — make sure each actually links our copy.
@@ -306,5 +311,5 @@ console.log(`categories (${categories.size}):`, Object.fromEntries([...categorie
 if (report.notInIndex.length) console.log('not in curated index (appended):', report.notInIndex);
 if (report.unresolvedLinks.length) console.log('unresolved internal links:', report.unresolvedLinks);
 if (report.warnings.length) console.log('warnings:', report.warnings);
-await writeFile(path.join(OUT, '..', 'kb-import-report.json'), JSON.stringify({ ...report, categories: Object.fromEntries(categories) }, null, 2));
+await writeFile(path.join('scripts', 'kb-import-report.json'), JSON.stringify({ ...report, categories: Object.fromEntries(categories) }, null, 2));
 if (report.warnings.length) process.exitCode = 1;
