@@ -14,7 +14,7 @@ const PROBLEMS = [
   {
     num: '/ 03',
     title: 'Sovereignty and compliance overhead',
-    body: 'Privacy Act 2020, NZISM, sector frameworks. Most platforms aren’t built for Aotearoa’s rules. We are.',
+    body: 'User access, data sovereignty, governance and privacy all have to be satisfied before a single row moves — and proven again every time the arrangement changes.',
   },
 ];
 

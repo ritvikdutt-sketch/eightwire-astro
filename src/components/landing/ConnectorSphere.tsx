@@ -175,7 +175,7 @@ export default function ConnectorSphere() {
             Step inside <em className="text-lime">the exchange</em>
           </h1>
           <p className="rise rise-d2 mx-auto mt-4 max-w-md text-body-lg leading-[1.7] text-cream/65">
-            Every system Conductor speaks to — databases, files, SaaS and transfer protocols.
+            Databases, files, SaaS and transfer protocols, connected without writing code.
           </p>
 
           {/* category filters */}

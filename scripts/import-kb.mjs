@@ -110,6 +110,10 @@ const turndown = new TurndownService({
 turndown.use(gfm);
 // Video embeds stay as HTML (Astro renders raw HTML in Markdown).
 turndown.keep((node) => node.nodeName === 'DIV' && node.getAttribute('class') === 'kb-embed');
+// Literal angle brackets in prose ("Data Source=<data source>") would otherwise be parsed as
+// HTML tags by the Markdown renderer and vanish — backslash-escape them like other punctuation.
+const escapeText = turndown.escape.bind(turndown);
+turndown.escape = (s) => escapeText(s).replace(/</g, '\\<');
 
 const imageFiles = new Map(); // remote URL → local file name (shared across articles)
 
@@ -151,6 +155,12 @@ function rewriteHref(href, slug) {
     const file = url.pathname.split('/').pop();
     if (PDFS.has(file)) return `../../whitepapers/${PDFS.get(file)}`;
     return href;
+  }
+  if (url.hostname === 'wiki.eight-wire.com') {
+    // Legacy wiki host: article slugs map 1:1 to the knowledge base; hashed ids are dead links.
+    const slugPart = url.pathname.split('/').filter(Boolean)[0];
+    if (slugPart && slugSet.has(slugPart)) return `../${slugPart}/${url.hash}`;
+    return null; // caller unlinks
   }
   if (url.hostname !== 'www.eightwire.io' && url.hostname !== 'eightwire.io') return href;
   const parts = url.pathname.split('/').filter(Boolean);
@@ -254,11 +264,24 @@ async function convertArticle(slug) {
       return;
     }
     const next = rewriteHref($a.attr('href'), slug);
+    if (next === null && href) {
+      report.warnings.push(`${slug}: unlinked dead legacy href ${href}`);
+      $a.replaceWith($a.text());
+      return;
+    }
     if (next) $a.attr('href', next);
     $a.removeAttr('target rel');
   });
 
-  let markdown = oneAddress(turndown.turndown(body.html() || '').replace(/\n{3,}/g, '\n\n').trim());
+  let markdown = oneAddress(
+    turndown
+      .turndown(body.html() || '')
+      // Webflow splits one bold run into adjacent <strong> fragments; "**a****b**" cannot pair in
+      // CommonMark, so join the fragments back into a single run.
+      .replace(/(\S)\*\*\*\*(\S)/g, '$1$2')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim(),
+  );
 
   // The two whitepaper articles say "see attached" — make sure each actually links our copy.
   const WHITEPAPER_ARTICLES = {

@@ -12,10 +12,10 @@ It is unwise to use these functions on their own without a conditional operator 
 
 For example, to log a Warning in the Batch Log for each row where the *"Flow"* column contains data with a value over *100*, you could use the following expression – note this uses a conditional operator to check the value before deciding whether to return the data directly or generate a warning:
 
-*Data("Flow") < 100 ? Data("Flow") : Warning("Too high")*
+*Data("Flow") \< 100 ? Data("Flow") : Warning("Too high")*
 
 The following example is the same, except the additional *value* parameter is added to the function so that the whole expression returns data no matter which way the conditional operator goes:
 
-*Data("Flow") < 100 ? Data("Flow") : Warning("Too high"****, Data("Flow")****)*
+*Data("Flow") \< 100 ? Data("Flow") : Warning("Too high", Data("Flow"))*
 
 It’s also useful to understand that Eightwire  internally processes data in parallel. This means that when the source data comes in, it’s broken up into pieces and each piece is processed at the same time as some or all of the other pieces. This parallel processing may result in Batch Log messages written using these functions arriving in the Batch Log out of order. If you use the Error function to abort a batch, you may occasionally still see other messages written to the Batch Log after the error message because a parallel block is still processing and may not be aborted until that block of records has been dealt with.

@@ -34,7 +34,7 @@ The expression can be manually mapped (click on the expression and then the dest
 
 > *Run the process to check that the expression is successful — for example if your source data contains NULLS or empty strings you may need to handle that in the expression.*
 
-> *A detailed guide to the expression editor syntax can be found in the pages on* [*Process Expressions*](https://wiki.eight-wire.com/overview) *Syntax.*
+> *A detailed guide to the expression editor syntax can be found in the pages on* [*Process Expressions*](../overview/) *Syntax.*
 
 More options working with processes are in the following pages;
 

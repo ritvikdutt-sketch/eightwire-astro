@@ -20,11 +20,11 @@ Use the the Protocol dropdown to select Oracle Data Provider Managed or Unmanage
 
 Connection string examples:
 
-Data Source=<data source>;User id=<user id>;Password=<password>;
+Data Source=\<data source>;User id=\<user id>;Password=\<password>;
 
 *With a trusted connection*
 
-Data Source=<data source>;Integrated Security=yes
+Data Source=\<data source>;Integrated Security=yes
 
 *Further Requirements;*
 
@@ -32,7 +32,7 @@ Data Source=<data source>;Integrated Security=yes
 
 Oracle (.NET Data Provider from Oracle) ODP.Net driver (Oracle.DataAccess needs to have been installed in the Global Assembly Cache (GAC)).
 
-This requires an extra manual step (configure.bat all <Oracle Home Directory> true true)
+This requires an extra manual step (configure.bat all \<Oracle Home Directory> true true)
 
 ## **OLEDB**
 
@@ -40,11 +40,11 @@ Connection string examples;
 
 Oracle OleDB with user id and password (the data source is defined in the tsnames.ora e.g. default is orcl):
 
-Provider=OraOLEDB.Oracle;Data Source=<data source>;User Id=<user id>;Password=<password>
+Provider=OraOLEDB.Oracle;Data Source=\<data source>;User Id=\<user id>;Password=\<password>
 
 *With a trusted connection*;
 
-Provider=OraOLEDB.Oracle;Data Source=<system identifier>;OSAuthent=1
+Provider=OraOLEDB.Oracle;Data Source=\<system identifier>;OSAuthent=1
 
 ## **ODBC**
 
@@ -54,8 +54,8 @@ If all the connector information is in the ODBC configuration, only the password
 
 Connection string examples;
 
-DSN=<ODBC connector name>;Pwd=<password>
+DSN=\<ODBC connector name>;Pwd=\<password>
 
-DSN=<ODBC connector name>;Uid=<user id>;Pwd=<password>
+DSN=\<ODBC connector name>;Uid=\<user id>;Pwd=\<password>
 
 *The ODBC driver from Oracle does not allow a trusted connection*.

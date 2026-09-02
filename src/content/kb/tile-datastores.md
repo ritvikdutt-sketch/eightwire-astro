@@ -6,7 +6,7 @@ order: 34
 sourceUrl: "https://www.eightwire.io/knowledge-base/tile-datastores"
 ---
 
-![Screenshot](./images/tile-datastores-1.webp)
+![Screenshot](./images/tile-datastore-types-1.webp)
 
 There are three types of tile datastores available
 

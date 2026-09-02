@@ -55,10 +55,10 @@ export default function ConnectorGrid() {
         {/* universal API note */}
         <div className="reveal mt-16 flex flex-col items-start justify-between gap-6 rounded border border-forest/20 bg-mint p-8 sm:flex-row sm:items-center">
           <div>
-            <h3 className="font-display text-2xl text-ink">Don&rsquo;t see your system?</h3>
+            <h3 className="font-display text-2xl text-ink">Can&rsquo;t see the connector you need?</h3>
             <p className="mt-2 max-w-lg text-body leading-[1.7] text-ink-soft">
-              Conductor&rsquo;s universal REST API and generic connectors cover almost anything that can speak HTTP,
-              SQL or files. Tell us what you need to move — we&rsquo;ll show you the fastest path.
+              Generic database, file and API connectors cover systems that are not named here.
+              Tell us what you need to move.
             </p>
           </div>
           <a href={CONTACT_HREF} className={`group shrink-0 ${btnForest}`}>

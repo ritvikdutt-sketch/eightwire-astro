@@ -48,4 +48,4 @@ Open the email and click 'Reset your Eightwire account's password'.
 
 *If you have changed your mind you can cancel the password change by clicking the 'Cancel'*
 
-> *If you try to log in to Eightwire for the first time and see a message '****We are currently setting up your account****'. In this case, you should check for the verification email in your inbox or spam folder. The link in the email must be clicked to verify before logging in.*
+> *If you try to log in to Eightwire for the first time and see a message 'We are currently setting up your account'. In this case, you should check for the verification email in your inbox or spam folder. The link in the email must be clicked to verify before logging in.*

@@ -28,7 +28,7 @@ This type is how you determine the way data is written to the destination object
 
 If the destination object is a relational database - you have all the types available whereas if you are writing to a file, you have a subset of types available.
 
-For the full list of destination actions by connector type please refer to [Connectors](https://wiki.eight-wire.com/connector-types)
+For the full list of destination actions by connector type please refer to [Connectors](../connector-types/)
 
 ‍**Destination Actions**
 

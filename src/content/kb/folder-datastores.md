@@ -86,7 +86,7 @@ Like any other data sharing process - the process can be executed manually or sc
 
 > ***Malware***
 
-> ***‍****Eightwire scans every file transferred for malware. Infected files will be rejected and not transferred. Eightwire will scan inside ZIP and RAR files.* ***It is your responsibility to ensure that your files are not infected with viruses or other malware.***
+> ***‍Eightwire scans every file transferred for malware. Infected files will be rejected and not transferred. Eightwire will scan inside ZIP and RAR files.* ***It is your responsibility to ensure that your files are not infected with viruses or other malware.***
 
 This type of connector is not automatically made available to all accounts.
 

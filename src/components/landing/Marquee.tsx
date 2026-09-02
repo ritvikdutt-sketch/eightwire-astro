@@ -1,11 +1,13 @@
-const COMPANIES = ['PHO networks', 'Government agencies', 'Primary care', 'Social services', 'Health registries', 'Community providers'];
+// The sectors Eightwire names in its own copy: "Trusted by governments, health providers,
+// insurers and banks with high stakes data."
+const COMPANIES = ['Governments', 'Health providers', 'Insurers', 'Banks'];
 
 export default function Marquee() {
   const row = [...COMPANIES, ...COMPANIES];
   return (
-    <section className="overflow-hidden border-b border-cream-line bg-forest-deepest py-12" aria-label="Trusted across sectors">
+    <section className="overflow-hidden border-b border-cream-line bg-forest-deepest py-12" aria-label="Who we work with">
       <p className="reveal mb-8 text-center font-mono text-caption uppercase tracking-[0.18em] text-cream/40">
-        Trusted across sectors
+        Who we work with
       </p>
       <div
         className="relative"
