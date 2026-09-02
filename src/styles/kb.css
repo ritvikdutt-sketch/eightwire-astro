@@ -1,0 +1,122 @@
+/* Knowledge-base article body. Markdown output has no classes, so the recipe lives here
+   and mirrors the System A tokens (tailwind.config.mjs): DM Serif headings, DM Sans body,
+   forest links, hairline tables, cream-dark panels. */
+
+.kb-prose {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #2a322d; /* ink-soft */
+}
+.kb-prose > * + * { margin-top: 1.1em; }
+
+.kb-prose h2,
+.kb-prose h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  color: #0b100d; /* ink */
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.kb-prose h2 { font-size: clamp(1.5rem, 2.2vw, 1.85rem); line-height: 1.2; margin-top: 2.2em; }
+.kb-prose h3 { font-size: 1.3rem; line-height: 1.25; margin-top: 1.8em; }
+.kb-prose h4,
+.kb-prose h5 { font-weight: 600; color: #0b100d; margin-top: 1.6em; }
+.kb-prose > :is(h2, h3, h4):first-child { margin-top: 0; }
+.kb-prose :is(h2, h3, h4) + * { margin-top: 0.6em; }
+
+.kb-prose a {
+  color: #145041; /* forest */
+  text-decoration: underline;
+  text-decoration-color: rgba(20, 80, 65, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+.kb-prose a:hover { text-decoration-color: #145041; }
+.kb-prose a:focus-visible { outline: 2px solid #145041; outline-offset: 3px; border-radius: 2px; }
+
+.kb-prose strong { color: #0b100d; font-weight: 600; }
+
+.kb-prose ul,
+.kb-prose ol { padding-left: 1.5em; }
+.kb-prose ul { list-style: disc; }
+.kb-prose ol { list-style: decimal; }
+.kb-prose li + li { margin-top: 0.45em; }
+.kb-prose li::marker { color: #69716c; }
+.kb-prose li > ul,
+.kb-prose li > ol { margin-top: 0.45em; }
+
+.kb-prose blockquote {
+  margin: 1.6em 0;
+  padding: 1rem 1.25rem;
+  background: #edebe2; /* cream-dark */
+  border: 1px solid #dddad0; /* cream-line */
+  border-radius: 4px;
+  font-style: italic;
+}
+.kb-prose blockquote > * + * { margin-top: 0.6em; }
+
+.kb-prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.6em 0;
+  border: 1px solid #dddad0;
+  border-radius: 4px;
+  background: #fff;
+}
+.kb-prose p > img:only-child { margin: 1.6em 0; }
+
+.kb-prose .kb-embed {
+  margin: 1.6em 0;
+  overflow: hidden;
+  border: 1px solid #dddad0;
+  border-radius: 4px;
+  background: #0b100d;
+}
+.kb-prose .kb-embed iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+
+.kb-prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.6em 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.kb-prose th,
+.kb-prose td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #dddad0;
+  text-align: left;
+  vertical-align: top;
+}
+.kb-prose th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #69716c;
+}
+
+.kb-prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  background: #edebe2;
+  border: 1px solid #dddad0;
+  border-radius: 3px;
+  color: #0b100d;
+}
+.kb-prose pre {
+  overflow-x: auto;
+  padding: 1rem 1.25rem;
+  background: #0b100d;
+  border-radius: 4px;
+  color: #f5f4ee;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.kb-prose pre code { padding: 0; background: none; border: 0; color: inherit; }
+
+.kb-prose hr { margin: 2em 0; border: 0; border-top: 1px solid #dddad0; }

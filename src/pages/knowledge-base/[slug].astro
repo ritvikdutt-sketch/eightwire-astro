@@ -1,0 +1,119 @@
+---
+import { getCollection, render } from 'astro:content';
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import { arrowNudge, focusForest, focusLime } from '../../components/landing/ui';
+import { CONTACT_EMAIL } from '../../components/landing/cta';
+import '../../styles/kb.css';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('kb');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL;
+
+const all = (await getCollection('kb')).sort((a, b) => a.data.order - b.data.order);
+const siblings = all.filter((e) => e.data.category === entry.data.category);
+const index = siblings.findIndex((e) => e.id === entry.id);
+const prev = index > 0 ? siblings[index - 1] : undefined;
+const next = index < siblings.length - 1 ? siblings[index + 1] : undefined;
+
+const topicHref = `${base}knowledge-base/?topic=${encodeURIComponent(entry.data.category)}`;
+const articleHref = (id: string) => `${base}knowledge-base/${id}/`;
+const description = entry.data.description || `${entry.data.title} — Eightwire knowledge base.`;
+---
+<LandingLayout title={`${entry.data.title} — Eightwire knowledge base`} description={description.slice(0, 300)}>
+  <!-- Article header: same atmosphere as PageHero, tighter, with the breadcrumb doing the wayfinding -->
+  <section class="relative overflow-hidden bg-forest-deepest" id="top">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0"
+      style="background: radial-gradient(ellipse 70% 55% at 75% 30%, rgba(129,215,19,0.10) 0%, transparent 60%), radial-gradient(ellipse 60% 70% at 8% 90%, rgba(20,80,65,0.45) 0%, transparent 65%);"
+    ></div>
+    <div class="relative mx-auto max-w-7xl px-5 pb-12 pt-28 sm:px-8 lg:pb-14 lg:pt-36">
+      <nav aria-label="Breadcrumb" class="rise font-mono text-caption uppercase tracking-[0.14em] text-cream/55">
+        <ol class="flex flex-wrap items-center gap-x-3 gap-y-1" role="list">
+          <li><a href={`${base}knowledge-base/`} class={`transition-colors duration-200 hover:text-lime ${focusLime}`}>Knowledge base</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href={topicHref} class={`text-lime transition-colors duration-200 hover:text-cream ${focusLime}`}>{entry.data.category}</a></li>
+        </ol>
+      </nav>
+      <h1 class="rise rise-d1 mt-5 max-w-3xl font-display text-[clamp(2rem,4.2vw,3.25rem)] leading-[1.08] tracking-[-0.01em] text-cream [text-wrap:balance]">
+        {entry.data.title}
+      </h1>
+      {entry.data.description && (
+        <p class="rise rise-d2 mt-5 max-w-2xl text-lede leading-[1.7] text-cream/70">{entry.data.description}</p>
+      )}
+    </div>
+    <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-lime/30 to-transparent"></div>
+  </section>
+
+  <section
+    class="border-b border-cream-line py-14 sm:py-16 lg:py-20"
+    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.05) 0%, transparent 60%), #F5F4EE;"
+  >
+    <div class="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[240px_1fr] lg:gap-16">
+      <!-- In this topic -->
+      <aside class="order-2 border-t border-cream-line pt-8 lg:order-1 lg:border-t-0 lg:pt-0" aria-label={`Articles in ${entry.data.category}`}>
+        <div class="lg:sticky lg:top-28">
+          <p class="border-t border-forest pt-3 font-mono text-caption uppercase tracking-[0.16em] text-forest">{entry.data.category}</p>
+          <ol class="mt-4 flex flex-col" role="list">
+            {siblings.map((s) => {
+              const current = s.id === entry.id;
+              return (
+                <li>
+                  <a
+                    href={articleHref(s.id)}
+                    aria-current={current ? 'page' : undefined}
+                    class={`block border-b border-cream-line/70 py-2.5 text-body-sm leading-[1.5] transition-colors duration-200 ${
+                      current ? 'font-medium text-forest' : 'text-ink-soft hover:text-forest'
+                    } ${focusForest}`}
+                  >
+                    {s.data.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+          <a href={`${base}knowledge-base/`} class={`group mt-6 inline-flex items-center gap-2 text-body-sm font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`}>
+            <span aria-hidden="true" class="transition-transform duration-200 group-hover:-translate-x-1">←</span> All topics
+          </a>
+        </div>
+      </aside>
+
+      <!-- Article -->
+      <article class="order-1 min-w-0 max-w-3xl lg:order-2">
+        <div class="kb-prose">
+          <Content />
+        </div>
+
+        <!-- Previous / next within the topic -->
+        <nav aria-label="Previous and next article" class="mt-16 grid gap-px border-y border-cream-line sm:grid-cols-2">
+          {prev ? (
+            <a href={articleHref(prev.id)} class={`group flex flex-col gap-1.5 py-6 sm:pr-8 ${focusForest}`}>
+              <span class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted"><span aria-hidden="true">←</span> Previous</span>
+              <span class="font-display text-xl leading-[1.25] text-ink transition-colors duration-200 group-hover:text-forest">{prev.data.title}</span>
+            </a>
+          ) : (
+            <span aria-hidden="true"></span>
+          )}
+          {next && (
+            <a href={articleHref(next.id)} class={`group flex flex-col gap-1.5 border-t border-cream-line py-6 sm:border-l sm:border-t-0 sm:pl-8 sm:text-right ${focusForest}`}>
+              <span class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">Next <span aria-hidden="true">→</span></span>
+              <span class="font-display text-xl leading-[1.25] text-ink transition-colors duration-200 group-hover:text-forest">{next.data.title}</span>
+            </a>
+          )}
+        </nav>
+
+        <p class="mt-10 text-body-sm text-ink-soft">
+          Stuck on this step?{' '}
+          <a href={`mailto:${CONTACT_EMAIL}`} class={`group inline-flex items-center gap-2 font-medium text-forest transition-colors duration-200 hover:text-forest-dark ${focusForest}`}>
+            Email {CONTACT_EMAIL} <span aria-hidden="true" class={arrowNudge}>→</span>
+          </a>
+        </p>
+      </article>
+    </div>
+  </section>
+</LandingLayout>
