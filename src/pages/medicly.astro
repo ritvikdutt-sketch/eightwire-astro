@@ -1,195 +1,66 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { btnPrimary, btnGhostDark, arrowNudge } from '../components/landing/ui';
+import LandingLayout from '../layouts/LandingLayout.astro';
+import PageHero from '../components/landing/PageHero.tsx';
+import SectionHead from '../components/landing/SectionHead.tsx';
+import FeatureColumns from '../components/landing/FeatureColumns.tsx';
+import HandoffBand from '../components/landing/HandoffBand.tsx';
+import CTASection from '../components/landing/CTASection.tsx';
+import { PLATFORM_LEDE } from '../components/landing/Platform.tsx';
+import { btnPrimary, btnGhostDark } from '../components/landing/ui';
+
 const base = import.meta.env.BASE_URL;
+
+// Copy carried over verbatim from the previous Medicly page.
+const LEDE = 'Health and social systems can access health data faster and more securely than before with Medicly.';
+const DESCRIPTION =
+  "Medicly is Eightwire's all-round solution for sensitive health data exchange. Health and social systems can access health data faster and more securely than before.";
+const OVERVIEW =
+  'Take the complexity out of data-sharing between healthcare technologies with our automated, safe and secure data exchange. Medicly enables the delivery of data from any system while removing the technical, security and compliance obstacles that get in the way.';
+const FEATURES = [
+  { icon: 'layers', title: 'Integration', body: 'System integration without the need for APIs, manual extracts or other complex technologies.' },
+  { icon: 'clock', title: 'Automation', body: 'Automated error correction for thousands of common data errors to reduce system crashes.' },
+  { icon: 'shield', title: 'Security', body: 'We meet the highest security thresholds required for data sharing across the public internet.' },
+  { icon: 'check', title: 'Compliance', body: 'Meet compliance with ease through our security controls that automatically reduce the effort in adhering to privacy and security standards.' },
+] as const;
 ---
-
-<BaseLayout title="Medicly | Health Data Exchange | Eightwire" description="Medicly is Eightwire's all-round solution for sensitive health data exchange. Health and social systems can access health data faster and more securely than before.">
-
-  <!-- ========== HERO ========== -->
-  <section class="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden" style="background: #0c2e24;">
-    <div class="absolute inset-0">
-      <img src={`${base}hero22.png`} alt="" class="w-full h-full object-cover" aria-hidden="true">
+<LandingLayout
+  title="Medicly — Eightwire"
+  description={DESCRIPTION}
+  ogDescription="Medicly is Eightwire's all-round solution for sensitive health data exchange."
+>
+  <PageHero eyebrow="Products · Medicly" lede={LEDE}>
+    An all-round solution for <em class="text-lime">sensitive health data</em> exchange
+    <div slot="actions" class="flex flex-wrap gap-3">
+      <a href="https://www.medicly.co.nz/" target="_blank" rel="noopener noreferrer" class={btnPrimary}>
+        Visit medicly.co.nz
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+          <path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="sr-only">(opens in a new tab)</span>
+      </a>
+      <a href="#contact" class={btnGhostDark}>Talk to us</a>
     </div>
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-      <!-- Medicly logo -->
-      <div class="mb-10 reveal">
-        <img src={`${base}images/Frame-19965medically-1.svg`} alt="Medicly" class="mx-auto h-14 sm:h-16 w-auto">
-      </div>
+  </PageHero>
 
-      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6 reveal reveal-delay-1">
-        An all-round solution for sensitive health data exchange
-      </h1>
-
-      <p class="text-white/75 body-relaxed text-lg sm:text-xl max-w-2xl mx-auto mb-10 reveal reveal-delay-2">
-        Health and social systems can access health data faster and more securely than before with Medicly.
-      </p>
-
-      <div class="reveal reveal-delay-3">
-        <a href="https://www.medicly.co.nz" target="_blank" rel="noopener noreferrer" class={btnPrimary}>
-          Visit medicly.co.nz
-          <svg class={arrowNudge} width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Decorative radial gradients -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-20" style="background: radial-gradient(circle, rgba(129,215,19,0.15) 0%, transparent 70%);"></div>
-    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-10" style="background: radial-gradient(circle, rgba(214,233,226,0.2) 0%, transparent 70%);"></div>
-  </section>
-
-  <!-- ========== TESTIMONIAL ========== -->
-  <section class="py-24 lg:py-32 relative overflow-hidden grain" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
-    <div class="max-w-4xl mx-auto px-6 relative z-10">
-      <div class="reveal rounded border border-cream/10 bg-cream/[0.04] p-8">
-        <!-- Decorative quote mark -->
-        <div class="mb-8">
-          <svg width="64" height="48" viewBox="0 0 64 48" fill="none" class="opacity-20">
-            <path d="M0 48V28.8C0 21.12 1.28 14.88 3.84 10.08C6.4 5.28 10.88 1.6 17.28 0L20.48 6.72C16.64 8 13.76 10.08 11.84 12.96C9.92 15.84 8.96 19.2 8.96 23.04H17.92V48H0ZM35.84 48V28.8C35.84 21.12 37.12 14.88 39.68 10.08C42.24 5.28 46.72 1.6 53.12 0L56.32 6.72C52.48 8 49.6 10.08 47.68 12.96C45.76 15.84 44.8 19.2 44.8 23.04H53.76V48H35.84Z" fill="#81D713"/>
-          </svg>
-        </div>
-
-        <blockquote class="font-display text-2xl sm:text-3xl lg:text-4xl text-white leading-[1.25] mb-8">
-          Medicly works seamlessly with your PMS, ensuring that data is secure in transit and is only used for the specific purpose for which it has been approved.
-        </blockquote>
-
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-sm bg-lime/20 flex items-center justify-center">
-            <span class="text-lime font-semibold text-lg">GS</span>
-          </div>
-          <div>
-            <p class="font-semibold text-white">Geoffrey Sayer</p>
-            <p class="text-white/60 text-sm">CEO, Medtech Global</p>
-          </div>
-        </div>
-      </div>
+  <!-- Overview -->
+  <section
+    class="border-b border-cream-line pt-24 pb-10 sm:pt-28 sm:pb-12"
+    style="background: radial-gradient(ellipse 80% 60% at 15% 40%, rgba(129,215,19,0.06) 0%, transparent 60%), #F5F4EE;"
+  >
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <SectionHead eyebrow="Overview" lede={OVERVIEW}>
+        Data-sharing in the health sector <em class="text-forest">made simple and secure</em>
+      </SectionHead>
     </div>
   </section>
 
-  <!-- ========== OVERVIEW ========== -->
-  <section class="py-24 lg:py-32 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div class="reveal">
-          <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted mb-3">Overview</p>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-forest leading-[1.15] mb-6">
-            Data-sharing in the health sector made simple and secure
-          </h2>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <p class="text-forest-light body-relaxed text-lg">
-            Take the complexity out of data-sharing between healthcare technologies with our automated, safe and secure data exchange. Medicly enables the delivery of data from any system while removing the technical, security and compliance obstacles that get in the way.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <FeatureColumns eyebrow="Why Medicly" items={FEATURES}>
+    Built for the <em class="text-forest">health sector</em>
+  </FeatureColumns>
 
-  <!-- ========== WHY MEDICLY — FEATURE CARDS ========== -->
-  <section class="py-24 lg:py-32 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center mb-16 reveal">
-        <p class="font-mono text-caption uppercase tracking-[0.14em] text-ink-muted mb-3">Why Medicly</p>
-        <h2 class="font-display text-3xl sm:text-4xl text-forest leading-[1.15]">
-          Built for the health sector
-        </h2>
-      </div>
+  <HandoffBand eyebrow="Conductor" lede={PLATFORM_LEDE} cta={{ label: 'Explore Conductor', href: `${base}conductor/` }}>
+    Medicly is built on <em class="text-lime">Conductor</em> for NZ health
+  </HandoffBand>
 
-      <div class="grid sm:grid-cols-2 gap-6 lg:gap-8">
-        <!-- Integration -->
-        <div class="reveal rounded border border-cream-line bg-white p-8 shadow-card">
-          <div class="w-12 h-12 rounded bg-forest/10 flex items-center justify-center mb-6">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145041" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <h3 class="font-display text-xl text-forest mb-3">Integration</h3>
-          <p class="text-forest-light body-relaxed">System integration without the need for APIs, manual extracts or other complex technologies.</p>
-        </div>
-
-        <!-- Automation -->
-        <div class="reveal reveal-delay-1 rounded border border-cream-line bg-white p-8 shadow-card">
-          <div class="w-12 h-12 rounded bg-forest/10 flex items-center justify-center mb-6">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145041" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 8V12l3 3"/><circle cx="12" cy="12" r="10"/>
-            </svg>
-          </div>
-          <h3 class="font-display text-xl text-forest mb-3">Automation</h3>
-          <p class="text-forest-light body-relaxed">Automated error correction for thousands of common data errors to reduce system crashes.</p>
-        </div>
-
-        <!-- Security -->
-        <div class="reveal reveal-delay-2 rounded border border-cream-line bg-white p-8 shadow-card">
-          <div class="w-12 h-12 rounded bg-forest/10 flex items-center justify-center mb-6">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145041" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h3 class="font-display text-xl text-forest mb-3">Security</h3>
-          <p class="text-forest-light body-relaxed">We meet the highest security thresholds required for data sharing across the public internet.</p>
-        </div>
-
-        <!-- Compliance -->
-        <div class="reveal reveal-delay-3 rounded border border-cream-line bg-white p-8 shadow-card">
-          <div class="w-12 h-12 rounded bg-forest/10 flex items-center justify-center mb-6">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145041" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-            </svg>
-          </div>
-          <h3 class="font-display text-xl text-forest mb-3">Compliance</h3>
-          <p class="text-forest-light body-relaxed">Meet compliance with ease through our security controls that automatically reduce the effort in adhering to privacy and security standards.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CTA SECTION ========== -->
-  <section class="py-24 lg:py-32 relative grain" style="background: linear-gradient(135deg, #145041 0%, #195a4a 100%);">
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      <div class="reveal">
-        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15] mb-10">
-          Find out more about how Medicly can help
-        </h2>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:support@eight-wire.com" class={btnPrimary}>
-            Contact us
-            <svg class={arrowNudge} width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M12 1.5L19 8.5M19 8.5L12 15.5M19 8.5L1 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://www.medicly.co.nz" target="_blank" rel="noopener noreferrer" class={btnGhostDark}>
-            Visit medicly.co.nz
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.43 1.64L14.33 1.64M14.33 1.64L14.33 11.54M14.33 1.64L1.61 14.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Decorative gradient -->
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10" style="background: radial-gradient(circle, rgba(129,215,19,0.2) 0%, transparent 70%);"></div>
-  </section>
-
-  <!-- ========== NEWSLETTER CTA ========== -->
-  <section class="py-24 lg:py-32 relative overflow-hidden grain" style="background: linear-gradient(170deg, #145041 0%, #0c372c 100%);">
-    <div class="max-w-5xl mx-auto px-6 relative z-10">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="reveal">
-          <div class="relative rounded overflow-hidden border border-cream/10">
-            <img src={`${base}images/65141d4abcc2e9571d29a428_Eightwire_Connect-1.png`} alt="Eightwire illustration" class="w-full h-auto">
-            <div class="absolute inset-0 bg-forest/30 mix-blend-color"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent mix-blend-multiply"></div>
-          </div>
-        </div>
-        <div class="reveal reveal-delay-2 rounded border border-cream/10 bg-cream/[0.04] p-8">
-          <p class="font-mono text-caption uppercase tracking-[0.14em] text-lime mb-3">The Wire</p>
-          <h2 class="font-display text-3xl sm:text-4xl text-white leading-[1.15] mb-4">Expand your bandwidth</h2>
-          <p class="text-white/70 body-relaxed mb-8">Join our email newsletter for the latest on safe and secure data-sharing.</p>
-          <a href="mailto:support@eight-wire.com?subject=Subscribe%20to%20The%20Wire" class={btnPrimary}>
-            Subscribe by email
-            <svg class={arrowNudge} width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 1.5L19 8.5M19 8.5L12 15.5M19 8.5L1 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</BaseLayout>
+  <CTASection />
+</LandingLayout>

@@ -3,12 +3,14 @@ import type { ReactNode } from 'react';
 interface Props {
   eyebrow: string;
   lede?: string;
+  /** optional CTA row — from Astro, pass `<div slot="actions">…</div>` */
+  actions?: ReactNode;
   /** heading content — rendered inside the page h1 */
   children: ReactNode;
 }
 
 /** Dark page intro for inner pages — shares the homepage hero's atmosphere. */
-export default function PageHero({ eyebrow, lede, children }: Props) {
+export default function PageHero({ eyebrow, lede, actions, children }: Props) {
   return (
     <section className="relative overflow-hidden bg-forest-deepest" id="top">
       <div
@@ -41,6 +43,7 @@ export default function PageHero({ eyebrow, lede, children }: Props) {
         {lede && (
           <p className="rise rise-d2 mt-6 max-w-xl text-lede leading-[1.7] text-cream/70">{lede}</p>
         )}
+        {actions && <div className="rise rise-d3 mt-9">{actions}</div>}
       </div>
 
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-lime/30 to-transparent" />
