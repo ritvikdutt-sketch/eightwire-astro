@@ -48,10 +48,15 @@ export default {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.3', transform: 'scale(0.7)' },
         },
+        dropdown: {
+          from: { opacity: '0', transform: 'translateY(-6px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',
         'pulse-dot': 'pulse-dot 2s ease-in-out infinite',
+        dropdown: 'dropdown 0.18s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
     },
   },
