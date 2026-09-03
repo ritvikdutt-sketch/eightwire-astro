@@ -14,14 +14,14 @@ const mailto = (subject?: string) =>
 /** A short wire under the address: your message travelling into the Eightwire mark. */
 function Wire({ animate, replay }: { animate: boolean; replay: number }) {
   return (
-    <svg viewBox="0 0 420 24" fill="none" className="h-6 w-full max-w-md" aria-hidden="true">
+    <svg viewBox="0 0 420 24" fill="none" className="h-6 w-full max-w-[420px] overflow-visible" aria-hidden="true">
       <defs>
         <filter id="contact-packet-blur" x="-200%" y="-200%" width="500%" height="500%">
           <feGaussianBlur stdDeviation="2" />
         </filter>
       </defs>
       <g className={animate ? 'contact-wire' : undefined} style={{ transformBox: 'fill-box', transformOrigin: 'left center' }}>
-        <path id="contact-wire-path" d="M 2 12 H 388" stroke="rgba(129,215,19,0.45)" strokeWidth="1" />
+        <path id="contact-wire-path" d="M 8 12 H 388" stroke="rgba(129,215,19,0.45)" strokeWidth="1" />
       </g>
       {animate ? (
         <g key={replay}>
@@ -99,7 +99,7 @@ export default function ContactHero() {
             href={mailto(subject)}
             aria-label={`Email ${CONTACT_EMAIL}${subject ? ` about ${subject}` : ''}`}
             onMouseEnter={() => setReplay((n) => n + 1)}
-            className={`group mt-5 block w-fit max-w-full break-words rounded-sm font-display text-[clamp(1.5rem,3.4vw,2.25rem)] leading-[1.15] tracking-[-0.01em] text-cream transition-colors duration-200 hover:text-lime ${focusLime}`}
+            className={`group mt-5 block w-fit max-w-full break-words rounded-sm font-display text-[clamp(1.5rem,3.4vw,2.25rem)] leading-[1.15] tracking-[-0.01em] text-cream transition-[color,transform] duration-200 hover:text-lime active:scale-[0.97] ${focusLime}`}
           >
             {CONTACT_EMAIL}
           </a>
@@ -120,7 +120,7 @@ export default function ContactHero() {
                     href={mailto(s)}
                     onMouseEnter={() => pick(s)}
                     onFocus={() => pick(s)}
-                    className={`inline-flex min-h-[44px] items-center rounded-sm border px-4 font-mono text-caption uppercase tracking-[0.12em] text-cream transition-[border-color,transform] duration-200 hover:-translate-y-px hover:border-lime ${
+                    className={`inline-flex min-h-[44px] items-center rounded-sm border px-4 font-mono text-caption uppercase tracking-[0.12em] text-cream transition-[border-color,transform] duration-200 hover:-translate-y-px hover:border-lime active:scale-[0.97] active:translate-y-0 ${
                       on ? 'border-lime' : 'border-cream/25'
                     } ${focusLime}`}
                   >
