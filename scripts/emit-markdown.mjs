@@ -47,7 +47,9 @@ const pages = htmlFiles
 
 const twinRoutes = new Set(pages.map((p) => p.route));
 const htmlUrl = (route) => `${SITE}/${route}${route ? '/' : ''}`;
-const mdUrl = (route) => `${htmlUrl(route)}index.md`;
+// Every twin is published twice so either guess resolves: the sibling form (/conductor.md, the
+// one people and agents reach for first) and the in-folder form (/conductor/index.md).
+const mdUrl = (route) => (route ? `${SITE}/${route}.md` : `${SITE}/index.md`);
 
 /** Turn a site-internal href into the Markdown twin when one exists, else the canonical HTML URL. */
 function resolveInternal(href) {
@@ -192,7 +194,9 @@ for (const page of pages) {
     twin.body,
     '',
   ].filter((s) => s !== '').join('\n');
-  writeFileSync(join(DIST, ...twin.route.split('/').filter(Boolean), 'index.md'), doc);
+  const segments = twin.route.split('/').filter(Boolean);
+  writeFileSync(join(DIST, ...segments, 'index.md'), doc);
+  if (segments.length) writeFileSync(join(DIST, ...segments.slice(0, -1), `${segments.at(-1)}.md`), doc);
   twins.push({ ...twin, doc });
 }
 
@@ -210,7 +214,7 @@ const llms = [
   '',
   `> ${SUMMARY}`,
   '',
-  `Markdown versions of every page on the Eightwire website, generated from the published site on ${TODAY}. The HTML page for any entry is the same URL without \`index.md\`. Contact: support@eight-wire.com.`,
+  `Markdown versions of every page on the Eightwire website, generated from the published site on ${TODAY}. Any page is available as Markdown at either \`<page>.md\` or \`<page>/index.md\`; drop the extension for the HTML page. \`llms-full.txt\` holds every page in one file. Contact: support@eight-wire.com.`,
   '',
   '## Pages',
   '',
