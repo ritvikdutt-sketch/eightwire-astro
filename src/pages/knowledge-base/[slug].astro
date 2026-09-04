@@ -85,7 +85,7 @@ const description = entry.data.description || `${entry.data.title} — Eightwire
 
       <!-- Article -->
       <article class="order-1 min-w-0 max-w-3xl lg:order-2">
-        <div class="kb-prose">
+        <div class="kb-prose" data-kb-prose>
           <Content />
         </div>
 
@@ -116,4 +116,17 @@ const description = entry.data.description || `${entry.data.title} — Eightwire
       </article>
     </div>
   </section>
+
+  <script is:inline>
+    // Wide tables scroll sideways (kb.css). A scrollable box must be reachable by keyboard, so give
+    // each one a tab stop and a name (WCAG 2.1.1); tables that fit need neither.
+    document.querySelectorAll('[data-kb-prose] table').forEach(function (t, i) {
+      if (t.scrollWidth <= t.clientWidth) return;
+      t.setAttribute('tabindex', '0');
+      t.setAttribute('role', 'region');
+      var heading = t.previousElementSibling;
+      while (heading && !/^H[2-4]$/.test(heading.tagName)) heading = heading.previousElementSibling;
+      t.setAttribute('aria-label', (heading ? heading.textContent.trim() + ' — ' : '') + 'table, scrolls sideways');
+    });
+  </script>
 </LandingLayout>

@@ -12,7 +12,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/agent-updates"
 
 Confirm whether your Agent is set to receive automatic updates by checking the update setting in the Eightwire portal on the Agent page.
 
-![Screenshot](./images/agent-updates-1.webp)
+![Agent page for Finance Base, Edit tab, with the Updates section's Automatically install updates checkbox unticked and the Save button](./images/agent-updates-1.webp)
 
 -   If the Updates checkbox is ticked - then any update will be released to your Agent automatically.
 -   If the Updates checkbox is not ticked - then you can apply the update when convenient, using the following steps;
@@ -27,9 +27,9 @@ Click on the Agent Update application and click to allow the application to make
 
 Use any key to exit.
 
-![Screenshot](./images/agent-updates-2.webp)
+![File Explorer in Program Files (x86) > Conductor Agent listing Agent.exe, AgentConfiguration and the AgentUpdate application](./images/agent-updates-2.webp)
 
-![Screenshot](./images/agent-updates-3.webp)
+![AgentUpdate.exe console window showing three Encrypting configuration section... Succeeded! results and Press any key to exit](./images/agent-updates-3.webp)
 
 Confirm the update has been successful by checking in the Eightwire portal for the new Agent version number and that the Agent is online.
 

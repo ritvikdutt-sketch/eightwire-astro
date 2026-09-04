@@ -8,7 +8,12 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/arithmetic-operators"
 
 The following operators are supported. Most operators are designed to work with numeric data, but some will also work with other types, such as text.
 
-![Screenshot](./images/arithmetic-operators-1.webp)
+| Operator | Description |
+| --- | --- |
+| `+` | Add – *Can also be used to append text* |
+| `-` | Subtract |
+| `/` | Divide |
+| `*` | Multiply |
 
 ## Integer and Decimal Arithmetic
 

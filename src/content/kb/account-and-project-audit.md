@@ -8,7 +8,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/account-and-project-audit"
 
 Navigate to Audit from the Account or Project Dashboards.
 
-![Screenshot](./images/account-and-project-audit-1.webp)
+![Datashare Project dashboard General Stats tiles with the Audit tile highlighted](./images/account-and-project-audit-1.webp)
 
 ## The report can be run using these options
 
@@ -44,14 +44,14 @@ A specific Entity can be queried using its ID - the ID appears in the URL when y
 
 This example filters for a specific user changing the configuration of a Datastore,
 
-![Screenshot](./images/account-and-project-audit-2.webp)
+![Audit Logger filters set to a user, date range, Entity DataStore, Audit action Update and Entity ID 4227, with the Filter button](./images/account-and-project-audit-2.webp)
 
 The results are shown as a full description of a State Before and a State After - in the example, the change of RegionID = 7 to RegionID = 2, shows that the Datastore Sovereignty was changed.
 
-![Screenshot](./images/account-and-project-audit-3.webp)
+![Audit result State Before and State After text panes, showing RegionID changed from 7 to 2](./images/account-and-project-audit-3.webp)
 
 The information can be exported by selecting the download icon and choosing an Export setting (all data shows the summary as well as the State Before and State After text).
 
-![Screenshot](./images/account-and-project-audit-4.webp)
+![Audit results grid download icon open, listing Export all data as csv, visible data as csv, selected data as csv and all data as pdf](./images/account-and-project-audit-4.webp)
 
 > *Eightwire retains all Audit data for existing entities.*

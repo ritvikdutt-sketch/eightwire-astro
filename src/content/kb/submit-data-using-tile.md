@@ -10,23 +10,23 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/submit-data-using-tile"
 
 Click on the blue  **i** symbol to see specific information for each Tile.
 
-![Screenshot](./images/submit-data-using-tile-1.webp)
+![Tile Information (screenshot)](./images/submit-data-using-tile-1.webp)
 
 The information tab has a section for
 
 **How to Use?**
 
-![Screenshot](./images/submit-data-using-tile-2.webp)
+![Tile Information (screenshot)](./images/submit-data-using-tile-2.webp)
 
 **Contact Support - Business and Technical**
 
-![Screenshot](./images/submit-data-using-tile-3.webp)
+![Tile Information (screenshot)](./images/submit-data-using-tile-3.webp)
 
 **File Templates** contain files to use as reporting templates  — click to Download.
 
-![Screenshot](./images/submit-data-using-tile-4.webp)
+![Tile Information (screenshot)](./images/submit-data-using-tile-4.webp)
 
-![Screenshot](./images/applying-column-row-level-filters-2.webp)
+![Tile Information (screenshot)](./images/applying-column-row-level-filters-2.webp)
 
 ## Submit data
 
@@ -34,17 +34,17 @@ To submit data to the tile
 
 drag a file from windows explorer to the tile or click in the tile and browse to the file location on your computer.
 
-![Screenshot](./images/submit-data-using-tile-6.webp)
+![Submit data (screenshot)](./images/submit-data-using-tile-6.webp)
 
 Click **Yes** to confirm the upload
 
-![Screenshot](./images/submit-data-using-tile-7.webp)
+![Submit data (screenshot)](./images/submit-data-using-tile-7.webp)
 
 If the file does not conform to the structure required a message will show you that the file cannot be downloaded.
 
-![Screenshot](./images/submit-data-using-tile-8.webp)
+![Submit data (screenshot)](./images/submit-data-using-tile-8.webp)
 
-![Screenshot](./images/submit-data-using-tile-9.webp)
+![Submit data (screenshot)](./images/submit-data-using-tile-9.webp)
 
 If the file conforms to the structure required the message will show
 
@@ -52,11 +52,11 @@ If the file conforms to the structure required the message will show
 
 Click on the Activity page link to see the history of your data submissions
 
-![Screenshot](./images/submit-data-using-tile-10.webp)
+![Submit data (screenshot)](./images/submit-data-using-tile-10.webp)
 
 The Date, row count, and the person who initiated the share are shown — as well as if the data was loaded successfully at the destination.
 
-![Screenshot](./images/monitor-tile-activity-1.webp)
+![Submit data (screenshot)](./images/monitor-tile-activity-1.webp)
 
 Congratulations!
 

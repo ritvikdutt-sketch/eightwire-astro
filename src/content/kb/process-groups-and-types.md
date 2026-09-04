@@ -10,7 +10,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/process-groups-and-types"
 
 Go to the **Process Group** from the Project page
 
-![Screenshot](./images/process-groups-and-types-1.webp)
+![Create a Process Group (screenshot)](./images/process-groups-and-types-1.webp)
 
 Click **+New** to add a new Process Group
 
@@ -20,7 +20,7 @@ Choose the destination action (Process Group Type) for the processes within the 
 
 Click **Save and Close**
 
-![Screenshot](./images/process-groups-and-types-2.webp)
+![Create a Process Group (screenshot)](./images/process-groups-and-types-2.webp)
 
 **Process Group Type**
 
@@ -34,6 +34,6 @@ For the full list of destination actions by connector type please refer to [Conn
 
 The key tasks a Connector performs are reading and writing. Reading is usually straightforward, but writing can be complex, depending on the platform and on the other data being written at the same time.
 
-![Screenshot](./images/process-groups-and-types-3.webp)
+![Create a Process Group (screenshot)](./images/process-groups-and-types-3.webp)
 
 Ready to create processes? Go to this page to see how: [Create, Map, and Filter a Process](../create-map-and-filter-a-process/)

@@ -8,15 +8,15 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/account-alerts"
 
 Navigate to **Account Alerts** from the Quick Access menu on the account dashboard.
 
-![Screenshot](./images/account-alerts-1.webp)
+![Dashboard Quick Access panel with the Alerts bell icon highlighted among Projects, Agents, Account, Users, Audit, Reports and Help](./images/account-alerts-1.webp)
 
 Select an Alert threshold to apply to the selected Alert options;
 
-![Screenshot](./images/account-alerts-2.webp)
+![Alert me for dropdown open on Account Activity Alerts, listing Success, Warnings and Failures; Warnings and Failures; Failures Only](./images/account-alerts-2.webp)
 
 For an Alert option, toggle to ON and enter any email addresses for notifications.
 
-![Screenshot](./images/account-alerts-3.webp)
+![Alert rows with Alert me for set to Warnings and Failures, process activity, Datastore connection and scan toggles ON with email tags](./images/account-alerts-3.webp)
 
 Choose as many of the alert options as you require;
 
@@ -32,9 +32,9 @@ Choose as many of the alert options as you require;
 
 In the example shown – any failed process within the entire Account or any Agent going offline will generate a separate email.
 
-![Screenshot](./images/account-alerts-4.webp)
+![Account Activity Alerts set to Failures Only with process activity and agent goes offline toggled ON and the Save button](./images/account-alerts-4.webp)
 
-![Screenshot](./images/account-alerts-5.webp)
+![Agent alert email with Connection details showing Status Connection lost, Agent Name Construction and the Last heartbeat time](./images/account-alerts-5.webp)
 
 Automated emails will give a summary description of a failure or that warnings have been generated.
 
@@ -42,8 +42,8 @@ You can use the relevant Batch and ProcessID shown in the email to check the det
 
 Let us know at support@eight-wire.com if you need help interpreting the warning or error message.
 
-![Screenshot](./images/account-alerts-6.webp)
+![Batch Details alert email listing the process, BatchID and ProcessID, a dashboard link and Status Succeeded with warnings](./images/account-alerts-6.webp)
 
-![Screenshot](./images/account-alerts-7.webp)
+![History for dbo.ExcelApplesCon showing a data truncation warning on ClaimNumber followed by Batch succeeded](./images/account-alerts-7.webp)
 
 To restrict your Alerts for specific Projects, check out [Project Alerts](../project-alerts/)

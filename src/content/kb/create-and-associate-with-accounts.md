@@ -16,7 +16,7 @@ Enter the details on behalf of the Associated Account
 
 Click **Create Account**
 
-![Screenshot](./images/create-and-associate-with-accounts-1.webp)
+![Create new Tile account form with Email, Phone, Company, Password and Re-type Password fields](./images/create-and-associate-with-accounts-1.webp)
 
 > **Email** *— this is the email address of the primary account holder. They will be created as a user with the Tile Account Admin role.*
 
@@ -30,11 +30,11 @@ The Associated Accounts menu is only for creating Tile Licence Accounts.
 
 If a Tile Licence Account already exists - you will be advised and invited to associate with it.
 
-![Screenshot](./images/create-and-associate-with-accounts-2.webp)
+![Confirm Association dialog saying an account with this email already exists, with Associate and No buttons](./images/create-and-associate-with-accounts-2.webp)
 
 If a full license already exists, you will also be advised. In that case, you can share using Tile without creating an Association.
 
-![Screenshot](./images/create-and-associate-with-accounts-3.webp)
+![Invalid Email dialog: can't associate to a full license account or an already associated account, with OK button](./images/create-and-associate-with-accounts-3.webp)
 
 > *Creating Associated Accounts means you are accepting the license cost on behalf of the data provider. They can only apply for Tile Licence Accounts at a monthly cost while associated.*
 
@@ -50,10 +50,10 @@ Instead, when a data-sharing relationship has stopped, then a parent Account can
 
 From the Associated Accounts Menu, find the Account and hover over Actions to highlight the **Delete** button.
 
-![Screenshot](./images/create-and-associate-with-accounts-4.webp)
+![Associated Accounts list with the Actions column highlighted and the red Delete button on the ACCOUNT A row](./images/create-and-associate-with-accounts-4.webp)
 
 Click the **Delete** button, and confirm again to remove your association with that Account.
 
-![Screenshot](./images/create-and-associate-with-accounts-5.webp)
+![Confirm Delete dialog asking to delete the association with 'Account A', with Delete and No buttons](./images/create-and-associate-with-accounts-5.webp)
 
 Ready to work with your Associated Accounts? Go to [Define your Tile Datastores](../define-your-tile-datastores/)

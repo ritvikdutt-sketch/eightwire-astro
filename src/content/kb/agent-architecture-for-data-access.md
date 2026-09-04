@@ -18,7 +18,7 @@ The same locations could also be accessed by Users on your network who need to p
 
 It is important that Users are aware that any object that is used for data sharing can be visible by another Organisation if the datastore has been shared.
 
-![Screenshot](./images/agent-architecture-for-data-access-1.webp)
+![Agent inside the Corporate Network (laptops, databases, workstation) sends outward through a firewall to the Eightwire Processing Servers](./images/agent-architecture-for-data-access-1.webp)
 
 ## Install within an existing DMZ
 
@@ -29,7 +29,7 @@ A DMZ is a 'no-mans-land' sandbox network between the internet and your company'
 1.  Allow the Agent to communicate inwards through the internal firewall to specific resources and either trust it or have it pass credentials through (less secure). This allows for less manual data shipping but requires some care to ensure the internal firewall rules allow only the access required and nothing more.
 2.  Create a 'data staging' area inside the DMZ and have data shipped between this staging area and your internal network by some other trusted process. You would then give the Agent access to this data.
 
-![Screenshot](./images/agent-architecture-for-data-access-2.webp)
+![Internal Networks connect through a firewall to a DMZ Server hosting the Agent, which sends through a second firewall to Eightwire Processing Servers](./images/agent-architecture-for-data-access-2.webp)
 
 > *An account can have multiple Agents installed as required.*
 

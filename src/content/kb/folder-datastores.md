@@ -12,7 +12,7 @@ Choose where your data is stored, select Folder
 
 Select an Agent for the Datastore
 
-![Screenshot](./images/folder-datastores-1.webp)
+![Folder Datastores (screenshot)](./images/folder-datastores-1.webp)
 
 Select the Path — in the example, the folder called 'DocumentMove' has been nominated as the source.
 
@@ -20,13 +20,13 @@ All the contents within 'DocumentMove' will be available to be copied to a desti
 
 This includes sub folders as well as files.
 
-![Screenshot](./images/folder-datastores-2.webp)
+![Folder Datastores (screenshot)](./images/folder-datastores-2.webp)
 
 Select — Source and Scan Process
 
 Select Region if required
 
-![Screenshot](./images/folder-datastores-3.webp)
+![Folder Datastores (screenshot)](./images/folder-datastores-3.webp)
 
 Click **SAVE**
 
@@ -34,7 +34,7 @@ The Datastore has been created, browse the datastore to check the results.
 
 In the example, all the folders in 'DocumentMove' folder are visible in the Datastore
 
-![Screenshot](./images/folder-datastores-4.webp)
+![Folder Datastores (screenshot)](./images/folder-datastores-4.webp)
 
 The individual folders or files appear only with attributes — Filename, SubFolderPath, Size, DateCreated, DateModified, Data
 
@@ -44,15 +44,15 @@ The individual folders or files appear only with attributes — Filename, SubFol
 
 > ‍**Any number and level of sub-directory folders are able to be transferred.**
 
-![Screenshot](./images/folder-datastores-5.webp)
+![Folder Datastores (screenshot)](./images/folder-datastores-5.webp)
 
 All first level of sub folders will be available as objects to select in a process;
 
-![Screenshot](./images/folder-datastores-6.webp)
+![Folder Datastores (screenshot)](./images/folder-datastores-6.webp)
 
 And any folders and files within those folders will be copied.
 
-![Screenshot](./images/folder-datastores-7.webp)
+![Folder Datastores (screenshot)](./images/folder-datastores-7.webp)
 
 Once the Datastore is complete — you can share it with a destination account — or create a process to transfer the folder(s) and files.
 
@@ -68,21 +68,21 @@ A process (to a Folder Destination) can be created using any of these process ty
 
 Create a process and add a source (choosing any number of level one folders in the directory).
 
-![Screenshot](./images/folder-datastores-8.webp)
+![Using Folder Datastores in a Process (screenshot)](./images/folder-datastores-8.webp)
 
 Define the destination datastore and object for each level one folder.
 
-![Screenshot](./images/folder-datastores-9.webp)
+![Using Folder Datastores in a Process (screenshot)](./images/folder-datastores-9.webp)
 
 Rename the destination to create a folder in the destination.
 
-![Screenshot](./images/folder-datastores-10.webp)
+![Using Folder Datastores in a Process (screenshot)](./images/folder-datastores-10.webp)
 
-![Screenshot](./images/folder-datastores-11.webp)
+![Using Folder Datastores in a Process (screenshot)](./images/folder-datastores-11.webp)
 
 Like any other data sharing process - the process can be executed manually or scheduled.
 
-![Screenshot](./images/folder-datastores-12.webp)
+![Using Folder Datastores in a Process (screenshot)](./images/folder-datastores-12.webp)
 
 > ***Malware***
 

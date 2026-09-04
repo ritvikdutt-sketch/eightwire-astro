@@ -10,7 +10,7 @@ From the Datastore page click **+New**
 
 Name your Datastore and select **Teradata**
 
-![Screenshot](./images/teradata-datastores-1.webp)
+![Teradata Datastores (screenshot)](./images/teradata-datastores-1.webp)
 
 **Agent** — Select an Agent
 

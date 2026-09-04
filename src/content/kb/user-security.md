@@ -14,12 +14,12 @@ Account Administrators have administration access including being able to edit a
 
 Be sure to restrict the number of Account Administrators you have.
 
-![Screenshot](./images/user-security-1.webp)
+![Role Based Security (screenshot)](./images/user-security-1.webp)
 
 **Project Access**
 
 Once a User has their Account level role assigned - then assign the level of access to the Projects they need.
 
-![Screenshot](./images/user-security-2.webp)
+![Role Based Security (screenshot)](./images/user-security-2.webp)
 
 When you are you ready to allow Account access to your Users, follow the steps on the page [Create Users](../create-users/)

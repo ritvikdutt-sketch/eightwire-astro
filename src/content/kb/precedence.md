@@ -8,4 +8,4 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/precedence"
 
 Use brackets to specify an order of precedence or to enclose function parameters.
 
-![Screenshot](./images/precedence-1.webp)
+![Precedence (screenshot)](./images/precedence-1.webp)

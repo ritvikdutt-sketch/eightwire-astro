@@ -8,32 +8,32 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/functions"
 
 ## **String Manipulation**
 
-![Screenshot](./images/functions-1.webp)
+![String Manipulation (screenshot)](./images/functions-1.webp)
 
 ## **Number Manipulation**
 
-![Screenshot](./images/functions-2.webp)
+![Number Manipulation (screenshot)](./images/functions-2.webp)
 
 ## **Date & Time Manipulation**
 
-![Screenshot](./images/functions-3.webp)
+![Date & Time Manipulation (screenshot)](./images/functions-3.webp)
 
 ## **Conversions**
 
-![Screenshot](./images/functions-4.webp)
+![Conversions (screenshot)](./images/functions-4.webp)
 
 ## **Validation**
 
-![Screenshot](./images/functions-5.webp)
+![Validation (screenshot)](./images/functions-5.webp)
 
 ## **Formatting**
 
-![Screenshot](./images/functions-6.webp)
+![Formatting (screenshot)](./images/functions-6.webp)
 
 ## **Miscellaneous**
 
-![Screenshot](./images/functions-7.webp)
+![Miscellaneous (screenshot)](./images/functions-7.webp)
 
 ## **Special**
 
-![Screenshot](./images/functions-8.webp)
+![Special (screenshot)](./images/functions-8.webp)

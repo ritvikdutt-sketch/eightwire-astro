@@ -12,11 +12,11 @@ Enter your email address and password.
 
 Click **Sign In**.
 
-![Screenshot](./images/sign-in-for-users-1.webp)
+![Sign In for Users (screenshot)](./images/sign-in-for-users-1.webp)
 
 If your account requires two-factor authentication, an SMS text message will be sent to your mobile phone number, containing a single-use PIN number. Enter this PIN number on the second step of the sign-in process and click the **Verify** button.
 
-![Screenshot](./images/sign-in-for-users-2.webp)
+![Sign In for Users (screenshot)](./images/sign-in-for-users-2.webp)
 
 If this is the first time your account has been used, you will have to **agree to the Terms and Conditions** before proceeding. You will only need to do this once.
 
@@ -34,17 +34,17 @@ Enter your email address.
 
 Click **Reset**.
 
-![Screenshot](./images/sign-in-for-users-3.webp)
+![Forgotten Password (screenshot)](./images/sign-in-for-users-3.webp)
 
 You will see a confirmation that an email will be sent, provided the email address entered was valid.
 
-![Screenshot](./images/sign-in-for-users-4.webp)
+![Forgotten Password (screenshot)](./images/sign-in-for-users-4.webp)
 
 Check your email. You should have received an email entitled 'Eightwire Password Reset'.
 
 Open the email and click 'Reset your Eightwire account's password'.
 
-![Screenshot](./images/sign-in-for-users-5.webp)
+![Forgotten Password (screenshot)](./images/sign-in-for-users-5.webp)
 
 *If you have changed your mind you can cancel the password change by clicking the 'Cancel'*
 

@@ -10,7 +10,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/using-datastore-tags"
 
 Go to Project Dashboard and click on **Tags**
 
-![Screenshot](./images/using-datastore-tags-1.webp)
+![Create Tags (screenshot)](./images/using-datastore-tags-1.webp)
 
 To create a new tag, click on the **+** button on the top right hand of the screen.
 
@@ -20,7 +20,7 @@ If you want to construct a hierarchy, assign an inheritance from an existing tag
 
 Use the **Is Notifiable** toggle for alerting an author (in your own account or in an account that you have shared a Datastore with) when the data is used in a new Process.
 
-![Screenshot](./images/using-datastore-tags-2.webp)
+![Create Tags (screenshot)](./images/using-datastore-tags-2.webp)
 
 ## Apply a Tag
 
@@ -30,7 +30,7 @@ On the tab called **Tags**
 
 Click on a column  to apply a Tag.
 
-![Screenshot](./images/scan-browse-and-edit-objects-10.webp)
+![Apply a Tag (screenshot)](./images/scan-browse-and-edit-objects-10.webp)
 
 Select from the available tags.
 
@@ -46,11 +46,11 @@ This is a safeguard to prevent data from being accidentally written to a datasto
 
 When the source object is selected for a process it shows that notifiable data is tagged.
 
-![Screenshot](./images/using-datastore-tags-4.webp)
+![Notifiable Tags and Process creation (screenshot)](./images/using-datastore-tags-4.webp)
 
 When the process is accepted, a warning message is shown.
 
-![Screenshot](./images/using-datastore-tags-5.webp)
+![Notifiable Tags and Process creation (screenshot)](./images/using-datastore-tags-5.webp)
 
 > *The tagged column is a source - is not assigned to a destination in a process.*
 
@@ -58,7 +58,7 @@ When the process is accepted, a warning message is shown.
 
 The tags applied to a Datastore are visible by a  separate Account if you share the Datastore with them — they simply have to browse the shared datastore — and view in the Tags tab.
 
-![Screenshot](./images/using-datastore-tags-6.webp)
+![Tags in External Datastores (screenshot)](./images/using-datastore-tags-6.webp)
 
 ## Reporting on the Use of Tags
 

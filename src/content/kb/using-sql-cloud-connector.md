@@ -24,7 +24,7 @@ or
 
 Data Source=\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_;Initial Catalog=\_\_\_\_\_\_\_\_\_\_\_\_\_;Trusted\_Connection=true
 
-![Screenshot](./images/using-sql-cloud-connector-1.webp)
+![Datastore Connection Settings (screenshot)](./images/using-sql-cloud-connector-1.webp)
 
 ## IP Addresses to allow (Agent Controller and Processing Servers)
 

@@ -19,6 +19,7 @@ import {
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL } from './cta';
+import MotionToggle from './MotionToggle';
 
 const base = import.meta.env.BASE_URL;
 
@@ -140,8 +141,9 @@ export default function Nav({ currentPath = '' }: Props) {
         <NavigationMenuItem key={item.title} value={item.title}>
           <NavigationMenuTrigger
             className={cn(active && 'text-forest')}
-            // hover already opened it — a click keeps it open instead of toggling it shut
-            onClick={(e) => { if (open) e.preventDefault(); }}
+            // hover already opened it — a pointer click keeps it open instead of toggling it shut;
+            // keyboard activation (detail === 0) still toggles, so Enter/Space can close it too
+            onClick={(e) => { if (open && e.detail !== 0) e.preventDefault(); }}
           >
             {item.title}
             <span className={underline(active || open)} aria-hidden="true" />
@@ -300,6 +302,7 @@ export default function Nav({ currentPath = '' }: Props) {
                     {SIGN_IN.text} to Conductor
                   </a>
                 </div>
+                <MotionToggle tone="light" />
               </nav>
               <p className="mt-auto font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">
                 Wellington · Aotearoa NZ

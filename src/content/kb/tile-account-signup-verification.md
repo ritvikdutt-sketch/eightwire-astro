@@ -16,7 +16,7 @@ You are recognised as being Associated with the sponsor.
 
 On the creation of the Account you will receive an email invitation to confirm the Activation
 
-![Screenshot](./images/tile-account-signup-verification-1.webp)
+![Accept an Invite as an Associated Account (screenshot)](./images/tile-account-signup-verification-1.webp)
 
 Click on the link and login to the Eightwire Account (using your email and a password provided by the sponsor account).
 
@@ -28,7 +28,7 @@ Click **Accept** to confirm the Terms and Conditions, and then you will be taken
 
 To sign up to an individual Account, go to our login page to access the Sign Up link
 
-![Screenshot](./images/tile-account-signup-verification-2.webp)
+![Sign up as an Individual Tile License Account (screenshot)](./images/tile-account-signup-verification-2.webp)
 
 Complete the fields:
 
@@ -38,14 +38,14 @@ Account Type — select 'Tile Licence' from the dropdown.
 
 Click **Sign up**
 
-![Screenshot](./images/tile-account-signup-verification-3.webp)
+![Sign up as an Individual Tile License Account (screenshot)](./images/tile-account-signup-verification-3.webp)
 
 Once the Account has been activated, a verification email will be generated allowing you to sign in to your Account for the first time.
 
 Your dashboard will have not Tiles to begin with until you receive Data Sharing invitations.
 
-![Screenshot](./images/tile-account-signup-verification-4.webp)
+![Sign up as an Individual Tile License Account (screenshot)](./images/tile-account-signup-verification-4.webp)
 
-![Screenshot](./images/applying-column-row-level-filters-2.webp)
+![Sign up as an Individual Tile License Account (screenshot)](./images/applying-column-row-level-filters-2.webp)
 
 Check out the process in [Accept a Tile Datashare Invitation](../accept-a-tile-datashare-invitation/)

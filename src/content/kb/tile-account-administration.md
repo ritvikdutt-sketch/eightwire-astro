@@ -16,15 +16,15 @@ Go to the Admin section - next to your profile on the top right hand corner, cli
 
 Click **Users**
 
-![Screenshot](./images/tile-account-administration-1.webp)
+![Create Users (screenshot)](./images/tile-account-administration-1.webp)
 
 Click **+New**
 
-![Screenshot](./images/tile-account-administration-2.webp)
+![Create Users (screenshot)](./images/tile-account-administration-2.webp)
 
 Complete Email Address and select a Role
 
-![Screenshot](./images/tile-account-administration-3.webp)
+![Create Users (screenshot)](./images/tile-account-administration-3.webp)
 
 Confirm Mobile and Passwords.
 
@@ -46,6 +46,6 @@ Click **My Account** to confirm the defaulted options
 
 To enable Two-Factor Authentication for your Users.
 
-![Screenshot](./images/tile-account-administration-4.webp)
+![Account Administration (screenshot)](./images/tile-account-administration-4.webp)
 
 > *For any help with your Administration in your Account - contact* [*support@eight-wire.com*](mailto:support@eight-wire.com)

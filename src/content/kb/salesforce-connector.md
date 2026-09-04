@@ -26,7 +26,7 @@ Add **Full Access** to Selected OAuth Scopes
 
 Check **‘Require Secret for Web Server Flow’**
 
-![Screenshot](./images/salesforce-connector-1.webp)
+![Salesforce Account Access (screenshot)](./images/salesforce-connector-1.webp)
 
 ## Create a Datastore
 
@@ -34,7 +34,7 @@ From the Datastore Page click **+New**
 
 Name your Datastore and select **‘In the cloud’** and **‘Salesforce’**
 
-![Screenshot](./images/salesforce-connector-2.webp)
+![Create a Datastore (screenshot)](./images/salesforce-connector-2.webp)
 
 **Connection**
 

@@ -12,21 +12,21 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/scan-browse-and-edit-objects
 -   Select Browse
 -   Click the  **\>**  to expand the object and see the column definitions.
 
-![Screenshot](./images/scan-browse-and-edit-objects-1.webp)
+![Browse the Datastore (screenshot)](./images/scan-browse-and-edit-objects-1.webp)
 
 If the datastore is created in your Project (not shared from another Project or Account) then you are able to edit Structure, Filters and Tags;
 
-![Screenshot](./images/scan-browse-and-edit-objects-2.webp)
+![Browse the Datastore (screenshot)](./images/scan-browse-and-edit-objects-2.webp)
 
 ## Edit Structure: existing columns
 
 In the tab named **Structure** click the **Edit pencil icon** against a column.
 
-![Screenshot](./images/scan-browse-and-edit-objects-3.webp)
+![Edit Structure: existing columns (screenshot)](./images/scan-browse-and-edit-objects-3.webp)
 
 > *The warning message means that as soon as you change the structure — then the Datastore is now set to Manual Scan. The next time a scan is run — the definition will revert to the structure read from the object.*
 
-![Screenshot](./images/scan-browse-and-edit-objects-4.webp)
+![Edit Structure: existing columns (screenshot)](./images/scan-browse-and-edit-objects-4.webp)
 
 Change the attributes as required.
 
@@ -34,7 +34,7 @@ For example you can change the size or data type of a column.
 
 You can define a column as a Primary Key
 
-![Screenshot](./images/scan-browse-and-edit-objects-5.webp)
+![Edit Structure: existing columns (screenshot)](./images/scan-browse-and-edit-objects-5.webp)
 
 Click **Save**
 
@@ -44,11 +44,11 @@ This is useful if you want to define some audit columns in a destination datasto
 
 Click **\+ New Column**
 
-![Screenshot](./images/scan-browse-and-edit-objects-6.webp)
+![Edit Structure : create new columns (screenshot)](./images/scan-browse-and-edit-objects-6.webp)
 
 Enter a column name and define the column attributes
 
-![Screenshot](./images/scan-browse-and-edit-objects-7.webp)
+![Edit Structure : create new columns (screenshot)](./images/scan-browse-and-edit-objects-7.webp)
 
 Click **Save**
 
@@ -60,7 +60,7 @@ Untick the check box under *Use* to restrict that column from being processed.
 
 Click **Save**
 
-![Screenshot](./images/scan-browse-and-edit-objects-8.webp)
+![Restrict the columns to share in a data transfer process (screenshot)](./images/scan-browse-and-edit-objects-8.webp)
 
 > *A column not marked* Use *will be visible in a process mapping as restricted — it is not able to be mapped.*
 
@@ -72,7 +72,7 @@ The options available will depend on the data type of the column - for example, 
 
 Only rows of data where all the columns meet the filter criteria will be used by Eightwire.
 
-![Screenshot](./images/scan-browse-and-edit-objects-9.webp)
+![Filter the data (screenshot)](./images/scan-browse-and-edit-objects-9.webp)
 
 > *Enter a filter without any punctuation marks — the value alone is enough. A range can be entered with values separated by a comma but the filter does not accept 'like' statements.*
 
@@ -88,7 +88,7 @@ Click on a column  to apply a Tag.
 
 Select from the availables tag.
 
-![Screenshot](./images/scan-browse-and-edit-objects-10.webp)
+![Apply a Tag (screenshot)](./images/scan-browse-and-edit-objects-10.webp)
 
 > *The tag PII (Personally Identifiable Information) is available by default in every Project. Applying that tag to a column within a Datastore will mean when a process is created that uses that data, a warning is seen.*
 

@@ -8,7 +8,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/accept-a-tile-datashare-invi
 
 Select **click here** to accept the invitation
 
-![Screenshot](./images/accept-a-tile-datashare-invitation-1.webp)
+![Datashare invitation email from Demo A for the Course XLS Datastore with the click here link and 72-hour expiry](./images/accept-a-tile-datashare-invitation-1.webp)
 
 You will be taken to the login page -—enter your Email and Password
 
@@ -18,11 +18,11 @@ Enter the Sharing PIN
 
 Click **I Agree**
 
-![Screenshot](./images/accept-a-tile-datashare-invitation-2.webp)
+![Sharing Agreement dialog with the empty Sharing Pin field outlined in red and the I Agree and Cancel buttons](./images/accept-a-tile-datashare-invitation-2.webp)
 
 Refresh the Dashboard to see the Tile appear.
 
-![Screenshot](./images/accept-a-tile-datashare-invitation-3.webp)
+![Dashboard with the TILES panel showing the Course XLS tile and its info icon](./images/accept-a-tile-datashare-invitation-3.webp)
 
 All the Users in your Account will see the Tile on the dashboard when they log in to the Account.
 

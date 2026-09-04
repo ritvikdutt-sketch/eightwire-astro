@@ -15,7 +15,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/install-an-agent"
 3.  Expand the "Install new Agent?" tab
 4.  Name the Agent and choose a download option Windows 64 bit (recommended) or Windows 32 bit
 
-![Screenshot](./images/install-an-agent-1.webp)
+![Agent Installation — after step 4 (screenshot)](./images/install-an-agent-1.webp)
 
 5\. The Agent executable will save to the downloads folder.
 
@@ -25,7 +25,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/install-an-agent"
 
 8\. Select a location for the Agent to be installed and click **Next>**
 
-![Screenshot](./images/install-an-agent-2.webp)
+![Agent Installation — after step 8 (screenshot)](./images/install-an-agent-2.webp)
 
 > *The default location is C:\\Program Files (86) but the Agent will operate from different drives if you require. If you have more than one Agent installed on the computer ensure that each Agent installation is in its own folder.*
 
@@ -35,10 +35,10 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/install-an-agent"
 
 11\. When the installation has run, Click **Finish**
 
-![Screenshot](./images/install-an-agent-3.webp)
+![Agent Installation — after step 11 (screenshot)](./images/install-an-agent-3.webp)
 
 12\. Got to the Agent page in Eightwire — click **Go To Agent**
 
-![Screenshot](./images/install-an-agent-4.webp)
+![Agent Installation — after step 12 (screenshot)](./images/install-an-agent-4.webp)
 
 Your Agent has been successfully installed but will be offline until you Authenticate it against the Eightwire cloud services — follow the [Agent Authentication steps here](../authenticate-an-agent/)

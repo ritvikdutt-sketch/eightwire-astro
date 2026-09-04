@@ -15,7 +15,8 @@ export default {
         chocolate: { DEFAULT: '#a55e46', dark: '#6c3b2a' },
         'light-brown': '#e2d7cd',
         cream: { DEFAULT: '#F5F4EE', dark: '#EDEBE2', line: '#DDDAD0' },
-        ink: { DEFAULT: '#0B100D', soft: '#2A322D', muted: '#69716C' },
+        // ink.muted darkened from #69716C so 11px labels clear 4.5:1 on cream-dark and tinted sections
+        ink: { DEFAULT: '#0B100D', soft: '#2A322D', muted: '#626A65' },
         // shadcn-style semantic tokens used by src/components/ui/*, mapped onto the palette above
         background: '#F5F4EE',
         foreground: '#0B100D',

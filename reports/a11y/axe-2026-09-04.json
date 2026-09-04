@@ -1,0 +1,1008 @@
+{
+  "generated": "2026-09-04T02:53:48.590Z",
+  "axe": "4.13.0",
+  "pages": 91,
+  "results": [
+    {
+      "route": "company",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 11
+        }
+      ]
+    },
+    {
+      "route": "conductor",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 11
+        }
+      ]
+    },
+    {
+      "route": "connectors",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 46
+        }
+      ]
+    },
+    {
+      "route": "contact-us",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 32
+        }
+      ]
+    },
+    {
+      "route": "faq",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 18
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 19
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 288
+        }
+      ]
+    },
+    {
+      "route": "medicly",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 11
+        }
+      ]
+    },
+    {
+      "route": "security",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 20
+        }
+      ]
+    },
+    {
+      "route": "technical-overview",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 10
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/accept-a-datastore-share-invitation",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 33
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/accept-a-tile-datashare-invitation",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 34
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/account-alerts",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 39
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/account-and-project-audit",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 39
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/account-group-and-communities",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 33
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/account-settings",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 43
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/account-setup-verification",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 27
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/agent-architecture-for-data-access",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 35
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/agent-faqs-and-connectivity-troubleshooting",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 77
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/agent-system-requirements",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 70
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/agent-updates",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 33
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/applying-column-row-level-filters",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 35
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/arithmetic-operators",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 40
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/assign-project-users",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 25
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/authenticate-an-agent",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 53
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/boolean-operators",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 41
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/certifications-and-accreditations",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 25
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/column-and-smart-mapping",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 57
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/conditional-operators",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 38
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/configure-an-agent",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 57
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/connect-via-api",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 17
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/connector-types",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 313
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/control-functions-for-activity-log",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 38
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/copy-account-and-copy-project",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 36
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/create-and-associate-with-accounts",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 36
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/create-and-connect",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 75
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/create-map-and-filter-a-process",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 88
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/create-process-expressions",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 50
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/create-users",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 46
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/csv-delimited-text-data-share",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 35
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/data-sharing-arrangements",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 61
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/datastore-connection-to-aws",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 57
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/datastore-queries",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 48
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/datastore-scan-faqs",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 42
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/datastore-wildcards",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 44
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/define-your-tile-datastores",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 60
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/eightwire-entities",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 49
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/error-handling",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 49
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/excel-data-share",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 52
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/execute-a-process",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 58
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/fixed-width-datastores",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 50
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/folder-datastores",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 55
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/ftp-sftp-datastores",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 58
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/functions",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 36
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/install-an-agent",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 51
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/literals",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 72
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/managing-datasharing-with-third-parties",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 18
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/monitor-process-activity",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 42
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/monitor-tile-activity",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 36
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/overview",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 42
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/precedence",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 28
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/process-csv-and-excel-data-using-tile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 41
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/process-event-execution-schedule",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 81
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/process-generic-files-using-tile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 43
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/process-group-time-schedule",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 42
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/process-groups-and-types",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 42
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/process-options-thresholds-and-toleration",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 79
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/project-alerts",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 38
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/project-metadata-report",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 41
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/project-setup",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 40
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/salesforce-connector",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 69
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/scan-browse-and-edit-objects",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 70
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/security-white-paper",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 21
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/share-a-tile-datastore",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 38
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/share-your-datastore",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 47
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/sign-in-for-users",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 41
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/submit-data-using-tile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 44
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/support-and-change-notifications",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 28
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/technical-whitepaper",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 23
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/teradata-datastores",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 45
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/tile-account-administration",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 40
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/tile-account-signup-verification",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 38
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/tile-datastore-types",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 35
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/tile-datastores",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 36
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/use-process-constants-and-system-expressions",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 58
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/user-security",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 31
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/using-datastore-tags",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 39
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/using-sql-cloud-connector",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 45
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/using-system-data",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 27
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/using-the-oracle-connector",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 44
+        }
+      ]
+    },
+    {
+      "route": "knowledge-base/video-tutorials",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 21
+        }
+      ]
+    }
+  ]
+}

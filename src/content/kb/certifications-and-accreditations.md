@@ -16,12 +16,12 @@ Eightwire worked with the Social Wellbeing Agency (SWA), SWA’s independent sec
 
 ·  A review of Eightwire business processes including Change Control, Business Continuity and Disaster Recovery.
 
-![Screenshot](./images/certifications-and-accreditations-1.webp)
+![Social Wellbeing Agency | Toi Hau Tāngata logo](./images/certifications-and-accreditations-1.webp)
 
-![Screenshot](./images/certifications-and-accreditations-2.webp)
+![Data Exchange lifebuoy ring graphic with blue, teal and orange markers](./images/certifications-and-accreditations-2.webp)
 
 ## Service Organisation Control (SOC 2) Type I audit
 
 Eightwire completed SOC2 Certification in August 2022
 
-![Screenshot](./images/certifications-and-accreditations-3.webp)
+![AICPA SOC for Service Organizations seal (aicpa.org/soc4so)](./images/certifications-and-accreditations-3.webp)

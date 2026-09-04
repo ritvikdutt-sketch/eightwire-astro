@@ -1,0 +1,23 @@
+---
+// Retired routes: an instant (0 s) redirect with a proper document language and a visible fallback,
+// replacing Astro's generated stubs, which had no <html lang>.
+interface Props {
+  from: string;
+  to: string;
+}
+const { from, to } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting… — Eightwire</title>
+    <meta http-equiv="refresh" content={`0;url=${to}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={to} />
+  </head>
+  <body style="font-family: system-ui, sans-serif; padding: 2rem; color: #0B100D; background: #F5F4EE;">
+    <p>Redirecting from <code>{from}</code> to <a href={to}>{to}</a>.</p>
+  </body>
+</html>

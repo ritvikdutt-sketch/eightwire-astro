@@ -12,15 +12,15 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/account-setup-verification"
 
 ## Complete the form and select sign up
 
-![Screenshot](./images/account-setup-verification-1.webp)
+![Sign up form with Email, Phone, Company, Password, Re-type Password and Account Type fields and the Sign up button](./images/account-setup-verification-1.webp)
 
 ## Once you submit, our administrators will be alerted and prepare your account for verification.
 
-![Screenshot](./images/account-setup-verification-2.webp)
+![Eightwire sign-up confirmation page saying the account is being set up and an activation email will follow](./images/account-setup-verification-2.webp)
 
 ## Once your account has been activated you will receive a verification email. Log in to your account and accept the terms and conditions to complete the process.
 
-![Screenshot](./images/account-setup-verification-3.webp)
+![Eightwire verification email with the conductor.eight-wire.com VerifyEmail link to click to activate the Account](./images/account-setup-verification-3.webp)
 
 Welcome to your new Account!
 

@@ -10,7 +10,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/agent-faqs-and-connectivity-
 
 To initially diagnose the problem, navigate to the folder where your Agent is installed and click on **Agent Configuration**
 
-![Screenshot](./images/agent-faqs-and-connectivity-troubleshooting-1.webp)
+![Conductor Agent install folder in File Explorer with the AgentConfiguration application highlighted](./images/agent-faqs-and-connectivity-troubleshooting-1.webp)
 
 **Service Status:** if this shows as stopped, go to Services (Local) and find the Conductor Agent service, to restart.
 
@@ -20,7 +20,7 @@ Go through the **Check Internet** steps to diagnose issues.
 
 **Version:** if the Agent you have installed shows the error message — Agent is deprecated — this means the Agent needs to be updated. Refer to [**Configure the Agent**](../configure-an-agent/) page for help with that.
 
-![Screenshot](./images/agent-faqs-and-connectivity-troubleshooting-2.webp)
+![Conductor Agent Configuration window showing Service Status Running, Proxy Settings and a red Connection failed error banner](./images/agent-faqs-and-connectivity-troubleshooting-2.webp)
 
 ## **Check Internet**
 
@@ -66,9 +66,9 @@ Ensure that the password for the Domain Account has not expired by checking the 
 
 Sometimes a service simply needs to be restarted.  
 
-![Screenshot](./images/agent-faqs-and-connectivity-troubleshooting-3.webp)
+![Conductor Agent Properties dialog General tab showing Service status Running with the Start and Stop buttons](./images/agent-faqs-and-connectivity-troubleshooting-3.webp)
 
-![Screenshot](./images/agent-faqs-and-connectivity-troubleshooting-4.webp)
+![Agent Troubleshooting flowchart: Yes/No checks on portal online status, internet access, firewall and .NET 4.5 lead to fixes or Contact Eightwire Support](./images/agent-faqs-and-connectivity-troubleshooting-4.webp)
 
 ## Frequently Asked Questions
 

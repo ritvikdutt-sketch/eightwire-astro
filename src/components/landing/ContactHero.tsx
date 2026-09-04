@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CONTACT_EMAIL } from './cta';
 import { focusLime } from './ui';
+import { useMotion } from '../../lib/motion';
 
 const base = import.meta.env.BASE_URL;
 
@@ -45,17 +46,9 @@ function Wire({ animate, replay }: { animate: boolean; replay: number }) {
 }
 
 export default function ContactHero() {
-  const [reduced, setReduced] = useState(false);
+  const motion = useMotion();
   const [subject, setSubject] = useState<string | undefined>(undefined);
   const [replay, setReplay] = useState(0);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReduced(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
 
   const pick = (s: string) => {
     if (s !== subject) {
@@ -99,13 +92,13 @@ export default function ContactHero() {
             href={mailto(subject)}
             aria-label={`Email ${CONTACT_EMAIL}${subject ? ` about ${subject}` : ''}`}
             onMouseEnter={() => setReplay((n) => n + 1)}
-            className={`group mt-5 block w-fit max-w-full break-words rounded-sm font-display text-[clamp(1.5rem,3.4vw,2.25rem)] leading-[1.15] tracking-[-0.01em] text-cream transition-[color,transform] duration-200 hover:text-lime active:scale-[0.97] ${focusLime}`}
+            className={`group mt-5 block w-fit max-w-full break-words rounded-sm font-display text-[clamp(1.5rem,3.4vw,2.25rem)] leading-[1.15] tracking-[-0.01em] text-cream transition-[color,transform] duration-200 hover:text-lime active:scale-[0.97] motion-reduce:transition-none motion-reduce:transform-none ${focusLime}`}
           >
             {CONTACT_EMAIL}
           </a>
 
           <div className="mt-4">
-            <Wire animate={!reduced} replay={replay} />
+            <Wire animate={motion} replay={replay} />
           </div>
 
           <p className="mt-8 font-mono text-caption uppercase tracking-[0.14em] text-cream/55" aria-live="polite">
@@ -120,8 +113,8 @@ export default function ContactHero() {
                     href={mailto(s)}
                     onMouseEnter={() => pick(s)}
                     onFocus={() => pick(s)}
-                    className={`inline-flex min-h-[44px] items-center rounded-sm border px-4 font-mono text-caption uppercase tracking-[0.12em] text-cream transition-[border-color,transform] duration-200 hover:-translate-y-px hover:border-lime active:scale-[0.97] active:translate-y-0 ${
-                      on ? 'border-lime' : 'border-cream/25'
+                    className={`inline-flex min-h-[44px] items-center rounded-sm border px-4 font-mono text-caption uppercase tracking-[0.12em] text-cream transition-[border-color,transform] duration-200 hover:-translate-y-px hover:border-lime active:scale-[0.97] active:translate-y-0 motion-reduce:transition-none motion-reduce:transform-none ${
+                      on ? 'border-lime' : 'border-cream/40'
                     } ${focusLime}`}
                   >
                     {s}

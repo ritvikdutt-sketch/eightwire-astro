@@ -8,7 +8,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/eightwire-entities"
 
 Within your Eightwire Account - the entities relate together in this way;
 
-![Screenshot](./images/eightwire-entities-1.webp)
+![Nested boxes: Account contains Project (holding Datastore > Object and Process Group > Process) alongside Agent and Users; no arrows.](./images/eightwire-entities-1.webp)
 
 ## **Account**
 

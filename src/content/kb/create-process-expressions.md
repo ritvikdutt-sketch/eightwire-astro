@@ -10,25 +10,25 @@ To create a process expression, navigate to a process.
 
 Highlight the process and select **Edit Process**
 
-![Screenshot](./images/create-process-expressions-1.webp)
+![Processes in Presentation for Analytics list with the Edit Process tooltip over the pencil button on the AA\_Inputs.xlsx row](./images/create-process-expressions-1.webp)
 
 Select **+Add Expression Column**
 
-![Screenshot](./images/create-process-expressions-2.webp)
+![Editing Process Mapping panel for StagingIn.AcuteAdmissionsProcessCommon with the +Add Expression Column button highlighted](./images/create-process-expressions-2.webp)
 
 Name the column that will be represented by an expression.
 
 Enter the expression and click **Save**
 
-![Screenshot](./images/create-process-expressions-3.webp)
+![Expression dialog with Field Name ArrivalMonth, expression Datepart(Data("ArrivalDatetime"),"Month") and the Save button](./images/create-process-expressions-3.webp)
 
 The syntax of the expression will be checked.
 
-![Screenshot](./images/create-process-expressions-4.webp)
+![Success toasts reading Expression checking has been successful and Manual mapping has been created successfully](./images/create-process-expressions-4.webp)
 
 The expression can be manually mapped (click on the expression and then the destination column).
 
-![Screenshot](./images/create-process-expressions-5.webp)
+![Mapping panel with ArrivalMonth and ArrivalYear expression columns mapped to the ArrivalMonth and ArrivalYear NUMBER destinations](./images/create-process-expressions-5.webp)
 
 **Save** the process.
 

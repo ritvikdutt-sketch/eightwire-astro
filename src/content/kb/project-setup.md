@@ -14,7 +14,7 @@ On the Security Tab, click +Add to select Users and assign a Project Role.
 
 Click Next to go to the Basic Tab
 
-![Screenshot](./images/project-setup-1.webp)
+![Create a Project (screenshot)](./images/project-setup-1.webp)
 
 Name the Project.
 
@@ -22,11 +22,11 @@ Provide an optional description (You can edit these fields at any time)
 
 Click Create
 
-![Screenshot](./images/project-setup-2.webp)
+![Create a Project (screenshot)](./images/project-setup-2.webp)
 
 ## Project Dashboard
 
-![Screenshot](./images/project-setup-3.webp)
+![Project Dashboard (screenshot)](./images/project-setup-3.webp)
 
 **Datastores** — create your datastores, display any external datastores.
 

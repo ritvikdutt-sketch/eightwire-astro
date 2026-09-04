@@ -106,7 +106,10 @@ export default function KbBrowser({ articles, categories, base, supportEmail }: 
           <section key={g.category} className="grid gap-4 border-b border-cream-line py-10 lg:grid-cols-[0.38fr_1fr] lg:gap-14 lg:py-12">
             <h2 className="self-start font-mono text-caption uppercase tracking-[0.14em] text-ink-muted">
               {g.category}
-              <span className="ml-2 text-ink-muted/60">{g.items.length}</span>
+              <span className="ml-2 text-ink-soft">
+                {g.items.length}
+                <span className="sr-only"> articles</span>
+              </span>
             </h2>
             <ul className="-mt-2" role="list">
               {g.items.map((a) => (

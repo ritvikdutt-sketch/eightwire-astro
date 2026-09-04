@@ -6,7 +6,7 @@ order: 31
 sourceUrl: "https://www.eightwire.io/knowledge-base/datastore-wildcards"
 ---
 
-![Screenshot](./images/datastore-wildcards-1.webp)
+![Files DataFileExample\_20200912\_1.txt to \_20200914\_3.txt → wildcard DataFileExample.txt → process → table dbo.DataLoaded, loaded once by last modified date](./images/datastore-wildcards-1.webp)
 
 Once a process is run on a file (determined by the LastModifiedDate) it cannot process again, preventing any data loads duplicated to your source.
 
@@ -25,9 +25,9 @@ Once a process is run on a file (determined by the LastModifiedDate) it cannot p
 1.  Create a CSV Datastore — it must be a source.
 2.  Note that in the file path, the files can be seen using their complete filename convention.
 
-![Screenshot](./images/datastore-wildcards-2.webp)
+![File Explorer listing six files ExistingClientList\_20200301\_A to ExistingClientList\_20200302\_C with Date modified column](./images/datastore-wildcards-2.webp)
 
-![Screenshot](./images/datastore-wildcards-3.webp)
+![Browsing Client Lists panel listing ExistingClientList\_20200301\_A.csv to \_20200302\_C.csv with Test Connection and Scan for Changes buttons](./images/datastore-wildcards-3.webp)
 
 3\. In the datastore go to the last tab — Filename Wildcards.
 
@@ -35,7 +35,7 @@ Once a process is run on a file (determined by the LastModifiedDate) it cannot p
 
 5\. Give your filename an alias — this is how the file will appear in the Datastore.
 
-![Screenshot](./images/datastore-wildcards-4.webp)
+![Filename wildcards tab with alias ClientList.csv, value ^ExistingClientList\_\[0-9\]{8}\_\[A-Z\]{1}.csv, + New Wildcard and Save buttons](./images/datastore-wildcards-4.webp)
 
 6\. In the value field save an expression that allocates variables \[0-9\] for numbers and \[A-Z\] for letters. Any other characters are expressed as they appear.  End the string with the file extension as it appears in windows explorer. Select **Save**.
 
@@ -43,7 +43,7 @@ Once a process is run on a file (determined by the LastModifiedDate) it cannot p
 
     Your datastore now appears with a constant filename.
 
-![Screenshot](./images/datastore-wildcards-5.webp)
+![Browsing Client Lists panel now listing the single wildcard file ClientList.csv with Test Connection and Scan for Changes buttons](./images/datastore-wildcards-5.webp)
 
 > *If a process executes and all the files have already transferred the error message will say "your datastore is empty".*
 

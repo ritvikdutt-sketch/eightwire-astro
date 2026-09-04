@@ -14,4 +14,8 @@ The second part is the value which will be returned if the first value evaluates
 
 The third value is returned if the first value evaluates to false.
 
-![Screenshot](./images/conditional-operators-1.webp)
+| Syntax | Description |
+|---|---|
+| `... ? ... : ...` | If – then – else |
+| Example | For example, the following would return "Yes" because the first part, `1=1`, evaluated to true:<br>`1 == 1 ? "Yes" : "No"` |
+| Example | Alternatively, this example would evaluate to "Nope":<br>`"Dog" == "Cat" ? "Yup" : "Nope"` |

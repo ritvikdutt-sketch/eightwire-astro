@@ -8,7 +8,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/account-settings"
 
 ## Navigate from the dashboard to Account.
 
-![Screenshot](./images/account-settings-1.webp)
+![Dashboard Quick Access tiles with the Account tile highlighted](./images/account-settings-1.webp)
 
 ## See an overview of your account activity and use the tabs to define the following:
 
@@ -20,7 +20,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/account-settings"
 
 **Time Zone** — The time zone that applies to your account. Any schedules you set in your account will use this time zone.
 
-![Screenshot](./images/account-settings-2.webp)
+![Account page Overview panel beside the Basic, Contact, Billing, Time Zone and Settings tabs, Basic showing Name and Description](./images/account-settings-2.webp)
 
 ## Settings
 

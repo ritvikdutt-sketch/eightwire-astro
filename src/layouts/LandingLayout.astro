@@ -11,11 +11,20 @@ interface Props {
 
 const { title, description, ogDescription = description } = Astro.props;
 const base = import.meta.env.BASE_URL;
+
+// Markdown twin of this page (written by scripts/emit-markdown.mjs after every build).
+const path = Astro.url.pathname;
+const rel = path.startsWith(base) ? path.slice(base.length) : path.replace(/^\/+/, '');
+const markdownHref = `${base}${rel}${rel === '' || rel.endsWith('/') ? '' : '/'}index.md`;
 ---
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-<script is:inline>document.documentElement.classList.remove('no-js');</script>
+<script is:inline>
+  document.documentElement.classList.remove('no-js');
+  // Apply the visitor's motion choice before first paint so nothing moves for a paused visitor.
+  try { if (localStorage.getItem('ew-motion') === 'paused') document.documentElement.dataset.motion = 'paused'; } catch (e) {}
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{title}</title>
@@ -24,6 +33,7 @@ const base = import.meta.env.BASE_URL;
 <meta property="og:description" content={ogDescription} />
 <meta property="og:type" content="website" />
 <link rel="icon" href={`${base}favicon.png`} type="image/png" />
+<link rel="alternate" type="text/markdown" href={markdownHref} title="Markdown version of this page" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -34,19 +44,44 @@ const base = import.meta.env.BASE_URL;
 
 <Nav client:load currentPath={Astro.url.pathname} />
 
-<main id="main-content">
+<main id="main-content" tabindex="-1" class="outline-none">
   <slot />
 </main>
 
 <FooterSection />
 
 <script is:inline>
+  // Scroll-reveal for static sections (islands use .rise instead).
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.07 });
   document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+  // Site-wide motion switch (WCAG 2.2.2): the footer button is static markup, so it is wired here.
+  // Islands (hero, connectors, contact) listen for the `ew-motion` event via src/lib/motion.ts.
+  (function () {
+    var KEY = 'ew-motion';
+    function paused() { try { return localStorage.getItem(KEY) === 'paused'; } catch (e) { return false; } }
+    function apply(p) {
+      document.documentElement.dataset.motion = p ? 'paused' : 'on';
+      document.querySelectorAll('[data-motion-toggle]').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(p));
+        b.textContent = p ? 'Play motion' : 'Pause motion';
+      });
+    }
+    apply(paused());
+    window.addEventListener('ew-motion', function () { apply(paused()); });
+    document.addEventListener('click', function (e) {
+      var b = e.target && e.target.closest ? e.target.closest('[data-motion-toggle]') : null;
+      if (!b) return;
+      var p = !paused();
+      try { localStorage.setItem(KEY, p ? 'paused' : 'on'); } catch (err) {}
+      apply(p);
+      window.dispatchEvent(new CustomEvent('ew-motion', { detail: { paused: p } }));
+    });
+  })();
 </script>
 </body>
 </html>

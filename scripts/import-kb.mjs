@@ -14,8 +14,18 @@ import { load } from 'cheerio';
 import TurndownService from 'turndown';
 import { gfm } from 'turndown-plugin-gfm';
 import sharp from 'sharp';
-import { mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
 import path from 'node:path';
+
+// Alt text and table transcriptions written by the vision pass (scripts/kb-alt-overrides.json):
+//   { "<slug>": { "<image number>": { "alt": "…", "table": "| GFM table … |" } } }
+// Without an entry, the alt is derived from the nearest heading and step; "Screenshot" is never emitted.
+let ALT_OVERRIDES = {};
+try {
+  ALT_OVERRIDES = JSON.parse(await readFile(path.join('scripts', 'kb-alt-overrides.json'), 'utf8'));
+} catch {
+  /* no overrides yet */
+}
 
 const ORIGIN = 'https://www.eightwire.io';
 const OUT = path.resolve('src/content/kb');
@@ -229,8 +239,33 @@ async function convertArticle(slug) {
     if (!$(t).find('th').length) report.tablesKeptRaw += 1;
   });
 
+  // Alt text from context: the nearest preceding heading, plus the step the screenshot follows.
+  const contextAlt = (img) => {
+    const anchor = $(img).closest('figure, p');
+    let node = (anchor.length ? anchor : $(img)).prev();
+    let heading = '';
+    let step = '';
+    while (node.length) {
+      const tag = (node[0].tagName || '').toLowerCase();
+      if (!step) {
+        if (tag === 'ol') step = String(node.children('li').length);
+        else if (tag === 'p') {
+          const m = node.text().trim().match(/^(\d{1,2})[.)]/);
+          if (m) step = m[1];
+        }
+      }
+      if (/^h[1-6]$/.test(tag)) {
+        heading = collapse(node.text());
+        break;
+      }
+      node = node.prev();
+    }
+    return `${heading || title}${step ? ` — after step ${step}` : ''} (screenshot)`;
+  };
+
   // Images → local files next to the article.
   let n = 0;
+  const tables = {};
   const imgs = body.find('img').toArray();
   for (const img of imgs) {
     const $img = $(img);
@@ -242,10 +277,20 @@ async function convertArticle(slug) {
     n += 1;
     const file = await downloadImage(new URL(src, ORIGIN).href, slug, n);
     $img.attr('src', `./images/${file}`);
-    const alt = collapse($img.attr('alt') || '');
-    $img.attr('alt', alt === '' || alt.toLowerCase() === 'image' ? 'Screenshot' : alt);
-    $img.removeAttr('loading srcset sizes width height');
+    const sourceAlt = collapse($img.attr('alt') || '');
+    const override = ALT_OVERRIDES[slug]?.[String(n)];
+    let alt = override?.alt ?? (sourceAlt && sourceAlt.toLowerCase() !== 'image' ? sourceAlt : contextAlt(img));
     const fig = $img.closest('figure');
+    if (override?.table) {
+      // The image is a table of text (WCAG 1.4.5). The transcription replaces it outright: real
+      // table markup is selectable, searchable, reflows, and needs no alt text.
+      tables[n] = override.table.trim();
+      (fig.length ? fig : $img).before(`<p>@@TABLE${n}@@</p>`);
+      (fig.length ? fig : $img).remove();
+      continue;
+    }
+    $img.attr('alt', alt);
+    $img.removeAttr('loading srcset sizes width height');
     if (fig.length) fig.replaceWith($('<p></p>').append($img));
   }
 
@@ -279,6 +324,8 @@ async function convertArticle(slug) {
       // Webflow splits one bold run into adjacent <strong> fragments; "**a****b**" cannot pair in
       // CommonMark, so join the fragments back into a single run.
       .replace(/(\S)\*\*\*\*(\S)/g, '$1$2')
+      // transcribed tables take the place of their placeholder paragraphs
+      .replace(/@@TABLE(\d+)@@/g, (_, k) => `\n${tables[k]}\n`)
       .replace(/\n{3,}/g, '\n\n')
       .trim(),
   );

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import { btnPrimary, btnGhostDark, arrowNudge, focusLime } from './ui';
 import { BOOK_DEMO_HREF, BOOK_DEMO_LABEL } from './cta';
+import { useMotion } from '../../lib/motion';
 
 const base = import.meta.env.BASE_URL;
 
@@ -147,15 +147,8 @@ function WireField({ animate }: { animate: boolean }) {
 }
 
 export default function Hero() {
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReduced(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
+  // packets only travel while motion is welcome: OS preference + the site's pause switch
+  const motion = useMotion();
 
   return (
     <section className="relative overflow-hidden bg-forest-deepest" id="top">
@@ -218,8 +211,8 @@ export default function Hero() {
         </div>
 
         <div className="rise rise-d2 relative">
-          <WireField animate={!reduced} />
-          <p className="mt-2 flex items-center justify-center gap-2 font-mono text-caption uppercase tracking-[0.14em] text-cream/40">
+          <WireField animate={motion} />
+          <p className="mt-2 flex items-center justify-center gap-2 font-mono text-caption uppercase tracking-[0.14em] text-cream/55">
             <span className="h-1.5 w-1.5 rounded-full bg-lime motion-safe:animate-pulse-dot" aria-hidden="true" />
             How data moves through Conductor
           </p>

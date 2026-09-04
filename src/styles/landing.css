@@ -42,3 +42,15 @@ body::after {
   .reveal { transition: none; opacity: 1; transform: none; }
   .rise { animation: none; }
 }
+
+/* Site-wide motion switch (footer "Pause motion", WCAG 2.2.2) — mirrors the reduced-motion rules
+   and freezes the CSS loops; islands stop their own SMIL/JS motion via useMotion(). */
+html[data-motion="paused"] { scroll-behavior: auto; }
+html[data-motion="paused"] .reveal { transition: none; opacity: 1; transform: none; }
+html[data-motion="paused"] .rise { animation: none; }
+html[data-motion="paused"] .motion-safe\:animate-marquee,
+html[data-motion="paused"] .motion-safe\:animate-pulse-dot { animation-play-state: paused; }
+
+/* the marquee also rests while it is pointed at or holds focus */
+.marquee-track:hover,
+.marquee-track:focus-within { animation-play-state: paused; }

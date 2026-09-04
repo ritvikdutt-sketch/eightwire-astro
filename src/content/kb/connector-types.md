@@ -6,10 +6,52 @@ order: 40
 sourceUrl: "https://www.eightwire.io/knowledge-base/connector-types"
 ---
 
-![Screenshot](./images/connector-types-1.webp)
+**Application**
 
-![Screenshot](./images/connector-types-2.webp)
+| CONNECTOR TYPE | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |
+|---|---|---|---|---|---|---|---|
+| SALESFORCE | ✗ | ✓ | ✓ | ✗ | Username<br>Password<br>Secret key<br>Access key | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
 
-![Screenshot](./images/connector-types-3.webp)
+**Database**
 
-![Screenshot](./images/connector-types-4.webp)
+| CONNECTOR TYPE | GROUP | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |
+|---|---|---|---|---|---|---|---|---|
+| ANSISQL | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| DB2 | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| DB2GENERIC | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| HADOOP HIVE | Database | ✗ | ✓ | ✗ | ✗ | URL<br>Username<br>Protocol<br>Connection String<br>Database | Full merge<br>Partial merge<br>Append<br>Overwrite | Request |
+| INTERBASE | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| MYOB | Database | ✓ | ✗ | ✗ | ✗ | Protocol<br>Connection String<br>Schema | Append<br>Overwrite | Default |
+| MYSQL | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| NETEZZASQL | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| ORACLE | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| POSTGRESQL | Database | ✓ | ✓ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| REDSHIFT | Database | ✗ | ✓ | ✓ | ✗ | Server<br>Username<br>Password<br>Database<br>Bucket<br>Secret key<br>Access key<br>AWS Region | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| SQLSERVER | Database | ✓ | ✓ | ✓ | ✗ | Protocol<br>Connection string<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| SYBASE | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection string<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |
+| CLOUDANT | NoSql | ✗ | ✓ | ✗ | ✗ | Username<br>Database<br>Entity | Append, Overwrite | Default |
+| COUCHDB | NoSql | ✓ | ✓ | ✗ | ✗ | URL<br>PORT<br>UserName<br>Database<br>Entity | Append, Overwrite | Default |
+| DOCUMENTDB | NoSql | ✗ | ✓ | ✗ | ✗ | URL<br>Database<br>Access Key | Append, Overwrite | Default |
+| DYNAMODB | NoSql | ✗ | ✓ | ✗ | ✗ | AWS Region<br>Access Key<br>Secret Key | Append, Overwrite | Default |
+| MONGODB | NoSql | ✗ | ✓ | ✗ | ✗ | URL<br>UserName<br>Database | Append, Overwrite | Default |
+
+**File**
+
+| CONNECTOR TYPE | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |
+|---|---|---|---|---|---|---|---|
+| CSV | ✓ | ✗ | ✗ | ✓ | Path<br>Column headers<br>Data Starts<br>Column delimiter<br>Row delimiter<br>Text qualifier | Overwrite | Default |
+| FIXEDWIDTH | ✓ | ✗ | ✗ | ✓ | Path<br>Column headers<br>Data starts<br>Padding character<br>Row delimiter | Overwrite | Default |
+| FOLDER | ✓ | ✗ | ✗ | ✗ | Path | Overwrite, Append | Request |
+| FTPCSV | ✓ | ✗ | ✗ | ✓ | Path<br>Column Headers<br>Data Starts<br>Column Delimiter<br>Row Delimiter<br>Test Qualifier<br>Port<br>Server<br>User Name<br>Protocol<br>Private key file path<br>Passphrase | Overwrite | Default |
+| FTPXLSX | ✓ | ✗ | ✗ | ✓ | Path<br>Column Headers<br>Data Starts<br>Column Delimiter<br>Row Delimiter<br>Test Qualifier<br>Port<br>Server<br>UserName<br>Protocol<br>Private key file path<br>Passphrase | Overwrite | Default |
+| HADOOP DFS | ✗ | ✓ | ✗ | ✓ | Path<br>Column headers<br>Data starts<br>Column Delimiter<br>Test Qualifier<br>URL<br>Username | Overwrite | Default |
+| S3CSV | ✗ | ✓ | ✗ | ✗ | Bucket name<br>Secret key<br>Access key<br>AWS region<br>Path<br>Column headers<br>Data starts<br>Column delimiter<br>Row delimiter<br>Text qualifier | Overwrite | Request |
+| XLSX | ✓ | ✗ | ✗ | ✓ | Path<br>Column headers<br>Data starts | Overwrite | Default |
+
+**Eightwire Tile**
+
+| CONNECTOR TYPE | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |
+|---|---|---|---|---|---|---|---|
+| CSV TILE | ✗ | ✓ | ✗ | ✗ | Destination Datastore | Defined by Destination | Default |
+| EXCEL TILE | ✗ | ✓ | ✗ | ✗ | Destination Datastore | Defined by Destination | Default |
+| GENERIC TILE | ✗ | ✓ | ✗ | ✗ | Defined by Destination | Insert, Overwrite | Request |

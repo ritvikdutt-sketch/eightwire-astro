@@ -8,7 +8,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/process-event-execution-sche
 
 > *Before working with an event schedule, define your Project dataflow — build and manually run all the required processes.*
 
-![Screenshot](./images/process-event-execution-schedule-1.webp)
+![Process Event Execution Schedule (screenshot)](./images/process-event-execution-schedule-1.webp)
 
 ## Define the initial event Time Schedule
 
@@ -16,15 +16,15 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/process-event-execution-sche
 
 Locate the Process Group (containing the first process that needs to execute).
 
-![Screenshot](./images/process-event-execution-schedule-2.webp)
+![Define the initial event Time Schedule (screenshot)](./images/process-event-execution-schedule-2.webp)
 
 Click on the Process Group to expand, and click **Edit Schedules**
 
-![Screenshot](./images/process-event-execution-schedule-3.webp)
+![Define the initial event Time Schedule (screenshot)](./images/process-event-execution-schedule-3.webp)
 
 Select **+** **New** to create a time schedule
 
-![Screenshot](./images/process-event-execution-schedule-4.webp)
+![Define the initial event Time Schedule (screenshot)](./images/process-event-execution-schedule-4.webp)
 
 Complete the options Start Time and Date. To make recurring, tick 'Repeat'
 
@@ -34,7 +34,7 @@ Select the occurrence — days of the week or the day of the month, that the sch
 
 Click **Save**
 
-![Screenshot](./images/process-event-execution-schedule-5.webp)
+![Define the initial event Time Schedule (screenshot)](./images/process-event-execution-schedule-5.webp)
 
 > *Uncheck the box 'Enabled', if you want to pause the schedule at any time.*
 
@@ -46,25 +46,25 @@ Click **Edit Schedules**
 
 Click to select the the time schedule you have created.
 
-![Screenshot](./images/process-event-execution-schedule-6.webp)
+![Define the execution event schedule (screenshot)](./images/process-event-execution-schedule-6.webp)
 
 Click **Execution Plan**
 
-![Screenshot](./images/process-event-execution-schedule-7.webp)
+![Define the execution event schedule (screenshot)](./images/process-event-execution-schedule-7.webp)
 
 Click the + button to add a new execution event.
 
-![Screenshot](./images/process-event-execution-schedule-8.webp)
+![Define the execution event schedule (screenshot)](./images/process-event-execution-schedule-8.webp)
 
 Click on the Process Group dropdown to select a Process Group.
 
-![Screenshot](./images/process-event-execution-schedule-9.webp)
+![Define the execution event schedule (screenshot)](./images/process-event-execution-schedule-9.webp)
 
 The processes that exist in the group will be displayed — click on the first event to be executed.
 
 Click on the **+** button to add processes to the sequence.
 
-![Screenshot](./images/process-event-execution-schedule-10.webp)
+![Define the execution event schedule (screenshot)](./images/process-event-execution-schedule-10.webp)
 
 The processes in the group that are still to be scheduled are highlighted.
 
@@ -72,11 +72,11 @@ Use the Process Group dropdown to add further processes to the execution plan.
 
 Click **Save** when you have finished the building the event sequence.
 
-![Screenshot](./images/process-event-execution-schedule-11.webp)
+![Define the execution event schedule (screenshot)](./images/process-event-execution-schedule-11.webp)
 
 The entire sequence can be seen on the Process Group page — click on the **blue arrow** to expand the display.
 
-![Screenshot](./images/process-event-execution-schedule-12.webp)
+![Define the execution event schedule (screenshot)](./images/process-event-execution-schedule-12.webp)
 
 The event schedule is in place and will begin execution at the scheduled time.
 
@@ -86,19 +86,19 @@ From a Process Group - click Edit Schedules
 
 Click in the schedule box
 
-![Screenshot](./images/process-event-execution-schedule-13.webp)
+![Edit an Execution Schedule (screenshot)](./images/process-event-execution-schedule-13.webp)
 
 Click **Execution Plan**
 
 Delete any process from the bottom of the sequence (click on the x) to edit the order.
 
-![Screenshot](./images/process-event-execution-schedule-14.webp)
+![Edit an Execution Schedule (screenshot)](./images/process-event-execution-schedule-14.webp)
 
 Amend the order as required and click **Save**
 
 The processes will be seen in the Activity Page as they execute.
 
-![Screenshot](./images/process-event-execution-schedule-15.webp)
+![Edit an Execution Schedule (screenshot)](./images/process-event-execution-schedule-15.webp)
 
 ## Execution Schedules using external Datastores
 
@@ -112,7 +112,7 @@ This may have an impact on your Project - if you use that datastore in a schedul
 
 Simply edit the execution events to correct the sequence accordingly.
 
-![Screenshot](./images/process-event-execution-schedule-16.webp)
+![Execution Schedules using external Datastores (screenshot)](./images/process-event-execution-schedule-16.webp)
 
 ## FAQ's for working with Event Schedules
 

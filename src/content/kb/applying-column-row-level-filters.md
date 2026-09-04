@@ -10,25 +10,25 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/applying-column-row-level-fi
 
 **Browse a Datastore** to view an object to apply row level filters.
 
-![Screenshot](./images/applying-column-row-level-filters-1.webp)
+![Datastore object Filter tab with the Edit Filter popup: Copy data when is equal to Health Provider A, with Ok and Do not filter buttons](./images/applying-column-row-level-filters-1.webp)
 
-![Screenshot](./images/applying-column-row-level-filters-2.webp)
+![Decorative horizontal divider line (1600x19 px); no UI content](./images/applying-column-row-level-filters-2.webp)
 
 ## Datastore options: Column level filters
 
 To restrict a **column** from being used in a process, simply untick the 'Use' checkbox and **Save**.
 
-![Screenshot](./images/applying-column-row-level-filters-3.webp)
+![Datastore Structure tab: the Use checkbox column is highlighted, the CODE row is unticked (marked orange), and the Save button is below](./images/applying-column-row-level-filters-3.webp)
 
 The restricted column appears unavailable (marked **Do Not Use**) and cannot be mapped to a destination column.
 
-![Screenshot](./images/applying-column-row-level-filters-4.webp)
+![Process Mapping panel with CODE listed under Unused source columns and marked Do not use, below the Mapped Columns list](./images/applying-column-row-level-filters-4.webp)
 
 Unmapped columns will not be written to the destination.
 
 A process can be executed successfully - even when source columns are not mapped to a destination.
 
-![Screenshot](./images/applying-column-row-level-filters-5.webp)
+![Unmapped System Columns showing LastUpdateTime BatchExecuteDate beside Unmapped Destination Columns showing LastUpdateDatTime DATETIME](./images/applying-column-row-level-filters-5.webp)
 
 ## Datastore Queries
 
@@ -36,12 +36,12 @@ Source Datastores connecting to relational databases have a Query tab available 
 
 This is a way to apply column level filtering to the data presented in a Datastore.
 
-![Screenshot](./images/applying-column-row-level-filters-6.webp)
+![Datastore Queries tab, 1 Data Query: Name field Match NGO Candidates to Ministry Clients above a SQL Query editor with a SELECT](./images/applying-column-row-level-filters-6.webp)
 
 ## Process filters
 
 Apply a **filter** within a process to control the rows written to a destination.
 
-![Screenshot](./images/applying-column-row-level-filters-7.webp)
+![Editing Process Mapping panel: the filter icon on the SchemeStatus TEXT mapped column is highlighted with the Add filter tooltip](./images/applying-column-row-level-filters-7.webp)
 
 > *A column does not have to be mapped for a filter to be applied to a dataset*

@@ -12,17 +12,17 @@ To authenticate an Agent, you need to be an Administrator on the Eightwire Accou
 2.  Click **Authentication Key**
 3.  Click **Proceed** to generate the authentication key.
 
-![Screenshot](./images/authenticate-an-agent-1.webp)
+![Generate a new key for 'Agent 99' dialog with the offline warning and the cursor on the Proceed button](./images/authenticate-an-agent-1.webp)
 
 4\. Copy the generated Key
 
-![Screenshot](./images/authenticate-an-agent-2.webp)
+![Generate a new key dialog showing the generated key in the Key generated field with the copy icon and 'copied!' tooltip](./images/authenticate-an-agent-2.webp)
 
 5\. On the computer where the Agent is installed — navigate to the Eightwire Conductor Agent folder.
 
 6\. Click on the AgentConfiguration application
 
-![Screenshot](./images/authenticate-an-agent-3.webp)
+![Windows Explorer view of the Conductor Agent folder in Program Files (x86) with the AgentConfiguration application selected](./images/authenticate-an-agent-3.webp)
 
 7\.  Click **Upload New Key**
 
@@ -34,7 +34,7 @@ To authenticate an Agent, you need to be an Administrator on the Eightwire Accou
 
 11\. Click **Yes** to confirm the Service restart
 
-![Screenshot](./images/authenticate-an-agent-4.webp)
+![Conductor Agent Configuration window with the Authentication Key field and the Service restart required prompt, cursor on Yes](./images/authenticate-an-agent-4.webp)
 
 12\. Close the Agent Configuration Application.
 
@@ -42,7 +42,7 @@ To authenticate an Agent, you need to be an Administrator on the Eightwire Accou
 
 14\. A message will appear **New Values Updated** and the Agent label will show **Online**
 
-![Screenshot](./images/authenticate-an-agent-5.webp)
+![Agent 99 page with the cursor on the refresh icon at the top right and the Agent label showing Online](./images/authenticate-an-agent-5.webp)
 
 ## To see the process for authenticating an existing Agent, check out this video...
 

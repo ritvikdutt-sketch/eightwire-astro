@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ritvikdutt-sketch.github.io/eightwire-astro/sitemap-index.xml
+
+# Machine-readable summary of this site for AI agents (llmstxt.org):
+# https://ritvikdutt-sketch.github.io/eightwire-astro/llms.txt
+# Every page also has a Markdown twin at <page-url>index.md

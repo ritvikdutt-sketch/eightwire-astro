@@ -10,7 +10,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/copy-account-and-copy-projec
 
 **Copy an entire Project - either within your Account to a different Account**
 
-![Screenshot](./images/copy-account-and-copy-project-1.webp)
+![Nested boxes: a Project contains a Datastore and a Process Group; the Process Group contains Processes.](./images/copy-account-and-copy-project-1.webp)
 
 -   Users are outside the copy process.
 -   During the copy process a new Agent for all Datastore conenctions can be nominated.
@@ -52,6 +52,6 @@ ExecutionPlan
 
 (along with all Projects, Datastores, Process Groups, Processes, Agents, within it).
 
-![Screenshot](./images/copy-account-and-copy-project-2.webp)
+![Nested boxes: an Account contains Agents and a Project; the Project contains a Datastore and a Process Group holding Processes.](./images/copy-account-and-copy-project-2.webp)
 
 > To engage this service please contact us at [support@eight-wire.com](mailto:support@eight-wire.com)

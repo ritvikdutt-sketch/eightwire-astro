@@ -17,7 +17,7 @@ For the Tile Account submitting the Data — the Activity Page will show a histo
 
 > *The Activity cannot be drilled down or detail involving the loading of data in the Destination Account.*
 
-![Screenshot](./images/monitor-tile-activity-1.webp)
+![Source Account (screenshot)](./images/monitor-tile-activity-1.webp)
 
 > *A data submission that does not meet minimum requirements in terms of file type or structure will not be uploaded - or show in the activity page.*
 
@@ -30,13 +30,13 @@ For the full license Account receiving the data, the Activity page will show the
 -   Rows Uploaded
 -   Colour coded (Successful, Warning, Failed)
 
-![Screenshot](./images/monitor-tile-activity-2.webp)
+![Destination Account (screenshot)](./images/monitor-tile-activity-2.webp)
 
-![Screenshot](./images/monitor-tile-activity-3.webp)
+![Destination Account (screenshot)](./images/monitor-tile-activity-3.webp)
 
 -   Detail behind Warning or Failed message.
 
-![Screenshot](./images/monitor-tile-activity-4.webp)
+![Destination Account (screenshot)](./images/monitor-tile-activity-4.webp)
 
 > *Use Process thresholds to enforce conditions for a process to succeed or fail.*
 

@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "postbuild": "node scripts/emit-markdown.mjs && node scripts/check-content.mjs",
+    "preview": "astro preview",
+    "audit:a11y": "node scripts/audit-a11y.mjs",
+    "import:kb": "node scripts/import-kb.mjs"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +35,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "axe-core": "^4.13.0",
     "cheerio": "^1.2.0",
     "puppeteer": "^24.43.0",
     "turndown": "^7.2.4",

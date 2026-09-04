@@ -12,7 +12,7 @@ To share an existing datastore, select it from the list of all Data Stores withi
 
 Click on the Datastore and expand the Sharing panel tab.
 
-![Screenshot](./images/share-your-datastore-1.webp)
+![Creating the Datastore Invitation (screenshot)](./images/share-your-datastore-1.webp)
 
 Enter the email address of the person you wish to share this Data Store with.
 
@@ -22,11 +22,11 @@ Click **Share data store**
 
 Click **Save**
 
-![Screenshot](./images/share-your-datastore-2.webp)
+![Creating the Datastore Invitation (screenshot)](./images/share-your-datastore-2.webp)
 
 The data-share invitation email will be sent on your behalf and you will be shown a five-digit PIN.
 
-![Screenshot](./images/share-your-datastore-3.webp)
+![Creating the Datastore Invitation (screenshot)](./images/share-your-datastore-3.webp)
 
 You should **manually** advise this number to the data sharing recipient. A phone call to the recipient is a great way to confirm that they have received the invitation and to give them the PIN.
 
@@ -36,7 +36,7 @@ Click **Ok** when finished.
 
 > *If you forget the number, it will be shown on the Sharing panel for this Datastore until you stop sharing this Data Store*
 
-![Screenshot](./images/share-your-datastore-4.webp)
+![Creating the Datastore Invitation (screenshot)](./images/share-your-datastore-4.webp)
 
 The status of a data share is always shown in the datastore — unopened, received and linked to a Project, or Paused.
 
@@ -48,7 +48,7 @@ Any change you make to the share — such as a new invitation, pause or delete o
 
 If the recipient does not use the correct PIN (after four attempts) they will see a message that they have been locked out of the datastore.
 
-![Screenshot](./images/share-your-datastore-5.webp)
+![Regenerate a Sharing Invitation (screenshot)](./images/share-your-datastore-5.webp)
 
 The invitation will appear in the datastore as locked and the recipient should contact you.
 

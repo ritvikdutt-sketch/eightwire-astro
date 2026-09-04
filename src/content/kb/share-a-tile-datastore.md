@@ -8,13 +8,13 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/share-a-tile-datastore"
 
 In the Datastore, expand the **Sharing Tab**
 
-![Screenshot](./images/share-a-tile-datastore-1.webp)
+![Share a Tile Datastore (screenshot)](./images/share-a-tile-datastore-1.webp)
 
 To share to a Tile Account you must be associated with them — see our page [Create and Associate with Accounts](../create-and-associate-with-accounts/)
 
 In the Datasharing options select the Organisation Name from the Associated Account Menu.
 
-![Screenshot](./images/share-a-tile-datastore-2.webp)
+![Share a Tile Datastore (screenshot)](./images/share-a-tile-datastore-2.webp)
 
 Complete the sharing agreement test — the text is visible by the recipients when they accept the share.
 
@@ -22,7 +22,7 @@ Click **Save**
 
 Click Share data store to generate the PIN.
 
-![Screenshot](./images/share-a-tile-datastore-3.webp)
+![Share a Tile Datastore (screenshot)](./images/share-a-tile-datastore-3.webp)
 
 Communicate the PIN to the recipient so they can accept the Datastore.
 
@@ -30,9 +30,9 @@ Communicate the PIN to the recipient so they can accept the Datastore.
 
 At any time you are able to Pause or Delete a share invitation — in which case the Tile will not be visible in the Data Provider Account.
 
-![Screenshot](./images/share-a-tile-datastore-4.webp)
+![Share a Tile Datastore (screenshot)](./images/share-a-tile-datastore-4.webp)
 
-![Screenshot](./images/applying-column-row-level-filters-2.webp)
+![Share a Tile Datastore (screenshot)](./images/applying-column-row-level-filters-2.webp)
 
 Job done! Your data providers can now manually submit data.
 

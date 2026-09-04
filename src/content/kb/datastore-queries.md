@@ -12,11 +12,11 @@ Once you have created the datastore, navigate to the Queries tab
 
 Click **+New** to add a new query
 
-![Screenshot](./images/datastore-queries-1.webp)
+![Datastore Queries tab listing four People Count data queries, with the +New button at the bottom left](./images/datastore-queries-1.webp)
 
 Enter the syntax of the query into the query panel (or copy and paste it in).
 
-![Screenshot](./images/datastore-queries-2.webp)
+![Browsing SQL Out view listing People Count Version 1 to 4, each suffixed (data query)](./images/datastore-queries-2.webp)
 
 The syntax to be used should be appropriate for the database type you are querying.
 
@@ -30,7 +30,7 @@ To check whether a query is validated, browse the datastore and scan the object.
 
 Any error related to the statement will appear when the datastore is scanned.
 
-![Screenshot](./images/datastore-queries-3.webp)
+![Scanning failed error: the agent could not gather schema information, incorrect syntax near the keyword 'select'](./images/datastore-queries-3.webp)
 
 > You can use a select statement or execute a stored procedure in the query pane.
 
@@ -46,6 +46,6 @@ An alternative is to reference a variable table so that the column properties ar
 
 **You can reference an inline table in the SQL statement** — if you do you will see any columns used in the inline query and presented in the main query repeated as unused source columns. This does not affect the process, which will execute without warnings about unmapped columns.
 
-![Screenshot](./images/datastore-queries-4.webp)
+![Mapping panel with seven mapped columns and ALLPeople NUMBER listed again under Unused source columns](./images/datastore-queries-4.webp)
 
 > Always test the datastore query syntax and permissions are correct using [Datastore browse and scan](../scan-browse-and-edit-objects/)

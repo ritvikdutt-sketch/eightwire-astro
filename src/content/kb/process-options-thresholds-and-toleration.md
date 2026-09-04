@@ -12,7 +12,7 @@ When editing a process, click on **Options** to configure process thresholds and
 
 For a Process Type Incrementally Load data, edit a process and select an option under 'Destination Action' and 'Column Involved'.
 
-![Screenshot](./images/process-options-thresholds-and-toleration-1.webp)
+![Destination Action Column Selection (screenshot)](./images/process-options-thresholds-and-toleration-1.webp)
 
 ## Column Matching Threshold
 

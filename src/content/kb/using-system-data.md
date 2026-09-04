@@ -10,4 +10,4 @@ This system metadata may be referenced in any expression.
 
 System metadata is accessible using the System("name") function call, where name is one of the following:
 
-![Screenshot](./images/using-system-data-1.webp)
+![Using System Data (screenshot)](./images/using-system-data-1.webp)

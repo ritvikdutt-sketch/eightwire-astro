@@ -14,7 +14,7 @@ There are three types of tile datastores available:
 
 **Generic** T**ile —** can be used with any file type (such as word, PDF, or image files) which are mapped to a Folder destination.
 
-![Screenshot](./images/tile-datastore-types-1.webp)
+![Tile Datastore Types (screenshot)](./images/tile-datastore-types-1.webp)
 
 The Information section of a tile has configurable text sections for Instructions and  Support.
 

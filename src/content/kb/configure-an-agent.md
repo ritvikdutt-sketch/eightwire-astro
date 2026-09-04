@@ -33,13 +33,13 @@ Locate the folder where the Agent is installed. This will likely be: *C:\\Progra
 
 Click on the Agent Update application and click to allow the application to make changes
 
-![Screenshot](./images/agent-updates-2.webp)
+![File Explorer in the Program Files (x86) Conductor Agent folder, showing the AgentUpdate application](./images/agent-updates-2.webp)
 
 You will see if the update has succeeded and what the new version is.
 
 Use any key to exit.
 
-![Screenshot](./images/agent-updates-3.webp)
+![AgentUpdate.exe console window showing Succeeded! after each configuration step and the Press any key to exit prompt](./images/agent-updates-3.webp)
 
 ## Uninstall an Agent
 
@@ -51,18 +51,18 @@ Click on the **unins000** Application and allow the Application to make changes.
 
 Click **Yes** to confirm the delete.
 
-![Screenshot](./images/configure-an-agent-3.webp)
+![Conductor Agent Uninstall confirmation dialog with the Yes button, shown over the Agent folder with unins000 selected](./images/configure-an-agent-3.webp)
 
 The Agent is uninstalled. You can delete the remaining text files and the folder.
 
-![Screenshot](./images/configure-an-agent-4.webp)
+![Conductor Agent Uninstall dialog confirming successful removal with an OK button; remaining text documents in the Agent folder](./images/configure-an-agent-4.webp)
 
 In the Eightwire portal on the Agent page click **Delete**.
 
-![Screenshot](./images/configure-an-agent-5.webp)
+![Agent page details panel with Machine, OS and Version, Admin Controls Stop and Uninstall, and the Delete button highlighted](./images/configure-an-agent-5.webp)
 
 Confirm by clicking **Delete**, the Agent will no longer appear on the Agent page or be available on the datastore page.
 
-![Screenshot](./images/configure-an-agent-6.webp)
+![Are you sure? dialog warning that deleting an agent removes it from your account but does not uninstall it, with the Delete button](./images/configure-an-agent-6.webp)
 
 As well as the steps to configure your Agent, there are other factors that you can consider when troubleshooting an Agent that is not connecting — check out [Agent FAQs and Connectivity Troubleshooting](../agent-faqs-and-connectivity-troubleshooting/)

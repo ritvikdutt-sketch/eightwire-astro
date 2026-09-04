@@ -16,21 +16,29 @@ There are several ways to apply the security required for your Datastore;
 
 ## Relational Database or Network Folder;
 
-![Screenshot](./images/data-sharing-arrangements-1.webp)
+| Method | User | Description |
+|---|---|---|
+| Agent supplied credentials | nominate a specific Active Directory User or the default `NT AUTHORITY\SYSTEM` | The database objects or folders that you expose in your datastore must be able to be accessed by the nominated User |
 
-![Screenshot](./images/data-sharing-arrangements-2.webp)
+![Database security tree showing the NT AUTHORITY\\SYSTEM user](./images/data-sharing-arrangements-2.webp)
 
-![Screenshot](./images/data-sharing-arrangements-3.webp)
+| Connection string |
+|---|
+| `server=SVRName; database=DBName; trusted_connection=yes;` |
 
-![Screenshot](./images/data-sharing-arrangements-4.webp)
+| Method | User | Description |
+|---|---|---|
+| Datastore supplied credentials | enter a specific Active Directory User or use the default `NT AUTHORITY\SYSTEM` | The database objects that you expose in your Datastore must be able to be read by the User quoted in the connection string.<br>or<br>A User must have permissions to a folder in order for the objects within to be visible in the Datastore. |
 
-![Screenshot](./images/data-sharing-arrangements-5.webp)
+![Database Security > Users tree listing CompanyOne, CompanyThree and CompanyTwo, with CompanyTwo selected](./images/data-sharing-arrangements-5.webp)
 
-![Screenshot](./images/data-sharing-arrangements-6.webp)
+| Connection string |
+|---|
+| `server=SVRName; User ID =CompanyTwo; Password=2Company; database=DBName` |
 
 ## Share the Source
 
-![Screenshot](./images/data-sharing-arrangements-7.webp)
+![Company A's Source Datastore is shared (dashed arrow) into Company B as an External shared datastore; a Process arrow loads it into B's Destination Datastore.](./images/data-sharing-arrangements-7.webp)
 
 In this example the Source Data Store is shared by Company A, to Company B.
 
@@ -42,7 +50,7 @@ Company B, as the owner of the Process, can select the objects that are to be in
 
 ## Share the Destination
 
-![Screenshot](./images/data-sharing-arrangements-8.webp)
+![Company B's Destination Datastore is shared (dashed arrow) into Company A as an External shared datastore; a Process arrow feeds it from A's Source Datastore.](./images/data-sharing-arrangements-8.webp)
 
 The Destination Data Store is shared by Company B, to Company A.
 
@@ -52,7 +60,7 @@ Company A, as the owner of the Process, can select the objects that are to be in
 
 ## Share Multiple Destinations
 
-![Screenshot](./images/data-sharing-arrangements-9.webp)
+![Company B and Company C each share their Destination Datastore (dashed arrows) into Company A; two Process arrows fan out from A's Source Datastore to each.](./images/data-sharing-arrangements-9.webp)
 
 The Destination Data Stores is shared by both Company B and Company C, to Company A. Company A can see the objects in both the Source and each Destination Data Store. Company B and Company C can only see the objects in their own respective Destination Data Store.
 
@@ -60,7 +68,7 @@ Company A, as the owner of the Processes, can select the objects that are to be 
 
 ## Hub: Receives data from multiple sources
 
-![Screenshot](./images/data-sharing-arrangements-10.webp)
+![Organisations A–D share Destination Datastores (dashed arrows) into Company A's hub; Process arrows flow from each External shared datastore into Company A.](./images/data-sharing-arrangements-10.webp)
 
 Data can come from several different organisations, with Company A acting as the hub and owning the processes that insert the data from the shared Source Data Stores into its Destination.
 
@@ -68,7 +76,7 @@ Data can come from several different organisations, with Company A acting as the
 
 ## Hub: Sends data to multiple destinations
 
-![Screenshot](./images/data-sharing-arrangements-11.webp)
+![Organisations A–D share Destination Datastores (dashed arrows) into Company A's hub; Process arrows flow from Company A out to each External shared datastore.](./images/data-sharing-arrangements-11.webp)
 
 Data can go to several different organisations and Data Stores, with Company A acting as the hub and owning the Processes that insert the data into each shared Destination Data Store.  **None of the source object structure is exposed to the destination organisations.**
 

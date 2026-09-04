@@ -28,7 +28,7 @@ The Scan will show Files and drill down to their schemas.
 
 This Datastore can be used with Filename Wildcards
 
-![Screenshot](./images/ftp-sftp-datastores-1.webp)
+![FTP/SFTP CSV and Excel (screenshot)](./images/ftp-sftp-datastores-1.webp)
 
 > *Data processed using this connector is transformed by Eightwire as usual - it can be loaded or extracted from any Datastore type.*
 

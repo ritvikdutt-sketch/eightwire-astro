@@ -16,7 +16,7 @@ This option is considered to be the most performant in terms of the tasks requir
 
 Use the the Protocol dropdown to select Oracle Data Provider Managed or Unmanaged Driver
 
-![Screenshot](./images/using-the-oracle-connector-1.webp)
+![ODP.NET (screenshot)](./images/using-the-oracle-connector-1.webp)
 
 Connection string examples:
 

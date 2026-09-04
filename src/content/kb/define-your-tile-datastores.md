@@ -22,7 +22,7 @@ Where is your data? — select **In the cloud**
 
 Choose a Datastore Type from the Tile section
 
-![Screenshot](./images/define-your-tile-datastores-1.webp)
+![Data Hub Datastore form with In the cloud selected and Excel Tile chosen under Tile, beside Delimited Text Tile and Generic Tile](./images/define-your-tile-datastores-1.webp)
 
 Connection — use the dropdown available to select a Destination Datastore — for the data.
 
@@ -32,9 +32,9 @@ Complete the file settings (Column Headers and Data Starts) dropdown options.
 
 Click **Save**
 
-![Screenshot](./images/define-your-tile-datastores-2.webp)
+![Excel Tile Connection panel: Destination datastore dropdown Database Hub, Column Headers In row 1, Data Starts In row 2, Save button](./images/define-your-tile-datastores-2.webp)
 
-![Screenshot](./images/applying-column-row-level-filters-2.webp)
+![Thin grey horizontal divider line with no visible interface content](./images/applying-column-row-level-filters-2.webp)
 
 ## Configure the Tile
 
@@ -42,7 +42,7 @@ Dropfile Options enable you to configure your Tile so that you can present requi
 
 In the Tile Datastore, click on the tab **Dropfile Options**
 
-![Screenshot](./images/define-your-tile-datastores-4.webp)
+![Excel Tile Datastore summary with Type, Agent, Connection, Option, Region, Sharing rows and the DropFile Options tab highlighted](./images/define-your-tile-datastores-4.webp)
 
 ## Avatar
 
@@ -50,7 +50,7 @@ Click in the Section 'Drop Avatar here' to upload an image that will be presente
 
 If you do not wish to use an Avatar, a default image will be presented.
 
-![Screenshot](./images/define-your-tile-datastores-5.webp)
+![DropFile Options tab Avatar section with the dashed Drop Avatar here upload box](./images/define-your-tile-datastores-5.webp)
 
 ## Instructions
 
@@ -70,7 +70,7 @@ Click on **New file template** to upload a file.
 
 When you have completed the Dropfile Options, click **Save**
 
-![Screenshot](./images/define-your-tile-datastores-6.webp)
+![Template table with Filename, Updated and Actions columns, the New file template button highlighted, and Save button](./images/define-your-tile-datastores-6.webp)
 
 > *The template section must* ***not*** *be used to share data — it is for communicating instructions and not intended as a secure data exchange.*
 

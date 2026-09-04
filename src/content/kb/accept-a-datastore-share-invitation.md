@@ -6,7 +6,7 @@ order: 18
 sourceUrl: "https://www.eightwire.io/knowledge-base/accept-a-datastore-share-invitation"
 ---
 
-![Screenshot](./images/accept-a-datastore-share-invitation-1.webp)
+![Datastore share invitation email from Demo A with the click here link, 36-hour expiry and New Zealand region restriction](./images/accept-a-datastore-share-invitation-1.webp)
 
 > *If either a source and destination datastore is locked to a specific Region - then the other datastore must choose the same Region, or leave the Region to default for a data transfer process to be successful*.
 
@@ -16,7 +16,7 @@ If you have already logged into Eightwire, you will be asked for the Sharing PIN
 
 If you are not logged into Eightwire, the link will take you to the login page. Once logged in you will be asked for the Sharing PIN.
 
-![Screenshot](./images/accept-a-datastore-share-invitation-2.webp)
+![Sharing Agreement dialog with the Sharing Pin field filled in and the I Agree button](./images/accept-a-datastore-share-invitation-2.webp)
 
 If you have the PIN, enter it now.
 
@@ -24,13 +24,13 @@ You should have been informed of the PIN by the person who shared the Datastore.
 
 Choose which Project(s) this new shared Data Store will be created in by clicking the relevant **Link** button(s)
 
-![Screenshot](./images/accept-a-datastore-share-invitation-3.webp)
+![Your Projects screen asking which project to link the shared Data Store to, with a Link button on each project card](./images/accept-a-datastore-share-invitation-3.webp)
 
 > *You can link a Data Share to more than one Project. If you do, one new shared Data Store will be created in each selected Project.*
 
 A shared Data Store appears as 'External' and details are confidential (although you can still browse objects in the datastore to get information on their structure).
 
-![Screenshot](./images/accept-a-datastore-share-invitation-4.webp)
+![Data Store Data Inputs page in Demo Project B with all details marked Confidential and the Test Connection and Browse buttons](./images/accept-a-datastore-share-invitation-4.webp)
 
 > *If a sharing agreement is stopped and the datastore is used in a Process Group then you will receive a notification email and the process will be deleted from the group.*
 

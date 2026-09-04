@@ -8,19 +8,19 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/support-and-change-notificat
 
 ## Support Channels
 
-![Screenshot](./images/support-and-change-notifications-1.webp)
+![Support Channels (screenshot)](./images/support-and-change-notifications-1.webp)
 
 ‍**Intercom**
 
 When logged into [Eightwire](https://conductor.eight-wire.com/Login.aspx?ReturnUrl=%2f) you can begin a conversation with us using the Chat (at the bottom right of the screen).
 
-![Screenshot](./images/support-and-change-notifications-2.webp)
+![Support Channels (screenshot)](./images/support-and-change-notifications-2.webp)
 
 ‍**Email**
 
 Email us at [support@eight-wire.com](mailto:support@eight-wire.com)
 
-![Screenshot](./images/support-and-change-notifications-3.webp)
+![Support Channels (screenshot)](./images/support-and-change-notifications-3.webp)
 
 ‍**Phone**
 

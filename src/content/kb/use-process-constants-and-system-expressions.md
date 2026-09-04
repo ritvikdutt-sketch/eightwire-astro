@@ -10,7 +10,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/use-process-constants-and-sy
 
 Eightwire has a number of expressions that provide metadata about the data transfer, as follows;
 
-![Screenshot](./images/use-process-constants-and-system-expressions-1.webp)
+![System Expression (screenshot)](./images/use-process-constants-and-system-expressions-1.webp)
 
 ## Assign a system expression to a process
 
@@ -18,19 +18,19 @@ Within a Process Group, hover over a process to edit it.
 
 Click **Edit Process**
 
-![Screenshot](./images/use-process-constants-and-system-expressions-2.webp)
+![Assign a system expression to a process (screenshot)](./images/use-process-constants-and-system-expressions-2.webp)
 
 Click **+Add System Column**
 
 Assign a field name for the column and select a system column type (for example **BatchExecuteDate** or **BatchID**).
 
-![Screenshot](./images/use-process-constants-and-system-expressions-3.webp)
+![Assign a system expression to a process (screenshot)](./images/use-process-constants-and-system-expressions-3.webp)
 
 Click **+Add**
 
 Click on the source System Column and then click on a destination column to map them.
 
-![Screenshot](./images/use-process-constants-and-system-expressions-4.webp)
+![Assign a system expression to a process (screenshot)](./images/use-process-constants-and-system-expressions-4.webp)
 
 Click **Save**
 

@@ -24,15 +24,15 @@ If the column matching threshold is set at *Minimum*, Eightwire will try everyth
 
 For example, the following mapping has a high accuracy because only the case of the column names has changed. Any column matching threshold will allow this:
 
-![Screenshot](./images/column-and-smart-mapping-1.webp)
+![Source FullName, DateOfBirth, NumberOfCats each arrow straight across to destination FULLNAME, DATEOFBIRTH, NUMBEROFCATS with identical types](./images/column-and-smart-mapping-1.webp)
 
 The following mapping has a moderate level of accuracy because the column names are not quite identical but are subsets of each other and the types are not quite the same, but are convertible without potential data loss. The fact that their columns are in a different order doesn't matter. This mapping would be possible with a *High* matching threshold or less:
 
-![Screenshot](./images/column-and-smart-mapping-2.webp)
+![Arrows map FullName Text(100) to NAME Text(200), DateOfBirth Date to DATEOFBIRTH Date and NumberOfCats Number(10,0) to CATS Number(18,0), two arrows crossing](./images/column-and-smart-mapping-2.webp)
 
 The following mapping has a low accuracy because not only are the column names only similar at best, but some of the data types are only compatible through conversion, and are not guaranteed to always convert. For example, if the *DateOfBirth* column actually contains a textual date value then it will convert to a date at the destination, but if it contains some other text instead, it will fail. This mapping would be possible with a *Low* or *Minimum* matching threshold:
 
-![Screenshot](./images/column-and-smart-mapping-3.webp)
+![Arrows map FullName Text(100) to FulNamme Text(90), DateOfBirth Text(50) to Birth Date; NumberOfCats, NumberOfChickens and Dogs Boolean stay unmapped](./images/column-and-smart-mapping-3.webp)
 
 In the above example, the first two columns' names either phonetically sound similar or are subsets of each other and they have compatible or non-guaranteed convertible data types, so they can be mapped, but not with much accuracy. The rest of the columns are just too different and cannot be sensibly mapped, so are left unmapped by Eightwire.
 
@@ -50,7 +50,7 @@ It is this behaviour that forms part of Eightwire's self-healing feature set. Th
 
 The following diagram shows a typical sequence of events over time.
 
-![Screenshot](./images/column-and-smart-mapping-4.webp)
+![First: table created, scanned into Eightwire. Over time: table changes. Later still: Process re-checks actual structures, re-creates smart mapping, transfers data](./images/column-and-smart-mapping-4.webp)
 
 **First**, a physical table is created in a database (or another type of platform). Then, a user logs onto the Eightwire portal and creates a Data Store. At that point, Eightwire scans the Data Store and stores its own copy of the table structure information – what columns and data types are used in the table.
 

@@ -1,12 +1,11 @@
-// The sectors Eightwire names in its own copy: "Trusted by governments, health providers,
-// insurers and banks with high stakes data."
-const COMPANIES = ['Governments', 'Health providers', 'Insurers', 'Banks'];
+// Sectors Eightwire names in its own published copy (company mission and footer line).
+const COMPANIES = ['Governments', 'Health providers', 'Social services', 'Banks'];
 
 export default function Marquee() {
   const row = [...COMPANIES, ...COMPANIES];
   return (
     <section className="overflow-hidden border-b border-cream-line bg-forest-deepest py-12" aria-label="Who we work with">
-      <p className="reveal mb-8 text-center font-mono text-caption uppercase tracking-[0.18em] text-cream/40">
+      <p className="reveal mb-8 text-center font-mono text-caption uppercase tracking-[0.18em] text-cream/55">
         Who we work with
       </p>
       <div
@@ -16,7 +15,7 @@ export default function Marquee() {
           WebkitMaskImage: 'linear-gradient(to right, transparent, black 12%, black 88%, transparent)',
         }}
       >
-        <div className="flex w-max motion-safe:animate-marquee motion-reduce:flex-wrap motion-reduce:justify-center">
+        <div className="marquee-track flex w-max motion-safe:animate-marquee motion-reduce:flex-wrap motion-reduce:justify-center">
           {row.map((name, i) => (
             <span
               key={`${name}-${i}`}

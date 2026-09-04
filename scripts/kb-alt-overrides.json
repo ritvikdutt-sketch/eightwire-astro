@@ -1,0 +1,637 @@
+{
+  "accept-a-datastore-share-invitation": {
+    "1": {
+      "alt": "Datastore share invitation email from Demo A with the click here link, 36-hour expiry and New Zealand region restriction",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Sharing Agreement dialog with the Sharing Pin field filled in and the I Agree button",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Your Projects screen asking which project to link the shared Data Store to, with a Link button on each project card",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Data Store Data Inputs page in Demo Project B with all details marked Confidential and the Test Connection and Browse buttons",
+      "kind": "screenshot"
+    }
+  },
+  "accept-a-tile-datashare-invitation": {
+    "1": {
+      "alt": "Datashare invitation email from Demo A for the Course XLS Datastore with the click here link and 72-hour expiry",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Sharing Agreement dialog with the empty Sharing Pin field outlined in red and the I Agree and Cancel buttons",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Dashboard with the TILES panel showing the Course XLS tile and its info icon",
+      "kind": "screenshot"
+    }
+  },
+  "account-alerts": {
+    "1": {
+      "alt": "Dashboard Quick Access panel with the Alerts bell icon highlighted among Projects, Agents, Account, Users, Audit, Reports and Help",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Alert me for dropdown open on Account Activity Alerts, listing Success, Warnings and Failures; Warnings and Failures; Failures Only",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Alert rows with Alert me for set to Warnings and Failures, process activity, Datastore connection and scan toggles ON with email tags",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Account Activity Alerts set to Failures Only with process activity and agent goes offline toggled ON and the Save button",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Agent alert email with Connection details showing Status Connection lost, Agent Name Construction and the Last heartbeat time",
+      "kind": "screenshot"
+    },
+    "6": {
+      "alt": "Batch Details alert email listing the process, BatchID and ProcessID, a dashboard link and Status Succeeded with warnings",
+      "kind": "screenshot"
+    },
+    "7": {
+      "alt": "History for dbo.ExcelApplesCon showing a data truncation warning on ClaimNumber followed by Batch succeeded",
+      "kind": "screenshot"
+    }
+  },
+  "account-and-project-audit": {
+    "1": {
+      "alt": "Datashare Project dashboard General Stats tiles with the Audit tile highlighted",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Audit Logger filters set to a user, date range, Entity DataStore, Audit action Update and Entity ID 4227, with the Filter button",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Audit result State Before and State After text panes, showing RegionID changed from 7 to 2",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Audit results grid download icon open, listing Export all data as csv, visible data as csv, selected data as csv and all data as pdf",
+      "kind": "screenshot"
+    }
+  },
+  "account-group-and-communities": {
+    "1": {
+      "alt": "Account Dashboard with Reports highlighted in the left sidebar, next to the Quick Access tiles",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Report | Description |\n| --- | --- |\n| Aged Users | Show users who have not logged into Conductor within the last 90 days |\n| Account Summary | Show summary statistics, last login date, last data transfer date and two-factor authentication information about accounts in your sector or community. |\n| Data Movement | Show the cumulative volume of data transferred between accounts in your sector or community over a period of time. This report also highlights data shares which have been inactive for more than 90 days. |\n| Data Security | Highlight data sharing between accounts in your sector or community, which may contain personally identifying information, other notifiable information, missing agreement references or inadequate data sovereignty restrictions. |"
+    }
+  },
+  "account-settings": {
+    "1": {
+      "alt": "Dashboard Quick Access tiles with the Account tile highlighted",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Account page Overview panel beside the Basic, Contact, Billing, Time Zone and Settings tabs, Basic showing Name and Description",
+      "kind": "screenshot"
+    }
+  },
+  "account-setup-verification": {
+    "1": {
+      "alt": "Sign up form with Email, Phone, Company, Password, Re-type Password and Account Type fields and the Sign up button",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Eightwire sign-up confirmation page saying the account is being set up and an activation email will follow",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Eightwire verification email with the conductor.eight-wire.com VerifyEmail link to click to activate the Account",
+      "kind": "screenshot"
+    }
+  },
+  "agent-architecture-for-data-access": {
+    "1": {
+      "alt": "Agent inside the Corporate Network (laptops, databases, workstation) sends outward through a firewall to the Eightwire Processing Servers",
+      "kind": "diagram"
+    },
+    "2": {
+      "alt": "Internal Networks connect through a firewall to a DMZ Server hosting the Agent, which sends through a second firewall to Eightwire Processing Servers",
+      "kind": "diagram"
+    }
+  },
+  "agent-faqs-and-connectivity-troubleshooting": {
+    "1": {
+      "alt": "Conductor Agent install folder in File Explorer with the AgentConfiguration application highlighted",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Conductor Agent Configuration window showing Service Status Running, Proxy Settings and a red Connection failed error banner",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Conductor Agent Properties dialog General tab showing Service status Running with the Start and Stop buttons",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Agent Troubleshooting flowchart: Yes/No checks on portal online status, internet access, firewall and .NET 4.5 lead to fixes or Contact Eightwire Support",
+      "kind": "diagram"
+    }
+  },
+  "agent-system-requirements": {
+    "1": {
+      "alt": "Left to right: Source System's Agent sends HTTPS through a firewall to Eightwire, then through a second firewall via HTTPS to the Destination System's Agent.",
+      "kind": "diagram"
+    },
+    "2": {
+      "alt": "",
+      "kind": "table",
+      "table": "**Minimum Specification**\n\n| TYPE | SPECIFICATION |\n| --- | --- |\n| RAM | 6GB |\n| Disk | 100GB HDD |\n| OS | Windows 7 (with .NET Framework 4.5 installed)<br>Windows 8 Windows Server 2012 |\n| CPU | 2 Core |\n\n**Recommended Specification**\n\n| TYPE | SPECIFICATION |\n| --- | --- |\n| RAM | 8GB |\n| Disk | 100GB SSD |\n| OS | Windows 10 Windows Server 2016 |\n| CPU | 4 Core |"
+    }
+  },
+  "agent-updates": {
+    "1": {
+      "alt": "Agent page for Finance Base, Edit tab, with the Updates section's Automatically install updates checkbox unticked and the Save button",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "File Explorer in Program Files (x86) > Conductor Agent listing Agent.exe, AgentConfiguration and the AgentUpdate application",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "AgentUpdate.exe console window showing three Encrypting configuration section... Succeeded! results and Press any key to exit",
+      "kind": "screenshot"
+    }
+  },
+  "applying-column-row-level-filters": {
+    "1": {
+      "alt": "Datastore object Filter tab with the Edit Filter popup: Copy data when is equal to Health Provider A, with Ok and Do not filter buttons",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Decorative horizontal divider line (1600x19 px); no UI content",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Datastore Structure tab: the Use checkbox column is highlighted, the CODE row is unticked (marked orange), and the Save button is below",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Process Mapping panel with CODE listed under Unused source columns and marked Do not use, below the Mapped Columns list",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Unmapped System Columns showing LastUpdateTime BatchExecuteDate beside Unmapped Destination Columns showing LastUpdateDatTime DATETIME",
+      "kind": "screenshot"
+    },
+    "6": {
+      "alt": "Datastore Queries tab, 1 Data Query: Name field Match NGO Candidates to Ministry Clients above a SQL Query editor with a SELECT",
+      "kind": "screenshot"
+    },
+    "7": {
+      "alt": "Editing Process Mapping panel: the filter icon on the SchemeStatus TEXT mapped column is highlighted with the Add filter tooltip",
+      "kind": "screenshot"
+    }
+  },
+  "arithmetic-operators": {
+    "1": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Operator | Description |\n| --- | --- |\n| `+` | Add – *Can also be used to append text* |\n| `-` | Subtract |\n| `/` | Divide |\n| `*` | Multiply |"
+    }
+  },
+  "assign-project-users": {
+    "1": {
+      "alt": "Dashboard Quick Access panel with the Users tile highlighted next to Projects, Agents and Account",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Add Users to this Project dialog with the Select users field, the Their role will be dropdown set to Author and the Ok button",
+      "kind": "screenshot"
+    }
+  },
+  "authenticate-an-agent": {
+    "1": {
+      "alt": "Generate a new key for 'Agent 99' dialog with the offline warning and the cursor on the Proceed button",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Generate a new key dialog showing the generated key in the Key generated field with the copy icon and 'copied!' tooltip",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Windows Explorer view of the Conductor Agent folder in Program Files (x86) with the AgentConfiguration application selected",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Conductor Agent Configuration window with the Authentication Key field and the Service restart required prompt, cursor on Yes",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Agent 99 page with the cursor on the refresh icon at the top right and the Agent label showing Online",
+      "kind": "screenshot"
+    }
+  },
+  "boolean-operators": {
+    "1": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Operator | Name | Description |\n|---|---|---|\n| `==` | Equality | True if both sides are equal |\n| `>` | Greater than | True if the left side is greater than the right |\n| `>=` | Greater than or equal to | True if the left side is greater than or equal to the right |\n| `<` | Less than | True if the left side is less than the right |\n| `<=` | Less than or equal to | True if the left side is less than or equal to the right |"
+    }
+  },
+  "certifications-and-accreditations": {
+    "1": {
+      "alt": "Social Wellbeing Agency | Toi Hau Tāngata logo",
+      "kind": "logo"
+    },
+    "2": {
+      "alt": "Data Exchange lifebuoy ring graphic with blue, teal and orange markers",
+      "kind": "logo"
+    },
+    "3": {
+      "alt": "AICPA SOC for Service Organizations seal (aicpa.org/soc4so)",
+      "kind": "logo"
+    }
+  },
+  "column-and-smart-mapping": {
+    "1": {
+      "alt": "Source FullName, DateOfBirth, NumberOfCats each arrow straight across to destination FULLNAME, DATEOFBIRTH, NUMBEROFCATS with identical types",
+      "kind": "diagram"
+    },
+    "2": {
+      "alt": "Arrows map FullName Text(100) to NAME Text(200), DateOfBirth Date to DATEOFBIRTH Date and NumberOfCats Number(10,0) to CATS Number(18,0), two arrows crossing",
+      "kind": "diagram"
+    },
+    "3": {
+      "alt": "Arrows map FullName Text(100) to FulNamme Text(90), DateOfBirth Text(50) to Birth Date; NumberOfCats, NumberOfChickens and Dogs Boolean stay unmapped",
+      "kind": "diagram"
+    },
+    "4": {
+      "alt": "First: table created, scanned into Eightwire. Over time: table changes. Later still: Process re-checks actual structures, re-creates smart mapping, transfers data",
+      "kind": "diagram"
+    }
+  },
+  "conditional-operators": {
+    "1": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Syntax | Description |\n|---|---|\n| `... ? ... : ...` | If – then – else |\n| Example | For example, the following would return \"Yes\" because the first part, `1=1`, evaluated to true:<br>`1 == 1 ? \"Yes\" : \"No\"` |\n| Example | Alternatively, this example would evaluate to \"Nope\":<br>`\"Dog\" == \"Cat\" ? \"Yup\" : \"Nope\"` |"
+    }
+  },
+  "configure-an-agent": {
+    "1": {
+      "alt": "File Explorer in the Program Files (x86) Conductor Agent folder, showing the AgentUpdate application",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "AgentUpdate.exe console window showing Succeeded! after each configuration step and the Press any key to exit prompt",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Conductor Agent Uninstall confirmation dialog with the Yes button, shown over the Agent folder with unins000 selected",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Conductor Agent Uninstall dialog confirming successful removal with an OK button; remaining text documents in the Agent folder",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Agent page details panel with Machine, OS and Version, Admin Controls Stop and Uninstall, and the Delete button highlighted",
+      "kind": "screenshot"
+    },
+    "6": {
+      "alt": "Are you sure? dialog warning that deleting an agent removes it from your account but does not uninstall it, with the Delete button",
+      "kind": "screenshot"
+    }
+  },
+  "connect-via-api": {},
+  "connector-types": {
+    "1": {
+      "alt": "",
+      "kind": "table",
+      "table": "**Application**\n\n| CONNECTOR TYPE | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |\n|---|---|---|---|---|---|---|---|\n| SALESFORCE | ✗ | ✓ | ✓ | ✗ | Username<br>Password<br>Secret key<br>Access key | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |"
+    },
+    "2": {
+      "alt": "",
+      "kind": "table",
+      "table": "**Database**\n\n| CONNECTOR TYPE | GROUP | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |\n|---|---|---|---|---|---|---|---|---|\n| ANSISQL | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| DB2 | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| DB2GENERIC | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| HADOOP HIVE | Database | ✗ | ✓ | ✗ | ✗ | URL<br>Username<br>Protocol<br>Connection String<br>Database | Full merge<br>Partial merge<br>Append<br>Overwrite | Request |\n| INTERBASE | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| MYOB | Database | ✓ | ✗ | ✗ | ✗ | Protocol<br>Connection String<br>Schema | Append<br>Overwrite | Default |\n| MYSQL | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| NETEZZASQL | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| ORACLE | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| POSTGRESQL | Database | ✓ | ✓ | ✓ | ✗ | Protocol<br>Connection String<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| REDSHIFT | Database | ✗ | ✓ | ✓ | ✗ | Server<br>Username<br>Password<br>Database<br>Bucket<br>Secret key<br>Access key<br>AWS Region | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| SQLSERVER | Database | ✓ | ✓ | ✓ | ✗ | Protocol<br>Connection string<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| SYBASE | Database | ✓ | ✗ | ✓ | ✗ | Protocol<br>Connection string<br>Schema | Full merge<br>Partial merge<br>Append<br>Overwrite<br>Incremental loading | Default |\n| CLOUDANT | NoSql | ✗ | ✓ | ✗ | ✗ | Username<br>Database<br>Entity | Append, Overwrite | Default |\n| COUCHDB | NoSql | ✓ | ✓ | ✗ | ✗ | URL<br>PORT<br>UserName<br>Database<br>Entity | Append, Overwrite | Default |\n| DOCUMENTDB | NoSql | ✗ | ✓ | ✗ | ✗ | URL<br>Database<br>Access Key | Append, Overwrite | Default |\n| DYNAMODB | NoSql | ✗ | ✓ | ✗ | ✗ | AWS Region<br>Access Key<br>Secret Key | Append, Overwrite | Default |\n| MONGODB | NoSql | ✗ | ✓ | ✗ | ✗ | URL<br>UserName<br>Database | Append, Overwrite | Default |"
+    },
+    "3": {
+      "alt": "",
+      "kind": "table",
+      "table": "**File**\n\n| CONNECTOR TYPE | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |\n|---|---|---|---|---|---|---|---|\n| CSV | ✓ | ✗ | ✗ | ✓ | Path<br>Column headers<br>Data Starts<br>Column delimiter<br>Row delimiter<br>Text qualifier | Overwrite | Default |\n| FIXEDWIDTH | ✓ | ✗ | ✗ | ✓ | Path<br>Column headers<br>Data starts<br>Padding character<br>Row delimiter | Overwrite | Default |\n| FOLDER | ✓ | ✗ | ✗ | ✗ | Path | Overwrite, Append | Request |\n| FTPCSV | ✓ | ✗ | ✗ | ✓ | Path<br>Column Headers<br>Data Starts<br>Column Delimiter<br>Row Delimiter<br>Test Qualifier<br>Port<br>Server<br>User Name<br>Protocol<br>Private key file path<br>Passphrase | Overwrite | Default |\n| FTPXLSX | ✓ | ✗ | ✗ | ✓ | Path<br>Column Headers<br>Data Starts<br>Column Delimiter<br>Row Delimiter<br>Test Qualifier<br>Port<br>Server<br>UserName<br>Protocol<br>Private key file path<br>Passphrase | Overwrite | Default |\n| HADOOP DFS | ✗ | ✓ | ✗ | ✓ | Path<br>Column headers<br>Data starts<br>Column Delimiter<br>Test Qualifier<br>URL<br>Username | Overwrite | Default |\n| S3CSV | ✗ | ✓ | ✗ | ✗ | Bucket name<br>Secret key<br>Access key<br>AWS region<br>Path<br>Column headers<br>Data starts<br>Column delimiter<br>Row delimiter<br>Text qualifier | Overwrite | Request |\n| XLSX | ✓ | ✗ | ✗ | ✓ | Path<br>Column headers<br>Data starts | Overwrite | Default |"
+    },
+    "4": {
+      "alt": "",
+      "kind": "table",
+      "table": "**Eightwire Tile**\n\n| CONNECTOR TYPE | INTERNAL NETWORK | IN THE CLOUD | QUERIES | WILDCARDS | CONNECTION FIELDS | DESTINATION ACTION | AVAILABILITY |\n|---|---|---|---|---|---|---|---|\n| CSV TILE | ✗ | ✓ | ✗ | ✗ | Destination Datastore | Defined by Destination | Default |\n| EXCEL TILE | ✗ | ✓ | ✗ | ✗ | Destination Datastore | Defined by Destination | Default |\n| GENERIC TILE | ✗ | ✓ | ✗ | ✗ | Defined by Destination | Insert, Overwrite | Request |"
+    }
+  },
+  "control-functions-for-activity-log": {},
+  "copy-account-and-copy-project": {
+    "1": {
+      "alt": "Nested boxes: a Project contains a Datastore and a Process Group; the Process Group contains Processes.",
+      "kind": "diagram"
+    },
+    "2": {
+      "alt": "Nested boxes: an Account contains Agents and a Project; the Project contains a Datastore and a Process Group holding Processes.",
+      "kind": "diagram"
+    }
+  },
+  "create-and-associate-with-accounts": {
+    "1": {
+      "alt": "Create new Tile account form with Email, Phone, Company, Password and Re-type Password fields",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Confirm Association dialog saying an account with this email already exists, with Associate and No buttons",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Invalid Email dialog: can't associate to a full license account or an already associated account, with OK button",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Associated Accounts list with the Actions column highlighted and the red Delete button on the ACCOUNT A row",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Confirm Delete dialog asking to delete the association with 'Account A', with Delete and No buttons",
+      "kind": "screenshot"
+    }
+  },
+  "create-and-connect": {
+    "1": {
+      "alt": "New Data Store step 'What shall we call this Data Store?' with Name and Description fields and the Next button",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Connection step 'How do we connect to your data?' with Protocol set to SQL Native Client, Connection String and Schema Name fields",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Testing connection notification showing 10% tested",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Grey generic image placeholder; the original screenshot is missing",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Test succeeded notification with a green tick",
+      "kind": "screenshot"
+    }
+  },
+  "create-map-and-filter-a-process": {
+    "1": {
+      "alt": "Transfer Data process group panel showing 0 processes, the Add processes to this group area and the View Processes button",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Add Source dialog with the Data Inputs datastore expanded to show AA_Inputs.xlsx, and the Add button",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Choose Destination Object dialog listing New options and Matching objects rated Good with 77%, 73% and 72% scores",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Suggested Mappings panel with ClientLists.csv, the blue tick and red cross buttons, and the Accept All link",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Editing Destination Database Table Name dialog for DailyRecordInput with the Save and Close button; New object row below with pencil icon",
+      "kind": "screenshot"
+    },
+    "6": {
+      "alt": "Creating Process... and Scanning successful notifications shown after accepting the mapping",
+      "kind": "screenshot"
+    },
+    "7": {
+      "alt": "Process row ClientLists.csv to Landing.ClientRecords with the Edit Process pencil icon tooltip and refresh, delete and execute buttons",
+      "kind": "screenshot"
+    },
+    "8": {
+      "alt": "Mapping screen with mapped columns joined by grey arrows, Unmapped Source and Destination Columns, and TaxFileNumber marked Do not use",
+      "kind": "screenshot"
+    },
+    "9": {
+      "alt": "Manually mapped UnionAccountNo and ClientProfile columns with dark grey arrows, the ClientProfile arrow highlighted, and blue ticks",
+      "kind": "screenshot"
+    },
+    "10": {
+      "alt": "EDIT FILTER popup on the ClientStatus column with Copy data when 'is equal to' 'Active', and Do not filter, Ok and Cancel buttons",
+      "kind": "screenshot"
+    }
+  },
+  "create-process-expressions": {
+    "1": {
+      "alt": "Processes in Presentation for Analytics list with the Edit Process tooltip over the pencil button on the AA_Inputs.xlsx row",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Editing Process Mapping panel for StagingIn.AcuteAdmissionsProcessCommon with the +Add Expression Column button highlighted",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Expression dialog with Field Name ArrivalMonth, expression Datepart(Data(\"ArrivalDatetime\"),\"Month\") and the Save button",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Success toasts reading Expression checking has been successful and Manual mapping has been created successfully",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Mapping panel with ArrivalMonth and ArrivalYear expression columns mapped to the ArrivalMonth and ArrivalYear NUMBER destinations",
+      "kind": "screenshot"
+    }
+  },
+  "create-users": {
+    "1": {
+      "alt": "Create new user form with Email, Role, Description, Mobile Phone Number and New Password fields and the Create button",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Eightwire verification email stating the new Account is ready to be activated, with the VerifyEmail link to click",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "User profile Overview for TRACY+XMS1 showing the AccountUser role, Email Verified: Yes and Date joined: 12/21/2020",
+      "kind": "screenshot"
+    }
+  },
+  "csv-delimited-text-data-share": {
+    "1": {
+      "alt": "Orange warning: the source datastore column name [DateOfBirth] differs from the column name on the source object",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Datastore scan column list showing both DateOfBirth and Date Of Birth as checked DATE columns",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "DATA TYPE PROPERTIES panel for the DateOfBirth column with the Date Format dropdown open and yyyy-MM-dd selected",
+      "kind": "screenshot"
+    }
+  },
+  "data-sharing-arrangements": {
+    "1": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Method | User | Description |\n|---|---|---|\n| Agent supplied credentials | nominate a specific Active Directory User or the default `NT AUTHORITY\\SYSTEM` | The database objects or folders that you expose in your datastore must be able to be accessed by the nominated User |"
+    },
+    "2": {
+      "alt": "Database security tree showing the NT AUTHORITY\\SYSTEM user",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Connection string |\n|---|\n| `server=SVRName; database=DBName; trusted_connection=yes;` |"
+    },
+    "4": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Method | User | Description |\n|---|---|---|\n| Datastore supplied credentials | enter a specific Active Directory User or use the default `NT AUTHORITY\\SYSTEM` | The database objects that you expose in your Datastore must be able to be read by the User quoted in the connection string.<br>or<br>A User must have permissions to a folder in order for the objects within to be visible in the Datastore. |"
+    },
+    "5": {
+      "alt": "Database Security > Users tree listing CompanyOne, CompanyThree and CompanyTwo, with CompanyTwo selected",
+      "kind": "screenshot"
+    },
+    "6": {
+      "alt": "",
+      "kind": "table",
+      "table": "| Connection string |\n|---|\n| `server=SVRName; User ID =CompanyTwo; Password=2Company; database=DBName` |"
+    },
+    "7": {
+      "alt": "Company A's Source Datastore is shared (dashed arrow) into Company B as an External shared datastore; a Process arrow loads it into B's Destination Datastore.",
+      "kind": "diagram"
+    },
+    "8": {
+      "alt": "Company B's Destination Datastore is shared (dashed arrow) into Company A as an External shared datastore; a Process arrow feeds it from A's Source Datastore.",
+      "kind": "diagram"
+    },
+    "9": {
+      "alt": "Company B and Company C each share their Destination Datastore (dashed arrows) into Company A; two Process arrows fan out from A's Source Datastore to each.",
+      "kind": "diagram"
+    },
+    "10": {
+      "alt": "Organisations A–D share Destination Datastores (dashed arrows) into Company A's hub; Process arrows flow from each External shared datastore into Company A.",
+      "kind": "diagram"
+    },
+    "11": {
+      "alt": "Organisations A–D share Destination Datastores (dashed arrows) into Company A's hub; Process arrows flow from Company A out to each External shared datastore.",
+      "kind": "diagram"
+    }
+  },
+  "datastore-connection-to-aws": {
+    "1": {
+      "alt": "Eightwire exchanges data two-way with a T2 Micro DX Agent Server inside an AWS VPC, which links to an AWS RDS Landing Zone and other AWS resources.",
+      "kind": "diagram"
+    }
+  },
+  "datastore-queries": {
+    "1": {
+      "alt": "Datastore Queries tab listing four People Count data queries, with the +New button at the bottom left",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Browsing SQL Out view listing People Count Version 1 to 4, each suffixed (data query)",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Scanning failed error: the agent could not gather schema information, incorrect syntax near the keyword 'select'",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Mapping panel with seven mapped columns and ALLPeople NUMBER listed again under Unused source columns",
+      "kind": "screenshot"
+    }
+  },
+  "datastore-scan-faqs": {},
+  "datastore-wildcards": {
+    "1": {
+      "alt": "Files DataFileExample_20200912_1.txt to _20200914_3.txt → wildcard DataFileExample.txt → process → table dbo.DataLoaded, loaded once by last modified date",
+      "kind": "diagram"
+    },
+    "2": {
+      "alt": "File Explorer listing six files ExistingClientList_20200301_A to ExistingClientList_20200302_C with Date modified column",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Browsing Client Lists panel listing ExistingClientList_20200301_A.csv to _20200302_C.csv with Test Connection and Scan for Changes buttons",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Filename wildcards tab with alias ClientList.csv, value ^ExistingClientList_[0-9]{8}_[A-Z]{1}.csv, + New Wildcard and Save buttons",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Browsing Client Lists panel now listing the single wildcard file ClientList.csv with Test Connection and Scan for Changes buttons",
+      "kind": "screenshot"
+    }
+  },
+  "define-your-tile-datastores": {
+    "1": {
+      "alt": "Data Hub Datastore form with In the cloud selected and Excel Tile chosen under Tile, beside Delimited Text Tile and Generic Tile",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Excel Tile Connection panel: Destination datastore dropdown Database Hub, Column Headers In row 1, Data Starts In row 2, Save button",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Thin grey horizontal divider line with no visible interface content",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Excel Tile Datastore summary with Type, Agent, Connection, Option, Region, Sharing rows and the DropFile Options tab highlighted",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "DropFile Options tab Avatar section with the dashed Drop Avatar here upload box",
+      "kind": "screenshot"
+    },
+    "6": {
+      "alt": "Template table with Filename, Updated and Actions columns, the New file template button highlighted, and Save button",
+      "kind": "screenshot"
+    }
+  },
+  "eightwire-entities": {
+    "1": {
+      "alt": "Nested boxes: Account contains Project (holding Datastore > Object and Process Group > Process) alongside Agent and Users; no arrows.",
+      "kind": "diagram"
+    }
+  },
+  "error-handling": {},
+  "excel-data-share": {
+    "1": {
+      "alt": "Datastore File Settings with Column Headers set to In row 1 and Data Starts set to In row 2",
+      "kind": "screenshot"
+    },
+    "2": {
+      "alt": "Datastore Structure tab with the Type dropdown open on the ExampleID column, Binary selected and Text highlighted",
+      "kind": "screenshot"
+    },
+    "3": {
+      "alt": "Warning: source datastore column name [DateOfBirth] differs from the column name on the source object; data will not be used",
+      "kind": "screenshot"
+    },
+    "4": {
+      "alt": "Datastore column list showing both DateOfBirth and Date Of Birth as checked DATE columns",
+      "kind": "screenshot"
+    },
+    "5": {
+      "alt": "Scanning objects notice: blank column names found in the source data, place-holder names Column8 to Column15 used",
+      "kind": "screenshot"
+    },
+    "6": {
+      "alt": "Data Type Properties panel for the DateOfBirth column with the Date Format dropdown open and yyyy-MM-dd selected",
+      "kind": "screenshot"
+    }
+  }
+}

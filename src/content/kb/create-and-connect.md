@@ -17,7 +17,7 @@ The steps to set up a datastore also include the option of downloading and conne
 
 3\. Click **Next**
 
-![Screenshot](./images/create-and-connect-1.webp)
+![New Data Store step 'What shall we call this Data Store?' with Name and Description fields and the Next button](./images/create-and-connect-1.webp)
 
 4\. Select whether the data you are connecting to is on premise or cloud hosted.
 
@@ -40,15 +40,15 @@ The instructions will vary depending on the datastore Type - for example;
 
 *The example shown connects to a SQL database*
 
-![Screenshot](./images/create-and-connect-2.webp)
+![Connection step 'How do we connect to your data?' with Protocol set to SQL Native Client, Connection String and Schema Name fields](./images/create-and-connect-2.webp)
 
 Click **Next** and the datastore will perform a connection test.
 
-![Screenshot](./images/create-and-connect-3.webp)
+![Testing connection notification showing 10% tested](./images/create-and-connect-3.webp)
 
-![Screenshot](./images/create-and-connect-4.svg)
+![Grey generic image placeholder; the original screenshot is missing](./images/create-and-connect-4.svg)
 
-![Screenshot](./images/create-and-connect-5.webp)
+![Test succeeded notification with a green tick](./images/create-and-connect-5.webp)
 
 8. **Configure the datastore**
 

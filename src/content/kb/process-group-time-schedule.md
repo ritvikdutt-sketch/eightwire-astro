@@ -14,7 +14,7 @@ Locate the Process Group in the list and click on the bar to expand,
 2.  To create a new time schedule select **New** or click on an existing schedule to edit or delete
 3.  Complete the options Start Time and Date. To make recurring, tick 'Repeat'
 
-![Screenshot](./images/process-group-time-schedule-1.webp)
+![Set up a Time Schedule — after step 3 (screenshot)](./images/process-group-time-schedule-1.webp)
 
 4\. Select a Start time and Finish Time and a frequency between those times.
 
@@ -22,13 +22,13 @@ Select the occurrence - days of the week or the day of the month, that the sched
 
 The example shown only runs during week days, every 30 minutes, between 2pm and 5pm. There is no end date to the schedule.
 
-![Screenshot](./images/process-group-time-schedule-2.webp)
+![Set up a Time Schedule — after step 4 (screenshot)](./images/process-group-time-schedule-2.webp)
 
 5\. Click **Save**
 
 6\. Uncheck the box 'Enabled', if you want to pause the schedule at any time.
 
-![Screenshot](./images/process-group-time-schedule-3.webp)
+![Set up a Time Schedule — after step 6 (screenshot)](./images/process-group-time-schedule-3.webp)
 
 > *The timings in the scheduler are determined by the time zone you have defined for your Account.*
 

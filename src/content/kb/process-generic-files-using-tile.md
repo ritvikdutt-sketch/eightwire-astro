@@ -16,28 +16,28 @@ Click **+Add Source** and select your Tile Datastore
 
 Highlight the source object and click **Add**
 
-![Screenshot](./images/process-generic-files-using-tile-1.webp)
+![Process Generic Files using Tile (screenshot)](./images/process-generic-files-using-tile-1.webp)
 
 For Generic Tile the source object available will be called 'File'
 
 The process will make a suggestion from the available Destination Datastores — select a Folder Datastore
 
-![Screenshot](./images/process-generic-files-using-tile-2.webp)
+![Process Generic Files using Tile (screenshot)](./images/process-generic-files-using-tile-2.webp)
 
 Click on the ellipsis to navigate and select an existing Datastore folder, or create a new Folder in the Datastore.
 
 Click **Accept All** or the **blue tick** to create the Process.
 
-![Screenshot](./images/process-generic-files-using-tile-3.webp)
+![Process Generic Files using Tile (screenshot)](./images/process-generic-files-using-tile-3.webp)
 
 The mapping will be applied automatically and is for a binary file (showing default properties as columns).
 
-![Screenshot](./images/process-generic-files-using-tile-4.webp)
+![Process Generic Files using Tile (screenshot)](./images/process-generic-files-using-tile-4.webp)
 
 Run a test process by using the Tile that is shown in your Project Dashboard.
 
 Drag a file into the tile and check that the process executes successfully (on the Activity Page).
 
-![Screenshot](./images/process-generic-files-using-tile-5.webp)
+![Process Generic Files using Tile (screenshot)](./images/process-generic-files-using-tile-5.webp)
 
 Nice work! — you have mapped the Tile to its destination, all that remains is to [share the Tile with your Data Providers](../share-a-tile-datastore/)

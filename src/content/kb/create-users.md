@@ -8,7 +8,7 @@ sourceUrl: "https://www.eightwire.io/knowledge-base/create-users"
 
 ## Creating users
 
-![Screenshot](./images/create-users-1.webp)
+![Create new user form with Email, Role, Description, Mobile Phone Number and New Password fields and the Create button](./images/create-users-1.webp)
 
 To create a User in your Account, from the Dashboard
 
@@ -38,9 +38,9 @@ They must click on the link to verify - and then log into their Account.
 
 > *Once the verification link has been clicked once - it cannot be used again - even if the user does not complete the log in action.*
 
-![Screenshot](./images/create-users-2.webp)
+![Eightwire verification email stating the new Account is ready to be activated, with the VerifyEmail link to click](./images/create-users-2.webp)
 
-![Screenshot](./images/create-users-3.webp)
+![User profile Overview for TRACY+XMS1 showing the AccountUser role, Email Verified: Yes and Date joined: 12/21/2020](./images/create-users-3.webp)
 
 The User  profile shows the Account role and the date verified.
 

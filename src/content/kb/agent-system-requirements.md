@@ -6,7 +6,7 @@ order: 8
 sourceUrl: "https://www.eightwire.io/knowledge-base/agent-system-requirements"
 ---
 
-![Screenshot](./images/agent-system-requirements-1.webp)
+![Left to right: Source System's Agent sends HTTPS through a firewall to Eightwire, then through a second firewall via HTTPS to the Destination System's Agent.](./images/agent-system-requirements-1.webp)
 
 ## System Requirements
 
@@ -14,7 +14,23 @@ The following requirements should be considered before installing an Agent.
 
 **Host Computer:**
 
-![Screenshot](./images/agent-system-requirements-2.webp)
+**Minimum Specification**
+
+| TYPE | SPECIFICATION |
+| --- | --- |
+| RAM | 6GB |
+| Disk | 100GB HDD |
+| OS | Windows 7 (with .NET Framework 4.5 installed)<br>Windows 8 Windows Server 2012 |
+| CPU | 2 Core |
+
+**Recommended Specification**
+
+| TYPE | SPECIFICATION |
+| --- | --- |
+| RAM | 8GB |
+| Disk | 100GB SSD |
+| OS | Windows 10 Windows Server 2016 |
+| CPU | 4 Core |
 
 Agents do not store data on disk and only write the occasional error log and monitoring/update logs, so a small disk is usually adequate.
 

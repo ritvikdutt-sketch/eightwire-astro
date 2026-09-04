@@ -26,7 +26,7 @@ RDS — Inbound ports 1433 - no outbound rules
 
 There is also a rule that allows the EC2 group to access the RDS group so the agent on EC2 can connect to RDS via the SQL Native Client (port 1433).
 
-![Screenshot](./images/datastore-connection-to-aws-1.webp)
+![Eightwire exchanges data two-way with a T2 Micro DX Agent Server inside an AWS VPC, which links to an AWS RDS Landing Zone and other AWS resources.](./images/datastore-connection-to-aws-1.webp)
 
 ## S3 Buckets
 

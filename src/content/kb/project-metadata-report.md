@@ -28,26 +28,26 @@ Displays any datastores accepted and linked into the Project from an external Ac
 
 From the Account Dashboard or from the left pane, select the **Reports** icon.
 
-![Screenshot](./images/project-metadata-report-1.webp)
+![To navigate to the Report (screenshot)](./images/project-metadata-report-1.webp)
 
 Select '**Project Metadata**'
 
-![Screenshot](./images/project-metadata-report-2.webp)
+![To navigate to the Report (screenshot)](./images/project-metadata-report-2.webp)
 
 **All metadata reports are organized by project** — the Projects you are Administrator for (or all if you're an Account Administrator) are displayed on the Metadata Reports page.
 
 Click on a project to open the metadata reports for that project.
 
-![Screenshot](./images/project-metadata-report-3.webp)
+![To navigate to the Report (screenshot)](./images/project-metadata-report-3.webp)
 
 The reports available are Internal Datastores, External Datastores, Process Groups, Processes, and Schedules.
 
 Click on a Report Section to drill down to detail.
 
-![Screenshot](./images/project-metadata-report-4.webp)
+![To navigate to the Report (screenshot)](./images/project-metadata-report-4.webp)
 
 Within the report, click on an arrow to expand a level.
 
-![Screenshot](./images/project-metadata-report-5.webp)
+![To navigate to the Report (screenshot)](./images/project-metadata-report-5.webp)
 
 > Click *on the download icon and select a download format (Excel or JSON) to export the enitre report for your selected project.*

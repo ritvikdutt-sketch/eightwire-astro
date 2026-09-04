@@ -16,7 +16,7 @@ Click **+Add Source** and select your Tile Datastore
 
 Highlight the source object and click **Add**
 
-![Screenshot](./images/process-csv-and-excel-data-using-tile-1.webp)
+![Process CSV and Excel Data using Tile (screenshot)](./images/process-csv-and-excel-data-using-tile-1.webp)
 
 For CSV and Excel Tile the source objects available are any objects in the Destination datastore you selected in the Tile datastore Connection tab.
 
@@ -24,18 +24,18 @@ The process will suggest the appropriate Destination — it will be the object i
 
 Click to **Accept** the process.
 
-![Screenshot](./images/process-csv-and-excel-data-using-tile-2.webp)
+![Process CSV and Excel Data using Tile (screenshot)](./images/process-csv-and-excel-data-using-tile-2.webp)
 
 The mapping will be applied automatically.
 
-![Screenshot](./images/process-csv-and-excel-data-using-tile-3.webp)
+![Process CSV and Excel Data using Tile (screenshot)](./images/process-csv-and-excel-data-using-tile-3.webp)
 
-![Screenshot](./images/process-csv-and-excel-data-using-tile-4.webp)
+![Process CSV and Excel Data using Tile (screenshot)](./images/process-csv-and-excel-data-using-tile-4.webp)
 
 Run a test process by using the Tile that is shown in your Project Dashboard.
 
 Drag a file into the tile and check that the process executes successfully (on the Activity Page).
 
-![Screenshot](./images/process-csv-and-excel-data-using-tile-5.webp)
+![Process CSV and Excel Data using Tile (screenshot)](./images/process-csv-and-excel-data-using-tile-5.webp)
 
 Once you are satisfied with the process transferring the submitted data - then next step is to [share the Tile](../share-a-tile-datastore/) to your data providers.

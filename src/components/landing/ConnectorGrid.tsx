@@ -39,9 +39,10 @@ export default function ConnectorGrid() {
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-cream-line bg-cream p-2">
                       <img src={`${base}${c.file}`} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
                     </span>
-                    <span className="min-w-0">
-                      <span className="block truncate text-body font-semibold text-ink">{c.name}</span>
-                      <span className="block truncate font-mono text-2xs uppercase tracking-[0.08em] text-ink-muted">
+                    {/* labels wrap rather than truncate so nothing is lost at 200% zoom or with wider text spacing */}
+                    <span className="min-w-0 break-words">
+                      <span className="block text-body font-semibold leading-snug text-ink">{c.name}</span>
+                      <span className="block font-mono text-2xs uppercase leading-snug tracking-[0.08em] text-ink-muted">
                         {c.kind}
                       </span>
                     </span>
