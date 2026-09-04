@@ -123,7 +123,7 @@ export default function ContactHero() {
               );
             })}
           </ul>
-          <p className="mt-7 font-mono text-caption uppercase tracking-[0.14em] text-cream/55">We reply from Wellington</p>
+          <p className="mt-7 font-mono text-caption uppercase tracking-[0.14em] text-cream/55">We reply in 24&ndash;48 hours</p>
         </div>
       </div>
 
