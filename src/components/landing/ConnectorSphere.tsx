@@ -30,6 +30,12 @@ const shortestDelta = (from: number, to: number) => {
   return d;
 };
 
+// Drag feel: degrees per pixel, and how much of the last movement carries on as inertia.
+const DRAG_SENSITIVITY = 0.32;
+const INERTIA_CARRY = 0.5;
+const INERTIA_DECAY = 0.9;
+const DRAG_THRESHOLD = 8; // px before a press counts as a drag rather than a click
+
 const chipClass = (on: boolean) =>
   `rounded-full border px-4 py-1.5 font-mono text-caption uppercase tracking-[0.1em] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime ${
     on ? 'border-lime bg-lime/15 text-lime' : 'border-cream/40 text-cream/70 hover:border-cream/70 hover:text-cream'
@@ -38,6 +44,9 @@ const chipClass = (on: boolean) =>
 /**
  * 3D connector gallery. Pointer users drag the sphere and click a tile; keyboard users move between
  * tiles with the arrow keys (one tab stop, roving tabindex) and open a tile with Enter or Space.
+ *
+ * Geometry (tile size, sphere radius) is pure CSS — see .sphere-canvas / .sphere-scene in
+ * landing.css — so the server-rendered frame already has the final shape and nothing jumps on load.
  * The idle rotation obeys the site motion switch and prefers-reduced-motion.
  */
 export default function ConnectorSphere() {
@@ -60,8 +69,6 @@ export default function ConnectorSphere() {
   const focusTarget = useRef<{ rx: number; ry: number } | null>(null);
   const motionRef = useRef(false);
 
-  const [radius, setRadius] = useState(480);
-  const [tile, setTile] = useState(116);
   const [selected, setSelected] = useState<Placed | null>(null);
   const [filter, setFilter] = useState<string | null>(null);
   const [hasDragged, setHasDragged] = useState(false);
@@ -70,26 +77,6 @@ export default function ConnectorSphere() {
   useEffect(() => {
     motionRef.current = motion;
   }, [motion]);
-
-  // measure container → sphere radius & tile size
-  useEffect(() => {
-    const el = canvasRef.current;
-    if (!el) return;
-    const measure = () => {
-      const w = el.clientWidth;
-      const h = el.clientHeight;
-      const t = w < 480 ? 80 : w < 640 ? 104 : 144;
-      // keep the projected sphere (radius + half a tile each side) inside the
-      // canvas — the old 250px floor overflowed narrow phone viewports
-      const r = Math.max(120, Math.min(w * 0.4, h * 0.66, (w - t) / 2, 500));
-      setRadius(Math.round(r));
-      setTile(t);
-    };
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
 
   // render loop: inertia, idle auto-rotate, focus easing
   useEffect(() => {
@@ -108,8 +95,8 @@ export default function ConnectorSphere() {
         // inertia
         r.ry -= vel.current.x;
         r.rx += vel.current.y;
-        vel.current.x *= 0.95;
-        vel.current.y *= 0.95;
+        vel.current.x *= INERTIA_DECAY;
+        vel.current.y *= INERTIA_DECAY;
         // idle drift — only while motion is welcome (site switch + OS preference)
         if (motionRef.current && now - lastInteract.current > 2600) r.ry -= 0.022;
       }
@@ -160,32 +147,36 @@ export default function ConnectorSphere() {
     const dx = e.clientX - lastPointer.current.x;
     const dy = e.clientY - lastPointer.current.y;
     lastPointer.current = { x: e.clientX, y: e.clientY };
+    const wasDrag = dragDist.current > DRAG_THRESHOLD;
     dragDist.current += Math.abs(dx) + Math.abs(dy);
-    if (dragDist.current > 8 && !hasDragged) setHasDragged(true);
-    // capture only once a real drag starts — capturing on pointerdown would
-    // retarget the click to the canvas and swallow tile selection on desktop
-    if (dragDist.current > 8 && !e.currentTarget.hasPointerCapture(e.pointerId)) {
+    if (!wasDrag && dragDist.current > DRAG_THRESHOLD) {
+      // a real drag has started: one cursor, tiles stop reacting, pointer stays captured even if
+      // it leaves the canvas. Capturing earlier would retarget the click and swallow tile selection.
+      if (!hasDragged) setHasDragged(true);
+      canvasRef.current?.setAttribute('data-dragging', '');
       try {
         (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
       } catch {
         /* synthetic events may carry no active pointer */
       }
     }
-    const k = 0.16;
-    rot.current.ry -= dx * k;
-    rot.current.rx += dy * k;
-    vel.current = { x: dx * k * 0.6, y: dy * k * 0.6 };
+    rot.current.ry -= dx * DRAG_SENSITIVITY;
+    rot.current.rx += dy * DRAG_SENSITIVITY;
+    vel.current = { x: dx * DRAG_SENSITIVITY * INERTIA_CARRY, y: dy * DRAG_SENSITIVITY * INERTIA_CARRY };
     lastInteract.current = performance.now();
   };
 
   const onPointerUp = () => {
     dragging.current = false;
     lastInteract.current = performance.now();
+    canvasRef.current?.removeAttribute('data-dragging');
     if (!motionRef.current) vel.current = { x: 0, y: 0 };
+    // the click that follows this pointerup still needs to know it was a drag; clear afterwards
+    setTimeout(() => { dragDist.current = 0; }, 0);
   };
 
-  const openTile = (p: Placed, i: number) => {
-    if (dragDist.current > 8) return; // it was a drag, not a click
+  const openTile = (p: Placed, i: number, viaKeyboard: boolean) => {
+    if (!viaKeyboard && dragDist.current > DRAG_THRESHOLD) return; // it was a drag, not a click
     returnFocusTo.current = tileRefs.current[i];
     setActiveIdx(i);
     setSelected(p);
@@ -219,6 +210,7 @@ export default function ConnectorSphere() {
     const idx = order[next];
     setActiveIdx(idx);
     tileRefs.current[idx]?.focus();
+    bringToFront(placed[idx]);
   };
 
   return (
@@ -260,12 +252,12 @@ export default function ConnectorSphere() {
           </div>
         </div>
 
-        {/* the sphere */}
+        {/* the sphere — geometry from .sphere-canvas / .sphere-scene in landing.css */}
         <div
           ref={canvasRef}
           role="group"
           aria-label="Connectors. Use the arrow keys to move between connectors and Enter to open one; drag to look around."
-          className="relative z-10 mt-2 min-h-[520px] flex-1 cursor-grab select-none overflow-hidden rounded-xl active:cursor-grabbing"
+          className="sphere-canvas relative z-10 mt-2 h-[max(520px,calc(100svh-30rem))] select-none overflow-hidden rounded-xl"
           style={{ perspective: '1300px', touchAction: 'pan-y' }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -275,7 +267,7 @@ export default function ConnectorSphere() {
         >
           <div
             ref={sceneRef}
-            className="absolute left-1/2 top-1/2 h-0 w-0"
+            className="sphere-scene absolute left-1/2 top-1/2 h-0 w-0"
             style={{ transformStyle: 'preserve-3d', transform: 'rotateX(-4deg) rotateY(0deg)' }}
           >
             {placed.map((p, i) => {
@@ -289,10 +281,12 @@ export default function ConnectorSphere() {
                   type="button"
                   tabIndex={!hidden && i === activeIdx ? 0 : -1}
                   aria-hidden={hidden || undefined}
-                  onClick={() => openTile(p, i)}
-                  onFocus={() => {
+                  onClick={(e) => openTile(p, i, e.detail === 0)}
+                  onFocus={(e) => {
                     setActiveIdx(i);
-                    bringToFront(p);
+                    // Turn to face the tile only for keyboard focus. A mouse press also focuses the
+                    // button, and easing toward it there would fight the drag that follows.
+                    if (!dragging.current && e.currentTarget.matches(':focus-visible')) bringToFront(p);
                   }}
                   aria-label={`${p.name} — ${p.kind}`}
                   className={`group absolute flex flex-col items-center justify-center gap-1.5 rounded-lg border bg-cream p-3 transition-[opacity,border-color,box-shadow] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime ${
@@ -303,11 +297,11 @@ export default function ConnectorSphere() {
                         : 'border-transparent opacity-100 hover:border-lime/70'
                   }`}
                   style={{
-                    width: tile,
-                    height: tile,
-                    marginLeft: -tile / 2,
-                    marginTop: -tile / 2,
-                    transform: `rotateY(${p.lon}deg) rotateX(${p.lat}deg) translateZ(${-radius}px)`,
+                    width: 'var(--tile)',
+                    height: 'var(--tile)',
+                    marginLeft: 'calc(var(--tile) / -2)',
+                    marginTop: 'calc(var(--tile) / -2)',
+                    transform: `rotateY(${p.lon}deg) rotateX(${p.lat}deg) translateZ(calc(-1 * var(--r)))`,
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                     // tiles must match the canvas, or touches starting on a tile

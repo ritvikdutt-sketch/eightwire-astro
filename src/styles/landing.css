@@ -54,3 +54,21 @@ html[data-motion="paused"] .motion-safe\:animate-pulse-dot { animation-play-stat
 /* the marquee also rests while it is pointed at or holds focus */
 .marquee-track:hover,
 .marquee-track:focus-within { animation-play-state: paused; }
+
+/* Connector sphere (ConnectorSphere.tsx). Tile size and sphere radius are computed by the
+   browser from the canvas box, so the server-rendered frame already has the final shape —
+   no measuring, no jump on load. --r mirrors the old script: the smaller of 40% of the width,
+   66% of the height and half the width minus one tile, kept between 120px and 500px.
+   Container units resolve against the nearest ancestor container, hence canvas → scene. */
+.sphere-canvas { cursor: grab; }
+.sphere-scene { --tile: 144px; --r: 340px; } /* fallback for browsers without container queries */
+@supports (container-type: size) {
+  .sphere-canvas { container-type: size; }
+  .sphere-scene { --tile: 80px; --r: clamp(120px, min(40cqw, 66cqh, calc((100cqw - var(--tile)) / 2)), 500px); }
+  @container (min-width: 480px) { .sphere-scene { --tile: 104px; } }
+  @container (min-width: 640px) { .sphere-scene { --tile: 144px; } }
+}
+/* while a drag is in progress: one cursor everywhere, and tiles neither hover nor take focus */
+.sphere-canvas[data-dragging],
+.sphere-canvas[data-dragging] * { cursor: grabbing !important; }
+.sphere-canvas[data-dragging] button { pointer-events: none; }
