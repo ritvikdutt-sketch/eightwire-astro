@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T02:53:48.590Z",
+  "generated": "2026-09-04T04:31:02.501Z",
   "axe": "4.13.0",
   "pages": 91,
   "results": [
@@ -98,7 +98,7 @@
         {
           "id": "color-contrast",
           "help": "Elements must meet minimum color contrast ratio thresholds",
-          "nodes": 20
+          "nodes": 18
         }
       ]
     },

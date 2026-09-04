@@ -17,6 +17,12 @@ const RULES = [
   { name: 'old domain eightwire.io', re: /eightwire\.io/i },
   { name: 'old street address', re: /Taranaki/i },
   { name: 'placeholder alt "Screenshot"', re: /alt="Screenshot"|!\[Screenshot\]/ },
+  // Unsubstantiated security superlatives inherited from the old site (removed Sept 2026 after
+  // Liz asked what they were based on). State capabilities and audited scope instead.
+  { name: 'claim: "exceed the highest…"', re: /exceed the highest/i },
+  { name: 'claim: "highest security thresholds"', re: /highest (?:national and global )?security thresholds/i },
+  { name: 'claim: "compliance hoops"', re: /compliance hoops/i },
+  { name: 'claim: "staff cannot access"', re: /staff cannot access/i },
 ];
 
 const files = [];

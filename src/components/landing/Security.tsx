@@ -28,9 +28,9 @@ const ITEMS = [
     ),
   },
   {
-    id: 'compliance',
-    title: 'Compliant from the start',
-    body: 'We exceed the highest security thresholds for data sharing and navigate all the compliance requirements, ensuring you can exchange even the most sensitive data with confidence and ease.',
+    id: 'assessment',
+    title: 'Independently assessed',
+    body: 'External security specialists have reviewed our AWS configuration against security best practices, the application code and configuration behind it, the controls covering our New Zealand processing servers, and our change control, business continuity and disaster recovery processes.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9" aria-hidden="true">
         <path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
@@ -39,10 +39,10 @@ const ITEMS = [
   },
 ];
 
-// As published in the knowledge base article "Certifications and Accreditations".
+// Scope and dates live in the knowledge-base article "Certifications and Accreditations", not here,
+// so this card cannot go stale. Government certification is omitted pending review (Sept 2026).
 const CERTS = [
-  { name: 'SOC 2 Type I & II', detail: 'Service Organisation Control audit completed August 2022' },
-  { name: 'NZ Government Security Certification', detail: 'For SENSITIVE data sharing — issued 2017, renewed November 2020 and November 2022' },
+  { name: 'SOC 2', detail: 'Service Organisation Control audit — see the certifications page for scope and dates' },
 ];
 
 export default function Security({ showHead = true }: { showHead?: boolean }) {
@@ -73,6 +73,13 @@ export default function Security({ showHead = true }: { showHead?: boolean }) {
                 </div>
               </div>
             ))}
+
+            <p className="reveal mt-8 text-body-sm text-ink-soft">
+              Questions about security?{' '}
+              <a href={`${base}faq/`} className={linkClass}>
+                Read the FAQ <span aria-hidden="true" className={arrowNudge}>→</span>
+              </a>
+            </p>
           </div>
 
           <div className={`reveal reveal-d2 p-8 lg:sticky lg:top-24 ${cardStatic}`}>

@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL;
 // Each trust line links to the page that substantiates it.
 const TRUST = [
   { label: 'Data locked to NZ or AU', href: `${base}security/#sovereignty` },
-  { label: 'SOC 2 Type I & II', href: `${base}knowledge-base/certifications-and-accreditations/` },
+  { label: 'SOC 2 audited', href: `${base}knowledge-base/certifications-and-accreditations/` },
 ];
 
 // `short` is what the node shows on phones, where the whole diagram is ~half size — bigger type,

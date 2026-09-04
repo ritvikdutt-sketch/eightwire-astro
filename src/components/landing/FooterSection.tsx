@@ -61,7 +61,7 @@ export default function FooterSection() {
             <a href={CERTS_HREF} className={`group mt-6 inline-flex items-center gap-3 rounded-sm ${focusRing}`}>
               <img src={`${base}images/Ellipse-16.png`} alt="" width="56" height="56" className="h-14 w-14 shrink-0" />
               <span className="text-body-xs leading-snug text-cream/55 transition-colors duration-200 group-hover:text-cream/80">
-                SOC 2 Type I &amp; II
+                SOC 2 audited
                 <span className="block text-cream/55 group-hover:text-lime">View the certificates</span>
               </span>
             </a>
